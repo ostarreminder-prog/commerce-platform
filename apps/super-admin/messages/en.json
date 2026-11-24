@@ -1,0 +1,322 @@
+{
+  "meta": {
+    "title": "Platform Console",
+    "description": "Manage stores, plans, and the platform"
+  },
+  "nav": {
+    "brand": "Tajer Platform",
+    "console": "Platform console",
+    "main": "Main navigation",
+    "openMenu": "Open menu",
+    "overview": "Overview",
+    "tenants": "Stores",
+    "plans": "Plans",
+    "subscriptions": "Subscriptions",
+    "usage": "Usage",
+    "ai": "AI usage",
+    "appsReview": "App review",
+    "partners": "Developers",
+    "providers": "Providers",
+    "jobs": "Jobs",
+    "logs": "Audit log",
+    "flags": "Feature flags",
+    "themes": "Themes",
+    "team": "Team",
+    "env": "Production",
+    "logoInitial": "S",
+    "userInitials": "A U",
+    "copilot": "Copilot"
+  },
+  "common": {
+    "search": "Search",
+    "all": "All",
+    "save": "Save",
+    "cancel": "Cancel",
+    "saved": "Saved",
+    "noResults": "No results match your search",
+    "error": "Couldn't load data",
+    "retry": "Retry",
+    "back": "Back",
+    "perMonth": "/ month"
+  },
+  "category": {
+    "payments": "Payments",
+    "shipping": "Shipping",
+    "marketing": "Marketing",
+    "accounting": "Accounting",
+    "ai": "AI"
+  },
+  "subStatus": {
+    "trialing": "Trialing",
+    "active": "Active",
+    "past_due": "Past due",
+    "cancelled": "Cancelled"
+  },
+  "reviewStatus": {
+    "pending": "Pending review",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "jobStatus": {
+    "success": "Success",
+    "running": "Running",
+    "failed": "Failed",
+    "queued": "Queued"
+  },
+  "partnerStatus": {
+    "active": "Active",
+    "pending": "Pending",
+    "suspended": "Suspended"
+  },
+  "staffStatus": {
+    "active": "Active",
+    "invited": "Invited",
+    "suspended": "Suspended"
+  },
+  "role": {
+    "owner": "Owner",
+    "admin": "Admin",
+    "support": "Support",
+    "developer": "Developer"
+  },
+  "providerKind": {
+    "shipping": "Shipping",
+    "payment": "Payments",
+    "communication": "Communication"
+  },
+  "flagScope": {
+    "all": "All stores",
+    "plan": "By plan",
+    "stores": "Selected stores"
+  },
+  "orderStub": {
+    "paid": "Paid",
+    "pending": "Pending",
+    "refunded": "Refunded"
+  },
+  "plan": {
+    "starter": "Starter",
+    "growth": "Growth",
+    "pro": "Pro"
+  },
+  "status": {
+    "active": "Active",
+    "trial": "Trial",
+    "suspended": "Suspended"
+  },
+  "overview": {
+    "title": "Platform overview",
+    "description": "Performance across all stores.",
+    "mrr": "Monthly recurring revenue",
+    "tenants": "Stores",
+    "gmv": "Gross merchandise value",
+    "ai": "Agent conversations",
+    "mrrChart": "MRR (12 months)",
+    "planMix": "Plan mix",
+    "health": "Service health",
+    "operational": "Operational",
+    "degraded": "Degraded",
+    "uptime": "Uptime {value}",
+    "latest": "Newest stores",
+    "viewAll": "View all",
+    "storesCount": "{count} stores"
+  },
+  "tenants": {
+    "title": "Stores",
+    "description": "Every store registered on the platform.",
+    "search": "Search by name, domain, or owner",
+    "planFilter": "Plan",
+    "store": "Store",
+    "owner": "Owner",
+    "city": "City",
+    "orders": "Orders",
+    "gmv": "Sales",
+    "joined": "Joined",
+    "details": "Store details",
+    "suspend": "Suspend store",
+    "activate": "Activate store",
+    "impersonate": "Log in as merchant",
+    "visit": "Visit store",
+    "suspended": "{name} suspended",
+    "activated": "{name} activated",
+    "impersonating": "Opening {name}'s dashboard...",
+    "aiConversations": "Agent conversations",
+    "contact": "Contact",
+    "openDetails": "Open store page"
+  },
+  "store": {
+    "back": "Stores",
+    "notFound": "Store not found",
+    "info": "Store info",
+    "subscription": "Subscription",
+    "renews": "Current period ends",
+    "mrr": "Monthly revenue",
+    "usage": "Usage",
+    "aiTokens": "AI tokens",
+    "aiMessages": "Agent messages",
+    "apiCalls": "API calls",
+    "staff": "Staff",
+    "orders": "Recent orders",
+    "ordersStub": "Sample data — last 5 orders",
+    "orderNumber": "Order #{number}"
+  },
+  "planDetail": {
+    "back": "Plans",
+    "notFound": "Plan not found",
+    "limits": "Limits",
+    "features": "Features",
+    "subscribers": "Subscribers ({count})",
+    "aiQuota": "AI conversations",
+    "seats": "Staff seats",
+    "fee": "Transaction fee",
+    "price": "Monthly price",
+    "storesOnPlan": "Stores on this plan"
+  },
+  "subscriptions": {
+    "title": "Subscriptions",
+    "description": "Store subscriptions and billing status.",
+    "store": "Store",
+    "plan": "Plan",
+    "status": "Status",
+    "mrr": "Monthly revenue",
+    "renews": "Period ends",
+    "started": "Started",
+    "totalMrr": "Total MRR"
+  },
+  "usage": {
+    "title": "Platform usage",
+    "description": "AI and API usage per store.",
+    "store": "Store",
+    "messages": "Agent messages",
+    "tokens": "Tokens",
+    "apiCalls": "API calls",
+    "share": "of total usage"
+  },
+  "review": {
+    "title": "App review",
+    "description": "App publishing requests from developers.",
+    "app": "App",
+    "categoryLabel": "Category",
+    "developer": "Developer",
+    "scopes": "Scopes",
+    "scopesCount": "{count} scopes",
+    "price": "Price",
+    "submitted": "Submitted",
+    "free": "Free",
+    "back": "App review",
+    "notFound": "Submission not found",
+    "approve": "Approve app",
+    "reject": "Reject",
+    "approved": "{name} approved",
+    "rejected": "{name} rejected",
+    "rejectTitle": "Reject {name}",
+    "rejectText": "Pick a rejection reason — the developer sees it with the decision.",
+    "confirmReject": "Confirm rejection",
+    "reasons": {
+      "scope_abuse": "Excessive scopes",
+      "policy": "Marketplace policy violation",
+      "quality": "Insufficient app quality",
+      "other": "Other reason"
+    },
+    "installs": "{count} installs"
+  },
+  "partners": {
+    "title": "Developers",
+    "description": "Developer accounts registered on the platform.",
+    "developer": "Developer",
+    "apps": "Apps",
+    "status": "Status",
+    "joined": "Joined",
+    "appsCount": "{count} apps"
+  },
+  "providers": {
+    "title": "Providers",
+    "description": "Shipping, payment, and communication integrations available to stores.",
+    "storesCount": "{count} stores using it",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "toggled": "{name} updated"
+  },
+  "jobs": {
+    "title": "Background jobs",
+    "description": "Scheduled system jobs and their last runs.",
+    "job": "Job",
+    "status": "Status",
+    "lastRun": "Last run",
+    "duration": "Duration",
+    "failures": "Failures",
+    "queuedNote": "Not started yet"
+  },
+  "logs": {
+    "title": "Audit log",
+    "description": "Every admin operation across the platform.",
+    "time": "Time",
+    "actor": "Actor",
+    "action": "Action",
+    "target": "Target",
+    "ip": "IP",
+    "system": "System"
+  },
+  "flags": {
+    "title": "Feature flags",
+    "description": "Roll out features platform-wide, per plan, or per store.",
+    "scope": "Scope",
+    "audience": {
+      "all": "Everyone",
+      "pro": "Pro plan",
+      "growth_pro": "Growth & Pro",
+      "stores_120": "120 beta stores",
+      "stores_beta": "Beta cohort"
+    },
+    "toggled": "{name} updated"
+  },
+  "themesMarket": {
+    "title": "Store themes",
+    "description": "Themes available to merchants in the design editor.",
+    "published": "Published",
+    "draft": "Draft",
+    "publishedAt": "Published {date}",
+    "sections": "{count} sections"
+  },
+  "team": {
+    "title": "Platform team",
+    "description": "People with access to the owner console.",
+    "member": "Member",
+    "email": "Email",
+    "role": "Role",
+    "status": "Status",
+    "lastActive": "Last active",
+    "never": "Never signed in",
+    "invite": "Invite member"
+  },
+  "plans": {
+    "title": "Plans and pricing",
+    "description": "Edit plan prices and limits.",
+    "aiQuota": "{count} AI conversations",
+    "seats": "{count} staff seats",
+    "fee": "{value} transaction fee",
+    "subscribers": "{count} subscribers",
+    "edit": "Edit plan",
+    "price": "Monthly price (SAR)",
+    "quota": "AI conversation limit",
+    "popular": "Most popular"
+  },
+  "ai": {
+    "title": "AI usage",
+    "description": "Agent usage and cost across the platform.",
+    "conversations": "Conversations this month",
+    "cost": "Model cost",
+    "perConversation": "Cost per conversation",
+    "margin": "AI margin",
+    "byAgent": "By agent type",
+    "topTenants": "Top consuming stores",
+    "usage": "Plan usage",
+    "alert": "The support agent is slower than usual (1.2s). The platform team is investigating.",
+    "kind": {
+      "support": "Support",
+      "sales": "Sales",
+      "marketing": "Marketing",
+      "inventory": "Inventory"
+    }
+  }
+}

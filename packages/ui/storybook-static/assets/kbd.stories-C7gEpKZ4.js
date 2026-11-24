@@ -1,0 +1,5 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{c}from"./cn-BLSKlp9E.js";function t({className:d,...a}){return e.jsx("kbd",{dir:"ltr",className:c("bg-muted text-muted-foreground pointer-events-none inline-flex h-5 select-none items-center gap-0.5 rounded border px-1.5 font-mono text-[10px] font-medium",d),...a})}t.__docgenInfo={description:"",methods:[],displayName:"Kbd"};const p={title:"Kbd"},s={render:()=>e.jsxs("p",{className:"p-6 text-sm",children:["Press ",e.jsx(t,{children:"⌘"})," + ",e.jsx(t,{children:"J"})," to open the assistant, or ",e.jsx(t,{children:"Esc"})," to close."]})};var r,o,n;s.parameters={...s.parameters,docs:{...(r=s.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  render: () => <p className="p-6 text-sm">
+      Press <Kbd>⌘</Kbd> + <Kbd>J</Kbd> to open the assistant, or <Kbd>Esc</Kbd> to close.
+    </p>
+}`,...(n=(o=s.parameters)==null?void 0:o.docs)==null?void 0:n.source}}};const l=["Default"];export{s as Default,l as __namedExportsOrder,p as default};

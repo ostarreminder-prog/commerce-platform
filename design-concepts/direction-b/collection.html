@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ديوان العود — دار سَحَر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diwan.css">
+<style>
+.chapters-nav{display:flex;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.chapters-nav::-webkit-scrollbar{display:none}
+.chapters-nav a{flex:0 0 auto;padding:16px 24px;font-family:var(--serif);font-size:1rem;color:var(--ink2);border-inline-start:1px solid var(--line);transition:.2s;white-space:nowrap}
+.chapters-nav a:first-child{border-inline-start:none}
+.chapters-nav a:hover{color:var(--henna)}
+.chapters-nav a.on{color:var(--henna);background:var(--paper2)}
+.chapters-nav a .pg{font-family:var(--lat);font-size:.62rem;color:var(--faint);margin-inline-start:8px}
+.chapter-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,64px);align-items:end}
+.chapter-intro .drop::first-letter{font-family:var(--serif);font-size:3.2em;float:inline-start;line-height:.8;padding-inline-end:12px;color:var(--henna)}
+.chapter-intro .thumbbox{aspect-ratio:16/9;border:1px solid var(--line2);background:var(--paper2);overflow:hidden;position:relative}
+.chapter-intro .thumbbox svg{width:100%;height:100%;object-fit:cover}
+.chapter-intro .thumbbox .cap{position:absolute;bottom:10px;inset-inline-start:12px;font-size:.58rem;letter-spacing:.26em;color:var(--faint);background:var(--paper);padding:4px 8px}
+@media(max-width:860px){.chapter-intro{grid-template-columns:1fr}}
+.rel-nav{display:grid;grid-template-columns:1fr 1fr;border-top:3px double var(--line2)}
+.rel-nav a{padding:26px 0;font-family:var(--serif);font-size:1.2rem;color:var(--ink2);transition:.2s}
+.rel-nav a:hover{color:var(--henna)}
+.rel-nav a+a{text-align:end;border-inline-start:1px solid var(--line);padding-inline-start:26px}
+.rel-nav small{display:block;font-size:.6rem;letter-spacing:.28em;color:var(--faint);font-family:var(--sans);margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap in">
+    <button class="burger" aria-label="القائمة">☰</button>
+    <a class="logo" href="index.html"><div class="ar">دار سَحَر</div><div class="en">DAR SAHAR</div></a>
+    <nav>
+      <a href="index.html#plates">المختارات</a>
+      <a href="collection.html" class="on">الفصول</a>
+      <a href="index.html#colophon">عن الدار</a>
+    </nav>
+    <div class="tools">
+      <button onclick="location='search.html'" aria-label="بحث"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button onclick="location='cart.html'" aria-label="السلة"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg><span class="cnt">٢</span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="chapters-nav" id="chNav"></nav>
+
+<main class="wrap">
+  <section class="phero">
+    <span class="chno lat" id="chNo"></span>
+    <div class="chapter-intro">
+      <div>
+        <h1 id="chName"></h1>
+        <p class="sub drop" id="chDesc"></p>
+        <div class="stats" id="chStats"></div>
+      </div>
+      <div class="thumbbox"><div id="chArt" style="width:100%;height:100%"></div><span class="cap lat">CHAPTER PLATE</span></div>
+    </div>
+  </section>
+
+  <div class="etools">
+    <div class="fchips" id="fChips"></div>
+    <div class="sort"><span>ترتيب:</span>
+      <select id="sortSel" aria-label="ترتيب">
+        <option value="ed">ترتيب المحرّر</option>
+        <option value="hi">السعر: الأعلى أولاً</option>
+        <option value="lo">السعر: الأدنى أولاً</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="plates dense" id="grid"></div>
+
+  <div class="pgn"><a class="on" href="#">1</a><a href="#">← الفصل التالي</a></div>
+
+  <nav class="rel-nav" id="relNav"></nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="colo">
+      <div><h5>التحرير</h5><a href="#">حكاية الدار</a><a href="#">مصادرنا</a><a href="#">الإصدارات النادرة</a></div>
+      <div><h5>الفصول</h5><a href="collection.html?c=oud">ديوان العود</a><a href="collection.html?c=rose">حديقة الطائف</a><a href="collection.html?c=musk">نخبة المسك</a><a href="collection.html?c=amber">ليالي العنبر</a></div>
+      <div><h5>القرّاء</h5><a href="#">الشحن والإرجاع</a><a href="#">تغليف الهدايا</a><a href="#">الأسئلة الشائعة</a></div>
+      <div><h5>الاشتراك</h5><a href="#">انضم لقائمة الدار</a><a href="#">إنستغرام</a><a href="#">واتساب</a></div>
+    </div>
+    <div class="imprint"><span>دار سَحَر © ٢٠٢٦ — يُطبَع ويُوزَّع من الرياض</span><span class="lat">SET IN AMIRI &amp; EB GARAMOND</span></div>
+  </div>
+</footer>
+
+<script src="../shared/data.js"></script>
+<script src="../shared/bottle.js"></script>
+<script>
+const C = SAHAR.collections, P = SAHAR.products;
+const colId = new URLSearchParams(location.search).get("c") || "oud";
+const col = SAHAR.col(colId) || C[0];
+const ci = C.indexOf(col);
+const arD = n => String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+document.title = col.ar + " — دار سَحَر";
+
+document.getElementById("chNav").innerHTML =
+  `<a href="collection.html" ${!location.search?"class='on'":""}>كل الفصول<span class="pg lat">ALL</span></a>` +
+  C.map((c,i)=>`<a href="collection.html?c=${c.id}" class="${c.id===colId?'on':''}">${c.ar}<span class="pg lat">CH.${["I","II","III","IV","V"][i]}</span></a>`).join("");
+
+const chLong = {
+  oud:"سبعة عطور تفتح الكتاب — عود كمبودي وهندي معتّق، معمول بيوت القصور، وبخور الليالي الطويلة. أعمق فصول الدار وأقربها إلى قلبها: رائحة الضيافة الأولى، وذاكرة المجالس القديمة.",
+  rose:"خمس لوحات وردية قطفت قممها قبل الشروق — من ورد الطائف المطلق إلى جوري الفجر النديّ. الفصل الأخف في الكتاب والأكثر صدقاً.",
+  musk:"بياض المسك بست درجات — من صفاء الغَسْل إلى لمعة اللؤلؤ. فصل الصباحات والثياب البيض والنظافة التي لا ترفع صوتها.",
+  amber:"سمر المجالس في ستة عطور — قهوة وعنبر ودخان ورواشين جدة القديمة. فصل الليالي الطويلة وأحاديث ما بعد العشاء.",
+  rare:"ست قارورات خارج التعداد — مرقّمة، محدودة، لا تُعاد. منها النسخة الأولى التي بدأت الحكاية كلها.",
+};
+const prods = P.filter(p=>p.col===colId);
+document.getElementById("chNo").textContent = `CHAPTER ${["I","II","III","IV","V"][ci]} — ${col.chapterAr}`;
+document.getElementById("chName").textContent = col.ar;
+document.getElementById("chDesc").textContent = chLong[colId];
+document.getElementById("chStats").innerHTML =
+  `<span><b>${arD(prods.length)}</b> لوحات</span><span>أسعار <b>${Math.min(...prods.map(p=>p.price)).toLocaleString("en-US")}—${Math.max(...prods.map(p=>p.price)).toLocaleString("en-US")}</b> ر.س</span><span>تغليف هدايا مجاني</span>`;
+document.getElementById("chArt").innerHTML = ambientSVG(col.hue, "paper", ci+1);
+
+// filter chips by concentration
+const concs = [...new Set(prods.map(p=>p.conc))];
+let f = "all", sort = "ed";
+document.getElementById("fChips").innerHTML =
+  `<button class="fchip on" data-f="all">الكل<span class="n lat">${prods.length}</span></button>` +
+  concs.map(c=>`<button class="fchip" data-f="${c}">${c}<span class="n lat">${prods.filter(p=>p.conc===c).length}</span></button>`).join("");
+
+const grid = document.getElementById("grid");
+function render(){
+  let list = f==="all" ? [...prods] : prods.filter(p=>p.conc===f);
+  if(sort==="hi") list.sort((a,b)=>b.price-a.price);
+  if(sort==="lo") list.sort((a,b)=>a.price-b.price);
+  grid.innerHTML = list.map((p,i)=>`<a class="pl" href="product.html?p=${p.id}">
+    ${p.badge?`<span class="badge">${p.badge}</span>`:""}
+    <div class="fig">${bottleSVG(p,{mode:"paper"})}
+      <div class="quick"><button>أضِف إلى السلة</button><button class="hv" aria-label="مفضلة">♡</button></div></div>
+    <div class="cap"><span class="fno lat">${arD(String(i+1).padStart(2,"0"))}</span>
+      <span><span class="name serif">${p.ar}</span><span class="col">${p.conc} · ${p.sizes[0].ar}</span></span>
+      <span class="price lat">${p.price.toLocaleString("en-US")} ر.س${p.compareAt?`<s>${p.compareAt.toLocaleString("en-US")}</s>`:""}</span></div>
+  </a>`).join("");
+}
+document.getElementById("fChips").addEventListener("click",e=>{
+  const b=e.target.closest(".fchip"); if(!b)return;
+  document.querySelectorAll(".fchip").forEach(c=>c.classList.remove("on"));
+  b.classList.add("on"); f=b.dataset.f; render();
+});
+document.getElementById("sortSel").onchange = e=>{sort=e.target.value;render();};
+render();
+
+const nx = C[(ci+1)%C.length], pv = C[(ci-1+C.length)%C.length];
+document.getElementById("relNav").innerHTML =
+  `<a href="collection.html?c=${pv.id}"><small>الفصل السابق ←</small>${pv.ar}</a>
+   <a href="collection.html?c=${nx.id}"><small>الفصل التالي ←</small>${nx.ar}</a>`;
+</script>
+</body>
+</html>

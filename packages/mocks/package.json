@@ -1,0 +1,23 @@
+{
+  "name": "@repo/mocks",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/data/index.ts",
+    "./fixtures/*": "./src/fixtures/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/contracts": "workspace:*",
+    "@repo/storefront-sections": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/config": "workspace:*",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.3"
+  }
+}

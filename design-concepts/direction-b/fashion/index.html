@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>نَسيج — العدد الأول</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../diwan.css">
+<style>
+/* token swap only — same system, different store identity */
+:root{ --henna:#4e5d43; --accent:var(--henna); }
+.mast{border-bottom:3px double var(--line2);padding:14px 0 0}
+.mast .top{display:flex;justify-content:space-between;align-items:baseline;font-size:.68rem;letter-spacing:.22em;color:var(--ink2);padding-bottom:12px}
+.mast .logo2{text-align:center;padding:6px 0 18px}
+.mast .logo2 .ar{font-family:var(--serif);font-size:clamp(2.6rem,6vw,4.6rem);line-height:1}
+.mast .logo2 .en{font-family:var(--lat);font-size:.62rem;letter-spacing:.58em;color:var(--faint);margin-top:8px}
+.mast .tocnav{border-top:1px solid var(--line);display:flex;justify-content:center;overflow-x:auto}
+.mast .tocnav a{font-size:.78rem;color:var(--ink2);padding:14px 26px;border-inline-start:1px solid var(--line);transition:.25s;white-space:nowrap}
+.mast .tocnav a:last-child{border-inline-end:1px solid var(--line)}
+.mast .tocnav a:hover{color:var(--henna);background:var(--paper2)}
+.mast .tocnav a .no{font-family:var(--lat);font-size:.6rem;color:var(--faint);display:block;text-align:center}
+.tools{position:fixed;top:14px;inset-inline-end:clamp(14px,3vw,40px);display:flex;gap:14px;z-index:60}
+.tools button{background:var(--paper);border:1px solid var(--line2);width:38px;height:38px;border-radius:50%;cursor:pointer;color:var(--ink);display:grid;place-items:center;transition:.25s;position:relative}
+.tools button:hover{border-color:var(--henna);color:var(--henna)}
+.tools .cnt{position:absolute;top:-4px;inset-inline-start:-4px;background:var(--henna);color:var(--paper);font-size:.58rem;width:16px;height:16px;border-radius:50%;display:grid;place-items:center}
+
+.cover{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,80px);padding:clamp(40px,6vw,90px) 0;border-bottom:1px solid var(--line)}
+.cover h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5.6vw,5.4rem);line-height:1.28}
+.cover h1 em{font-style:normal;color:var(--henna)}
+.cover .dek{margin-top:26px;font-size:.95rem;line-height:2.1;color:var(--ink2);max-width:46ch;border-inline-start:3px solid var(--henna);padding-inline-start:18px}
+.cover .cta{margin-top:36px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.cover .plate{position:relative;border:1px solid var(--line2);background:var(--paper2);padding:8%;display:grid;place-items:center}
+.cover .plate::after{content:"لوحة الغلاف";position:absolute;bottom:-24px;inset-inline-start:0;font-size:.62rem;letter-spacing:.26em;color:var(--faint)}
+.cover .plate .fig{position:absolute;top:14px;inset-inline-end:14px;font-family:var(--lat);font-size:.72rem;color:var(--faint);letter-spacing:.2em}
+.contents{padding:34px 0;border-bottom:1px solid var(--line)}
+.contents .ct{font-size:.62rem;letter-spacing:.3em;color:var(--faint);margin-bottom:18px}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px 34px}
+.toc a{display:flex;align-items:baseline;gap:8px;font-family:var(--serif);font-size:1.08rem;padding:7px 0;transition:.2s}
+.toc a:hover{color:var(--henna)}
+.toc .dots{flex:1;border-bottom:1px dotted var(--faint);transform:translateY(-4px)}
+.toc .pg{font-family:var(--lat);font-size:.85rem;color:var(--faint)}
+.sec{padding:clamp(70px,8vw,120px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem)}
+.sec-head .folio{font-family:var(--lat);font-size:.8rem;color:var(--faint);letter-spacing:.2em}
+.chapter{border-top:1px solid var(--line);padding:clamp(44px,6vw,80px) 0;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,80px);align-items:center}
+.chapter:nth-child(even){direction:ltr}
+.chapter:nth-child(even)>*{direction:rtl}
+.chapter .chno{font-family:var(--lat);font-size:.78rem;letter-spacing:.3em;color:var(--henna)}
+.chapter h3{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,3.2rem);margin:8px 0 16px}
+.chapter .drop::first-letter{font-family:var(--serif);font-size:3.1em;float:inline-start;line-height:.85;padding-inline-end:10px;color:var(--henna)}
+.chapter p{font-size:.88rem;line-height:2.15;color:var(--ink2);max-width:50ch}
+.chapter .more{display:inline-block;margin-top:20px;font-size:.75rem;color:var(--henna);border-bottom:1px solid var(--henna);padding-bottom:4px}
+.chapter .plrow{display:flex;gap:14px}
+.chapter .plrow figure{flex:1;border:1px solid var(--line2);background:var(--paper2);aspect-ratio:3/4;display:grid;place-items:center;padding:6%;transition:.3s;overflow:hidden}
+.chapter .plrow figure:hover{border-color:var(--henna)}
+.chapter .plrow figure:nth-child(2){transform:translateY(18px)}
+.spread{background:var(--paper2);border-block:1px solid var(--line2);text-align:center;padding:clamp(70px,9vw,130px) 0}
+.spread q{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.9;quotes:"«" "»";max-width:22ch;display:inline-block}
+.spread .src{margin-top:26px;font-size:.68rem;letter-spacing:.3em;color:var(--faint)}
+@media(max-width:860px){
+  .mast .top{font-size:.56rem}
+  .cover{grid-template-columns:1fr;gap:48px;padding-top:32px}
+  .chapter{grid-template-columns:1fr}.chapter:nth-child(even){direction:rtl}
+  .sec-head{flex-direction:column;gap:8px;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div class="tools">
+  <button aria-label="بحث"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+  <button aria-label="السلة"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg><span class="cnt">٣</span></button>
+</div>
+
+<header class="mast" style="position:static">
+  <div class="wrap">
+    <div class="top">
+      <span>مجلة نَسيج الأسبوعية — العدد ١٢</span>
+      <span class="lat">ISSUE Nº 12 — JEDDAH</span>
+      <span>٤٠٠ قطعة في المخزون</span>
+    </div>
+    <a class="logo2" href="#"><div class="ar serif">نَسيج</div><div class="en">NASIJ · A CLOTHING WEEKLY</div></a>
+    <nav class="tocnav">
+      <a href="#plates">المختارات<span class="no lat">PICKS</span></a>
+      <a href="#chapters">الأقسام<span class="no lat">DEPTS</span></a>
+      <a href="#sizes">دليل المقاسات<span class="no lat">SIZES</span></a>
+      <a href="#colophon">عن المتجر<span class="no lat">ABOUT</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="cover">
+    <div>
+      <div class="eyebrow">افتتاحية العدد</div>
+      <h1>لباسُك اليومي،<br>بعنايةِ <em>المحرِّر</em></h1>
+      <p class="dek">في هذا العدد: ٤٠٠ قطعة في أربعة أقسام — عبايات وأثواب وفساتين وإكسسوارات. صوّرنا كل قطعة كما هي، بلا تجميل.</p>
+      <div class="cta"><a class="btn-ink" href="#plates">تصفّح المختارات</a><a class="link-u" href="product.html">قطعة الغلاف</a></div>
+    </div>
+    <figure class="plate"><span class="fig lat">FIG. 1</span><div id="coverArt"></div></figure>
+  </section>
+
+  <section class="contents">
+    <div class="ct">في هذا العدد — ٤٠٠ قطعة</div>
+    <div class="toc" id="tocList"></div>
+  </section>
+
+  <section class="sec" id="plates">
+    <div class="sec-head"><h2>مختارات المحرّر</h2><span class="folio lat">PLATES 2 — 7 / 400</span></div>
+    <div class="plates dense" id="platesGrid"></div>
+  </section>
+
+  <section id="chapters" style="padding-bottom:40px">
+    <div class="sec-head"><h2>أقسام المتجر الأربعة</h2><span class="folio lat">DEPTS I — IV</span></div>
+    <div id="chaptersList"></div>
+  </section>
+</main>
+
+<section class="spread" id="sizes">
+  <div class="wrap">
+    <div class="eyebrow">من هامش المتجر</div>
+    <q>المقاسُ الصحيح أهمُّ من آخر صيحة.</q>
+    <div class="src">— دليل مقاسات مجاني مع كل طلب، وإرجاع بلا أسئلة</div>
+  </div>
+</section>
+
+<footer id="colophon">
+  <div class="wrap">
+    <div class="colo">
+      <div><h5>المتجر</h5><a href="#">حكاية نَسيج</a><a href="#">دليل المقاسات</a><a href="#">العناية بالأقمشة</a></div>
+      <div><h5>الأقسام</h5><a href="#">العبايات</a><a href="#">الأثواب</a><a href="#">الفساتين</a><a href="#">الإكسسوارات</a></div>
+      <div><h5>العملاء</h5><a href="#">الشحن والإرجاع</a><a href="#">تتبّع الطلب</a><a href="#">الأسئلة الشائعة</a></div>
+      <div><h5>تابعنا</h5><a href="#">انضم للقائمة</a><a href="#">إنستغرام</a><a href="#">جدة — حي الروضة</a></div>
+    </div>
+    <div class="imprint"><span>نَسيج © ٢٠٢٦ — يُطبَع ويُوزَّع من جدة</span><span class="lat">400 ITEMS · SET IN AMIRI &amp; EB GARAMOND</span></div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+const P = NASIJ.products, C = NASIJ.collections;
+const arD = n => String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+
+document.getElementById("coverArt").innerHTML = garmentSVG(NASIJ.prod("abaya-silk"));
+
+document.getElementById("tocList").innerHTML = C.map((c,i)=>`<a href="#chapters"><span>${c.ar}</span><span class="dots"></span><span class="pg lat">p.${10+i*22}</span></a>`).join("");
+
+document.getElementById("platesGrid").innerHTML = P.slice(0,6).map((p,i)=>`
+  <a class="pl" href="product.html?p=${p.id}">
+    ${p.badge?`<span class="badge">${p.badge}</span>`:""}
+    <div class="fig">${garmentSVG(p)}
+      <div class="quick"><button>أضِف إلى السلة</button><button class="hv" aria-label="مفضلة">♡</button></div></div>
+    <div class="cap"><span class="fno lat">${arD(String(i+2).padStart(2,"0"))}</span>
+      <span><span class="name serif">${p.ar}</span><span class="col">${NASIJ.col(p.col).ar} · S—XL</span></span>
+      <span class="price lat">${p.price.toLocaleString("en-US")} ر.س${p.compareAt?`<s>${p.compareAt.toLocaleString("en-US")}</s>`:""}</span></div>
+  </a>`).join("");
+
+document.getElementById("chaptersList").innerHTML = C.map((c,i)=>{
+  const prods = P.filter(p=>p.col===c.id).slice(0,3);
+  return `<div class="chapter">
+    <div>
+      <span class="chno lat">${c.chAr} · DEPT ${["I","II","III","IV"][i]}</span>
+      <h3>${c.ar}</h3>
+      <p class="drop">${c.desc} — ${arD(prods.length)} قطع معروضة هنا من أصل ${arD(80+i*40)} في القسم.</p>
+      <a class="more" href="#">تصفّح القسم كاملاً</a>
+    </div>
+    <div class="plrow">${prods.map(p=>`<figure title="${p.ar}">${garmentSVG(p,.62)}</figure>`).join("")}</div>
+  </div>`;
+}).join("");
+</script>
+</body>
+</html>

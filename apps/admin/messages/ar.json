@@ -1,0 +1,5706 @@
+{
+  "meta": {
+    "title": "لوحة التاجر",
+    "description": "إدارة متجرك وطلباتك ووكلائك الذكيين"
+  },
+  "designSystem": {
+    "title": "نظام التصميم",
+    "description": "الألوان والخطوط والمكونات الأساسية المشتركة بين كل التطبيقات.",
+    "toc": "محتويات الصفحة",
+    "sections": {
+      "colors": {
+        "title": "الألوان",
+        "description": "لون أساسي واحد قابل للتغيير عبر المتغير ‎--primary‎، وألوان دلالية للحالات."
+      },
+      "typography": {
+        "title": "الخطوط",
+        "description": "IBM Plex Sans Arabic، والأرقام إنجليزية دائماً."
+      },
+      "buttons": {
+        "title": "الأزرار",
+        "description": "الأنواع والأحجام وحالات التحميل والتعطيل."
+      },
+      "badges": {
+        "title": "الشارات",
+        "description": "لعرض الحالات مثل حالة الدفع والشحن."
+      },
+      "forms": {
+        "title": "النماذج",
+        "description": "حقول مربوطة بـ React Hook Form وzod، ولكل حقل label ورسالة خطأ."
+      },
+      "money": {
+        "title": "المبالغ",
+        "description": "تُخزّن بالهللة (integer) وتُعرض بدالة واحدة formatMoney."
+      },
+      "cards": {
+        "title": "البطاقات والمؤشرات",
+        "description": "بطاقات المؤشرات مع حالة التحميل."
+      },
+      "states": {
+        "title": "حالات الشاشة",
+        "description": "كل شاشة لها أربع حالات: تحميل، وفارغة، وخطأ، وبيانات."
+      },
+      "table": {
+        "title": "الجداول",
+        "description": "ترتيب وتحديد متعدد وإجراءات جماعية وتقسيم صفحات."
+      },
+      "overlays": {
+        "title": "النوافذ والقوائم",
+        "description": "نافذة حوار، ولوحة جانبية، وقوائم منسدلة، وتلميحات، وإشعارات، وبحث شامل."
+      },
+      "misc": {
+        "title": "مكونات أخرى",
+        "description": "التبويبات والتنبيهات وشريط التقدم والصور الرمزية."
+      }
+    },
+    "colors": {
+      "primary": "أساسي",
+      "secondary": "ثانوي",
+      "muted": "خافت",
+      "accent": "تمييز",
+      "destructive": "خطر",
+      "success": "نجاح",
+      "warning": "تحذير",
+      "info": "معلومة",
+      "background": "الخلفية",
+      "card": "البطاقة",
+      "border": "الحدود"
+    },
+    "typography": {
+      "h1": "عنوان رئيسي للصفحة",
+      "h2": "عنوان قسم",
+      "h3": "عنوان فرعي",
+      "body": "نص أساسي: منصة متكاملة تساعدك تدير متجرك وتبيع عبر واتساب بمساعدة وكلاء أذكياء.",
+      "muted": "نص ثانوي للتوضيحات والملاحظات.",
+      "numbers": "الأرقام: 0123456789 — طلب رقم #10241 بتاريخ 2026-11-20"
+    },
+    "buttons": {
+      "primary": "حفظ التغييرات",
+      "secondary": "ثانوي",
+      "outline": "إطار",
+      "ghost": "شفاف",
+      "destructive": "حذف",
+      "link": "رابط",
+      "small": "صغير",
+      "large": "كبير",
+      "loading": "جارٍ الحفظ",
+      "disabled": "معطّل",
+      "withIcon": "إضافة منتج",
+      "iconOnly": "إعدادات",
+      "simulateLoading": "جرّب حالة التحميل"
+    },
+    "badges": {
+      "paid": "مدفوع",
+      "pending": "بانتظار الدفع",
+      "refunded": "مسترد",
+      "failed": "فشل",
+      "shipped": "تم الشحن",
+      "draft": "مسودة",
+      "info": "جديد"
+    },
+    "form": {
+      "storeName": "اسم المتجر",
+      "storeNamePlaceholder": "مثال: متجر الورد",
+      "storeNameHint": "يظهر لعملائك في المتجر والفواتير.",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الجوال",
+      "category": "نشاط المتجر",
+      "categoryPlaceholder": "اختر النشاط",
+      "categories": {
+        "fashion": "أزياء",
+        "electronics": "إلكترونيات",
+        "food": "أغذية",
+        "beauty": "تجميل"
+      },
+      "description": "وصف المتجر",
+      "shippingMethod": "طريقة الشحن الافتراضية",
+      "shipping": {
+        "standard": "شحن عادي (3-5 أيام)",
+        "express": "شحن سريع (يوم واحد)",
+        "pickup": "استلام من الفرع"
+      },
+      "notifications": "تفعيل إشعارات الطلبات الجديدة",
+      "terms": "أوافق على الشروط والأحكام",
+      "submit": "إرسال",
+      "reset": "إعادة تعيين",
+      "submitted": "تم حفظ البيانات بنجاح"
+    },
+    "money": {
+      "amount": "المبلغ بالهللة",
+      "formatted": "المعروض"
+    },
+    "stats": {
+      "revenue": "المبيعات",
+      "orders": "الطلبات",
+      "conversion": "معدل التحويل",
+      "aov": "متوسط قيمة الطلب",
+      "vsLastWeek": "مقارنة بالأسبوع الماضي"
+    },
+    "states": {
+      "loading": "تحميل",
+      "empty": "فارغة",
+      "error": "خطأ",
+      "data": "بيانات",
+      "emptyTitle": "لا توجد طلبات بعد",
+      "emptyDescription": "أول ما يطلب عميل من متجرك بيظهر الطلب هنا.",
+      "emptyAction": "شارك رابط متجرك",
+      "errorRetried": "تمت إعادة المحاولة",
+      "switcher": "اختر الحالة المعروضة"
+    },
+    "table": {
+      "number": "رقم الطلب",
+      "customer": "العميل",
+      "total": "المبلغ",
+      "status": "حالة الدفع",
+      "date": "التاريخ",
+      "markPaid": "تحديد كمدفوع",
+      "export": "تصدير",
+      "exported": "تم تجهيز ملف التصدير"
+    },
+    "overlays": {
+      "openDialog": "فتح نافذة حوار",
+      "dialogTitle": "إلغاء الطلب؟",
+      "dialogDescription": "سيتم إشعار العميل وإرجاع المبلغ لطريقة الدفع الأصلية. لا يمكن التراجع عن هذا الإجراء.",
+      "cancel": "تراجع",
+      "confirm": "تأكيد الإلغاء",
+      "openSheetStart": "لوحة من البداية",
+      "openSheetEnd": "لوحة من النهاية",
+      "openSheetBottom": "لوحة من الأسفل",
+      "sheetTitle": "المساعد الذكي",
+      "sheetDescription": "اسأل عن مبيعاتك أو اطلب تنفيذ مهمة.",
+      "actions": "إجراءات",
+      "view": "عرض",
+      "edit": "تعديل",
+      "duplicate": "نسخ",
+      "delete": "حذف",
+      "popover": "تفاصيل",
+      "popoverBody": "يمكن استخدام النافذة المنبثقة لعرض معلومات إضافية أو فلاتر سريعة.",
+      "tooltip": "مرّر هنا",
+      "tooltipBody": "تلميح قصير يوضح الإجراء",
+      "toast": "عرض إشعار",
+      "toastTitle": "تم حفظ المنتج",
+      "toastDescription": "التغييرات ظاهرة الآن في متجرك.",
+      "command": "بحث شامل",
+      "commandTitle": "البحث في اللوحة",
+      "commandPlaceholder": "ابحث عن طلب، منتج، عميل، أو إعداد…",
+      "commandEmpty": "لا توجد نتائج",
+      "commandPages": "الصفحات",
+      "commandOrders": "الطلبات",
+      "commandProducts": "المنتجات",
+      "commandSettings": "الإعدادات"
+    },
+    "misc": {
+      "overview": "نظرة عامة",
+      "activity": "النشاط",
+      "notes": "ملاحظات",
+      "overviewBody": "محتوى تبويب النظرة العامة.",
+      "activityBody": "سجل نشاط الطلب يظهر هنا.",
+      "notesBody": "ملاحظات داخلية للفريق.",
+      "alertInfoTitle": "معلومة",
+      "alertInfo": "تم تحديث أسعار الشحن لمدينة الرياض.",
+      "alertSuccessTitle": "تم بنجاح",
+      "alertSuccess": "تم ربط حساب WhatsApp للأعمال.",
+      "alertWarningTitle": "تنبيه",
+      "alertWarning": "5 منتجات قاربت تخلص من المخزون.",
+      "alertErrorTitle": "خطأ",
+      "alertError": "فشل إرسال الفاتورة إلى ZATCA.",
+      "setupProgress": "تقدم إعداد المتجر",
+      "avatars": "صور رمزية",
+      "shortcut": "اختصار البحث"
+    }
+  },
+  "common": {
+    "viewAll": "عرض الكل",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "search": "بحث",
+    "filter": "تصفية",
+    "export": "تصدير",
+    "back": "رجوع",
+    "comingSoon": "قيد البناء",
+    "comingSoonDescription": "هذه الشاشة ضمن المجموعات القادمة.",
+    "goHome": "العودة للرئيسية",
+    "viewStore": "عرض المتجر",
+    "more": "المزيد",
+    "all": "الكل",
+    "items": "{count, plural, one {منتج واحد} two {منتجان} few {{count} منتجات} many {{count} منتجاً} other {{count} منتج}}",
+    "delete": "حذف",
+    "breadcrumb": "مسار التنقل",
+    "next": "التالي",
+    "edit": "تعديل",
+    "actions": "إجراءات",
+    "reset": "مسح",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "nav": {
+    "groups": {
+      "sales": "المبيعات",
+      "catalog": "المنتجات",
+      "ai": "الذكاء الاصطناعي",
+      "growth": "النمو",
+      "store": "المتجر",
+      "operations": "العمليات"
+    },
+    "home": "الرئيسية",
+    "orders": "الطلبات",
+    "customers": "العملاء",
+    "shipping": "الشحن",
+    "invoices": "الفواتير",
+    "products": "المنتجات",
+    "reviews": "التقييمات",
+    "inventory": "المخزون",
+    "conversations": "المحادثات",
+    "agents": "استوديو الوكلاء",
+    "marketing": "التسويق",
+    "reports": "التقارير",
+    "storeDesign": "تصميم المتجر",
+    "apps": "التطبيقات",
+    "settings": "الإعدادات",
+    "openMenu": "فتح القائمة",
+    "mainNav": "القائمة الرئيسية",
+    "plan": "باقة {plan}",
+    "upgrade": "ترقية الباقة",
+    "usage": "استهلاك الوكلاء هذا الشهر",
+    "returns": "المرتجعات",
+    "abandonedCarts": "السلات المتروكة",
+    "categories": "التصنيفات",
+    "collections": "المجموعات",
+    "imports": "الاستيراد والتصدير",
+    "inbox": "المحادثات",
+    "approvals": "الموافقات",
+    "knowledge": "قاعدة المعرفة",
+    "shipments": "الشحنات",
+    "coupons": "الكوبونات",
+    "promotions": "العروض",
+    "storefront": "الثيمات",
+    "pages": "الصفحات",
+    "menus": "القوائم",
+    "domains": "الدومينات",
+    "seo": "SEO",
+    "appStore": "متجر التطبيقات",
+    "media": "الوسائط",
+    "copilot": "المساعد",
+    "brands": "العلامات التجارية",
+    "locations": "المواقع",
+    "priceLists": "قوائم الأسعار",
+    "loyalty": "الولاء",
+    "giftCards": "بطاقات الهدايا",
+    "affiliates": "المسوّقون"
+  },
+  "plans": {
+    "starter": "البداية",
+    "growth": "النمو",
+    "pro": "الاحترافية"
+  },
+  "topbar": {
+    "search": "ابحث في الطلبات والمنتجات والعملاء…",
+    "switchStore": "تبديل المتجر",
+    "stores": "متاجرك",
+    "addStore": "إضافة متجر جديد",
+    "notifications": "الإشعارات",
+    "markAllRead": "تحديد الكل كمقروء",
+    "account": "الحساب",
+    "profile": "الملف الشخصي",
+    "billing": "الاشتراك والفوترة",
+    "logout": "تسجيل الخروج",
+    "help": "المساعدة",
+    "notificationItems": {
+      "newOrder": "طلب جديد #{number} من {name}",
+      "lowStock": "{product} قارب على النفاد",
+      "handoff": "الوكيل حوّل محادثة مع {name} لفريقك",
+      "payout": "تم إيداع 12,480.00 ر.س في حسابك"
+    },
+    "viewAs": "عرض كـ",
+    "roles": {
+      "owner": "المالك",
+      "admin": "مدير المتجر",
+      "catalog": "أمين الكتالوج",
+      "orders": "موظف الطلبات",
+      "support": "خدمة العملاء",
+      "marketing": "التسويق",
+      "readonly": "مشاهد"
+    },
+    "notificationEvents": {
+      "order_created": "طلب جديد #{number}",
+      "payment_failed": "فشل دفع الطلب #{number}",
+      "conversation_waiting": "{customer} ينتظر رد موظف",
+      "approval_requested": "{agent} يطلب موافقة",
+      "low_stock": "مخزون منخفض: {product}",
+      "shipments_delayed": "{count} شحنات متأخرة",
+      "invoice_rejected": "رفضت ZATCA الفاتورة {number}",
+      "return_requested": "طلب إرجاع جديد #{number}",
+      "app_installed": "تم تثبيت {app}",
+      "usage_limit": "اقتربت من حد الباقة"
+    },
+    "noNotifications": "لا توجد إشعارات",
+    "viewAll": "عرض الكل"
+  },
+  "commandPalette": {
+    "placeholder": "ابحث عن صفحة أو طلب أو منتج…",
+    "empty": "لا توجد نتائج",
+    "pages": "الصفحات",
+    "orders": "الطلبات",
+    "products": "المنتجات",
+    "customers": "العملاء",
+    "conversations": "المحادثات",
+    "askCopilot": "اسأل المساعد: {query}"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "subtitle": "أهلاً بعودتك! سجّل دخولك لإدارة متجرك.",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "remember": "تذكرني",
+    "forgot": "نسيت كلمة المرور؟",
+    "submit": "دخول",
+    "or": "أو",
+    "withPhone": "الدخول برقم الجوال",
+    "noAccount": "ما عندك حساب؟",
+    "createStore": "أنشئ متجرك مجاناً",
+    "demoHint": "للتجربة: أي بريد وكلمة مرور من 6 أحرف.",
+    "brandTitle": "متجرك يشتغل حتى وأنت نايم",
+    "brandSubtitle": "وكلاء أذكياء يردون على عملائك، ويتابعون الطلبات، ويستردون السلات المتروكة.",
+    "brandPoints": {
+      "agents": "ردود فورية على واتساب وإنستقرام",
+      "payments": "مدى وApple Pay وتابي وتمارا",
+      "shipping": "ربط مباشر مع أرامكس وسمسا وسبل"
+    },
+    "brandName": "نخلة",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "اكتب بريد إلكتروني صحيح",
+      "tooShort": "كلمة المرور 6 أحرف على الأقل"
+    },
+    "logoInitial": "ن"
+  },
+  "dashboard": {
+    "greeting": {
+      "morning": "صباح الخير، {name}",
+      "evening": "مساء الخير، {name}"
+    },
+    "subtitle": "هذا ملخص أداء متجرك خلال آخر 7 أيام.",
+    "addProduct": "إضافة منتج",
+    "kpis": {
+      "revenue": "المبيعات",
+      "orders": "الطلبات",
+      "aov": "متوسط قيمة الطلب",
+      "conversion": "معدل التحويل",
+      "vsLastWeek": "مقارنة بالأسبوع الماضي"
+    },
+    "sales": {
+      "title": "المبيعات",
+      "description": "آخر 30 يوم",
+      "revenue": "الإيرادات",
+      "orders": "الطلبات"
+    },
+    "statusBreakdown": {
+      "title": "حالة الطلبات",
+      "description": "توزيع آخر 50 طلب"
+    },
+    "recentOrders": {
+      "title": "أحدث الطلبات",
+      "empty": "لا توجد طلبات بعد"
+    },
+    "lowStock": {
+      "title": "مخزون منخفض",
+      "description": "منتجات تحتاج إعادة طلب",
+      "empty": "المخزون ممتاز، ما فيه منتجات منخفضة",
+      "left": "{count, plural, =0 {نفد} one {باقي قطعة} two {باقي قطعتين} few {باقي {count} قطع} many {باقي {count} قطعة} other {باقي {count} قطعة}}"
+    },
+    "topProducts": {
+      "title": "الأكثر مبيعاً",
+      "sold": "{count} مبيع"
+    },
+    "agents": {
+      "title": "نشاط الوكلاء الأذكياء",
+      "description": "آخر 30 يوم",
+      "conversations": "محادثة",
+      "resolved": "حُلّت بدون تدخل",
+      "carts": "سلة مستردة",
+      "revenue": "مبيعات عبر الوكيل",
+      "manage": "إدارة الوكلاء"
+    },
+    "insight": {
+      "title": "اقتراح من مساعدك الذكي",
+      "body": "3 منتجات من الأكثر مبيعاً قاربت على النفاد، وفيه 4 محادثات تنتظر ردك. ابدأ بها عشان ما تخسر مبيعات.",
+      "action": "راجع المحادثات"
+    },
+    "onboarding": {
+      "title": "أكمل إعداد متجرك",
+      "progress": "{done} من {total} خطوات",
+      "dismiss": "إخفاء",
+      "steps": {
+        "store": "بيانات المتجر",
+        "products": "إضافة أول منتج",
+        "payments": "تفعيل الدفع الإلكتروني",
+        "shipping": "ربط شركة شحن",
+        "domain": "ربط النطاق الخاص",
+        "agent": "تفعيل وكيل خدمة العملاء"
+      }
+    }
+  },
+  "orderColumns": {
+    "number": "الطلب",
+    "customer": "العميل",
+    "date": "التاريخ",
+    "total": "الإجمالي",
+    "status": "الحالة",
+    "payment": "الدفع",
+    "items": "المنتجات"
+  },
+  "orders": {
+    "title": "الطلبات",
+    "description": "تابع طلبات متجرك وحدّث حالاتها.",
+    "createOrder": "طلب يدوي",
+    "searchPlaceholder": "ابحث برقم الطلب أو اسم العميل أو الجوال",
+    "allPayments": "كل حالات الدفع",
+    "allChannels": "كل القنوات",
+    "channel": {
+      "storefront": "المتجر",
+      "whatsapp": "واتساب",
+      "voice": "الوكيل الصوتي",
+      "manual": "يدوي",
+      "app": "تطبيق"
+    },
+    "bulk": {
+      "markProcessing": "بدء التجهيز",
+      "markReady": "جاهز للشحن",
+      "markShipped": "تم الشحن",
+      "printInvoices": "طباعة الفواتير",
+      "clear": "إلغاء التحديد"
+    },
+    "updated": "تم تحديث {count, plural, one {طلب واحد} two {طلبين} few {{count} طلبات} many {{count} طلباً} other {{count} طلب}}",
+    "emptyTitle": "ما فيه طلبات مطابقة",
+    "emptyDescription": "جرّب تغيّر البحث أو الفلاتر.",
+    "resetFilters": "مسح الفلاتر",
+    "noOrdersTitle": "لا توجد طلبات بعد",
+    "noOrdersDescription": "أول ما يطلب عميل من متجرك بيظهر الطلب هنا.",
+    "results": "{count, plural, one {طلب واحد} two {طلبان} few {{count} طلبات} many {{count} طلباً} other {{count} طلب}}",
+    "stats": {
+      "toProcess": "بانتظار التجهيز",
+      "toShip": "بانتظار الشحن",
+      "unpaid": "بانتظار الدفع",
+      "todayRevenue": "مبيعات اليوم"
+    }
+  },
+  "orderDetail": {
+    "back": "الطلبات",
+    "title": "طلب #{number}",
+    "placedAt": "{date} عبر {channel}",
+    "nextAction": {
+      "new": "بدء التجهيز",
+      "processing": "جاهز للشحن",
+      "ready": "تأكيد الشحن",
+      "shipped": "تأكيد التوصيل"
+    },
+    "printInvoice": "طباعة الفاتورة",
+    "printLabel": "بوليصة الشحن",
+    "cancelOrder": "إلغاء الطلب",
+    "refund": "استرداد المبلغ",
+    "markReturned": "تسجيل كمرتجع",
+    "statusChanged": "تم تحديث حالة الطلب إلى \"{status}\"",
+    "items": "المنتجات",
+    "qty": "الكمية",
+    "sku": "SKU: {sku}",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "free": "مجاني",
+    "discount": "الخصم",
+    "vat": "ضريبة القيمة المضافة (15%) مشمولة",
+    "total": "الإجمالي",
+    "timeline": "سجل الطلب",
+    "actor": {
+      "system": "النظام",
+      "staff": "فريق المتجر",
+      "agent": "وكيل الذكاء الاصطناعي"
+    },
+    "addNote": "أضف ملاحظة داخلية…",
+    "saveNote": "إضافة",
+    "noteSaved": "تمت إضافة الملاحظة",
+    "customer": "العميل",
+    "ordersCount": "{count, plural, one {طلب واحد} two {طلبان} few {{count} طلبات} many {{count} طلباً} other {{count} طلب}}",
+    "viewCustomer": "ملف العميل",
+    "whatsapp": "مراسلة واتساب",
+    "shippingCard": "الشحن",
+    "carrier": {
+      "aramex": "أرامكس",
+      "smsa": "سمسا",
+      "spl": "البريد السعودي",
+      "redbox": "ريد بوكس"
+    },
+    "tracking": "رقم التتبع",
+    "noTracking": "يُنشأ عند الشحن",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "payment": "الدفع",
+    "method": {
+      "mada": "مدى",
+      "visa": "فيزا / ماستركارد",
+      "applePay": "Apple Pay",
+      "stcPay": "STC Pay",
+      "tabby": "تابي",
+      "tamara": "تمارا",
+      "cod": "الدفع عند الاستلام"
+    },
+    "customerNote": "ملاحظة العميل",
+    "agentTitle": "مساعد الطلبات",
+    "agentText": "أكد الوكيل العنوان مع العميل عبر واتساب وأرسل له رابط التتبع تلقائياً.",
+    "notFoundTitle": "الطلب غير موجود",
+    "notFoundDescription": "يمكن انحذف أو الرابط غلط.",
+    "steps": "مراحل الطلب"
+  },
+  "products": {
+    "title": "المنتجات",
+    "description": "أدر منتجات متجرك وأسعارها ومخزونها.",
+    "add": "إضافة منتج",
+    "import": "استيراد",
+    "searchPlaceholder": "ابحث باسم المنتج أو SKU",
+    "allCategories": "كل التصنيفات",
+    "stockFilter": {
+      "all": "كل المخزون",
+      "in": "متوفر",
+      "low": "مخزون منخفض",
+      "out": "نفد المخزون"
+    },
+    "view": {
+      "table": "عرض جدول",
+      "grid": "عرض شبكة"
+    },
+    "columns": {
+      "product": "المنتج",
+      "category": "التصنيف",
+      "price": "السعر",
+      "stock": "المخزون",
+      "sales": "المبيعات",
+      "status": "الحالة",
+      "actions": "إجراءات"
+    },
+    "stockLeft": "{count} متوفر",
+    "lowStock": "منخفض",
+    "outOfStock": "نفد",
+    "sold": "{count} مبيع",
+    "actions": {
+      "edit": "تعديل",
+      "duplicate": "تكرار",
+      "viewInStore": "عرض في المتجر",
+      "delete": "حذف"
+    },
+    "bulk": {
+      "activate": "تفعيل",
+      "draft": "تحويل لمسودة",
+      "delete": "حذف"
+    },
+    "deleteTitle": "حذف {count, plural, one {منتج واحد} two {منتجين} few {{count} منتجات} many {{count} منتجاً} other {{count} منتج}}؟",
+    "deleteDescription": "ما تقدر تتراجع عن الحذف. الطلبات السابقة ما تتأثر.",
+    "deleted": "تم الحذف",
+    "updated": "تم تحديث المنتجات",
+    "duplicated": "تم إنشاء نسخة كمسودة",
+    "emptyTitle": "ما فيه منتجات مطابقة",
+    "emptyDescription": "جرّب تغيّر البحث أو الفلاتر.",
+    "resetFilters": "مسح الفلاتر",
+    "noProductsTitle": "أضف أول منتج لمتجرك",
+    "noProductsDescription": "المنتجات اللي تضيفها تظهر في متجرك مباشرة.",
+    "results": "{count, plural, one {منتج واحد} two {منتجان} few {{count} منتجات} many {{count} منتجاً} other {{count} منتج}}",
+    "summary": {
+      "total": "كل المنتجات",
+      "active": "نشطة",
+      "low": "مخزون منخفض",
+      "out": "نفد المخزون"
+    }
+  },
+  "productForm": {
+    "back": "المنتجات",
+    "newTitle": "منتج جديد",
+    "editTitle": "تعديل المنتج",
+    "basics": "المعلومات الأساسية",
+    "basicsHint": "اكتب الاسم والوصف بالعربي، والإنجليزي اختياري.",
+    "arabic": "العربية",
+    "english": "English",
+    "name": "اسم المنتج",
+    "description": "الوصف",
+    "namePlaceholder": "مثال: قهوة سعودية بالهيل 500 جم",
+    "descriptionPlaceholder": "وش يميز المنتج؟ المكونات، المقاس، طريقة الاستخدام…",
+    "aiWrite": "اكتب الوصف بالذكاء الاصطناعي",
+    "aiWriting": "جاري الكتابة…",
+    "aiDone": "كتب الوكيل وصفاً مقترحاً، راجعه قبل الحفظ.",
+    "aiTemplate": "{name} منتج مختار بعناية من متجر نخلة، بجودة عالية تناسب الاستخدام اليومي والإهداء. يصلك مغلّفاً بعناية خلال 1-3 أيام عمل لجميع مدن المملكة.",
+    "media": "الصور",
+    "mediaHint": "اسحب الصور هنا أو اضغط للرفع. PNG أو JPG حتى 5 ميجا.",
+    "upload": "رفع صور",
+    "placeholderColor": "لون الصورة المؤقتة",
+    "pricing": "التسعير",
+    "price": "السعر",
+    "compareAt": "السعر قبل الخصم",
+    "compareAtHint": "يظهر مشطوباً بجانب السعر.",
+    "cost": "التكلفة",
+    "costHint": "ما يظهر للعملاء.",
+    "margin": "هامش الربح",
+    "profit": "الربح لكل قطعة",
+    "discountBadge": "خصم {percent}",
+    "vatNote": "الأسعار شاملة ضريبة القيمة المضافة 15%.",
+    "inventory": "المخزون",
+    "sku": "رمز المنتج (SKU)",
+    "stock": "الكمية المتوفرة",
+    "lowStockThreshold": "تنبيه عند انخفاض الكمية إلى",
+    "status": "حالة المنتج",
+    "statusHint": {
+      "active": "يظهر في المتجر ويمكن شراؤه.",
+      "draft": "مخفي عن العملاء لين تنشره.",
+      "archived": "مخفي ومحفوظ للسجلات."
+    },
+    "organization": "التنظيم",
+    "category": "التصنيف",
+    "selectCategory": "اختر التصنيف",
+    "preview": "معاينة في المتجر",
+    "performance": "الأداء",
+    "rating": "التقييم",
+    "reviews": "{count} تقييم",
+    "salesCount": "المبيعات",
+    "unsaved": "عندك تغييرات ما انحفظت",
+    "discard": "تجاهل",
+    "save": "حفظ المنتج",
+    "saving": "جاري الحفظ…",
+    "created": "تمت إضافة المنتج",
+    "saved": "تم حفظ التغييرات",
+    "danger": "حذف المنتج",
+    "dangerHint": "يختفي المنتج من المتجر نهائياً.",
+    "deleteConfirm": "حذف المنتج",
+    "deleted": "تم حذف المنتج",
+    "notFoundTitle": "المنتج غير موجود",
+    "notFoundDescription": "يمكن انحذف أو الرابط غلط.",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "pricePositive": "السعر لازم يكون أكبر من صفر",
+      "compareAtHigher": "لازم يكون أعلى من السعر",
+      "nonNegative": "ما يصير بالسالب",
+      "integer": "لازم يكون رقم صحيح"
+    }
+  },
+  "inbox": {
+    "title": "المحادثات",
+    "search": "ابحث باسم العميل",
+    "filters": {
+      "all": "الكل",
+      "mine": "تحتاجني",
+      "agent": "مع الوكيل",
+      "resolved": "مغلقة",
+      "channel": "القناة",
+      "allChannels": "كل القنوات",
+      "assignee": "المسؤول",
+      "everyone": "الكل",
+      "agents": "الوكلاء",
+      "humans": "الموظفون",
+      "unassigned": "غير مسندة"
+    },
+    "channel": {
+      "whatsapp": "واتساب",
+      "instagram": "إنستقرام",
+      "webchat": "دردشة المتجر"
+    },
+    "status": {
+      "open": "مفتوحة",
+      "waiting": "بانتظارك",
+      "resolved": "مغلقة"
+    },
+    "intent": {
+      "orderStatus": "حالة طلب",
+      "productQuestion": "استفسار منتج",
+      "return": "استرجاع",
+      "complaint": "شكوى",
+      "purchase": "نية شراء"
+    },
+    "handledByAgent": "يرد الوكيل",
+    "handledByStaff": "ترد أنت",
+    "takeOver": "استلام",
+    "returnToAgent": "إرجاع للوكيل",
+    "resolve": "حل",
+    "reopen": "إعادة فتح",
+    "tookOver": "استلمت المحادثة، الوكيل متوقف فيها",
+    "returned": "الوكيل رجع يرد في هذي المحادثة",
+    "resolvedToast": "تم إغلاق المحادثة",
+    "agentBanner": "الوكيل يرد على هذي المحادثة تلقائياً. استلمها لو تبي ترد بنفسك.",
+    "handoffBanner": "الوكيل حوّل لك المحادثة: {reason}",
+    "composer": "اكتب ردك… (Enter للإرسال)",
+    "send": "إرسال",
+    "suggestions": "ردود مقترحة",
+    "suggestion": {
+      "orderStatus": "طلبك قيد التجهيز وبيوصلك رابط التتبع أول ما يُشحن.",
+      "productQuestion": "المنتج متوفر حالياً، تبي أضيفه لسلتك؟",
+      "return": "نعتذر عن الإزعاج، أرسلت لك رابط طلب الاسترجاع.",
+      "complaint": "نعتذر منك جداً، بنحل الموضوع حالاً وبعطيك كود خصم 15%.",
+      "purchase": "أكيد! هذا رابط الدفع المباشر، والتوصيل مجاني فوق 200 ريال."
+    },
+    "you": "أنت",
+    "agent": "الوكيل",
+    "back": "المحادثات",
+    "context": "تفاصيل العميل",
+    "linkedOrder": "الطلب المرتبط",
+    "viewOrder": "عرض الطلب",
+    "noOrder": "ما فيه طلب مرتبط",
+    "aiSummary": "ملخص الوكيل",
+    "summaryText": "العميل يسأل عن {intent}. المحادثة فيها {count} رسائل.",
+    "customerOrders": "{count} طلب · {spent}",
+    "viewCustomer": "ملف العميل",
+    "selectTitle": "اختر محادثة",
+    "selectDescription": "اختر محادثة من القائمة عشان تشوف التفاصيل وترد.",
+    "emptyTitle": "ما فيه محادثات هنا",
+    "emptyDescription": "المحادثات اللي تطابق الفلتر بتظهر هنا.",
+    "searchPlaceholder": "الاسم أو الجوال أو نص رسالة",
+    "statuses": {
+      "open_ai": "مع الوكيل",
+      "waiting_human": "بانتظار موظف",
+      "open_human": "مع موظف",
+      "resolved": "محلولة",
+      "closed": "مغلقة"
+    },
+    "channels": {
+      "whatsapp": "واتساب",
+      "webchat": "دردشة الموقع",
+      "voice": "مكالمة",
+      "instagram": "إنستقرام",
+      "messenger": "ماسنجر",
+      "x": "إكس",
+      "tiktok": "تيك توك",
+      "email": "البريد"
+    },
+    "priorities": {
+      "low": "منخفضة",
+      "normal": "عادية",
+      "high": "عالية",
+      "urgent": "عاجلة"
+    },
+    "sentiments": {
+      "positive": "إيجابي",
+      "neutral": "محايد",
+      "negative": "سلبي"
+    },
+    "messageTypes": {
+      "text": "نص",
+      "image": "صورة",
+      "audio": "رسالة صوتية",
+      "document": "مستند",
+      "product_card": "بطاقة منتج",
+      "payment_link": "رابط دفع",
+      "order_card": "بطاقة طلب",
+      "template": "قالب",
+      "system": "نظام",
+      "internal_note": "ملاحظة داخلية"
+    },
+    "system": {
+      "takeover": "استلم الموظف المحادثة",
+      "returned_to_agent": "أُعيدت المحادثة للوكيل",
+      "resolved": "تم حل المحادثة",
+      "closed": "أُغلقت المحادثة",
+      "approval_approved": "تمت الموافقة على طلب الوكيل",
+      "approval_rejected": "رُفض طلب الوكيل",
+      "reopened": "أُعيد فتح المحادثة",
+      "handoff_to_human": "حُوّلت المحادثة لموظف"
+    },
+    "waiting": "منتظرة",
+    "read": "مقروءة",
+    "noneTitle": "لا محادثات",
+    "noneDescription": "أول رسالة من عملائك بتظهر هنا.",
+    "noResults": "لا نتائج",
+    "noResultsHint": "جرّب تغيير البحث أو الفلاتر.",
+    "pickTitle": "اختر محادثة",
+    "pickDescription": "اختر محادثة من القائمة لعرضها والرد.",
+    "notFoundTitle": "المحادثة غير موجودة",
+    "notFoundDescription": "الرابط غير صحيح.",
+    "backToList": "رجوع للمحادثات",
+    "close": "إغلاق",
+    "unassign": "إلغاء الإسناد",
+    "resolveTitle": "حل المحادثة؟",
+    "resolveDescription": "بتتحول المحادثة لمحلولة وتطلع من قائمة الانتظار.",
+    "resolved": "تم حل المحادثة",
+    "closed": "أُغلقت المحادثة",
+    "replyPlaceholder": "اكتب رداً… (Enter للإرسال)",
+    "notePlaceholder": "ملاحظة داخلية (العميل ما يشوفها)…",
+    "addNote": "إضافة ملاحظة",
+    "sendFailed": "تعذّر الإرسال",
+    "attach": "إرفاق",
+    "attachHint": "إرفاق الملفات بيكون متاحاً مع الربط الحقيقي.",
+    "internalNote": "ملاحظة داخلية",
+    "sendProduct": "إرسال منتج",
+    "pickProductHint": "اختيار المنتج من الكتالوج قريباً.",
+    "sendPaymentLink": "رابط دفع",
+    "paymentLink": "رابط دفع",
+    "paymentLinkSent": "أُرسل رابط الدفع",
+    "toolCall": "استدعاء أداة: {tool}",
+    "view": "عرض",
+    "items": "منتجات",
+    "assignee": "المسؤول",
+    "sentiment": "الانطباع",
+    "rating": "التقييم",
+    "agentPath": "مسار الوكلاء",
+    "relatedOrders": "طلبات مرتبطة",
+    "tags": "الوسوم",
+    "tagPlaceholder": "وسم…",
+    "priority": "الأولوية",
+    "customer": "العميل",
+    "linkCustomer": "ربط عميل",
+    "linkOrder": "ربط طلب",
+    "unlinkOrder": "إلغاء ربط الطلب",
+    "noLinkedOrders": "لا توجد طلبات مرتبطة",
+    "reopened": "أُعيد فتح المحادثة",
+    "searchThread": "ابحث داخل المحادثة…",
+    "smartReply": {
+      "suggest": "اقترح رداً",
+      "generating": "يجهّز الرد…",
+      "draftTitle": "مسودة رد مقترح",
+      "regenerate": "إعادة التوليد",
+      "rephrase": "إعادة الصياغة",
+      "reject": "تجاهل الاقتراح",
+      "acceptSend": "إرسال",
+      "sources": "المصادر:",
+      "hint": "الرد ما يرسل إلا بضغطك — عدّله قبل الإرسال"
+    },
+    "pick": {
+      "search": "ابحث…",
+      "empty": "لا نتائج مطابقة",
+      "productTitle": "إرسال منتج",
+      "productDescription": "اختر منتجاً لإرساله كبطاقة في المحادثة",
+      "orderTitle": "ربط طلب",
+      "orderDescription": "اختر الطلب المرتبط بهذه المحادثة",
+      "customerTitle": "ربط عميل",
+      "customerDescription": "اختر سجل العميل المرتبط بهذه المحادثة"
+    }
+  },
+  "customers": {
+    "title": "العملاء",
+    "description": "اعرف عملاءك، وش يشترون، ومتى آخر مرة طلبوا.",
+    "export": "تصدير",
+    "add": "إضافة عميل",
+    "search": "ابحث بالاسم أو الجوال أو البريد",
+    "allSegments": "كل الفئات",
+    "allCities": "كل المدن",
+    "summary": {
+      "total": "كل العملاء",
+      "vip": "عملاء مميزون",
+      "returning": "عملاء متكررون",
+      "atRisk": "معرضون للفقد"
+    },
+    "col": {
+      "customer": "العميل",
+      "city": "المدينة",
+      "segment": "الفئة",
+      "orders": "الطلبات",
+      "spent": "إجمالي الشراء",
+      "lastOrder": "آخر طلب"
+    },
+    "never": "ما طلب للحين",
+    "count": "{count} عميل",
+    "emptyTitle": "ما فيه عملاء يطابقون البحث",
+    "emptyDescription": "جرّب كلمة ثانية أو امسح الفلاتر.",
+    "clear": "مسح الفلاتر",
+    "back": "العملاء",
+    "contact": "التواصل",
+    "joined": "عميل من {date}",
+    "stats": {
+      "orders": "الطلبات",
+      "spent": "إجمالي الشراء",
+      "aov": "متوسط الطلب",
+      "lastOrder": "آخر طلب"
+    },
+    "ordersTitle": "طلبات العميل",
+    "noOrders": "ما عنده طلبات للحين",
+    "conversationsTitle": "المحادثات",
+    "noConversations": "ما فيه محادثات",
+    "notes": "ملاحظات داخلية",
+    "notesPlaceholder": "مثال: يفضل التوصيل بعد العصر",
+    "saveNote": "حفظ الملاحظة",
+    "noteSaved": "تم حفظ الملاحظة",
+    "aiTitle": "اقتراح المساعد",
+    "ai": {
+      "vip": "عميل مميز. أرسل له كود شكر خاص قبل موسم التخفيضات.",
+      "new": "عميل جديد. رسالة ترحيب مع خصم 10% على الطلب الثاني ترفع فرصة رجوعه.",
+      "returning": "يشتري بانتظام. اقترح عليه منتجات من نفس التصنيف.",
+      "atRisk": "ما طلب من فترة. حملة \"وحشتنا\" بخصم بسيط ممكن ترجعه."
+    },
+    "sendWhatsapp": "أرسل عبر واتساب",
+    "notFoundTitle": "العميل غير موجود",
+    "newCustomer": "عميل جديد",
+    "searchPlaceholder": "الاسم أو الجوال أو البريد",
+    "results": "{count, plural, =0 {لا نتائج} one {عميل واحد} two {عميلان} few {{count} عملاء} many {{count} عميلاً} other {{count} عميل}}",
+    "resetFilters": "مسح الفلاتر",
+    "noneTitle": "لا يوجد عملاء بعد",
+    "noneDescription": "أول عميل يطلب من متجرك بيظهر هنا.",
+    "cols": {
+      "name": "العميل",
+      "phone": "الجوال",
+      "city": "المدينة",
+      "orders": "الطلبات",
+      "totalSpent": "إجمالي الإنفاق",
+      "lastOrder": "آخر طلب",
+      "segment": "الفئة",
+      "source": "المصدر",
+      "consent": "التسويق",
+      "email": "البريد",
+      "registered": "التسجيل",
+      "avgOrder": "متوسط الطلب",
+      "tags": "الوسوم"
+    },
+    "filters": {
+      "segment": "الفئة",
+      "allSegments": "كل الفئات",
+      "city": "المدينة",
+      "allCities": "كل المدن",
+      "source": "المصدر",
+      "allSources": "كل المصادر",
+      "tag": "وسم",
+      "consent": "موافقة واتساب",
+      "consentYes": "موافق",
+      "consentNo": "غير موافق",
+      "minOrders": "أقل عدد طلبات",
+      "minSpent": "أقل إنفاق (ر.س)",
+      "lastOrder": "آخر طلب",
+      "more": "فلاتر أكثر",
+      "any": "الكل",
+      "maxSpent": "أعلى إنفاق (ر.س)"
+    },
+    "sources": {
+      "storefront": "المتجر",
+      "whatsapp": "واتساب",
+      "voice": "مكالمة",
+      "manual": "يدوي",
+      "import": "استيراد",
+      "app": "تطبيق"
+    },
+    "bulk": {
+      "addTag": "إضافة وسم",
+      "apply": "تطبيق",
+      "tagged": "أُضيف الوسم لـ {count} عميل",
+      "removeTag": "إزالة وسم",
+      "pickTag": "اختر وسمًا لإزالته",
+      "untagged": "أُزيل وسم «{tag}» من {count} عميل"
+    },
+    "exportTitle": "تصدير العملاء",
+    "exportDescription": "بيُصدَّر {count} عميل بملف CSV.",
+    "exportWarning": "الملف فيه بيانات شخصية (أسماء وجوالات). تعامل معه حسب نظام حماية البيانات الشخصية.",
+    "exportDone": "تم التصدير",
+    "exportConfirm": "تصدير",
+    "new": {
+      "title": "عميل جديد",
+      "description": "أضف عميلاً يدوياً برقم جواله.",
+      "name": "الاسم",
+      "phone": "الجوال",
+      "email": "البريد الإلكتروني",
+      "birthDate": "تاريخ الميلاد",
+      "gender": "الجنس",
+      "genderUnspecified": "غير محدد",
+      "genderMale": "ذكر",
+      "genderFemale": "أنثى",
+      "tags": "الوسوم",
+      "tagsPlaceholder": "VIP، جملة، …",
+      "note": "ملاحظة",
+      "consent": "الموافقة التسويقية",
+      "consent_whatsapp": "واتساب",
+      "consent_sms": "رسائل SMS",
+      "consent_email": "بريد",
+      "withAddress": "إضافة عنوان",
+      "addressRequired": "أكمل اسم المستلم والمدينة أو أزل العنوان",
+      "create": "إنشاء",
+      "done": "تم إنشاء العميل",
+      "invalid": "أدخل اسماً ورقم جوال سعودي صحيح (+9665…)",
+      "phoneTaken": "الرقم مسجل لعميل آخر",
+      "failed": "تعذّر الإنشاء"
+    },
+    "edit": {
+      "title": "تعديل بيانات العميل",
+      "name": "الاسم",
+      "email": "البريد",
+      "gender": "الجنس",
+      "genders": {
+        "male": "ذكر",
+        "female": "أنثى",
+        "unspecified": "غير محدد"
+      },
+      "birthDate": "تاريخ الميلاد",
+      "done": "تم الحفظ",
+      "notes": "ملاحظات"
+    },
+    "profile": {
+      "title": "العميل",
+      "crumb": "العملاء",
+      "backToList": "رجوع للعملاء",
+      "notFoundTitle": "العميل غير موجود",
+      "notFoundDescription": "الرابط غير صحيح أو العميل انحذف.",
+      "since": "عميل من {date}",
+      "message": "مراسلة",
+      "newOrder": "طلب جديد",
+      "stats": {
+        "orders": "الطلبات",
+        "total": "إجمالي الإنفاق",
+        "avg": "متوسط الطلب",
+        "returns": "المرتجعات"
+      },
+      "tabs": {
+        "orders": "الطلبات",
+        "conversations": "المحادثات",
+        "carts": "السلات",
+        "returns": "المرتجعات",
+        "addresses": "العناوين",
+        "timeline": "السجل"
+      },
+      "cols": {
+        "number": "الرقم",
+        "date": "التاريخ",
+        "total": "الإجمالي",
+        "status": "الحالة",
+        "order": "الطلب"
+      },
+      "emptyOrders": "ما عنده طلبات",
+      "emptyConversations": "ما فيه محادثات",
+      "emptyCarts": "ما فيه سلات",
+      "emptyReturns": "ما فيه مرتجعات",
+      "emptyAddresses": "ما فيه عناوين",
+      "emptyTimeline": "لا أحداث بعد",
+      "timeline": {
+        "order": "طلب {number}",
+        "conversation": "محادثة جديدة",
+        "return": "مرتجع {number}"
+      },
+      "default": "افتراضي",
+      "data": "البيانات",
+      "email": "البريد",
+      "source": "المصدر",
+      "birthDate": "تاريخ الميلاد",
+      "consents": "موافقات التسويق",
+      "channels": {
+        "whatsapp": "واتساب",
+        "sms": "رسائل نصية",
+        "email": "بريد"
+      },
+      "consentUpdated": "آخر تحديث: {date}",
+      "tags": "الوسوم",
+      "tagPlaceholder": "وسم…",
+      "removeTag": "إزالة الوسم",
+      "notes": "ملاحظات",
+      "notesSaved": "تم حفظ الملاحظة",
+      "actions": "إجراءات",
+      "sendCoupon": "إرسال كوبون",
+      "sendCouponDescription": "اختر كوبوناً لإرساله للعميل عبر واتساب.",
+      "send": "إرسال",
+      "couponSent": "أُرسل الكوبون {code}",
+      "exportData": "تصدير بيانات العميل",
+      "exportDone": "تم تصدير البيانات",
+      "deleteData": "حذف بيانات العميل",
+      "deleteTitle": "حذف بيانات العميل؟",
+      "deleteDescription": "بيتم إخفاء هوية العميل نهائياً (الاسم والجوال والبريد والعناوين) حفاظاً على نظام حماية البيانات.",
+      "deleteWarning": "هذا الإجراء لا رجعة فيه. الطلبات بتبقى بس بدون بيانات شخصية.",
+      "confirmDelete": "نعم، احذف البيانات",
+      "deleted": "تم حذف بيانات العميل",
+      "staffNotes": "ملاحظات الموظفين",
+      "emptyNotes": "لا ملاحظات بعد.",
+      "notePlaceholder": "أضف ملاحظة داخلية عن العميل…",
+      "addNote": "إضافة ملاحظة",
+      "noteAdded": "أُضيفت الملاحظة",
+      "addAddress": "إضافة عنوان",
+      "setDefault": "تعيين افتراضي",
+      "defaultSet": "حُدّث العنوان الافتراضي",
+      "deleteAddress": "حذف العنوان؟",
+      "deleteAddressBody": "سيزال العنوان من ملف العميل.",
+      "addressDeleted": "حُذف العنوان",
+      "addressForm": {
+        "addTitle": "إضافة عنوان",
+        "editTitle": "تعديل العنوان",
+        "label": "المسمى",
+        "labelPlaceholder": "المنزل، العمل…",
+        "recipient": "اسم المستلم",
+        "phone": "الجوال",
+        "city": "المدينة",
+        "district": "الحي",
+        "street": "الشارع",
+        "building": "رقم المبنى",
+        "postal": "الرمز البريدي",
+        "notes": "ملاحظات",
+        "default": "العنوان الافتراضي",
+        "saved": "حُفظ العنوان",
+        "failed": "تعذّر حفظ العنوان"
+      },
+      "gender": "الجنس"
+    },
+    "cancel": "إلغاء",
+    "segments": {
+      "title": "الشرائح",
+      "builtin": "الفئات",
+      "presets": "شرائح جاهزة",
+      "custom": "شرائحي",
+      "new": "عملاء جدد (30 يوم)",
+      "repeat": "عملاء متكررون",
+      "top_spenders": "الأعلى إنفاقًا",
+      "inactive": "غير نشطين (90+ يوم)",
+      "high_order_count": "كثيرو الطلبات",
+      "save": "حفظ كشريحة",
+      "namePlaceholder": "اسم الشريحة (يحفظ الفلاتر الحالية)",
+      "saved": "حُفظت الشريحة «{name}»",
+      "saveFailed": "تعذّر حفظ الشريحة",
+      "deleted": "حُذفت الشريحة",
+      "delete": "حذف الشريحة",
+      "empty": "لا شرائح محفوظة بعد — اضبط الفلاتر واحفظها."
+    },
+    "loyalty": {
+      "title": "نقاط الولاء",
+      "lifetime": "إجمالي مكتسب: {count}",
+      "emptyLedger": "لا حركات نقاط بعد",
+      "tiers": {
+        "bronze": "برونزي",
+        "silver": "فضي",
+        "gold": "ذهبي"
+      },
+      "txn": {
+        "earn": "كسب",
+        "redeem": "استرداد",
+        "adjust": "تعديل يدوي",
+        "expire": "انتهاء"
+      }
+    }
+  },
+  "inventory": {
+    "title": "المخزون",
+    "description": "تابع الكميات وعدّلها، وخلك قبل النفاد بخطوة.",
+    "summary": {
+      "value": "قيمة المخزون (بالتكلفة)",
+      "units": "إجمالي القطع",
+      "low": "منخفض",
+      "out": "نفد"
+    },
+    "aiTitle": "اقتراح وكيل المخزون",
+    "aiText": "{count} منتجات بتنفد خلال أسبوع حسب معدل البيع. نقترح تطلب كميات جديدة الحين.",
+    "aiAction": "عرض المقترحات",
+    "search": "ابحث باسم المنتج أو SKU",
+    "col": {
+      "product": "المنتج",
+      "available": "المتوفر",
+      "threshold": "حد التنبيه",
+      "value": "القيمة",
+      "adjust": "تعديل الكمية"
+    },
+    "decrease": "إنقاص",
+    "increase": "زيادة",
+    "save": "حفظ",
+    "saved": "تم تحديث المخزون",
+    "quantity": "الكمية الجديدة لـ {name}",
+    "filters": {
+      "all": "الكل",
+      "low": "منخفض",
+      "out": "نفد"
+    },
+    "emptyTitle": "ما فيه منتجات هنا",
+    "emptyDescription": "المنتجات اللي تطابق الفلتر بتظهر هنا."
+  },
+  "carrierName": {
+    "aramex": "أرامكس",
+    "smsa": "سمسا",
+    "spl": "سبل",
+    "redbox": "ريدبوكس"
+  },
+  "paymentMethodName": {
+    "card": "فيزا / ماستركارد",
+    "mada": "مدى",
+    "apple_pay": "Apple Pay",
+    "stc_pay": "STC Pay",
+    "cod": "الدفع عند الاستلام",
+    "bank_transfer": "تحويل بنكي",
+    "payment_link": "رابط دفع",
+    "gift_card": "بطاقة هدية"
+  },
+  "shipping": {
+    "title": "الشحن",
+    "description": "جهّز الشحنات، اطبع البوالص، وتابع التوصيل.",
+    "settings": "إعدادات الشحن",
+    "summary": {
+      "toShip": "بانتظار الشحن",
+      "inTransit": "في الطريق",
+      "delivered": "تم التوصيل",
+      "avgDays": "متوسط مدة التوصيل"
+    },
+    "days": "{count} يوم",
+    "carriers": "شركات الشحن",
+    "connected": "مربوطة",
+    "connect": "ربط",
+    "shipments": "{count} شحنة",
+    "rate": "يبدأ من {price}",
+    "tabs": {
+      "toShip": "بانتظار الشحن",
+      "inTransit": "في الطريق",
+      "delivered": "تم التوصيل"
+    },
+    "col": {
+      "order": "الطلب",
+      "customer": "العميل",
+      "city": "المدينة",
+      "carrier": "الشركة",
+      "tracking": "رقم التتبع",
+      "status": "الحالة"
+    },
+    "createShipment": "إنشاء شحنة",
+    "printLabel": "طباعة البوليصة",
+    "track": "تتبع",
+    "created": "تم إنشاء الشحنة وطباعة البوليصة",
+    "labelPrinted": "تم تجهيز البوليصة للطباعة",
+    "freeShipping": "الشحن مجاني للطلبات فوق {amount}",
+    "emptyTitle": "ما فيه شحنات هنا",
+    "emptyDescription": "الشحنات بتظهر هنا أول ما تجهز الطلبات."
+  },
+  "invoices": {
+    "title": "الفواتير",
+    "description": "فواتير ضريبية إلكترونية متوافقة مع متطلبات هيئة الزكاة والضريبة والجمارك.",
+    "export": "تصدير",
+    "zatcaTitle": "الفوترة الإلكترونية مفعّلة",
+    "zatcaText": "متجرك مربوط بمنصة فاتورة (المرحلة الثانية). كل فاتورة تنرسل تلقائياً مع رمز QR.",
+    "zatcaStatus": "مربوط",
+    "summary": {
+      "total": "إجمالي الفواتير",
+      "vat": "ضريبة القيمة المضافة",
+      "count": "عدد الفواتير",
+      "credit": "إشعارات دائنة"
+    },
+    "col": {
+      "number": "رقم الفاتورة",
+      "order": "الطلب",
+      "customer": "العميل",
+      "date": "التاريخ",
+      "vat": "الضريبة",
+      "total": "الإجمالي",
+      "type": "النوع",
+      "zatca": "حالة ZATCA",
+      "description": "الوصف",
+      "quantity": "الكمية",
+      "unitPrice": "سعر الوحدة",
+      "subtotal": "المجموع الفرعي",
+      "status": "حالة الإصدار",
+      "original": "الفاتورة الأصلية",
+      "sku": "SKU"
+    },
+    "type": {
+      "simplified": "فاتورة مبسطة",
+      "standard": "فاتورة ضريبية",
+      "credit_note": "إشعار دائن"
+    },
+    "download": "تنزيل",
+    "downloaded": "جاري تنزيل الفاتورة {number}",
+    "search": "ابحث برقم الفاتورة أو الطلب أو العميل",
+    "emptyTitle": "ما فيه فواتير تطابق البحث",
+    "emptyDescription": "جرّب رقم ثاني.",
+    "zatca": {
+      "pending": "قيد الإرسال",
+      "reported": "مُبلّغ عنها",
+      "cleared": "معتمدة",
+      "rejected": "مرفوضة"
+    },
+    "filters": {
+      "all": "الكل",
+      "status": "حالة الإصدار",
+      "date": "تاريخ الإصدار",
+      "returns": "الإشعارات الدائنة فقط",
+      "reset": "إعادة تعيين"
+    },
+    "resend": "إعادة الإرسال",
+    "zatcaErrors": "رفضت هيئة الزكاة هذه الفاتورة",
+    "pdfPreview": "معاينة PDF",
+    "pdfPreviewHint": "معاينة الفاتورة بتنسيق هيئة الزكاة تظهر هنا.",
+    "lines": "بنود الفاتورة",
+    "subtotal": "المجموع قبل الضريبة",
+    "details": "تفاصيل الفاتورة",
+    "return": "المرتجع",
+    "relatedInvoice": "الفاتورة المرتبطة",
+    "customerVat": "الرقم الضريبي للعميل",
+    "issuedAt": "تاريخ الإصدار",
+    "qrTitle": "رمز QR",
+    "qrHint": "رمز التحقق المتوافق مع متطلبات المرحلة الثانية.",
+    "zatcaOffTitle": "الفوترة الإلكترونية غير مربوطة",
+    "zatcaOffText": "اربط متجرك بمنصة فاتورة من الإعدادات ← الضرائب عشان تبدأ إرسال الفواتير إلى هيئة الزكاة.",
+    "zatcaConn": {
+      "not_connected": "غير مربوط",
+      "onboarding": "قيد الربط",
+      "connected": "مربوط",
+      "error": "خطأ في الربط"
+    },
+    "results": "{count} فاتورة",
+    "orphan": "بدون أصل",
+    "print": "طباعة",
+    "popupBlocked": "المتصفح حظر نافذة الطباعة",
+    "returnReason": "سبب الإرجاع",
+    "shipment": "الشحنة",
+    "issueStatus": {
+      "issued": "صادرة",
+      "paid": "مدفوعة",
+      "unpaid": "غير مدفوعة",
+      "partially_refunded": "مستردة جزئياً",
+      "refunded": "مستردة",
+      "cancelled": "ملغاة"
+    },
+    "financial": {
+      "title": "الملخص المالي",
+      "subtotal": "المجموع الفرعي",
+      "discount": "الخصم",
+      "shipping": "الشحن",
+      "taxable": "المبلغ الخاضع للضريبة",
+      "vat": "الضريبة (15%)",
+      "total": "الإجمالي",
+      "paid": "المدفوع",
+      "refunded": "المسترد",
+      "remaining": "المتبقي"
+    },
+    "integrity": {
+      "missingOriginal": "هذا الإشعار الدائن غير مرتبط بفاتورته الأصلية.",
+      "amountMismatch": "إجمالي الإشعار الدائن أكبر من إجمالي الفاتورة الأصلية."
+    },
+    "zatcaZone": {
+      "title": "الإرسال إلى هيئة الزكاة",
+      "simulated": "محاكاة",
+      "status": "الحالة",
+      "invoiceNumber": "رقم الفاتورة",
+      "lastSent": "آخر إرسال",
+      "qrData": "بيانات QR",
+      "attempts": "سجل الإرسال",
+      "loading": "جاري التحميل…",
+      "noAttempts": "ما فيه محاولات إرسال بعد.",
+      "resend": "إعادة الإرسال إلى ZATCA",
+      "resendTitle": "إعادة إرسال الفاتورة {number}؟",
+      "resendBody": "بتنرسل الفاتورة مرة ثانية لبوابة فاتورة (محاكاة).",
+      "resendBodyError": "آخر إرسال فشل: {reason}. تعيد الإرسال؟",
+      "reported": "تم إبلاغ ZATCA بالفاتورة {number}",
+      "rejectedAgain": "انرفضت الفاتورة {number} مرة ثانية: {reason}",
+      "notEligible": "فقط الفواتير المعلّقة أو المرفوضة تنرسل مرة ثانية",
+      "failed": "تعذّرت إعادة إرسال الفاتورة"
+    },
+    "doc": {
+      "docTitle": "إشعار دائن",
+      "taxInvoice": "فاتورة ضريبية",
+      "seller": "البائع",
+      "billTo": "فوترة إلى",
+      "vatNo": "الرقم الضريبي",
+      "orderNo": "الطلب",
+      "issueDate": "تاريخ الإصدار",
+      "number": "رقم الفاتورة",
+      "description": "الوصف",
+      "qty": "الكمية",
+      "unitPrice": "سعر الوحدة",
+      "vat": "الضريبة",
+      "lineTotal": "الإجمالي",
+      "subtotal": "المجموع الفرعي",
+      "vatAmount": "الضريبة",
+      "total": "الإجمالي",
+      "qrHint": "رمز ZATCA — حمولة TLV",
+      "relatedInvoice": "الفاتورة المرتبطة"
+    }
+  },
+  "reports": {
+    "title": "التقارير",
+    "description": "أداء متجرك خلال آخر 30 يوم.",
+    "export": "تصدير التقرير",
+    "range": {
+      "7": "آخر 7 أيام",
+      "30": "آخر 30 يوم",
+      "90": "آخر 90 يوم"
+    },
+    "kpi": {
+      "revenue": "صافي المبيعات",
+      "orders": "الطلبات",
+      "aov": "متوسط الطلب",
+      "conversion": "معدل التحويل",
+      "tax": "الضريبة المحصلة"
+    },
+    "revenueTitle": "المبيعات اليومية",
+    "channelsTitle": "المبيعات حسب القناة",
+    "paymentsTitle": "طرق الدفع",
+    "categoriesTitle": "المبيعات حسب التصنيف",
+    "citiesTitle": "أكثر المدن طلباً",
+    "agentTitle": "أثر الوكلاء الأذكياء",
+    "agent": {
+      "conversations": "محادثة",
+      "resolved": "حُلّت تلقائياً",
+      "carts": "سلة مستردة",
+      "revenue": "مبيعات عن طريق الوكلاء"
+    },
+    "orders": "{count} طلب",
+    "revenue": "المبيعات",
+    "types": {
+      "sales": "تقرير المبيعات",
+      "products": "تقرير المنتجات",
+      "customers": "تقرير العملاء",
+      "agents": "تقرير الوكلاء",
+      "marketing": "تقرير التسويق",
+      "tax": "تقرير الضريبة"
+    },
+    "typeDesc": {
+      "sales": "الإيراد والطلبات ومتوسط الطلب حسب اليوم والقناة والمدينة.",
+      "products": "الأكثر مبيعاً والأكثر إرجاعاً والأكثر سؤالاً عنه.",
+      "customers": "الجدد مقابل العائدين وتوزيع الشرائح.",
+      "agents": "المحادثات والحل والمبيعات لكل وكيل.",
+      "marketing": "أداء الكوبونات واسترجاع السلات المتروكة.",
+      "tax": "ضريبة القيمة المضافة والفواتير حسب الفترة وحالة ZATCA."
+    },
+    "comparePrevious": "قارن بالفترة السابقة",
+    "products": {
+      "topSelling": "الأكثر مبيعاً (آخر 30 يوم)",
+      "topReturned": "الأكثر إرجاعاً",
+      "topAsked": "الأكثر سؤالاً عنه",
+      "product": "المنتج",
+      "sold": "المبيعات",
+      "revenue": "الإيراد",
+      "asked": "سؤالاً عنه"
+    },
+    "customers": {
+      "total": "إجمالي العملاء",
+      "newInPeriod": "عملاء جدد في الفترة",
+      "returning": "عملاء عائدون ومميزون",
+      "atRisk": "معرّضون للفقد",
+      "segments": "الإنفاق حسب الشريحة",
+      "segment": {
+        "new": "جدد",
+        "returning": "عائدون",
+        "vip": "مميزون",
+        "at_risk": "معرّضون"
+      }
+    },
+    "agents": {
+      "table": "أداء الوكلاء",
+      "agent": "الوكيل",
+      "conversations": "المحادثات",
+      "resolved": "نسبة الحل",
+      "revenue": "المبيعات"
+    },
+    "marketing": {
+      "couponRevenue": "إيراد الكوبونات",
+      "uses": "مرات الاستخدام",
+      "carts": "السلات المتروكة",
+      "recovered": "نسبة الاسترجاع",
+      "coupons": "أداء الكوبونات",
+      "coupon": "الكوبون",
+      "status": "الحالة",
+      "discount": "الخصم الممنوح",
+      "revenue": "الإيراد"
+    },
+    "tax": {
+      "vatTotal": "ضريبة القيمة المضافة",
+      "invoices": "الفواتير",
+      "creditNotes": "إشعارات دائنة",
+      "rejected": "مرفوضة من ZATCA",
+      "invoicesList": "فواتير الفترة",
+      "invoice": "الفاتورة",
+      "vat": "الضريبة",
+      "total": "الإجمالي",
+      "zatca": "حالة ZATCA"
+    }
+  },
+  "marketing": {
+    "title": "التسويق",
+    "description": "حملات وكوبونات تجيب عملاء جدد وترجّع القدامى.",
+    "newCampaign": "حملة جديدة",
+    "newCoupon": "كوبون جديد",
+    "aiTitle": "خل وكيل التسويق يكتب حملتك",
+    "aiText": "اختر الهدف وهو يجهز النص والجمهور ووقت الإرسال المناسب.",
+    "aiPlaceholder": "مثال: عرض اليوم الوطني على القهوة",
+    "aiGenerate": "جهّز الحملة",
+    "aiResult": "🇸🇦 بمناسبة اليوم الوطني: خصم 20% على كل القهوة السعودية لين نهاية الأسبوع. استخدم كود WATAN20 👇",
+    "aiAudience": "الجمهور المقترح: 1,240 عميل اشتروا قهوة آخر 90 يوم",
+    "tabs": {
+      "campaigns": "الحملات",
+      "coupons": "الكوبونات",
+      "carts": "السلات المتروكة"
+    },
+    "campaignStatus": {
+      "active": "نشطة",
+      "scheduled": "مجدولة",
+      "ended": "منتهية",
+      "draft": "مسودة"
+    },
+    "sent": "أُرسلت",
+    "opened": "فُتحت",
+    "revenue": "المبيعات",
+    "coupon": {
+      "code": "الكود",
+      "discount": "الخصم",
+      "usage": "الاستخدام",
+      "expires": "ينتهي",
+      "status": "الحالة",
+      "active": "فعّال",
+      "expired": "منتهي",
+      "copy": "نسخ الكود",
+      "copied": "تم نسخ الكود",
+      "title": "الكوبون",
+      "notFoundTitle": "الكوبون غير موجود",
+      "notFoundDescription": "الرابط غير صحيح أو الكوبون انحذف.",
+      "backToList": "رجوع للكوبونات",
+      "editTitle": "تعديل الكوبون",
+      "saved": "تم الحفظ",
+      "failed": "تعذّر الحفظ",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل",
+      "enabled": "تم التفعيل",
+      "disabledNow": "تم التعطيل",
+      "delete": "حذف",
+      "deleteTitle": "حذف الكوبون؟",
+      "deleteDescription": "الكوبون استُخدم {count} مرة. الحذف نهائي.",
+      "deleteWarning": "العملاء اللي عندهم الكود ما بيقدرون يستخدمونه بعد الحذف.",
+      "confirmDelete": "نعم، احذف",
+      "deleted": "تم حذف الكوبون",
+      "stats": {
+        "usage": "الاستخدام",
+        "revenue": "المبيعات المحققة",
+        "discount": "إجمالي الخصم"
+      },
+      "usageTitle": "سجل الاستخدام",
+      "noUsageTitle": "لا استخدامات بعد",
+      "noUsageDescription": "أول طلب يستخدم الكوبون بيظهر هنا.",
+      "cols": {
+        "order": "الطلب",
+        "customer": "العميل",
+        "date": "التاريخ",
+        "discount": "الخصم",
+        "orderTotal": "إجمالي الطلب"
+      },
+      "settings": "الإعدادات",
+      "s": {
+        "type": "النوع",
+        "value": "القيمة",
+        "maxDiscount": "أقصى خصم",
+        "period": "الفترة",
+        "minOrder": "أقل طلب",
+        "perCustomer": "لكل عميل",
+        "appliesTo": "ينطبق على",
+        "excludeSale": "يستثني المخفَّض",
+        "createdBy": "أنشأه"
+      },
+      "form": {
+        "code": "الكود",
+        "type": "النوع",
+        "types": {
+          "percentage": "نسبة %",
+          "fixed": "مبلغ ثابت",
+          "free_shipping": "شحن مجاني"
+        },
+        "percent": "النسبة %",
+        "amount": "المبلغ (ر.س)",
+        "maxDiscount": "أقصى خصم (ر.س)",
+        "minOrder": "أقل قيمة طلب (ر.س)",
+        "usageLimit": "حد الاستخدام الكلي",
+        "perCustomer": "حد لكل عميل",
+        "appliesTo": "ينطبق على",
+        "applies": {
+          "all": "كل المنتجات",
+          "products": "منتجات محددة",
+          "categories": "تصنيفات محددة",
+          "collections": "مجموعات محددة"
+        },
+        "startsAt": "يبدأ",
+        "endsAt": "ينتهي (فارغ = بلا نهاية)",
+        "eligibility": "الأهلية",
+        "elig": {
+          "all": "كل العملاء",
+          "new": "عملاء جدد فقط"
+        },
+        "excludeSaleItems": "استبعاد المنتجات المخفَّضة"
+      }
+    },
+    "couponDialog": {
+      "title": "كوبون جديد",
+      "description": "الكوبون يشتغل في المتجر وفي محادثات الوكلاء.",
+      "code": "كود الخصم",
+      "percent": "نسبة الخصم (%)",
+      "limit": "عدد مرات الاستخدام",
+      "create": "إنشاء الكوبون",
+      "created": "تم إنشاء الكوبون {code}",
+      "invalid": "اكتب كود من 4 أحرف على الأقل ونسبة بين 1 و 90"
+    },
+    "carts": {
+      "title": "استرداد السلات المتروكة",
+      "text": "وكيل المبيعات يرسل تذكير عبر واتساب بعد ساعة من ترك السلة.",
+      "abandoned": "سلة متروكة",
+      "recovered": "تم استردادها",
+      "rate": "نسبة الاسترداد",
+      "value": "قيمة مستردة",
+      "enabled": "التذكير التلقائي مفعّل"
+    },
+    "coupons": {
+      "title": "الكوبونات",
+      "description": "أكواد الخصم لمتجرك.",
+      "new": "كوبون جديد",
+      "searchPlaceholder": "كود الكوبون",
+      "results": "{count, plural, =0 {لا نتائج} one {كوبون واحد} two {كوبونان} few {{count} كوبونات} many {{count} كوبوناً} other {{count} كوبون}}",
+      "noneTitle": "لا توجد كوبونات",
+      "noneDescription": "أنشئ أول كود خصم لعملائك.",
+      "newTitle": "كوبون جديد",
+      "newDescription": "حدد الكود ونوع الخصم وشروط الاستخدام.",
+      "create": "إنشاء",
+      "created": "تم إنشاء الكوبون",
+      "failed": "تعذّر الحفظ",
+      "codeTaken": "الكود مستخدم",
+      "codeInvalid": "الكود لازم يكون أحرف وأرقام إنجليزية",
+      "freeShipping": "شحن مجاني",
+      "types": {
+        "percentage": "نسبة %",
+        "fixed": "مبلغ ثابت",
+        "free_shipping": "شحن مجاني"
+      },
+      "statuses": {
+        "active": "نشط",
+        "scheduled": "مجدول",
+        "expired": "منتهي",
+        "disabled": "معطّل"
+      },
+      "filters": {
+        "status": "الحالة",
+        "allStatuses": "كل الحالات",
+        "type": "النوع",
+        "allTypes": "كل الأنواع"
+      },
+      "cols": {
+        "code": "الكود",
+        "type": "النوع",
+        "value": "القيمة",
+        "usage": "الاستخدام",
+        "status": "الحالة",
+        "period": "الفترة",
+        "min": "أقل طلب",
+        "by": "أنشأه"
+      }
+    },
+    "promotions": {
+      "title": "العروض التلقائية",
+      "description": "تخفيضات تلقائية بدون كود.",
+      "new": "عرض جديد",
+      "newTitle": "عرض جديد",
+      "editTitle": "تعديل العرض",
+      "formDescription": "حدد نوع العرض وفترته.",
+      "create": "إنشاء",
+      "created": "تم إنشاء العرض",
+      "saved": "تم الحفظ",
+      "failed": "تعذّر الحفظ",
+      "toggled": "تم تحديث الحالة",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل",
+      "delete": "حذف",
+      "deleteTitle": "حذف العرض؟",
+      "deleteDescription": "العرض بينحذف وما عاد ينطبق على السلات الجديدة.",
+      "confirmDelete": "نعم، احذف",
+      "deleted": "تم حذف العرض",
+      "noneTitle": "لا توجد عروض",
+      "noneDescription": "أنشئ أول عرض تلقائي.",
+      "types": {
+        "percentage": "نسبة %",
+        "fixed_amount": "مبلغ ثابت",
+        "free_shipping": "شحن مجاني",
+        "buy_x_get_y": "اشترِ X خذ Y"
+      },
+      "statuses": {
+        "active": "نشط",
+        "scheduled": "مجدول",
+        "expired": "منتهي",
+        "disabled": "معطّل"
+      },
+      "filters": {
+        "status": "الحالة",
+        "all": "كل الحالات"
+      },
+      "cols": {
+        "name": "الاسم",
+        "type": "النوع",
+        "benefit": "المنفعة",
+        "period": "الفترة",
+        "status": "الحالة",
+        "orders": "الطلبات",
+        "revenue": "المبيعات",
+        "by": "أنشأه"
+      },
+      "buyXGetY": "اشترِ {buy} خذ {get} مجاناً",
+      "freeShipping": "شحن مجاني",
+      "form": {
+        "nameAr": "الاسم (عربي)",
+        "nameEn": "الاسم (إنجليزي)",
+        "type": "النوع",
+        "types": {
+          "percentage": "نسبة %",
+          "fixed_amount": "مبلغ ثابت",
+          "free_shipping": "شحن مجاني",
+          "buy_x_get_y": "اشترِ X خذ Y"
+        },
+        "percent": "النسبة %",
+        "amount": "المبلغ (ر.س)",
+        "buyQty": "كمية الشراء",
+        "getQty": "كمية المجان",
+        "startsAt": "يبدأ",
+        "endsAt": "ينتهي (فارغ = بلا نهاية)"
+      }
+    },
+    "loyalty": {
+      "title": "برنامج الولاء",
+      "description": "نقاط تُكسبها على كل طلب وتُسترد كخصم",
+      "settingsTitle": "إعدادات البرنامج",
+      "settingsDescription": "معدلات الكسب والاسترداد والمستويات",
+      "enabled": "مفعّل",
+      "disabled": "متوقف",
+      "earnRate": "نقاط لكل ريال",
+      "earnRateHint": "مثال: 1 = نقطة واحدة لكل ريال مدفوع",
+      "redeemRate": "قيمة النقطة (ر.س)",
+      "redeemRateHint": "كم ريال تساوي النقطة الواحدة عند الاسترداد",
+      "expiryDays": "صلاحية النقاط (يوم)",
+      "expiryDaysHint": "0 = ما تنتهي صلاحيتها",
+      "tiersTitle": "المستويات",
+      "minPoints": "نقاط العتبة",
+      "perks": "المزايا",
+      "tiers": {
+        "bronze": "برونزي",
+        "silver": "فضي",
+        "gold": "ذهبي"
+      },
+      "accountsTitle": "أرصدة العملاء",
+      "noneTitle": "لا أرصدة بعد",
+      "noneDescription": "الأرصدة تُنشأ تلقائياً مع أول نقاط مكتسبة",
+      "cols": {
+        "customer": "العميل",
+        "points": "النقاط",
+        "lifetime": "إجمالي مكتسب",
+        "tier": "المستوى",
+        "date": "التاريخ",
+        "type": "النوع",
+        "note": "ملاحظة"
+      },
+      "txn": {
+        "earn": "كسب",
+        "redeem": "استرداد",
+        "adjust": "تعديل يدوي",
+        "expire": "انتهاء"
+      },
+      "ledgerTitle": "حركات النقاط",
+      "ledgerEmptyTitle": "لا حركات",
+      "ledgerEmptyDescription": "حركات الكسب والاسترداد تظهر هنا",
+      "adjust": "تعديل",
+      "adjustTitle": "تعديل نقاط {name}",
+      "points": "النقاط (±)",
+      "pointsHint": "موجب للإضافة، سالب للخصم",
+      "note": "السبب",
+      "noteRequired": "سبب التعديل مطلوب",
+      "pointsRequired": "أدخل عدد نقاط صحيح",
+      "adjustSubmit": "تطبيق",
+      "rateRequired": "معدلات الكسب والاسترداد لازم تكون أكبر من صفر"
+    },
+    "giftCards": {
+      "title": "بطاقات الهدايا",
+      "description": "أصدر بطاقات رصيد واستردها في الطلبات",
+      "issue": "إصدار بطاقة",
+      "issueTitle": "إصدار بطاقة هدية",
+      "issueSubmit": "إصدار",
+      "cols": {
+        "code": "الكود",
+        "balance": "الرصيد",
+        "initial": "القيمة",
+        "customer": "العميل",
+        "status": "الحالة",
+        "expires": "الانتهاء",
+        "date": "التاريخ",
+        "type": "النوع",
+        "amount": "المبلغ",
+        "order": "الطلب",
+        "actor": "بواسطة"
+      },
+      "status": {
+        "active": "نشطة",
+        "partially_used": "مستخدمة جزئياً",
+        "redeemed": "مستهلكة",
+        "expired": "منتهية",
+        "deactivated": "موقوفة"
+      },
+      "txn": {
+        "issue": "إصدار",
+        "redeem": "استرداد",
+        "deactivate": "إيقاف",
+        "adjust": "تعديل"
+      },
+      "form": {
+        "code": "الكود",
+        "codeHint": "اتركه فارغاً للتوليد التلقائي",
+        "amount": "القيمة (ر.س)",
+        "customer": "العميل",
+        "noCustomer": "بدون عميل",
+        "expires": "تاريخ الانتهاء"
+      },
+      "amountRequired": "أدخل قيمة صحيحة",
+      "codeTaken": "الكود مستخدم في بطاقة ثانية",
+      "noneTitle": "لا بطاقات هدايا",
+      "noneDescription": "أصدر أول بطاقة لعملائك",
+      "notFoundTitle": "البطاقة غير موجودة",
+      "notFoundDescription": "الرابط غلط أو البطاقة حُذفت",
+      "backToList": "رجوع للقائمة",
+      "stats": {
+        "balance": "الرصيد",
+        "initial": "القيمة الأصلية",
+        "spent": "المستخدم",
+        "expires": "الانتهاء",
+        "noExpiry": "بدون انتهاء"
+      },
+      "holder": "صاحب البطاقة: {name}",
+      "holderUnassigned": "بطاقة غير مرتبطة بعميل",
+      "issuedBy": "أصدرها {name}",
+      "deactivate": "إيقاف البطاقة",
+      "ledgerTitle": "حركات البطاقة",
+      "ledgerEmptyTitle": "لا حركات",
+      "ledgerEmptyDescription": "الاسترداد والتعديلات تظهر هنا"
+    },
+    "affiliates": {
+      "title": "المسوّقون بالعمولة",
+      "description": "شركاء يجيبون طلبات مقابل عمولة على كل بيع",
+      "new": "مسوّق جديد",
+      "newTitle": "إضافة مسوّق",
+      "editTitle": "تعديل مسوّق",
+      "edit": "تعديل",
+      "pause": "إيقاف",
+      "resume": "استئناف",
+      "payoutsNote": "صرف العمولات يُسجّل هنا لكن التحويل الفعلي يتم خارج المنصة (محاكاة).",
+      "cols": {
+        "name": "الاسم",
+        "code": "الكود",
+        "rate": "العمولة",
+        "clicks": "النقرات",
+        "orders": "الطلبات",
+        "revenue": "المبيعات",
+        "commission": "العمولات",
+        "status": "الحالة",
+        "date": "التاريخ",
+        "order": "الطلب",
+        "total": "الإجمالي",
+        "amount": "المبلغ",
+        "note": "ملاحظة"
+      },
+      "status": {
+        "active": "نشط",
+        "paused": "موقوف"
+      },
+      "payout": {
+        "pending": "قيد الصرف",
+        "paid": "مدفوعة"
+      },
+      "form": {
+        "name": "الاسم",
+        "email": "البريد",
+        "code": "كود الإحالة",
+        "commissionRate": "نسبة العمولة %",
+        "rateHint": "نسبة من إجمالي كل طلب منسوب له",
+        "amount": "المبلغ (ر.س)",
+        "note": "ملاحظة"
+      },
+      "nameRequired": "الاسم مطلوب",
+      "codeRequired": "الكود مطلوب",
+      "rateRequired": "النسبة بين 1 و100",
+      "noneTitle": "لا مسوّقين",
+      "noneDescription": "أضف أول شريك وابدأ تتبع الإحالات",
+      "notFoundTitle": "المسوّق غير موجود",
+      "notFoundDescription": "الرابط غلط أو المسوّق حُذف",
+      "backToList": "رجوع للقائمة",
+      "stats": {
+        "clicks": "النقرات",
+        "orders": "الطلبات",
+        "revenue": "المبيعات المنسوبة",
+        "commission": "عمولات مكتسبة",
+        "pendingPayout": "مستحق الصرف"
+      },
+      "conversionsTitle": "الطلبات المنسوبة",
+      "conversionsEmpty": "لا طلبات منسوبة بعد",
+      "payoutsTitle": "الدفعات",
+      "payoutsEmpty": "لا دفعات بعد",
+      "createPayout": "تسجيل دفعة",
+      "payoutTitle": "دفعة عمولة",
+      "payoutHint": "المستحق المتاح: {amount}",
+      "payoutAmountRequired": "أدخل مبلغاً صحيحاً",
+      "payoutSubmit": "تسجيل",
+      "markPaid": "تم الدفع"
+    }
+  },
+  "storeDesign": {
+    "title": "تصميم المتجر",
+    "description": "غيّر شكل متجرك وشوف النتيجة مباشرة.",
+    "publish": "نشر التغييرات",
+    "published": "تم نشر التصميم على متجرك",
+    "preview": "معاينة",
+    "theme": "القالب",
+    "themes": {
+      "oasis": "واحة",
+      "najd": "نجد",
+      "red-sea": "البحر الأحمر"
+    },
+    "color": "اللون الأساسي",
+    "font": "الخط",
+    "fonts": {
+      "plex": "IBM Plex",
+      "tajawal": "تجوال",
+      "almarai": "المراعي"
+    },
+    "sections": "أقسام الصفحة الرئيسية",
+    "section": {
+      "hero": "البانر الرئيسي",
+      "categories": "التصنيفات",
+      "featured": "منتجات مميزة",
+      "reviews": "آراء العملاء",
+      "newsletter": "النشرة البريدية"
+    },
+    "moveUp": "تحريك لأعلى",
+    "moveDown": "تحريك لأسفل",
+    "desktop": "كمبيوتر",
+    "mobile": "جوال",
+    "heroTitle": "عنوان البانر",
+    "heroDefault": "قهوة وتمور من قلب المملكة",
+    "heroCta": "تسوّق الآن",
+    "shopBy": "تسوّق حسب التصنيف",
+    "featuredTitle": "الأكثر مبيعاً",
+    "reviewsTitle": "وش يقول عملاؤنا",
+    "reviewText": "جودة ممتازة وتوصيل سريع، أنصح فيه!",
+    "newsletterTitle": "اشترك ويوصلك كل جديد",
+    "newsletterCta": "اشترك"
+  },
+  "apps": {
+    "title": "التطبيقات",
+    "description": "وسّع متجرك بتطبيقات جاهزة للدفع والشحن والتسويق والمحاسبة.",
+    "search": "ابحث عن تطبيق",
+    "installed": "مثبّت",
+    "install": "تثبيت",
+    "uninstall": "إزالة",
+    "installedToast": "تم تثبيت {name}",
+    "removedToast": "تمت إزالة {name}",
+    "category": {
+      "all": "الكل",
+      "payments": "الدفع",
+      "shipping": "الشحن",
+      "marketing": "التسويق",
+      "accounting": "المحاسبة",
+      "ai": "الذكاء الاصطناعي"
+    },
+    "free": "مجاني",
+    "perMonth": "{price} / شهرياً",
+    "installedCount": "{count} تطبيقات مثبتة",
+    "emptyTitle": "ما لقينا تطبيقات",
+    "emptyDescription": "جرّب كلمة ثانية أو تصنيف ثاني.",
+    "items": {
+      "tabby": "قسّم مشترياتك على 4 دفعات بدون فوائد.",
+      "tamara": "اشتر الحين وادفع بعدين.",
+      "zid-pay": "بوابة دفع محلية تدعم مدى وApple Pay.",
+      "smsa": "اربط شحنات سمسا واطبع البوالص تلقائياً.",
+      "torod": "قارن أسعار شركات الشحن واختر الأنسب.",
+      "snap-pixel": "تتبّع التحويلات من إعلانات سناب شات.",
+      "mailchimp": "أرسل حملات بريدية لعملائك.",
+      "google-shopping": "اعرض منتجاتك في جوجل للتسوق.",
+      "qoyod": "مزامنة الفواتير والمبيعات مع قيود.",
+      "daftra": "محاسبة ومخزون في مكان واحد.",
+      "ai-photos": "حسّن صور منتجاتك وشيل الخلفية بضغطة.",
+      "ai-translate": "ترجم منتجاتك للإنجليزي تلقائياً."
+    },
+    "installedDescription": "التطبيقات المثبتة على متجرك وصلاحياتها.",
+    "browseStore": "متجر التطبيقات",
+    "storeTitle": "متجر التطبيقات",
+    "storeDescription": "وسّع متجرك بتطبيقات معتمدة للدفع والشحن والتسويق والمحاسبة.",
+    "open": "فتح",
+    "openInstalled": "إدارة التثبيت",
+    "grantedScopesCount": "{count} صلاحيات ممنوحة",
+    "lastActivity": "آخر نشاط {time}",
+    "installs": "{count} تثبيت",
+    "about": "عن التطبيق",
+    "scopesTitle": "الصلاحيات المطلوبة",
+    "pricing": "السعر",
+    "grantedScopes": "الصلاحيات الممنوحة",
+    "activity": "سجل النشاط",
+    "noActivity": "ما فيه نشاط مسجل للتطبيق.",
+    "billing": "الفوترة",
+    "installedBy": "ثبّته",
+    "installedAt": "مثبّت منذ {date}",
+    "installedAtShort": "تاريخ التثبيت",
+    "lastActivityShort": "آخر نشاط",
+    "appInfo": "معلومات التطبيق",
+    "developer": "المطوّر",
+    "support": "الدعم",
+    "storePage": "صفحة المتجر",
+    "openStorePage": "عرض صفحة التطبيق",
+    "oneTime": "{price} مرة واحدة",
+    "usageBased": "{price} حسب الاستخدام",
+    "scope": {
+      "orders": {
+        "read": "قراءة الطلبات وتفاصيلها",
+        "manage": "إدارة الطلبات وتحديث حالتها"
+      },
+      "customers": {
+        "read": "قراءة بيانات العملاء",
+        "export": "تصدير بيانات العملاء"
+      },
+      "shipments": {
+        "manage": "إنشاء الشحنات والبوالص وإدارتها"
+      },
+      "reports": {
+        "read": "الوصول لتقارير المتجر"
+      },
+      "products": {
+        "read": "قراءة المنتجات وأسعارها",
+        "manage": "تعديل المنتجات وصورها"
+      },
+      "invoices": {
+        "read": "قراءة الفواتير والإشعارات"
+      },
+      "inventory": {
+        "manage": "قراءة المخزون وتحديث الكميات"
+      }
+    },
+    "auditAction": {
+      "app": {
+        "installed": "تثبيت التطبيق",
+        "uninstalled": "إلغاء تثبيت التطبيق"
+      },
+      "shipment": {
+        "created": "إنشاء شحنة"
+      },
+      "order": {
+        "paid": "تسجيل دفعة"
+      },
+      "reports": {
+        "synced": "مزامنة التقارير"
+      },
+      "product": {
+        "updated": "تعديل منتج"
+      },
+      "staff": {
+        "invited": "دعوة موظف"
+      },
+      "settings": {
+        "updated": "تحديث الإعدادات"
+      }
+    },
+    "connection": {
+      "title": "الاتصال والإعدادات",
+      "simulated": "فحص محاكى — يتحقق أن الحقول مكتملة، وما فيه اتصال حقيقي بالمزود بدون باكند",
+      "keyPlaceholder": "api_key",
+      "valuePlaceholder": "القيمة / بيانات الاعتماد",
+      "addField": "إضافة حقل",
+      "removeField": "حذف الحقل",
+      "save": "حفظ الإعدادات",
+      "test": "فحص الاتصال",
+      "untested": "غير مفحوص",
+      "ok": "متصل (محاكى)",
+      "failed": "فشل الفحص"
+    }
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "description": "إعدادات المتجر والدفع والفريق والباقة.",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "nav": {
+      "general": "معلومات المتجر",
+      "payments": "الدفع",
+      "shipping": "الشحن",
+      "taxes": "الضرائب وZATCA",
+      "notifications": "الإشعارات",
+      "channels": "القنوات",
+      "staff": "الموظفون",
+      "roles": "الأدوار",
+      "audit": "سجل العمليات",
+      "billing": "الباقة والفوترة",
+      "developers": "المطورين",
+      "copilot": "المساعد الذكي",
+      "danger": "المنطقة الخطرة",
+      "maintenance": "وضع الصيانة",
+      "profile": "ملفي الشخصي",
+      "regional": "الإقليمية واللغة"
+    },
+    "general": {
+      "name": "اسم المتجر",
+      "domain": "النطاق",
+      "email": "بريد التواصل",
+      "phone": "جوال التواصل",
+      "cr": "رقم السجل التجاري",
+      "vatNumber": "الرقم الضريبي",
+      "legalName": "الاسم القانوني",
+      "industry": "النشاط",
+      "logo": "الشعار",
+      "changeLogo": "تغيير الشعار",
+      "connectDomain": "ربط نطاق خاص",
+      "taxSettings": "إعدادات الضريبة"
+    },
+    "payments": {
+      "methods": "طرق الدفع",
+      "hint": "اختر طرق الدفع اللي تظهر لعملائك في صفحة الدفع.",
+      "fee": "رسوم {fee}",
+      "kyc": {
+        "title": "توثيق حساب الدفع (KYC)",
+        "hint": "أكمل التوثيق عشان تستلم مستحقاتك ويتفعل الدفع الإلكتروني.",
+        "viewStatus": "عرض حالة التوثيق",
+        "status": {
+          "not_started": "لم يبدأ",
+          "pending_kyc": "قيد التوثيق",
+          "active": "مفعّل",
+          "rejected": "مرفوض"
+        },
+        "steps": {
+          "account": "الحساب",
+          "documents": "المستندات",
+          "review": "المراجعة",
+          "live": "التفعيل"
+        }
+      },
+      "cod": {
+        "title": "الدفع عند الاستلام",
+        "fee": "الرسوم (ر.س)",
+        "maxOrder": "أعلى قيمة طلب (ر.س)",
+        "cities": "المدن المتاحة: {cities}"
+      },
+      "bank": {
+        "title": "التحويل البنكي",
+        "iban": "الآيبان",
+        "bankName": "اسم البنك",
+        "instructions": "تعليمات للعميل"
+      },
+      "settlement": {
+        "title": "التسوية",
+        "pending": "مستحقات معلقة",
+        "lastPayout": "آخر تسوية",
+        "next": "التسوية القادمة"
+      }
+    },
+    "shipping": {
+      "pickup": {
+        "title": "عنوان الاستلام",
+        "hint": "العنوان اللي تستلم منه شركات الشحن الطلبات.",
+        "recipient": "اسم المستلم",
+        "phone": "الجوال",
+        "city": "المدينة",
+        "district": "الحي",
+        "street": "الشارع",
+        "postalCode": "الرمز البريدي"
+      },
+      "zones": {
+        "title": "مناطق الشحن",
+        "hint": "حدد المدن وأسعار الشحن لكل منطقة.",
+        "rateType": "النوع",
+        "conditions": "الشرط",
+        "price": "السعر",
+        "rate": {
+          "flat": "سعر ثابت",
+          "weight": "حسب الوزن",
+          "price": "حسب قيمة الطلب"
+        }
+      },
+      "carriers": {
+        "title": "شركات الشحن"
+      },
+      "options": {
+        "title": "خيارات الشحن",
+        "freeThreshold": "شحن مجاني فوق (ر.س)",
+        "fallbackRate": "سعر احتياطي (ر.س)",
+        "handlingDays": "أيام التجهيز"
+      }
+    },
+    "taxes": {
+      "vat": {
+        "title": "ضريبة القيمة المضافة",
+        "enabled": "تفعيل الضريبة",
+        "enabledHint": "تُحتسب الضريبة تلقائياً على الطلبات والفواتير.",
+        "number": "الرقم الضريبي",
+        "rate": "نسبة الضريبة",
+        "included": "الأسعار شاملة الضريبة",
+        "includedHint": "تظهر الأسعار لعملائك شاملة ضريبة القيمة المضافة {rate}%."
+      },
+      "zatca": {
+        "title": "الفوترة الإلكترونية (ZATCA)",
+        "hint": "اربط متجرك بهيئة الزكاة لإصدار فواتير إلكترونية معتمدة.",
+        "egsSerial": "الرقم التسلسلي للجهاز (EGS)",
+        "status": {
+          "not_connected": "غير مربوط",
+          "onboarding": "قيد الربط",
+          "connected": "مربوط",
+          "error": "خطأ"
+        },
+        "steps": {
+          "register": "التسجيل",
+          "onboard": "ربط الجهاز",
+          "live": "إصدار الفواتير"
+        }
+      }
+    },
+    "notifications": {
+      "hint": "قوالب الرسائل لكل حدث وقناة — عدّل المحتوى وفعّل ما تحتاجه.",
+      "event": "الحدث",
+      "on": "مفعّل",
+      "off": "موقوف",
+      "add": "إضافة",
+      "edit": "تعديل القالب",
+      "channels": {
+        "whatsapp": "WhatsApp",
+        "sms": "SMS",
+        "email": "البريد"
+      },
+      "waStatus": {
+        "approved": "معتمد",
+        "pending": "قيد الاعتماد",
+        "rejected": "مرفوض"
+      },
+      "events": {
+        "order_confirmed": "تأكيد الطلب",
+        "payment_failed": "فشل الدفع",
+        "shipped": "الشحن",
+        "out_for_delivery": "خارج للتوصيل",
+        "delivered": "التسليم",
+        "cart_abandoned": "سلة متروكة",
+        "return_update": "تحديث مرتجع",
+        "otp": "رمز التحقق"
+      },
+      "editor": {
+        "title": "قالب {event} — {channel}",
+        "hint": "استخدم المتغيرات داخل النص وبتنحط قيمها الفعلية عند الإرسال.",
+        "variables": "المتغيرات",
+        "ar": "المحتوى (عربي)",
+        "en": "المحتوى (English)",
+        "enabled": "تفعيل هذا القالب",
+        "preview": "معاينة",
+        "submit": "إرسال للاعتماد"
+      }
+    },
+    "channels": {
+      "whatsapp": "أرقام WhatsApp",
+      "voice": "الأرقام الصوتية",
+      "add": "إضافة رقم",
+      "disconnect": "فصل",
+      "cols": {
+        "phone": "الرقم",
+        "displayName": "الاسم المعروض",
+        "status": "الحالة",
+        "quality": "الجودة",
+        "agent": "الوكيل"
+      },
+      "numStatus": {
+        "active": "مفعّل",
+        "pending": "قيد الربط",
+        "disconnected": "مفصول"
+      },
+      "quality": {
+        "high": "عالية",
+        "medium": "متوسطة",
+        "low": "منخفضة"
+      },
+      "webchat": {
+        "title": "دردشة الموقع",
+        "hint": "ودجت المحادثة اللي يشوفها زوار متجرك.",
+        "enabled": "تفعيل دردشة الموقع",
+        "greeting": "رسالة الترحيب",
+        "agent": "الوكيل المسؤول"
+      }
+    },
+    "staff": {
+      "invite": "دعوة عضو",
+      "cols": {
+        "name": "الاسم",
+        "email": "البريد",
+        "role": "الدور",
+        "status": "الحالة",
+        "lastLogin": "آخر دخول",
+        "mfa": "MFA"
+      },
+      "status": {
+        "invited": "دعوة مُرسلة",
+        "active": "نشط",
+        "suspended": "موقوف"
+      },
+      "mfaOn": "مفعّل",
+      "inviteDialog": {
+        "title": "دعوة عضو جديد",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "role": "الدور",
+        "pickRole": "اختر الدور",
+        "submit": "إرسال الدعوة"
+      }
+    },
+    "roles": {
+      "list": "الأدوار",
+      "new": "دور جديد",
+      "pick": "اختر دوراً من القائمة لعرض صلاحياته وتعديلها.",
+      "name": "اسم الدور",
+      "description": "الوصف",
+      "system": "نظام",
+      "groups": {
+        "orders": "الطلبات",
+        "catalog": "الكتالوج",
+        "customers": "العملاء",
+        "conversations": "المحادثات",
+        "agents": "الوكلاء",
+        "operations": "العمليات",
+        "growth": "النمو",
+        "store": "المتجر",
+        "admin": "الإدارة"
+      },
+      "perms": {
+        "orders": {
+          "read": "عرض الطلبات",
+          "manage": "إدارة الطلبات",
+          "refund": "استرداد المدفوعات"
+        },
+        "prices": {
+          "update": "تعديل الأسعار"
+        },
+        "products": {
+          "read": "عرض المنتجات",
+          "manage": "إدارة المنتجات"
+        },
+        "inventory": {
+          "manage": "إدارة المخزون"
+        },
+        "customers": {
+          "read": "عرض العملاء",
+          "manage": "إدارة العملاء",
+          "export": "تصدير العملاء"
+        },
+        "conversations": {
+          "read": "عرض المحادثات",
+          "reply": "الرد على المحادثات"
+        },
+        "approvals": {
+          "decide": "البت في الموافقات"
+        },
+        "agents": {
+          "read": "عرض الوكلاء",
+          "manage": "إدارة الوكلاء"
+        },
+        "knowledge": {
+          "manage": "إدارة قاعدة المعرفة"
+        },
+        "shipments": {
+          "manage": "إدارة الشحنات"
+        },
+        "invoices": {
+          "read": "عرض الفواتير"
+        },
+        "returns": {
+          "manage": "إدارة المرتجعات"
+        },
+        "marketing": {
+          "manage": "إدارة التسويق"
+        },
+        "reports": {
+          "read": "عرض التقارير"
+        },
+        "storefront": {
+          "manage": "إدارة واجهة المتجر"
+        },
+        "apps": {
+          "manage": "إدارة التطبيقات"
+        },
+        "settings": {
+          "manage": "إدارة الإعدادات"
+        },
+        "staff": {
+          "manage": "إدارة الموظفين"
+        },
+        "billing": {
+          "manage": "إدارة الفوترة"
+        },
+        "audit": {
+          "read": "عرض سجل العمليات"
+        },
+        "developers": {
+          "manage": "إدارة أدوات المطورين"
+        }
+      }
+    },
+    "audit": {
+      "hint": "كل إجراء على متجرك مسجل هنا بالفاعل والوقت والتغييرات.",
+      "export": "تصدير السجل",
+      "filters": {
+        "actor": "الفاعل",
+        "allActors": "كل الفاعلين",
+        "type": "النوع",
+        "allTypes": "كل الأنواع",
+        "range": "الفترة"
+      },
+      "ranges": {
+        "all": "كل الفترات",
+        "today": "اليوم",
+        "week": "آخر 7 أيام",
+        "month": "آخر 30 يوماً"
+      },
+      "types": {
+        "app": "التطبيقات",
+        "shipment": "الشحنات",
+        "order": "الطلبات",
+        "reports": "التقارير",
+        "product": "المنتجات",
+        "staff": "الموظفون",
+        "settings": "الإعدادات"
+      },
+      "actions": {
+        "app": {
+          "installed": "تثبيت التطبيق",
+          "uninstalled": "إلغاء تثبيت التطبيق"
+        },
+        "shipment": {
+          "created": "إنشاء شحنة"
+        },
+        "order": {
+          "paid": "تسجيل دفعة"
+        },
+        "reports": {
+          "synced": "مزامنة التقارير"
+        },
+        "product": {
+          "updated": "تعديل منتج"
+        },
+        "staff": {
+          "invited": "دعوة موظف"
+        },
+        "settings": {
+          "updated": "تحديث الإعدادات"
+        }
+      },
+      "cols": {
+        "time": "الوقت",
+        "actor": "الفاعل",
+        "action": "الإجراء",
+        "target": "الهدف",
+        "changes": "التغييرات"
+      }
+    },
+    "billing": {
+      "current": "باقتك الحالية",
+      "renews": "تتجدد في {date}",
+      "upgrade": "ترقية الباقة",
+      "usage": "الاستهلاك",
+      "perMonth": "شهرياً",
+      "addons": "الإضافات",
+      "paymentMethod": "طريقة الدفع",
+      "updatePayment": "تحديث طريقة الدفع",
+      "invoices": "فواتير الاشتراك",
+      "status": {
+        "trialing": "تجريبية",
+        "active": "نشطة",
+        "past_due": "متأخرة",
+        "cancelled": "ملغاة"
+      },
+      "metrics": {
+        "products": "المنتجات",
+        "staff": "أعضاء الفريق",
+        "agentConversations": "محادثات الوكلاء",
+        "orders": "الطلبات"
+      },
+      "invoiceStatus": {
+        "paid": "مدفوعة",
+        "open": "مفتوحة"
+      },
+      "changePlan": "تغيير الخطة",
+      "changePlanHint": "التغيير يطبق فوراً في الوضع التجريبي — الفوترة الفعلية تحتاج بوابة دفع",
+      "cardLast4": "آخر 4 أرقام من البطاقة",
+      "cardHint": "وضع تجريبي — يحفظ الرقم كمرجع فقط وما يشحن أي مبلغ"
+    },
+    "developers": {
+      "apiKeys": {
+        "title": "مفاتيح API",
+        "hint": "مفاتيح للأنظمة الخارجية — يظهر أول 8 أحرف فقط.",
+        "create": "إنشاء مفتاح"
+      },
+      "cols": {
+        "name": "الاسم",
+        "scopes": "الصلاحيات",
+        "prefix": "المفتاح",
+        "lastUsed": "آخر استخدام"
+      },
+      "revoke": "إلغاء",
+      "webhooks": {
+        "title": "الـ Webhooks",
+        "hint": "استقبل أحداث المتجر لحظياً على رابطك.",
+        "add": "إضافة webhook",
+        "addHint": "الرابط لازم يبدأ بـ https:// ويستقبل POST.",
+        "url": "الرابط",
+        "status": {
+          "active": "نشط",
+          "disabled_failing": "موقوف للفشل"
+        }
+      },
+      "deliveries": {
+        "event": "الحدث",
+        "status": "الحالة",
+        "attempt": "المحاولة",
+        "at": "الوقت",
+        "duration": "المدة",
+        "succeeded": "نجح",
+        "failed": "فشل"
+      },
+      "resend": "إعادة إرسال"
+    },
+    "danger": {
+      "export": {
+        "title": "تصدير كل البيانات",
+        "body": "نجهز ملفاً كاملاً بمنتجاتك وطلباتك وعملائك ونرسل لك إشعاراً لما يجهز.",
+        "cta": "تصدير البيانات"
+      },
+      "suspend": {
+        "title": "إيقاف المتجر مؤقتاً",
+        "body": "العملاء بيشوفون رسالة «المتجر غير متاح» والوكلاء بيتوقفون.",
+        "cta": "إيقاف المتجر"
+      },
+      "delete": {
+        "title": "حذف المتجر نهائياً",
+        "body": "بنحذف كل المنتجات والطلبات والعملاء والمحادثات بعد 30 يوماً. هذا الإجراء ما ينرجع.",
+        "cta": "حذف المتجر"
+      }
+    },
+    "verification": {
+      "title": "توثيق النشاط (KYC)",
+      "hint": "ارفع مستنداتك عشان نفعّل الدفع الإلكتروني وتحويل المستحقات.",
+      "status": {
+        "not_started": "لم يبدأ",
+        "in_review": "قيد المراجعة",
+        "approved": "معتمد",
+        "rejected": "مرفوض"
+      },
+      "steps": {
+        "details": "البيانات",
+        "documents": "المستندات",
+        "review": "المراجعة",
+        "live": "التفعيل"
+      },
+      "docs": {
+        "title": "المستندات المطلوبة",
+        "hint": "PDF أو صورة واضحة، بحجم أقل من 10MB.",
+        "missing": "لم يُرفع بعد",
+        "upload": "رفع",
+        "replace": "استبدال",
+        "status": {
+          "missing": "مطلوب",
+          "uploaded": "مُرفع",
+          "rejected": "مرفوض"
+        },
+        "kinds": {
+          "national_id": "الهوية الوطنية",
+          "commercial_registration": "السجل التجاري",
+          "iban_certificate": "شهادة الآيبان"
+        }
+      },
+      "submit": "إرسال للمراجعة"
+    },
+    "returnPolicy": {
+      "title": "سياسة الإرجاع",
+      "description": "تُفرض هذه القواعد عند تقديم أي طلب مرتجع.",
+      "windowDays": "نافذة الإرجاع (أيام)",
+      "reasons": "الأسباب المتاحة",
+      "nonReturnable": "منتجات غير قابلة للإرجاع",
+      "removeNonReturnable": "إزالة من القائمة",
+      "noNonReturnable": "كل المنتجات قابلة للإرجاع حالياً.",
+      "allowExchange": "السماح بالاستبدال",
+      "allowStoreCredit": "السماح برصيد المتجر",
+      "saved": "حُفظت سياسة الإرجاع",
+      "saveFailed": "تعذّر حفظ سياسة الإرجاع"
+    },
+    "maintenance": {
+      "title": "وضع الصيانة",
+      "description": "أوقف المتجر مؤقتاً للزوار أثناء التحديثات — الزوار يشوفون صفحة صيانة",
+      "toggle": "تفعيل وضع الصيانة",
+      "toggleHint": "عند التفعيل يتحول كل صفحات المتجر لصفحة الصيانة فوراً",
+      "messageAr": "رسالة الصيانة (عربي)",
+      "messageEn": "رسالة الصيانة (إنجليزي)",
+      "eta": "الوقت المتوقع للعودة",
+      "etaHint": "اختياري — يظهر للزوار تحت الرسالة",
+      "activeBanner": "وضع الصيانة مفعّل — زوار المتجر يشوفون صفحة الصيانة حالياً",
+      "syncNote": "هذه الحالة تتزامن محلياً مع المتجر عبر التخزين المشترك (محاكاة بدون خادم حقيقي)",
+      "save": "حفظ"
+    },
+    "profile": {
+      "title": "ملفي الشخصي",
+      "description": "بيانات حسابك وكلمة المرور — تنعكس على كل القائمة",
+      "name": "الاسم",
+      "nameRequired": "الاسم مطلوب",
+      "phone": "الجوال",
+      "email": "البريد الإلكتروني",
+      "emailHint": "البريد يُدار من إعدادات الموظفين",
+      "role": "الدور: {role}",
+      "roles": {
+        "owner": "المالك",
+        "admin": "مدير",
+        "catalog": "كتالوج",
+        "orders": "طلبات",
+        "support": "دعم",
+        "marketing": "تسويق",
+        "readonly": "قراءة"
+      },
+      "language": "لغة اللوحة",
+      "langAr": "العربية",
+      "langEn": "English",
+      "languageHint": "تُحفظ على حسابك وتُطبق فوراً",
+      "password": {
+        "title": "تغيير كلمة المرور",
+        "description": "حدّث كلمة مرورك بشكل دوري",
+        "simulated": "هذه بيئة عرض — تغيير كلمة المرور محاكى وما يغيّر بيانات الدخول الفعلية.",
+        "current": "الحالية",
+        "next": "الجديدة",
+        "confirm": "تأكيد الجديدة",
+        "submit": "تحديث كلمة المرور",
+        "mismatch": "تأكيد كلمة المرور ما يطابق الجديدة",
+        "weak": "كلمة المرور لازم 8 أحرف على الأقل وفيها رقم",
+        "currentRequired": "أدخل كلمة المرور الحالية"
+      },
+      "session": {
+        "title": "الجلسة",
+        "lastLogin": "آخر دخول",
+        "mfa": "التحقق بخطوتين",
+        "mfaOn": "مفعّل",
+        "mfaOff": "غير مفعّل",
+        "status": "الحالة",
+        "statuses": {
+          "active": "نشط",
+          "invited": "مدعو",
+          "suspended": "موقوف"
+        }
+      }
+    },
+    "regional": {
+      "title": "الإقليمية واللغة",
+      "description": "لغات المتجر والعملة والمنطقة الزمنية",
+      "languages": "لغات المتجر",
+      "langNames": {
+        "ar": "العربية",
+        "en": "English"
+      },
+      "languagesHint": "كل لغة مفعّلة تنتج نسخة من المتجر — أبقِ الترجمات مكتملة",
+      "defaultLanguage": "اللغة الافتراضية",
+      "defaultLanguageHint": "اللغة اللي يشوفها الزائر أول مرة",
+      "timezone": "المنطقة الزمنية",
+      "currency": "العملة",
+      "currencyPrimary": "الريال السعودي",
+      "currencyBadge": "أساسية",
+      "currencyNote": "عرض أسعار العملة متعددة مدروس — حالياً كل الأسعار بالريال.",
+      "oneRequired": "فعّل لغة واحدة على الأقل",
+      "save": "حفظ",
+      "currencyName": "﷼ ريال سعودي (SAR)"
+    }
+  },
+  "studio": {
+    "title": "استوديو الوكلاء",
+    "description": "صمّم شجرة وكلائك: وكيل رئيسي يستقبل العميل ويحوّله للمتخصص المناسب.",
+    "tabs": {
+      "overview": "الوكلاء",
+      "test": "مختبر الاختبار",
+      "live": "المراقبة المباشرة",
+      "history": "السجل",
+      "channels": "الأرقام والقنوات"
+    },
+    "status": {
+      "live": "يعمل",
+      "paused": "متوقف",
+      "draft": "مسودة"
+    },
+    "role": {
+      "orchestrator": "رئيسي",
+      "specialist": "فرعي"
+    },
+    "channel": {
+      "whatsapp": "WhatsApp",
+      "voice": "مكالمات",
+      "webchat": "دردشة الموقع"
+    },
+    "warnings": {
+      "noDescription": "ما فيه وصف، فالوكيل الأب ما يعرف متى يحوّل له",
+      "handoffToInactive": "فيه قاعدة تحويل لوكيل غير شغّال: {name}",
+      "voiceWithoutNumber": "وكيل صوتي بدون رقم هاتف مربوط",
+      "humanAfterHours": "يحوّل لموظف خارج ساعات العمل وما فيه أحد يستلم"
+    },
+    "kpi": {
+      "conversations": "محادثات اليوم",
+      "calls": "مكالمات اليوم",
+      "resolution": "نسبة الحل",
+      "handoff": "التحويل لموظف",
+      "cost": "التكلفة اليوم",
+      "vsYesterday": "مقارنة بأمس"
+    },
+    "overview": {
+      "viewTree": "شجرة",
+      "viewGraph": "رسم",
+      "search": "ابحث عن وكيل…",
+      "expandAll": "فتح الكل",
+      "collapseAll": "طي الكل",
+      "addRoot": "وكيل رئيسي جديد",
+      "rootZone": "أفلت هنا عشان يصير وكيل رئيسي",
+      "noResults": "ما فيه وكيل بهذا الاسم",
+      "agentsCount": "{count} وكيل",
+      "levels": "{count} مستويات",
+      "warningsCount": "{count, plural, one {تحذير واحد} two {تحذيران} few {{count} تحذيرات} other {{count} تحذير}}",
+      "conversations": "{count} محادثة",
+      "noDescription": "بدون وصف",
+      "dragHint": "اسحب أي وكيل من المقبض وأفلته على وكيل ثاني عشان تغيّر أبوه.",
+      "cycle": "ما ينفع تنقل وكيل تحت واحد من أبنائه أو أحفاده",
+      "moved": "انتقل «{name}» تحت «{parent}»",
+      "movedRoot": "صار «{name}» وكيل رئيسي",
+      "humanHandoff": "يحوّل لموظف",
+      "hidden": "{count} مخفي",
+      "readOnly": "عندك صلاحية عرض فقط، والتعديل لمدير الوكلاء.",
+      "expand": "فتح فرع {name}",
+      "collapse": "طي فرع {name}",
+      "drag": "اسحب {name}",
+      "emptyTitle": "ما عندك وكلاء للحين",
+      "emptyBody": "ابدأ بوكيل رئيسي يستقبل عملاءك على WhatsApp والمكالمات.",
+      "errorTitle": "ما قدرنا نحمّل الوكلاء",
+      "retry": "حاول مرة ثانية",
+      "depth": "مستوى {level}"
+    },
+    "actions": {
+      "open": "فتح الإعدادات",
+      "addChild": "إضافة وكيل فرعي",
+      "duplicate": "نسخ الفرع",
+      "pause": "إيقاف",
+      "resume": "تشغيل",
+      "delete": "حذف",
+      "menu": "إجراءات {name}",
+      "duplicated": "انسخ الفرع كمسودة"
+    },
+    "add": {
+      "title": "وكيل رئيسي جديد",
+      "titleChild": "وكيل فرعي تحت «{parent}»",
+      "description": "بينضاف كمسودة، وتقدر تكمل إعداده قبل النشر.",
+      "name": "اسم الوكيل",
+      "namePlaceholder": "مثال: الهدايا والمناسبات",
+      "nameRequired": "اكتب اسم الوكيل",
+      "parent": "الوكيل الأب",
+      "noParent": "بدون أب (وكيل رئيسي)",
+      "create": "إنشاء ومتابعة الإعداد",
+      "created": "انضاف الوكيل كمسودة"
+    },
+    "delete": {
+      "title": "حذف «{name}»؟",
+      "body": "الوكيل بينحذف نهائياً، وأي قاعدة تحويل له بتتوقف.",
+      "hasChildren": "تحته {count} وكيل. وش تبي نسوي فيهم؟",
+      "reparent": "انقل الأبناء المباشرين ({count}) تحت «{parent}»",
+      "reparentRoot": "خلّ الأبناء المباشرين ({count}) وكلاء رئيسيين",
+      "cascade": "احذف الفرع كامل ({count} وكيل)",
+      "confirm": "حذف",
+      "deleted": "انحذف الوكيل"
+    },
+    "pause": {
+      "title": "إيقاف «{name}»؟",
+      "body": "ما بيستقبل تحويلات جديدة، وأي محادثة كانت بتتحول له بترجع للأب.",
+      "rootWarning": "هذا وكيل رئيسي: كل القنوات المربوطة فيه ({channels}) بتتحول لفريقك مباشرة لين ترجع تشغله.",
+      "branch": "أوقف الفرع كامل ({count} وكيل تحته)",
+      "branchResume": "شغّل الفرع كامل ({count} وكيل تحته)",
+      "confirm": "إيقاف",
+      "paused": "توقف الوكيل",
+      "resumeTitle": "تشغيل «{name}»؟",
+      "resumeBody": "بيرجع يستقبل التحويلات بآخر نسخة منشورة.",
+      "resumeConfirm": "تشغيل",
+      "resumed": "اشتغل الوكيل"
+    },
+    "graph": {
+      "label": "رسم شجرة الوكلاء",
+      "toHuman": "موظف"
+    },
+    "detail": {
+      "cancel": "إلغاء",
+      "breadcrumb": "مسار الوكيل",
+      "hiddenLevels": "{count} مستويات مخفية",
+      "untitled": "وكيل بدون اسم",
+      "level": "المستوى {n}",
+      "updated": "آخر تعديل {when}",
+      "test": "اختبر",
+      "readOnly": "صلاحيتك عرض فقط، ما تقدر تعدّل إعدادات الوكيل.",
+      "saved": "انحفظت المسودة",
+      "published": "انتشر الإصدار v{v}",
+      "defaultNote": "تحديث الإعدادات",
+      "publishTitle": "نشر «{name}» كإصدار v{v}؟",
+      "publishBody": "الإصدار الجديد يبدأ يرد على العملاء فوراً، وتقدر ترجع لأي إصدار سابق من تبويب الإصدارات.",
+      "publishWarnings": "فيه {count} تحذير، تقدر تنشر بس ننصحك تعالجها:",
+      "notePlaceholder": "وش تغيّر؟ (اختياري)",
+      "note": "ملاحظة الإصدار",
+      "discardTitle": "تتجاهل التغييرات؟",
+      "discardBody": "بترجع كل الحقول لآخر نسخة محفوظة.",
+      "notFoundTitle": "الوكيل مو موجود",
+      "notFoundBody": "يمكن انحذف أو انتقل. ارجع للاستوديو وشوف الشجرة.",
+      "backToStudio": "رجوع للاستوديو",
+      "errorTitle": "ما قدرنا نحمّل الوكيل",
+      "tabs": {
+        "general": "عام",
+        "persona": "الشخصية",
+        "handoffs": "التحويلات",
+        "tools": "الأدوات",
+        "knowledge": "المعرفة",
+        "voice": "الصوت",
+        "whatsapp": "WhatsApp",
+        "hours": "ساعات العمل",
+        "versions": "الإصدارات",
+        "performance": "الأداء"
+      },
+      "footer": {
+        "dirty": "عندك تغييرات ما انحفظت",
+        "unpublished": "محفوظ كمسودة وما انتشر للعملاء",
+        "clean": "منشور · v{v}",
+        "discard": "تجاهل",
+        "save": "حفظ كمسودة",
+        "publish": "نشر"
+      },
+      "inherit": {
+        "inheritedFrom": "موروث من",
+        "via": "عن طريق: {names}",
+        "direct": "من الأب مباشرة",
+        "custom": "مخصّص لهذا الوكيل",
+        "customHint": "ما يتأثر بتعديلات «{name}»",
+        "customize": "خصّص لهذا الوكيل",
+        "reset": "ارجع للوراثة",
+        "resetTitle": "ترجع للوراثة؟",
+        "resetBody": "بتنحذف القيم المخصصة ويرجع الوكيل يأخذ إعدادات «{name}».",
+        "resetConfirm": "ارجع للوراثة"
+      },
+      "general": {
+        "warningsTitle": "{count} تحذير يحتاج انتباهك",
+        "identity": "الهوية",
+        "identityHint": "الاسم والشكل اللي يظهر لك في الشجرة والسجلات.",
+        "name": "اسم الوكيل",
+        "nameRequired": "الاسم مطلوب",
+        "icon": "الأيقونة",
+        "color": "اللون",
+        "placement": "مكانه في الشجرة",
+        "placementHint": "غيّر الأب أو أضف وكلاء فرعيين تحته.",
+        "parent": "الوكيل الأب",
+        "parentHint": "الأب يحوّل له المحادثة حسب الوصف تحت.",
+        "rootHint": "وكيل رئيسي: أول من يستقبل العميل في القنوات المربوطة.",
+        "noParent": "بدون أب (وكيل رئيسي)",
+        "children": "الوكلاء الفرعيون ({count})",
+        "addChild": "إضافة فرعي",
+        "noChildren": "ما له وكلاء فرعيون. هو اللي يرد بنفسه.",
+        "whenTitle": "متى يحوّل له «{parent}»؟",
+        "whenHint": "اكتب بوضوح نوع الطلبات اللي يتولاها. الأب يعتمد على هذا الوصف لما يقرر التحويل.",
+        "aboutTitle": "عن الوكيل",
+        "aboutHint": "وصف داخلي لفريقك.",
+        "descriptionPlaceholder": "مثال: العميل يسأل عن طلب موجود: الحالة، الشحن، الاستبدال…",
+        "description": "الوصف",
+        "channels": "القنوات",
+        "channelsHint": "القنوات اللي يستقبل منها هذا الوكيل العملاء مباشرة.",
+        "channelsChildHint": "القنوات اللي يقدر يخدم فيها لما تنحوّل له المحادثة."
+      },
+      "persona": {
+        "title": "الشخصية",
+        "hint": "كيف يتكلم الوكيل مع العميل.",
+        "tone": "الأسلوب",
+        "tones": {
+          "friendly": "ودود",
+          "formal": "رسمي",
+          "concise": "مختصر"
+        },
+        "toneSample": {
+          "friendly": "«هلا والله! أبشر، خلني أشوف لك»",
+          "formal": "«مرحباً بك، يسعدنا خدمتك»",
+          "concise": "«تمام. رقم الطلب؟»"
+        },
+        "dialect": "اللهجة",
+        "dialects": {
+          "najdi": "نجدية",
+          "hijazi": "حجازية",
+          "gulf": "خليجية",
+          "msa": "فصحى"
+        },
+        "language": "اللغة",
+        "languages": {
+          "ar": "العربية",
+          "en": "English",
+          "auto": "حسب لغة العميل"
+        },
+        "greeting": "رسالة الترحيب",
+        "greetingHint": "أول رسالة يرسلها الوكيل، أو أول جملة في المكالمة.",
+        "preview": "معاينة",
+        "instructions": "التعليمات",
+        "instructionsHint": "التعليمات خاصة بهذا الوكيل وما تنورث للأبناء.",
+        "snippets": {
+          "noPrices": "لا تعطي أسعار غير اللي في الكتالوج.",
+          "confirmOrder": "أكّد رقم الطلب والجوال قبل أي إجراء.",
+          "escalate": "لو العميل زعلان أو طلب موظف، حوّله فوراً.",
+          "shortAnswers": "خلّ الردود قصيرة، جملتين بالكثير."
+        },
+        "snippetLabels": {
+          "noPrices": "لا أسعار خارج الكتالوج",
+          "confirmOrder": "تأكيد رقم الطلب",
+          "escalate": "التحويل عند الزعل",
+          "shortAnswers": "ردود قصيرة"
+        }
+      },
+      "handoffs": {
+        "title": "قواعد التحويل",
+        "hint": "الوكيل يقيّم القواعد بالترتيب، وأول قاعدة تنطبق تتنفذ.",
+        "add": "قاعدة جديدة",
+        "priority": "الأولوية {n}",
+        "up": "رفع الأولوية",
+        "down": "تنزيل الأولوية",
+        "when": "لما",
+        "conditionPlaceholder": "مثال: العميل يسأل عن استرجاع",
+        "then": "حوّل إلى",
+        "targetType": "نوع الوجهة",
+        "targets": {
+          "child": "وكيل فرعي",
+          "parent": "الوكيل الأب",
+          "human": "موظف"
+        },
+        "pickChild": "اختر وكيل",
+        "humanTeam": "فريق خدمة العملاء",
+        "inactive": "«{name}» مو شغّال، التحويل له بيفشل",
+        "remove": "حذف القاعدة",
+        "empty": "ما فيه قواعد. الوكيل بيرد على كل شي بنفسه.",
+        "fallback": "لو ما انطبقت أي قاعدة، يرد الوكيل بنفسه حسب تعليماته وأدواته.",
+        "incoming": "يستقبل من",
+        "incomingHint": "مين يحوّل لهذا الوكيل.",
+        "incomingByDescription": "الأب يحوّل له بناءً على الوصف في تبويب «عام».",
+        "incomingRoot": "وكيل رئيسي، يستقبل العملاء مباشرة من القنوات.",
+        "map": "خريطة التحويل"
+      },
+      "tools": {
+        "title": "الأدوات",
+        "hint": "وش يقدر الوكيل يسوي فعلياً في المتجر.",
+        "sensitive": "حساس",
+        "limit": "الحد",
+        "units": {
+          "percent": "%",
+          "sar": "ر.س",
+          "perDay": "/يوم"
+        },
+        "approval": "يحتاج موافقة",
+        "enabled": "تفعيل {name}",
+        "on": "مفعّلة",
+        "off": "موقفة",
+        "confirmEnableTitle": "تفعيل «{name}»؟",
+        "confirmApprovalTitle": "إلغاء الموافقة على «{name}»؟",
+        "confirmEnableBody": "هذي أداة حساسة تأثر على فلوس أو طلبات العملاء. بنفعّلها مع اشتراط موافقة موظف قبل التنفيذ.",
+        "confirmApprovalBody": "الوكيل بينفذ هذي الأداة بدون ما يرجع لأحد. تأكد إن الحد مناسب.",
+        "confirm": "تأكيد",
+        "names": {
+          "productSearch": "البحث في المنتجات",
+          "availability": "التوفر",
+          "orderStatus": "حالة الطلب",
+          "paymentLink": "رابط دفع",
+          "shippingQuote": "تكلفة الشحن",
+          "cancelOrder": "إلغاء طلب",
+          "refund": "استرداد مبلغ",
+          "discount": "كود خصم",
+          "createTicket": "إنشاء تذكرة",
+          "transfer": "تحويل"
+        },
+        "descriptions": {
+          "productSearch": "يبحث في الكتالوج ويقترح منتجات",
+          "availability": "يتحقق من المخزون والمقاسات",
+          "orderStatus": "يجيب حالة الطلب ورقم التتبع",
+          "paymentLink": "ينشئ رابط دفع ويرسله للعميل",
+          "shippingQuote": "يحسب الشحن والمدة حسب المدينة",
+          "cancelOrder": "يلغي طلب ما انشحن",
+          "refund": "يسترد المبلغ كامل أو جزء منه",
+          "discount": "ينشئ كود خصم للعميل",
+          "createTicket": "يفتح تذكرة للفريق",
+          "transfer": "يحوّل المحادثة لوكيل ثاني أو موظف"
+        }
+      },
+      "knowledge": {
+        "title": "مصادر المعرفة",
+        "hint": "الملفات والأسئلة والصفحات اللي يعتمد عليها الوكيل في إجاباته.",
+        "add": "إضافة مصدر",
+        "addTitle": "مصدر معرفة جديد",
+        "addHint": "ارفع ملف، أو أضف أسئلة شائعة، أو رابط صفحة.",
+        "types": {
+          "file": "ملف",
+          "faq": "أسئلة شائعة",
+          "url": "رابط"
+        },
+        "drop": "اسحب الملف هنا أو اضغط للاختيار",
+        "dropHint": "PDF, DOCX, XLSX, CSV حتى 20MB",
+        "sourceTitle": "العنوان",
+        "url": "الرابط",
+        "pairs": "عدد الأسئلة",
+        "cancel": "إلغاء",
+        "selected": "{count} من {total} مصادر مختارة",
+        "pairsCount": "{count} سؤال",
+        "added": "انضاف «{title}»"
+      },
+      "voice": {
+        "numbers": "أرقام الهاتف",
+        "numbersHint": "الأرقام اللي تتحوّل مكالماتها لهذا الوكيل.",
+        "viaRoot": "يستقبل المكالمات المحوّلة من «{name}» ({count} رقم).",
+        "noNumber": "ما فيه رقم هاتف مربوط، المكالمات ما بتوصل.",
+        "linkNumber": "اربط رقم",
+        "voice": "الصوت",
+        "voiceHint": "اختر الصوت واسمعه قبل.",
+        "male": "رجالي",
+        "female": "نسائي",
+        "preview": "استمع لصوت {name}",
+        "speed": "سرعة الكلام",
+        "pitch": "طبقة الصوت",
+        "behaviour": "سلوك المكالمة",
+        "interruptible": "يسمح بالمقاطعة",
+        "interruptibleHint": "يوقف كلامه لما يتكلم العميل.",
+        "record": "تسجيل المكالمات",
+        "recordHint": "يحفظ التسجيل في السجل للمراجعة.",
+        "consent": "يتم تنبيه العميل في بداية المكالمة إنها مسجلة.",
+        "silence": "مهلة الصمت",
+        "silenceHint": "بعدها يسأل العميل إذا لا زال معه.",
+        "sec": "ثانية",
+        "maxCall": "أقصى مدة",
+        "min": "دقيقة"
+      },
+      "whatsapp": {
+        "number": "رقم WhatsApp",
+        "numberHint": "الرقم اللي يستقبل منه هذا الوكيل الرسائل.",
+        "numberChildHint": "المحادثات توصله عن طريق «{name}». تقدر تربطه برقم خاص.",
+        "inheritNumber": "نفس رقم الوكيل الرئيسي",
+        "status": "الحالة",
+        "statuses": {
+          "connected": "متصل",
+          "pending": "قيد التفعيل",
+          "disconnected": "غير متصل"
+        },
+        "quality": "الجودة",
+        "qualities": {
+          "high": "عالية",
+          "medium": "متوسطة",
+          "low": "منخفضة"
+        },
+        "dailyLimit": "الحد اليومي",
+        "templates": "القوالب المسموحة",
+        "noTemplates": "ما فيه قوالب معتمدة لهذا الرقم.",
+        "behaviour": "سلوك الرد",
+        "delay": "تأخير الرد",
+        "delayHint": "يخلي الرد يبان طبيعي أكثر.",
+        "sec": "ثانية",
+        "typing": "إظهار «يكتب…»",
+        "typingHint": "يشوف العميل إن الوكيل يكتب.",
+        "sampleCustomer": "السلام عليكم، عندكم عود كمبودي؟",
+        "typingSample": "يكتب… ({sec} ث)"
+      },
+      "hours": {
+        "title": "ساعات العمل",
+        "hint": "متى يكون الوكيل والفريق متاحين. توقيت الرياض.",
+        "openNow": "متاح الحين",
+        "closedNow": "خارج الدوام الحين",
+        "allDay": "24/7",
+        "copySunday": "انسخ الأحد لكل الأيام",
+        "days": {
+          "0": "الأحد",
+          "1": "الاثنين",
+          "2": "الثلاثاء",
+          "3": "الأربعاء",
+          "4": "الخميس",
+          "5": "الجمعة",
+          "6": "السبت"
+        },
+        "from": "من",
+        "to": "إلى",
+        "closed": "مغلق",
+        "afterHours": "خارج ساعات العمل",
+        "afterHoursHint": "وش يسوي الوكيل لما يتواصل العميل خارج الدوام.",
+        "behaviours": {
+          "reply": "يرد عادي",
+          "message": "رسالة ثابتة",
+          "voicemail": "بريد صوتي",
+          "human": "تحويل لموظف"
+        },
+        "behaviourHints": {
+          "reply": "يكمل الوكيل الرد بشكل طبيعي",
+          "message": "يرسل رسالة إن الفريق بيرد بالدوام",
+          "voicemail": "يسجل رسالة صوتية (للمكالمات)",
+          "human": "يحوّل لموظف المناوبة"
+        },
+        "humanWarning": "تأكد إن فيه موظف مناوب، وإلا العميل بينتظر بدون رد."
+      },
+      "versions": {
+        "title": "الإصدارات",
+        "hint": "كل نشر ينشئ إصدار جديد تقدر ترجع له.",
+        "emptyTitle": "ما فيه إصدارات",
+        "emptyBody": "انشر الوكيل عشان ينحفظ أول إصدار.",
+        "current": "الحالي",
+        "restore": "استرجاع",
+        "fields": {
+          "instructions": "التعليمات",
+          "tone": "الأسلوب",
+          "handoffRules": "قواعد التحويل",
+          "greeting": "رسالة الترحيب"
+        },
+        "restoreTitle": "ترجع للإصدار v{v}؟",
+        "restoreBody": "بننشر إصدار جديد بنفس إعدادات الإصدار هذا.",
+        "restoreBodyDirty": "عندك تغييرات ما انحفظت وبتضيع. بننشر إصدار جديد بنفس إعدادات الإصدار هذا.",
+        "restoreConfirm": "استرجاع ونشر",
+        "restored": "رجع الوكيل لإعدادات v{v}"
+      },
+      "performance": {
+        "allChannels": "كل القنوات",
+        "days": "{count} يوم",
+        "conversations": "المحادثات",
+        "resolution": "نسبة الحل",
+        "handoff": "التحويل لموظف",
+        "duration": "متوسط المدة",
+        "cost": "التكلفة",
+        "perConversation": "{value} للمحادثة",
+        "volume": "عدد المحادثات",
+        "rates": "الحل والتحويل"
+      }
+    },
+    "lab": {
+      "hint": "اكتب كأنك عميل وشوف مين يرد ومسار التحويل خطوة بخطوة.",
+      "target": "الهدف: توصل المحادثة لـ",
+      "clearTarget": "إلغاء الهدف",
+      "traceTitle": "مسار التفكير",
+      "traceHint": "اضغط على أي رد عشان تشوف كيف وصل له الوكيل.",
+      "saveAsTest": "احفظ كاختبار",
+      "storeName": "متجر نخلة",
+      "typing": "يكتب…",
+      "servedBy": "يخدمك: {name}",
+      "online": "متصل",
+      "reset": "محادثة جديدة",
+      "waNotice": "محاكاة: الرسائل ما توصل لعملاء حقيقيين",
+      "placeholderWa": "اكتب رسالة",
+      "placeholderWeb": "اكتب سؤالك…",
+      "placeholderVoice": "اكتب اللي بتقوله…",
+      "send": "إرسال",
+      "webTitle": "مساعد المتجر",
+      "webSubtitle": "يرد خلال ثواني",
+      "webHello": "هلا فيك!",
+      "webHelloBody": "اسأل عن منتج، أو تابع طلبك، أو اطلب مساعدة.",
+      "ringing": "جاري الاتصال…",
+      "callEnded": "انتهت المكالمة · {time}",
+      "thinking": "{name} يفكر…",
+      "speaking": "{name} يتكلم",
+      "listening": "يستمع لك…",
+      "voiceIdle": "ابدأ مكالمة تجريبية على الرقم الموحد، والكلام بيطلع هنا كنص.",
+      "you": "أنت",
+      "mute": "كتم",
+      "unmute": "إلغاء الكتم",
+      "endCall": "إنهاء المكالمة",
+      "speaker": "السماعة",
+      "callAgain": "اتصل مرة ثانية",
+      "startCall": "ابدأ مكالمة تجريبية",
+      "simError": "ما وصل الرد.",
+      "retry": "أعد المحاولة",
+      "suggestions": {
+        "s1": "وين طلبي رقم 10234؟",
+        "s2": "أبغى عطر عود رجالي",
+        "s3": "نبي 200 علبة هدايا لموظفين الشركة",
+        "s4": "أبي أرجع منتج",
+        "s5": "طلبي متأخر وما أحد رد!!"
+      },
+      "trace": {
+        "emptyTitle": "ما فيه رد محدد",
+        "emptyBody": "أرسل رسالة من المحاكي، وبيطلع هنا كل اللي صار: مين استلم، ولمين حوّل، وأي أداة استخدم.",
+        "path": "مسار الوكلاء",
+        "reached": "وصلت لـ «{name}» زي المتوقع",
+        "missed": "ما وصلت لـ «{name}»",
+        "hops": "تحويلات",
+        "time": "الوقت",
+        "cost": "التكلفة",
+        "received": "{name} استلم الرسالة",
+        "handoff": "{from} حوّل إلى {to}",
+        "handoffHuman": "{from} حوّل لموظف",
+        "tool": "{name} استخدم «{tool}»",
+        "reply": "{name} رد على العميل",
+        "why": "السبب:"
+      },
+      "tests": {
+        "title": "حالات الاختبار المحفوظة",
+        "hint": "أسئلة ثابتة تتأكد إنها توصل للوكيل الصح بعد أي تعديل.",
+        "runAll": "شغّل الكل",
+        "running": "جاري التشغيل {done}/{total}",
+        "runningOne": "جاري التشغيل",
+        "add": "حالة جديدة",
+        "passed": "{count} نجحت",
+        "failed": "{count} فشلت",
+        "never": "{count} ما اشتغلت",
+        "emptyTitle": "ما فيه حالات اختبار",
+        "emptyBody": "احفظ أي محادثة من المحاكي كحالة اختبار.",
+        "expectedLine": "المتوقع: {agent} · {expected}",
+        "got": "آخر نتيجة: {answer}",
+        "open": "افتح في المحاكي",
+        "run": "شغّل",
+        "pass": "نجح",
+        "fail": "فشل",
+        "notRun": "ما اشتغل",
+        "addTitle": "حالة اختبار جديدة",
+        "addHint": "حدد السؤال والوكيل اللي لازم يرد عليه.",
+        "question": "سؤال العميل",
+        "questionPlaceholder": "مثال: وين طلبي؟",
+        "expectedAgent": "الوكيل المتوقع",
+        "pickAgent": "اختر وكيل",
+        "expected": "الرد المتوقع",
+        "expectedPlaceholder": "وش لازم يسوي الوكيل؟",
+        "channel": "القناة",
+        "save": "حفظ",
+        "cancel": "إلغاء",
+        "added": "انحفظت حالة الاختبار",
+        "runDone": "نجحت {pass} من {total}"
+      }
+    },
+    "live": {
+      "emptyTitle": "ما فيه محادثات شغالة الحين",
+      "emptyBody": "أول ما يتصل عميل أو يرسل على WhatsApp بتطلع هنا مباشرة.",
+      "kpi": {
+        "active": "محادثات نشطة",
+        "calls": "مكالمات",
+        "whatsapp": "WhatsApp",
+        "attention": "تحتاج انتباه"
+      },
+      "filters": {
+        "all": "الكل",
+        "voice": "مكالمات",
+        "whatsapp": "WhatsApp",
+        "attention": "انتباه"
+      },
+      "noneInFilter": "ما فيه محادثات بهذا الفلتر.",
+      "states": {
+        "speaking": "الوكيل يتكلم",
+        "waiting": "ينتظر رد العميل",
+        "transferring": "جاري التحويل"
+      },
+      "takenOver": "أنت تتولى المحادثة",
+      "stuck": "عالق",
+      "stuckHint": "الوكيل يكرر نفس السؤال والعميل ما تقدم. يفضّل تتدخل.",
+      "sentiment": "مزاج العميل",
+      "moods": {
+        "upset": "منزعج",
+        "neutral": "محايد",
+        "happy": "راضي"
+      },
+      "messages": "الرسائل",
+      "listeningNow": "تستمع للمكالمة الحين",
+      "listen": "استمع",
+      "stopListening": "إيقاف الاستماع",
+      "takeOver": "تولَّ المحادثة",
+      "takeOverTitle": "تتولى محادثة {name}؟",
+      "takeOverVoice": "الوكيل بيسكت وبتصير أنت على الخط. العميل بيسمع ردودك كصوت.",
+      "takeOverChat": "الوكيل بيتوقف عن الرد وأنت تكمل مع العميل.",
+      "tookOver": "صرت أنت المسؤول عن المحادثة",
+      "release": "رجّعها للوكيل",
+      "replyPlaceholder": "اكتب ردك للعميل",
+      "sayPlaceholder": "اكتب اللي تبي تقوله (يتحول لصوت)",
+      "send": "إرسال",
+      "noReply": "ما عندك صلاحية الرد على المحادثات.",
+      "back": "رجوع",
+      "agentTyping": "الوكيل يكتب…",
+      "transferring": "جاري التحويل لوكيل ثاني…",
+      "handedTo": "تحوّلت إلى {name}",
+      "staff": "أنت (موظف)",
+      "customer": "العميل"
+    },
+    "history": {
+      "title": "السجل",
+      "emptyTitle": "ما فيه محادثات سابقة",
+      "emptyBody": "بتطلع هنا كل المكالمات والمحادثات بعد ما تنتهي.",
+      "kpi": {
+        "resolved": "نسبة الحل",
+        "duration": "متوسط المدة",
+        "cost": "إجمالي التكلفة",
+        "rating": "متوسط التقييم"
+      },
+      "search": "ابحث بالاسم أو الجوال أو الملخص",
+      "all": "الكل",
+      "outcome": "النتيجة",
+      "allOutcomes": "كل النتائج",
+      "outcomes": {
+        "resolved": "انحلت",
+        "handedOff": "تحوّلت لموظف",
+        "dropped": "انقطعت"
+      },
+      "noResults": "ما فيه نتائج مطابقة.",
+      "rating": "التقييم {value} من 5",
+      "cols": {
+        "customer": "العميل",
+        "path": "مسار الوكلاء",
+        "outcome": "النتيجة",
+        "duration": "المدة",
+        "cost": "التكلفة",
+        "rating": "التقييم",
+        "date": "التاريخ"
+      },
+      "detail": {
+        "back": "رجوع للسجل",
+        "notFoundTitle": "المحادثة مو موجودة",
+        "notFoundBody": "يمكن انحذفت أو الرابط غلط.",
+        "errorTitle": "ما قدرنا نحمّل المحادثة",
+        "duration": "المدة {time}",
+        "cost": "التكلفة {value}",
+        "messages": "الرسائل ({count})",
+        "summary": "ملخص الذكاء الاصطناعي",
+        "path": "مسار الوكلاء",
+        "actions": "الإجراءات المنفذة",
+        "noActions": "ما نفّذ الوكيل أي إجراء.",
+        "ticket": "التذكرة",
+        "ticketOpen": "مفتوحة",
+        "noTicket": "ما انفتحت تذكرة.",
+        "play": "تشغيل",
+        "pause": "إيقاف مؤقت",
+        "seek": "موضع التسجيل",
+        "speed": "سرعة التشغيل",
+        "agentVoice": "الوكيل",
+        "customerVoice": "العميل",
+        "clickToSeek": "اضغط على أي جملة للانتقال لها"
+      }
+    },
+    "channels": {
+      "phones": "أرقام الهاتف",
+      "phonesHint": "كل رقم يتحوّل للوكيل المربوط فيه. الأفضل تربطه بوكيل رئيسي.",
+      "addPhone": "إضافة رقم",
+      "whatsapp": "أرقام WhatsApp Business",
+      "whatsappHint": "الأرقام المربوطة بحسابك في Meta.",
+      "addWhatsApp": "ربط رقم WhatsApp",
+      "unassigned": "غير مربوط",
+      "notOrchestrator": "وكيل فرعي، العميل بيتخطى الوكيل الرئيسي",
+      "noPhones": "ما فيه أرقام",
+      "noPhonesBody": "أضف رقم عشان يقدر العملاء يتصلون على وكلائك.",
+      "noWhatsApp": "ما فيه أرقام WhatsApp",
+      "noWhatsAppBody": "اربط رقم WhatsApp Business عشان يرد وكلاؤك على الرسائل.",
+      "linked": "انربط الرقم بـ «{name}»",
+      "unlinked": "انفك ربط الرقم",
+      "quality": "الجودة",
+      "qualities": {
+        "high": "عالية",
+        "medium": "متوسطة",
+        "low": "منخفضة"
+      },
+      "dailyLimit": "الحد اليومي",
+      "templates": "القوالب المعتمدة ({count})",
+      "noTemplates": "ما فيه قوالب معتمدة",
+      "cols": {
+        "number": "الرقم",
+        "provider": "المشغّل",
+        "agent": "الوكيل المربوط",
+        "status": "الحالة",
+        "calls": "مكالمات اليوم"
+      },
+      "status": {
+        "active": "نشط",
+        "connected": "متصل",
+        "pending": "قيد التفعيل",
+        "disconnected": "غير متصل"
+      },
+      "add": {
+        "phoneTitle": "إضافة رقم هاتف",
+        "phoneHint": "رقم موحد أو جوال أو أرضي.",
+        "waTitle": "ربط رقم WhatsApp",
+        "waHint": "الرقم لازم يكون مسجل في WhatsApp Business API.",
+        "number": "الرقم",
+        "phoneInvalid": "اكتب رقم سعودي صحيح (9200XXXXX أو 05XXXXXXXX أو 01XXXXXXXX).",
+        "waInvalid": "اكتب الرقم بالصيغة الدولية 9665XXXXXXXX.",
+        "provider": "المشغّل",
+        "displayName": "الاسم الظاهر",
+        "displayPlaceholder": "مثال: متجر نخلة",
+        "agent": "اربطه بوكيل",
+        "later": "لاحقاً",
+        "phoneNote": "بنرسل طلب التحويل للمشغّل، والتفعيل ياخذ عادة يوم إلى يومين عمل.",
+        "waNote": "بنرسل رمز تحقق للرقم، وبعد الموافقة من Meta يصير الرقم متصل.",
+        "cancel": "إلغاء",
+        "submit": "إضافة",
+        "added": "انضاف الرقم وهو قيد التفعيل"
+      },
+      "social": {
+        "title": "قنوات التواصل الاجتماعي",
+        "hint": "اربط رسائل منصات التواصل ليستلمها الوكيل — الربط محاكاة (لا يوجد OAuth فعلي)",
+        "kinds": {
+          "instagram": "Instagram DM",
+          "messenger": "Messenger",
+          "x": "X",
+          "tiktok": "TikTok",
+          "email": "البريد الإلكتروني"
+        },
+        "notConnected": "غير مربوط",
+        "agent": "الوكيل المسؤول",
+        "connect": "ربط",
+        "disconnect": "فصل",
+        "test": "اختبار",
+        "connectTitle": "ربط {channel}",
+        "connectDescription": "أدخل المعرف أو رقم الصفحة لإتمام الربط",
+        "simulatedNote": "محاكاة — لا يتم فتح OAuth حقيقي مع {channel}. الحالة تنتقل من \"قيد التفعيل\" إلى \"متصل\" تلقائياً.",
+        "handleLabel": "المعرف / رقم الصفحة",
+        "handlePlaceholder": "@username أو معرف الصفحة",
+        "handleHint": "مثال: @nakhla_store أو رقم الصفحة على المنصة"
+      }
+    }
+  },
+  "storeGate": {
+    "title": "المتجر غير موجود",
+    "description": "الرابط يشير إلى متجر غير موجود أو ليس لديك صلاحية الوصول إليه.",
+    "back": "ارجع لمتجري"
+  },
+  "actor": {
+    "staff": "موظف",
+    "agent": "وكيل",
+    "app": "تطبيق",
+    "system": "النظام",
+    "customer": "العميل"
+  },
+  "entity": {
+    "previewHint": "مرّر أو اضغط Shift للمعاينة",
+    "preview": {
+      "notFound": "غير موجود",
+      "total": "الإجمالي",
+      "payment": "الدفع",
+      "fulfillment": "التنفيذ",
+      "createdAt": "التاريخ",
+      "phone": "الجوال",
+      "ordersCount": "الطلبات",
+      "totalSpent": "إجمالي الإنفاق",
+      "lastOrder": "آخر طلب",
+      "price": "السعر",
+      "variants": "الخيارات",
+      "sold30d": "مبيعات 30 يوم",
+      "sku": "SKU",
+      "channel": "القناة",
+      "updatedAt": "آخر تحديث",
+      "messages": "الرسائل",
+      "summary": "الملخص",
+      "tracking": "رقم التتبع",
+      "eta": "التسليم المتوقع",
+      "cod": "تحصيل عند الاستلام",
+      "lastUpdate": "آخر تحديث",
+      "type": "النوع",
+      "vat": "الضريبة",
+      "issuedAt": "تاريخ الإصدار",
+      "reason": "السبب",
+      "items": "القطع",
+      "refund": "الاسترداد",
+      "attempts": "محاولات الاسترداد",
+      "abandonedAt": "تُركت",
+      "role": "النوع",
+      "channels": "القنوات",
+      "roles": {
+        "orchestrator": "وكيل رئيسي",
+        "specialist": "وكيل فرعي"
+      },
+      "channelNames": {
+        "whatsapp": "WhatsApp",
+        "webchat": "دردشة الموقع",
+        "voice": "مكالمة",
+        "instagram": "Instagram",
+        "messenger": "ماسنجر",
+        "x": "إكس",
+        "tiktok": "تيك توك",
+        "email": "البريد الإلكتروني"
+      },
+      "invoiceTypes": {
+        "simplified": "مبسطة",
+        "standard": "ضريبية",
+        "credit_note": "إشعار دائن"
+      },
+      "returnReasons": {
+        "damaged": "تالف",
+        "wrong_item": "منتج خاطئ",
+        "not_as_described": "غير مطابق للوصف",
+        "size_issue": "مشكلة مقاس",
+        "changed_mind": "غيّر رأيه",
+        "other": "أخرى"
+      },
+      "uses": "الاستخدامات",
+      "revenue": "الإيراد",
+      "chunks": "الأجزاء",
+      "agents": "الوكلاء",
+      "succeeded": "نجحت",
+      "failed": "فشلت",
+      "amount": "المبلغ",
+      "products": "المنتجات",
+      "collectionTypes": {
+        "manual": "يدوية",
+        "automatic": "تلقائية"
+      },
+      "couponTypes": {
+        "percentage": "نسبة",
+        "fixed": "مبلغ ثابت",
+        "free_shipping": "شحن مجاني"
+      },
+      "knowledgeTypes": {
+        "file": "ملف",
+        "faq": "سؤال وجواب",
+        "url": "رابط",
+        "policy": "سياسة",
+        "product_catalog": "كتالوج المنتجات",
+        "text": "نص"
+      },
+      "importTypes": {
+        "products": "منتجات",
+        "customers": "عملاء",
+        "inventory": "مخزون"
+      },
+      "approvalActions": {
+        "cancel_order": "إلغاء طلب",
+        "refund": "استرداد",
+        "discount_above_limit": "خصم فوق الحد"
+      }
+    }
+  },
+  "sales": {
+    "paymentMethods": {
+      "card": "بطاقة",
+      "mada": "مدى",
+      "apple_pay": "Apple Pay",
+      "stc_pay": "STC Pay",
+      "cod": "الدفع عند الاستلام",
+      "bank_transfer": "تحويل بنكي",
+      "payment_link": "رابط دفع",
+      "gift_card": "بطاقة هدية"
+    },
+    "periods": {
+      "all": "كل الفترات",
+      "today": "اليوم",
+      "7d": "آخر 7 أيام",
+      "30d": "آخر 30 يوم",
+      "90d": "آخر 90 يوم"
+    },
+    "cancelReasons": {
+      "customer_request": "طلب العميل",
+      "out_of_stock": "نفاد المخزون",
+      "fraud": "اشتباه احتيال",
+      "payment_failed": "فشل الدفع",
+      "other": "سبب آخر"
+    },
+    "invoiceTypes": {
+      "simplified": "فاتورة مبسطة",
+      "standard": "فاتورة ضريبية",
+      "credit_note": "إشعار دائن"
+    },
+    "events": {
+      "created": "أُنشئ الطلب",
+      "paid": "تم الدفع",
+      "payment_failed": "فشل الدفع",
+      "status_changed": "تغيّرت حالة التنفيذ إلى {to}",
+      "shipment_created": "أُنشئت شحنة مع {carrier}",
+      "shipment_updated": "تحديث على الشحنة",
+      "delivered": "تم التوصيل",
+      "refunded": "استرداد {amount}",
+      "note_added": "ملاحظة داخلية",
+      "invoice_issued": "صدرت الفاتورة",
+      "message_sent": "{kind, select, payment_link {أُرسل رابط الدفع للعميل} confirmation {أُرسل تأكيد الطلب للعميل} other {أُرسلت رسالة للعميل}}",
+      "return_requested": "طلب إرجاع",
+      "cancelled": "أُلغي الطلب",
+      "edited": "عُدّل الطلب",
+      "digital_delivered": "سُلّمت ملفات المنتج الرقمي",
+      "loyalty_earned": "أُضيفت نقاط الولاء للعميل"
+    },
+    "orders": {
+      "title": "الطلبات",
+      "description": "كل طلبات متجرك من كل القنوات.",
+      "export": "تصدير",
+      "newOrder": "طلب يدوي جديد",
+      "searchPlaceholder": "رقم الطلب، الجوال، الاسم، SKU أو رقم التتبع",
+      "resetFilters": "مسح الفلاتر",
+      "results": "{count, plural, =0 {لا نتائج} one {طلب واحد} two {طلبان} few {{count} طلبات} many {{count} طلباً} other {{count} طلب}}",
+      "emptyTitle": "ما فيه طلبات مطابقة",
+      "emptyDescription": "جرّب تغيّر البحث أو الفلاتر.",
+      "noOrdersTitle": "لا توجد طلبات بعد",
+      "noOrdersDescription": "أول ما يطلب عميل من متجرك بيظهر الطلب هنا.",
+      "tabs": {
+        "all": "الكل",
+        "needs_action": "تحتاج إجراء",
+        "in_progress": "قيد التنفيذ",
+        "completed": "مكتملة",
+        "cancelled": "ملغاة",
+        "unpaid": "غير مدفوعة"
+      },
+      "columns": {
+        "number": "الطلب",
+        "date": "التاريخ",
+        "customer": "العميل",
+        "channel": "القناة",
+        "items": "المنتجات",
+        "total": "الإجمالي",
+        "payment": "الدفع",
+        "fulfillment": "التنفيذ",
+        "shipment": "الشحنة",
+        "tags": "الوسوم"
+      },
+      "filters": {
+        "period": "الفترة",
+        "payment": "حالة الدفع",
+        "fulfillment": "حالة الشحن",
+        "allPayments": "كل حالات الدفع",
+        "allFulfillment": "كل حالات الشحن",
+        "more": "فلاتر أكثر",
+        "any": "الكل",
+        "method": "طريقة الدفع",
+        "channel": "القناة",
+        "agent": "الوكيل",
+        "city": "المدينة",
+        "amount": "المبلغ (ر.س)",
+        "from": "من",
+        "to": "إلى",
+        "coupon": "الكوبون",
+        "tag": "الوسم",
+        "customer": "العميل",
+        "product": "المنتج",
+        "clearMore": "مسح الفلاتر الإضافية"
+      },
+      "bulk": {
+        "createShipments": "إنشاء شحنات ({count})",
+        "shipmentsCreated": "تم إنشاء {count, plural, one {شحنة واحدة} two {شحنتين} few {{count} شحنات} many {{count} شحنة} other {{count} شحنة}}",
+        "printLabels": "طباعة البوالص",
+        "labelsQueued": "جاري تجهيز {count} بوليصة للطباعة",
+        "changeStatus": "تغيير الحالة",
+        "updated": "تم تحديث {count} طلب",
+        "addTag": "إضافة وسم",
+        "tagPlaceholder": "مثال: VIP",
+        "apply": "تطبيق",
+        "tagged": "تمت إضافة الوسم إلى {count} طلب",
+        "export": "تصدير CSV",
+        "shipmentsPartial": "تم إنشاء {ok} من أصل {total} شحنة",
+        "shipmentsFailed": "تعذر إنشاء الشحنات",
+        "noLabels": "لا توجد شحنات للطلبات المحددة",
+        "askCopilot": "اسأل المساعد"
+      },
+      "stats": {
+        "needsAction": "طلبات تحتاج إجراء",
+        "todayOrders": "طلبات اليوم",
+        "todayRevenue": "إيرادات اليوم"
+      }
+    },
+    "order": {
+      "notFoundTitle": "الطلب غير موجود",
+      "notFoundDescription": "ممكن يكون الرابط غلط أو الطلب يتبع متجر ثاني.",
+      "backToOrders": "العودة للطلبات",
+      "actions": {
+        "createShipment": "إنشاء شحنة",
+        "refund": "استرداد",
+        "cancel": "إلغاء الطلب",
+        "print": "طباعة",
+        "printInvoice": "الفاتورة",
+        "printLabel": "البوليصة",
+        "more": "المزيد",
+        "duplicate": "تكرار الطلب",
+        "sendPaymentLink": "إرسال رابط دفع",
+        "edit": "تعديل الطلب",
+        "createReturn": "إنشاء مرتجع",
+        "copyData": "نسخ بيانات الطلب"
+      },
+      "labelQueued": "جاري تجهيز البوليصة للطباعة",
+      "paymentLinkSent": "تم إرسال رابط الدفع للعميل",
+      "cancelledBanner": "الطلب ملغي: {reason}",
+      "items": "المنتجات",
+      "cols": {
+        "product": "المنتج",
+        "sku": "SKU",
+        "qty": "الكمية",
+        "price": "السعر",
+        "discount": "الخصم",
+        "total": "الإجمالي",
+        "fulfillment": "التنفيذ"
+      },
+      "line": {
+        "fulfilled": "{n} من {of} جُهّز",
+        "returned": "{n} مرتجع"
+      },
+      "summary": {
+        "subtotal": "المجموع الفرعي",
+        "discount": "الخصم",
+        "shipping": "الشحن",
+        "free": "مجاني",
+        "tax": "الضريبة (15%)",
+        "taxIncluded": "الضريبة (15%) مشمولة",
+        "total": "الإجمالي",
+        "paid": "المدفوع",
+        "refunded": "المسترد",
+        "balance": "المتبقي"
+      },
+      "payments": "الدفعات",
+      "noPayments": "ما فيه دفعات مسجلة بعد. طريقة الدفع: {method}",
+      "refundLine": "استرداد",
+      "shipments": "الشحنات",
+      "noShipments": "ما انشحن الطلب بعد.",
+      "returnShipment": "شحنة إرجاع",
+      "invoice": "الفاتورة",
+      "noInvoice": "ما صدرت فاتورة بعد.",
+      "returns": "المرتجعات",
+      "noReturns": "ما فيه مرتجعات.",
+      "timeline": "الخط الزمني",
+      "customer": "العميل",
+      "whatsapp": "WhatsApp",
+      "customerOrders": "طلباته",
+      "customerSpent": "إجمالي مشترياته",
+      "customerMissing": "العميل غير موجود",
+      "risk": {
+        "title": "مؤشرات المخاطر",
+        "firstOrder": "أول طلب لهذا العميل",
+        "highAmount": "مبلغ الطلب أعلى من المعتاد",
+        "codWithReturns": "دفع عند الاستلام لعميل عنده مرتجعات سابقة"
+      },
+      "shippingAddress": "عنوان الشحن",
+      "edit": "تعديل",
+      "customerNote": "ملاحظة العميل",
+      "internalNotes": "ملاحظات داخلية",
+      "noNotes": "ما فيه ملاحظات.",
+      "notePlaceholder": "أضف ملاحظة داخلية…",
+      "addNote": "إضافة ملاحظة",
+      "noteSaved": "تمت إضافة الملاحظة",
+      "tags": "الوسوم",
+      "conversation": "المحادثة المرتبطة",
+      "createdByAgent": "أنشأه الوكيل",
+      "addTag": "إضافة وسم",
+      "tagPlaceholder": "مثال: VIP",
+      "removeTag": "إزالة الوسم \"{tag}\"",
+      "noTags": "لا توجد وسوم بعد",
+      "tagFailed": "تعذر تحديث الوسوم",
+      "popupBlocked": "حظر المتصفح نافذة الطباعة",
+      "paymentLinkFailed": "تعذر إرسال رابط الدفع",
+      "labelFields": {
+        "order": "طلب",
+        "to": "التسليم إلى",
+        "cod": "الدفع عند الاستلام",
+        "weight": "الوزن",
+        "tracking": "التتبع",
+        "label": "رقم البوليصة",
+        "packages": "الطرود"
+      },
+      "printInvoice": {
+        "title": "فاتورة ضريبية",
+        "billTo": "فاتورة إلى"
+      },
+      "copied": "تم نسخ بيانات الطلب",
+      "copyFailed": "تعذّر نسخ بيانات الطلب",
+      "billingAddress": "عنوان الفوترة",
+      "billingSameAsShipping": "نفس عنوان الشحن",
+      "editDialog": {
+        "title": "تعديل الطلب #{number}",
+        "description": "أضف أو احذف منتجات، عدّل الكميات والخصم — يعاد حساب الإجمالي تلقائياً.",
+        "lockedLine": "مرتبطة بمرتجع/استرداد — لا يمكن تعديل الكمية",
+        "decrease": "إنقاص",
+        "increase": "زيادة",
+        "quantity": "الكمية",
+        "remove": "حذف",
+        "discount": "الخصم (ر.س)",
+        "shipping": "رسوم الشحن (ر.س)",
+        "newTotal": "الإجمالي الجديد",
+        "save": "حفظ التعديلات",
+        "saved": "تم حفظ تعديلات الطلب",
+        "errors": {
+          "not_editable": "لا يمكن تعديل طلب بهذه الحالة",
+          "cancelled": "الطلب ملغي — لا يمكن تعديله",
+          "insufficient_stock": "المخزون غير كافٍ للمتغير {sku}",
+          "below_fulfilled": "الكمية أقل من المشحون بالفعل",
+          "line_locked": "السطر مرتبط بمرتجع أو استرداد",
+          "quantity": "كمية غير صالحة",
+          "variant": "منتج غير معروف",
+          "no_items": "لا يمكن حفظ طلب بلا منتجات",
+          "failed": "تعذّر حفظ تعديلات الطلب"
+        }
+      },
+      "digitalTitle": "التسليم الرقمي",
+      "digitalDelivered": "سُلّم",
+      "attribution": "الإسناد والمصدر",
+      "affiliate": "مسوّق:",
+      "locationLabel": "موقع المخزون:"
+    },
+    "dialogs": {
+      "ofMax": "الحد {max}",
+      "qtyFor": "كمية {name}",
+      "refund": {
+        "title": "استرداد من الطلب #{number}",
+        "description": "المتبقي القابل للاسترداد: {remaining}",
+        "amount": "مبلغ الاسترداد (ر.س)",
+        "amountHint": "يُحسب من المنتجات المختارة، وتقدر تعدّله بحد أقصى {max}",
+        "reason": "السبب",
+        "reasonRequired": "اكتب سبب الاسترداد",
+        "restock": "إرجاع المنتجات للمخزون",
+        "notify": "إشعار العميل",
+        "warning": "الاسترداد ما يمكن التراجع عنه، والمبلغ يرجع لوسيلة الدفع الأصلية.",
+        "confirm": "استرداد {amount}",
+        "done": "تم استرداد {amount}",
+        "failed": "تعذّر الاسترداد. تأكد من المبلغ."
+      },
+      "cancel": {
+        "title": "إلغاء الطلب #{number}",
+        "description": "ما تقدر تلغي طلب انشحن. الإلغاء يسجَّل في الخط الزمني.",
+        "reason": "سبب الإلغاء",
+        "choose": "اختر السبب",
+        "reasonRequired": "اختر سبب الإلغاء",
+        "details": "تفاصيل",
+        "refund": "استرداد المبلغ المدفوع",
+        "restock": "إرجاع المنتجات للمخزون",
+        "notify": "إشعار العميل",
+        "confirm": "تأكيد الإلغاء",
+        "done": "تم إلغاء الطلب #{number}",
+        "failed": "تعذّر إلغاء الطلب"
+      },
+      "shipment": {
+        "title": "شحنة جديدة للطلب #{number}",
+        "description": "اختر المنتجات والطرد والناقل.",
+        "items": "المنتجات والكميات",
+        "package": "الطرد",
+        "weight": "الوزن (كجم)",
+        "dims": {
+          "l": "الطول (سم)",
+          "w": "العرض (سم)",
+          "h": "الارتفاع (سم)"
+        },
+        "carrier": "الناقل والخدمة",
+        "eta": "{days, plural, one {يوم واحد} two {يومين} few {{days} أيام} many {{days} يوماً} other {{days} يوم}}",
+        "cod": "مبلغ التحصيل",
+        "noCod": "لا يوجد",
+        "pickup": "تاريخ الاستلام من المستودع",
+        "confirm": "إنشاء الشحنة ({count} قطعة)",
+        "done": "تم إنشاء الشحنة {tracking}",
+        "failed": "تعذّر إنشاء الشحنة",
+        "existing": "شحنات موجودة لهذا الطلب",
+        "fullyShipped": "كل البنود القابلة للشحن موجودة على شحنات.",
+        "deliverTo": "التوصيل إلى"
+      },
+      "address": {
+        "title": "تعديل عنوان الشحن",
+        "description": "تقدر تعدّل العنوان قبل الشحن فقط.",
+        "recipientName": "اسم المستلم",
+        "phone": "الجوال",
+        "city": "المدينة",
+        "district": "الحي",
+        "street": "الشارع",
+        "buildingNumber": "رقم المبنى",
+        "postalCode": "الرمز البريدي",
+        "shortAddress": "العنوان المختصر",
+        "saved": "تم تحديث العنوان",
+        "failed": "تعذّر تحديث العنوان"
+      }
+    },
+    "returnReasons": {
+      "damaged": "تالف",
+      "wrong_item": "منتج خطأ",
+      "not_as_described": "غير مطابق للوصف",
+      "size_issue": "مشكلة في المقاس",
+      "changed_mind": "غيّر رأيه",
+      "other": "سبب آخر"
+    },
+    "newOrder": {
+      "title": "طلب يدوي جديد",
+      "fromConversation": "من المحادثة",
+      "duplicateOf": "نسخة من الطلب",
+      "customer": "العميل",
+      "change": "تغيير",
+      "searchCustomer": "ابحث بالاسم أو الجوال",
+      "quickCreate": "عميل جديد",
+      "customerName": "الاسم",
+      "customerPhone": "الجوال",
+      "createCustomer": "إنشاء العميل",
+      "customerCreated": "تم إنشاء العميل",
+      "cancel": "إلغاء",
+      "products": "المنتجات",
+      "searchProduct": "ابحث باسم المنتج أو SKU",
+      "noProducts": "ابحث عن منتج وأضفه للطلب.",
+      "lowStock": "المتاح {n} فقط",
+      "decrease": "إنقاص",
+      "increase": "زيادة",
+      "quantity": "الكمية",
+      "unitPrice": "سعر الوحدة",
+      "remove": "إزالة",
+      "address": "العنوان",
+      "pickCustomerFirst": "اختر العميل أول.",
+      "newAddress": "عنوان جديد",
+      "recipient": "اسم المستلم",
+      "city": "المدينة",
+      "district": "الحي",
+      "street": "الشارع",
+      "shipping": "الشحن",
+      "paymentAndNotes": "الخصم والدفع",
+      "coupon": "كوبون",
+      "couponApplied": "خصم الكوبون {amount}",
+      "couponErrors": {
+        "unknown": "الكوبون غير موجود",
+        "inactive": "الكوبون غير فعّال",
+        "min": "الطلب أقل من الحد الأدنى للكوبون"
+      },
+      "manualDiscount": "خصم يدوي (ر.س)",
+      "paymentMethod": "طريقة الدفع",
+      "payments": {
+        "payment_link": "رابط دفع",
+        "cod": "الدفع عند الاستلام",
+        "bank_transfer": "تحويل بنكي",
+        "external": "مدفوع خارجياً"
+      },
+      "note": "ملاحظة داخلية",
+      "sendConfirmation": "إرسال تأكيد الطلب للعميل",
+      "summary": "الملخص",
+      "subtotal": "المجموع ({count, plural, =0 {لا قطع} one {قطعة} two {قطعتان} few {{count} قطع} many {{count} قطعة} other {{count} قطعة}})",
+      "discount": "الخصم",
+      "shippingFee": "الشحن",
+      "taxIncluded": "الضريبة (15%) مشمولة",
+      "total": "الإجمالي",
+      "overStockWarning": "{count, plural, one {منتج واحد} two {منتجان} few {{count} منتجات} many {{count} منتجاً} other {{count} منتج}} كميته أكبر من المتاح",
+      "submit": "إنشاء الطلب",
+      "created": "تم إنشاء الطلب #{number}",
+      "fixErrors": "كمّل الحقول المطلوبة",
+      "errors": {
+        "customer": "اختر العميل",
+        "items": "أضف منتج واحد على الأقل",
+        "address": "اختر العنوان أو كمّل بيانات العنوان الجديد",
+        "name": "اكتب الاسم",
+        "phone": "رقم الجوال لازم يكون سعودي (05XXXXXXXX)",
+        "taken": "فيه عميل مسجل بنفس الجوال",
+        "insufficientStock": "المخزون غير كافٍ لأحد الأصناف"
+      },
+      "failed": "تعذر إنشاء الطلب",
+      "growthTitle": "الإسناد والإضافات",
+      "location": "موقع الشحن",
+      "locationHint": "يُخصم المخزون من هذا الموقع",
+      "affiliateCode": "كود مسوّق",
+      "affiliateHint": "لإسناد الطلب لشريك",
+      "giftCard": "بطاقة هدية",
+      "checkBalance": "فحص",
+      "cardBalance": "الرصيد: {amount}",
+      "cardInvalid": "بطاقة غير صالحة",
+      "giftCardHint": "تُخصم من الإجمالي عند الإنشاء",
+      "loyaltyPoints": "نقاط الولاء",
+      "loyaltyHint": "الرصيد: {points} نقطة ≈ {amount}",
+      "loyaltyNone": "اختر عميلاً أو فعّل البرنامج"
+    },
+    "returns": {
+      "title": "المرتجعات",
+      "description": "طلبات الإرجاع من العملاء وحالتها.",
+      "search": "رقم المرتجع أو الطلب",
+      "allStatuses": "كل الحالات",
+      "allReasons": "كل الأسباب",
+      "noneTitle": "لا توجد مرتجعات",
+      "noneDescription": "لما يطلب عميل إرجاع منتج بيظهر هنا.",
+      "cols": {
+        "number": "الرقم",
+        "order": "الطلب",
+        "customer": "العميل",
+        "items": "المنتجات",
+        "reason": "السبب",
+        "status": "الحالة",
+        "refundAmount": "مبلغ الاسترداد",
+        "date": "التاريخ",
+        "refundStatus": "حالة الاسترداد"
+      },
+      "heading": "مرتجع #{number}",
+      "items": "المنتجات المرتجعة",
+      "reasonAndNote": "السبب وملاحظة العميل",
+      "noNote": "ما كتب العميل ملاحظة.",
+      "summary": "التفاصيل",
+      "originalOrder": "الطلب الأصلي",
+      "resolution": "الحل",
+      "restock": "إرجاع للمخزون",
+      "yes": "نعم",
+      "no": "لا",
+      "returnShipment": "شحنة الإرجاع",
+      "creditNote": "الإشعار الدائن",
+      "rejectedBanner": "مرفوض: {reason}",
+      "receivedDone": "تم تأكيد استلام المرتجع",
+      "notFound": "المرتجع غير موجود",
+      "back": "العودة للمرتجعات",
+      "actions": {
+        "approve": "قبول",
+        "reject": "رفض",
+        "receive": "تأكيد الاستلام",
+        "refund": "استرداد",
+        "requestInfo": "طلب معلومات"
+      },
+      "approve": {
+        "title": "قبول المرتجع #{number}",
+        "description": "حدد الحل والمبلغ.",
+        "resolution": "الحل",
+        "resolutions": {
+          "refund": "استرداد",
+          "exchange": "استبدال",
+          "store_credit": "رصيد"
+        },
+        "amount": "المبلغ (ر.س)",
+        "restock": "إرجاع المنتجات للمخزون بعد الاستلام",
+        "createShipment": "إنشاء شحنة إرجاع",
+        "confirm": "قبول المرتجع",
+        "done": "تم قبول المرتجع",
+        "acceptedQty": "الكمية المقبولة",
+        "requestedQty": "مطلوب: {n}",
+        "noAcceptedItems": "اقبل قطعة واحدة على الأقل",
+        "creditAmount": "مبلغ الرصيد"
+      },
+      "reject": {
+        "title": "رفض المرتجع #{number}",
+        "description": "السبب بيوصل للعميل.",
+        "reason": "سبب الرفض",
+        "required": "اكتب سبب الرفض",
+        "confirm": "رفض المرتجع",
+        "done": "تم رفض المرتجع"
+      },
+      "refund": {
+        "title": "استرداد {amount}",
+        "description": "بيرجع المبلغ للعميل ويصدر إشعار دائن.",
+        "warning": "الاسترداد ما يمكن التراجع عنه.",
+        "confirm": "استرداد {amount}",
+        "done": "تم استرداد {amount} وإصدار إشعار دائن",
+        "failed": "تعذّر الاسترداد"
+      },
+      "requestInfo": {
+        "title": "طلب معلومات — مرتجع #{number}",
+        "description": "اسأل العميل عن تفاصيل أو صور إضافية قبل اتخاذ القرار.",
+        "note": "ما المطلوب من العميل؟",
+        "required": "اكتب ما تحتاجه من العميل",
+        "confirm": "طلب المعلومات",
+        "done": "تم إرسال طلب المعلومات",
+        "failed": "تعذّر إرسال طلب المعلومات"
+      },
+      "activity": {
+        "title": "سجل المرتجع",
+        "notePlaceholder": "أضف ملاحظة داخلية…",
+        "addNote": "إضافة ملاحظة",
+        "noteFailed": "تعذّرت إضافة الملاحظة",
+        "events": {
+          "created": "أُنشئ طلب المرتجع ({items} سطر)",
+          "status_changed": "تغيّرت الحالة إلى {to}",
+          "info_requested": "طُلبت معلومات إضافية",
+          "note_added": "ملاحظة داخلية"
+        }
+      }
+    },
+    "carts": {
+      "title": "السلات المتروكة",
+      "description": "تم استرجاع {recovered} من {total} سلة.",
+      "noneTitle": "لا توجد سلات متروكة",
+      "noneDescription": "السلات اللي يتركها العملاء قبل الدفع بتظهر هنا.",
+      "emptyTitle": "ما فيه سلات بهذي الحالة",
+      "all": "الكل",
+      "cols": {
+        "customer": "العميل",
+        "items": "المنتجات",
+        "total": "القيمة",
+        "abandonedAt": "وقت الترك",
+        "status": "حالة الاسترجاع",
+        "attempts": "المحاولات",
+        "order": "الطلب الناتج",
+        "actions": "إجراءات"
+      },
+      "send": "إرسال تذكير",
+      "sent": "تم إرسال رسالة الاسترجاع",
+      "openConversation": "المحادثة",
+      "detailTitle": "سلة متروكة",
+      "abandoned": "تُركت {when}",
+      "attemptsTitle": "محاولات الاسترجاع",
+      "noAttempts": "ما انرسل أي تذكير بعد.",
+      "opened": "فُتحت",
+      "notOpened": "لم تُفتح",
+      "channels": {
+        "whatsapp": "WhatsApp",
+        "sms": "رسالة نصية",
+        "email": "بريد"
+      },
+      "notFound": "السلة غير موجودة",
+      "back": "العودة للسلات",
+      "settings": {
+        "auto": "الاسترجاع التلقائي",
+        "delay": "التوقيت",
+        "after1h": "بعد ساعة",
+        "after24h": "بعد 24 ساعة",
+        "agent": "الوكيل المسؤول",
+        "coupon": "كوبون تحفيزي",
+        "noCoupon": "بدون كوبون",
+        "saved": "تم حفظ الإعدادات",
+        "secondReminder": "تذكير ثانٍ",
+        "reminderOff": "معطّل",
+        "after48h": "بعد ٤٨ ساعة",
+        "excludeRecentOrders": "استبعاد من طلب مؤخراً",
+        "excludeDays": "{n} يوم",
+        "excludeOptedOut": "استبعاد الملغى اشتراكهم"
+      },
+      "sendFailed": "تعذر إرسال رسالة الاسترجاع",
+      "errors": {
+        "cart_not_due": "هذه السلة لم يحن وقت استرجاعها بعد",
+        "recovery_recent": "تم إرسال رسالة استرجاع مؤخراً",
+        "closed": "هذه السلة مغلقة بالفعل",
+        "excluded_recent_order": "استُبعدت السلة — للعميل طلب حديث",
+        "excluded_opted_out": "استُبعدت السلة — العميل ألغى الاشتراك"
+      },
+      "source": "مصدر الزيارة",
+      "probability": "احتمالية الاسترجاع",
+      "probabilityValue": "{n}%",
+      "sources": {
+        "storefront": "المتجر",
+        "instagram": "إنستغرام",
+        "google": "بحث جوجل",
+        "whatsapp": "واتساب",
+        "direct": "مباشر"
+      },
+      "sendDialog": {
+        "title": "إرسال رسالة استرجاع",
+        "description": "اختر قالباً أو اكتب رسالة مخصصة للعميل.",
+        "template": "القالب",
+        "noTemplate": "بدون قالب — رسالة مخصصة",
+        "message": "نص الرسالة",
+        "messagePlaceholder": "اكتب رسالة الاسترجاع…",
+        "templateHint": "اتركه فارغاً لاستخدام نص القالب كما هو.",
+        "cancel": "إلغاء",
+        "confirm": "إرسال"
+      },
+      "templates": {
+        "title": "قوالب الاسترجاع",
+        "new": "قالب جديد",
+        "empty": "لا قوالب بعد — أنشئ أول قالب استرجاع.",
+        "disabled": "معطّل",
+        "preview": "معاينة",
+        "edit": "تعديل",
+        "delete": "حذف",
+        "deleted": "حُذف القالب",
+        "saved": "حُفظ القالب",
+        "saveFailed": "تعذّر حفظ القالب",
+        "newTitle": "قالب استرجاع جديد",
+        "editTitle": "تعديل القالب",
+        "vars": "متغيرات متاحة: {name} · {store} · {link}",
+        "nameAr": "الاسم (عربي)",
+        "nameEn": "الاسم (إنجليزي)",
+        "channel": "القناة",
+        "channels": {
+          "whatsapp": "واتساب",
+          "sms": "SMS",
+          "email": "بريد"
+        },
+        "enabled": "مفعّل",
+        "contentAr": "المحتوى (عربي)",
+        "contentEn": "المحتوى (إنجليزي)",
+        "save": "حفظ القالب"
+      }
+    },
+    "home": {
+      "greeting": "هلا {name}",
+      "subtitle": "ملخص متجرك اليوم.",
+      "viewAll": "عرض الكل",
+      "kpi": {
+        "salesToday": "مبيعات اليوم",
+        "vsYesterday": "مقارنة بأمس",
+        "ordersToday": "طلبات اليوم",
+        "aov": "متوسط الطلب",
+        "visitors": "زوار اليوم",
+        "conversion": "نسبة التحويل"
+      },
+      "lists": {
+        "needsAction": "طلبات تحتاج إجراء",
+        "noneNeedsAction": "ما فيه طلبات تنتظرك",
+        "waiting": "محادثات بانتظار موظف",
+        "noneWaiting": "ما فيه محادثات تنتظر",
+        "approvals": "موافقات الوكلاء المعلقة",
+        "noneApprovals": "ما فيه موافقات معلقة",
+        "lowStock": "منتجات قاربت تخلص",
+        "noneLowStock": "المخزون كله بخير",
+        "left": "باقي {n}",
+        "latest": "آخر الطلبات",
+        "noneLatest": "ما فيه طلبات بعد"
+      },
+      "approvalActions": {
+        "cancel_order": "إلغاء طلب",
+        "refund": "استرداد",
+        "discount_above_limit": "خصم فوق الحد"
+      },
+      "charts": {
+        "sales30": "المبيعات آخر 30 يوم",
+        "revenue": "الإيرادات",
+        "orders": "الطلبات",
+        "byChannel": "الطلبات حسب القناة (30 يوم)"
+      },
+      "agents": {
+        "title": "أداء الوكلاء",
+        "conversationsToday": "محادثات اليوم",
+        "resolution": "نسبة الحل",
+        "sales": "مبيعات عبر الوكلاء (30 يوم)"
+      },
+      "setup": {
+        "title": "كمّل إعداد متجرك",
+        "progress": "{done} من {total}",
+        "products": "أضف منتجات",
+        "payments": "فعّل الدفع",
+        "shipping": "فعّل الشحن",
+        "whatsapp": "اربط WhatsApp",
+        "domain": "اربط الدومين",
+        "published": "انشر المتجر"
+      }
+    },
+    "newReturn": {
+      "title": "مرتجع جديد",
+      "description": "قدّم طلب إرجاع نيابة عن العميل — تُطبَّق سياسة الإرجاع تلقائياً.",
+      "policyHint": "سياسة الإرجاع: حتى {days} يوم من تاريخ الطلب.",
+      "selectOrder": "الطلب",
+      "selectOrderPlaceholder": "اختر طلباً مؤهلاً…",
+      "notReturnable": "منتج غير قابل للإرجاع (سياسة)",
+      "alreadyReturned": "أُرجعت كل الكمية",
+      "quantity": "الكمية",
+      "details": "تفاصيل الطلب",
+      "reason": "السبب",
+      "note": "وصف المشكلة",
+      "notePlaceholder": "مثال: وصل المنتج مكسوراً…",
+      "photos": "المرفقات",
+      "addPhoto": "إرفاق صورة",
+      "removePhoto": "إزالة الصورة",
+      "summary": "الملخص",
+      "summaryOrder": "الطلب",
+      "summaryItems": "عدد القطع",
+      "submit": "تقديم طلب المرتجع",
+      "created": "أُنشئ المرتجع #{number}",
+      "noPermissionTitle": "لا صلاحية",
+      "noPermissionDescription": "تحتاج صلاحية إدارة المرتجعات لإنشاء طلب إرجاع.",
+      "back": "العودة للمرتجعات",
+      "errors": {
+        "no_items": "اختر قطعة واحدة على الأقل",
+        "window_expired": "انتهت نافذة الإرجاع لهذا الطلب",
+        "reason_disabled": "هذا السبب معطّل في سياسة الإرجاع",
+        "item": "سطر غير معروف",
+        "not_returnable": "منتج غير قابل للإرجاع حسب السياسة",
+        "item_qty": "الكمية تتجاوز المتبقي للإرجاع",
+        "failed": "تعذّر تقديم طلب المرتجع"
+      }
+    }
+  },
+  "catalog": {
+    "stock": {
+      "all": "الكل",
+      "in_stock": "متوفر",
+      "low": "منخفض",
+      "out_of_stock": "نفد"
+    },
+    "products": {
+      "title": "المنتجات",
+      "description": "كل منتجات متجرك مع خياراتها ومخزونها.",
+      "new": "منتج جديد",
+      "searchPlaceholder": "اسم المنتج أو SKU أو الباركود",
+      "results": "{count, plural, =0 {لا نتائج} one {منتج واحد} two {منتجان} few {{count} منتجات} many {{count} منتجاً} other {{count} منتج}}",
+      "resetFilters": "مسح الفلاتر",
+      "noneTitle": "لا توجد منتجات بعد",
+      "noneDescription": "أضف أول منتج أو استورده من ملف.",
+      "noResults": "ما فيه منتجات مطابقة",
+      "noResultsHint": "جرّب تغيير البحث أو الفلاتر.",
+      "cols": {
+        "product": "المنتج",
+        "sku": "SKU",
+        "price": "السعر",
+        "stock": "المخزون",
+        "status": "الحالة",
+        "categories": "التصنيفات",
+        "updated": "آخر تحديث",
+        "variants": "الخيارات",
+        "name": "المنتج",
+        "sold": "مبيعات 30 يوم",
+        "conversations": "محادثات"
+      },
+      "filters": {
+        "status": "الحالة",
+        "allStatuses": "كل الحالات",
+        "category": "التصنيف",
+        "allCategories": "كل التصنيفات",
+        "collection": "المجموعة",
+        "allCollections": "كل المجموعات",
+        "import": "الاستيراد",
+        "stock": "المخزون",
+        "allStock": "كل المخزون",
+        "brand": "العلامة",
+        "clearMore": "مسح",
+        "from": "من",
+        "more": "فلاتر أكثر",
+        "price": "السعر",
+        "tag": "وسم",
+        "to": "إلى",
+        "allBrands": "كل العلامات"
+      },
+      "statuses": {
+        "draft": "مسودة",
+        "active": "نشط",
+        "archived": "مؤرشف"
+      },
+      "export": {
+        "title": "تصدير المنتجات",
+        "description": "بيُصدَّر {count} منتج بالأعمدة المختارة.",
+        "download": "تنزيل CSV",
+        "done": "تم تصدير {count} سطر",
+        "perVariant": "سطر لكل نسخة",
+        "pickCols": "اختر عموداً واحداً على الأقل",
+        "cols": {
+          "name": "المنتج",
+          "sku": "SKU",
+          "barcode": "الباركود",
+          "status": "الحالة",
+          "price": "السعر",
+          "compareAt": "السعر قبل الخصم",
+          "cost": "التكلفة",
+          "stock": "المخزون",
+          "sold30d": "مبيعات 30 يوم",
+          "categories": "التصنيفات"
+        }
+      },
+      "bulk": {
+        "activate": "تفعيل",
+        "archive": "أرشفة",
+        "addTag": "إضافة وسم",
+        "apply": "تطبيق",
+        "updated": "تم تحديث {count} منتج",
+        "tagged": "أُضيف الوسم لـ {count} منتج",
+        "adjustPrices": "تعديل الأسعار",
+        "cancel": "إلغاء",
+        "confirmDelete": "نعم، احذف",
+        "delete": "حذف",
+        "deleteTitle": "حذف المنتجات؟",
+        "deleteDescription": "بيُحذف {count} منتج نهائياً.",
+        "deleteWarning": "الطلبات السابقة ما تتأثر، بس المنتجات ونسخها بتنحذف.",
+        "deleted": "تم حذف {count} منتج",
+        "export": "تصدير",
+        "setStatus": "تغيير الحالة",
+        "tagPlaceholder": "وسم…",
+        "toCategory": "إضافة لتصنيف",
+        "toCollection": "إضافة لمجموعة",
+        "price": {
+          "apply": "تطبيق",
+          "cancel": "إلغاء",
+          "description": "بيُعدَّل سعر {count} منتج.",
+          "done": "تم تعديل أسعار {count} منتج",
+          "failed": "تعذّر التعديل",
+          "fixed": "مبلغ ثابت (+/− ر.س)",
+          "percent": "نسبة (+/− %)",
+          "title": "تعديل الأسعار",
+          "value": "القيمة",
+          "valueHint": "قيمة سالبة للتخفيض، موجبة للرفع."
+        },
+        "category": {
+          "apply": "إضافة",
+          "cancel": "إلغاء",
+          "failed": "تعذّرت الإضافة",
+          "placeholder": "اختر تصنيفاً…",
+          "title": "إضافة لتصنيف",
+          "done": "أُضيف {count} منتج للتصنيف",
+          "description": "بيُضاف {count} منتج للتصنيف المختار."
+        },
+        "collection": {
+          "apply": "إضافة",
+          "cancel": "إلغاء",
+          "failed": "تعذّرت الإضافة",
+          "placeholder": "اختر مجموعة…",
+          "title": "إضافة لمجموعة",
+          "done": "أُضيف {count} منتج للمجموعة",
+          "description": "بيُضاف {count} منتج للمجموعة المختارة."
+        },
+        "statused": "تم تحديث حالة {count} منتج"
+      },
+      "duplicate": "نسخ",
+      "archivedToast": "تمت الأرشفة",
+      "duplicated": "تم نسخ المنتج",
+      "fromImport": "من الاستيراد {id}",
+      "newProduct": "منتج جديد",
+      "import": "استيراد",
+      "emptyTitle": "ما فيه منتجات مطابقة",
+      "emptyDescription": "جرّب تغيير البحث أو الفلاتر.",
+      "stockLow": "منخفض",
+      "stockOut": "نفد",
+      "summary": {
+        "total": "كل المنتجات",
+        "active": "نشطة",
+        "draft": "مسودات",
+        "archived": "مؤرشفة",
+        "lowOut": "منخفض / نافد"
+      }
+    },
+    "editor": {
+      "title": "المنتج",
+      "newProduct": "منتج جديد",
+      "editProduct": "تعديل المنتج",
+      "saved": "تم الحفظ",
+      "created": "تم إنشاء المنتج",
+      "failed": "تعذّر الحفظ",
+      "notFoundTitle": "المنتج غير موجود",
+      "notFoundDescription": "الرابط غير صحيح أو المنتج انحذف.",
+      "backToList": "رجوع للمنتجات",
+      "crumb": "المنتجات",
+      "sections": {
+        "basics": "الأساسيات",
+        "media": "الصور",
+        "organization": "التنظيم",
+        "options": "الخيارات والنسخ",
+        "seo": "السيو"
+      },
+      "fields": {
+        "nameAr": "الاسم (عربي)",
+        "nameEn": "الاسم (إنجليزي)",
+        "descAr": "الوصف (عربي)",
+        "descEn": "الوصف (إنجليزي)",
+        "slug": "الرابط",
+        "type": "نوع المنتج",
+        "status": "الحالة",
+        "categories": "التصنيفات",
+        "collections": "المجموعات اليدوية",
+        "tags": "الوسوم",
+        "mediaUrl": "رابط صورة",
+        "addMedia": "إضافة",
+        "optionName": "اسم الخيار (مثل: الحجم)",
+        "optionValues": "القيم (افصل بفاصلة)",
+        "addOption": "إضافة خيار",
+        "price": "السعر",
+        "compareAt": "السعر قبل الخصم",
+        "cost": "التكلفة",
+        "sku": "SKU",
+        "barcode": "الباركود",
+        "stock": "المخزون",
+        "lowStock": "حد التنبيه",
+        "weight": "الوزن (كجم)",
+        "taxable": "خاضع للضريبة",
+        "seoTitle": "عنوان السيو",
+        "seoDesc": "وصف السيو"
+      },
+      "types": {
+        "physical": "منتج ملموس",
+        "digital": "منتج رقمي",
+        "service": "خدمة"
+      },
+      "optionsHint": "أضف خيارات مثل الحجم أو اللون عشان تتولّد النسخ.",
+      "noOptions": "منتج بخيار واحد",
+      "variantsTitle": "النسخ",
+      "applyToAll": "تطبيق على الكل",
+      "deleteProduct": "حذف المنتج",
+      "deleteTitle": "حذف المنتج؟",
+      "deleteDescription": "بينحذف المنتج ونسخه نهائياً. الطلبات السابقة ما تتأثر.",
+      "deleted": "تم حذف المنتج",
+      "confirmDelete": "نعم، احذف",
+      "createOptionFirst": "أضف خياراً واحداً على الأقل أو احفظ المنتج بنسخة واحدة",
+      "addImage": "إضافة صورة",
+      "addOption": "إضافة خيار",
+      "aiDone": "تم التوليد، راجع النص قبل الحفظ",
+      "aiNotes": "ملاحظات للوكيل",
+      "aiNotesHint": "نص يقرأه الوكيل فقط — مواصفات، تحذيرات، إجابات متكررة.",
+      "aiNotesPlaceholder": "مثال: ما ينفع للحوامل، بلد المنشأ…",
+      "aiWrite": "ولّد بالذكاء الاصطناعي",
+      "backInStock": "تنبيهات التوفر",
+      "backInStockWaiting": "{count} عميل بانتظار توفر المنتج",
+      "backInStockNone": "ما فيه عملاء بانتظار التوفر",
+      "basics": "الأساسيات",
+      "brand": "العلامة التجارية",
+      "bulkPrice": "سعر الكل",
+      "bulkPricePrompt": "سعر موحد لكل النسخ (ر.س)",
+      "bulkWeight": "وزن الكل",
+      "bulkWeightPrompt": "وزن موحد لكل النسخ (كجم)",
+      "categories": "التصنيفات",
+      "collections": "المجموعات اليدوية",
+      "compareAt": "السعر قبل الخصم",
+      "conversationsAbout": "محادثات عن المنتج",
+      "crumbProducts": "المنتجات",
+      "generateVariants": "توليد النسخ",
+      "inventory": "المخزون",
+      "inventoryScreen": "سجل المخزون",
+      "mainImage": "الصورة الرئيسية",
+      "media": "الصور",
+      "mediaHint": "اختر من المكتبة أو ارفع صورة جديدة — أول صورة هي الرئيسية.",
+      "moveDown": "انزل",
+      "moveUp": "اطلع",
+      "nameAr": "الاسم (عربي)",
+      "nameEn": "الاسم (إنجليزي)",
+      "nameRequired": "الاسم بالعربي مطلوب",
+      "newHint": "منتج جديد — عبّي الحقول واحفظ.",
+      "noManualCollections": "ما فيه مجموعات يدوية بعد.",
+      "optionName": "اسم الخيار",
+      "optionNamePlaceholder": "الحجم، اللون، السعة…",
+      "optionValues": "القيم",
+      "optionValuesPlaceholder": "50مل، 100مل (افصل بفاصلة)",
+      "optionsVariants": "الخيارات والنسخ",
+      "ordersWithProduct": "طلبات تحتوي المنتج",
+      "organization": "التنظيم",
+      "price": "السعر",
+      "priceRequired": "السعر مطلوب",
+      "related": "شاشات مرتبطة",
+      "cropImage": "قص الصورة",
+      "removeImage": "إزالة الصورة",
+      "removeOption": "حذف الخيار",
+      "removeTag": "إزالة الوسم",
+      "requiresShipping": "يحتاج شحن",
+      "saveFailed": "تعذّر الحفظ",
+      "selectAll": "تحديد الكل",
+      "selectVariant": "اختر نسخة لعرض مخزونها",
+      "seo": "السيو",
+      "seoTitle": "عنوان السيو",
+      "seoTitleHint": "حتى 60 حرفاً",
+      "seoDescription": "وصف السيو",
+      "seoDescriptionHint": "حتى 160 حرفاً",
+      "seoPreviewTitle": "عنوان المنتج | نخلة",
+      "seoPreviewDescription": "وصف المنتج اللي بيظهر في نتائج البحث.",
+      "shortDescription": "وصف مختصر",
+      "sku": "SKU",
+      "stats": "أداء 30 يوم",
+      "status": "الحالة",
+      "tagPlaceholder": "وسم…",
+      "tags": "الوسوم",
+      "taxable": "خاضع للضريبة",
+      "unsavedChanges": "تغييرات غير محفوظة",
+      "variantOption": "نسخة",
+      "viewInStore": "عرض في المتجر",
+      "weight": "الوزن (كجم)",
+      "descriptionAr": "الوصف (عربي)",
+      "descriptionEn": "الوصف (إنجليزي)",
+      "selected": "محدد",
+      "sold30d": "مبيعات",
+      "revenue30d": "إيراد",
+      "views30d": "مشاهدات",
+      "conversations30d": "محادثات",
+      "altText": "النص البديل",
+      "altAr": "النص البديل (عربي)",
+      "altEn": "النص البديل (إنجليزي)",
+      "deleteVariant": "حذف النسخة",
+      "deleteVariantBody": "بتنحذف النسخة من المنتج مع سجل مخزونها.",
+      "deleteVariantOrdered": "النسخة داخلة في طلبات سابقة — الطلبات ما تتأثر لأنها تحتفظ بنسخة من بياناتها.",
+      "deleteVariantTitle": "تحذف النسخة؟",
+      "draftRestored": "استعدنا مسودة غير محفوظة — أكمل أو ألغِ.",
+      "duplicateBarcode": "الباركود «{value}» مكرر — لازم يكون فريداً.",
+      "duplicateSku": "الـ SKU «{value}» مكرر — لازم يكون فريداً.",
+      "margin": "الهامش",
+      "priceInvalid": "تأكد أن السعر قبل الخصم والتكلفة أرقام صحيحة.",
+      "reviewsOf": "تقييمات المنتج",
+      "slugHint": "يُستخدم في رابط المنتج بالمتجر — اتركه فارغاً ليُشتق من الاسم.",
+      "variantImage": "صورة النسخة",
+      "variantImageEmpty": "أضف صوراً للمنتج أولاً ثم اربطها بالنسخ.",
+      "uploadFailed": "تعذّر رفع الصورة — حاول مرة أخرى.",
+      "digitalTitle": "ملفات التسليم الرقمي",
+      "digitalNote": "المنتجات الرقمية تُسلّم برابط تحميل بعد الدفع (محاكاة — ما فيه تخزين ملفات فعلي).",
+      "digitalKind": "النوع",
+      "digitalFile": "ملف",
+      "digitalLink": "رابط",
+      "digitalName": "الاسم",
+      "digitalUrl": "الرابط",
+      "digitalRemove": "إزالة",
+      "digitalAdd": "إضافة ملف",
+      "digitalSave": "حفظ الملفات",
+      "digitalIncomplete": "أكمل اسم ورابط كل ملف"
+    },
+    "categories": {
+      "title": "التصنيفات",
+      "description": "شجرة تصنيفات متجرك.",
+      "new": "تصنيف جديد",
+      "editTitle": "تعديل التصنيف",
+      "newTitle": "تصنيف جديد",
+      "cols": {
+        "name": "الاسم",
+        "products": "المنتجات",
+        "order": "الترتيب",
+        "slug": "الرابط"
+      },
+      "fields": {
+        "nameAr": "الاسم (عربي)",
+        "nameEn": "الاسم (إنجليزي)",
+        "slug": "الرابط",
+        "parent": "التصنيف الأب",
+        "noParent": "بدون أب (جذر)",
+        "sortOrder": "الترتيب",
+        "seoTitle": "عنوان السيو",
+        "seoDesc": "وصف السيو"
+      },
+      "saved": "تم الحفظ",
+      "created": "تم إنشاء التصنيف",
+      "deleted": "تم حذف التصنيف",
+      "failed": "تعذّر الحفظ",
+      "deleteTitle": "حذف التصنيف؟",
+      "deleteDescription": "التصنيفات الفرعية بتنتقل للأب، والمنتجات بتبقى بدون هذي التصنيفة.",
+      "confirmDelete": "نعم، احذف",
+      "noneTitle": "لا توجد تصنيفات",
+      "noneDescription": "أنشئ أول تصنيف لتنظيم منتجاتك.",
+      "pickTitle": "اختر تصنيفاً",
+      "pickDescription": "اختر تصنيفاً من الشجرة لعرضه أو تعديله.",
+      "addChild": "إضافة فرعي",
+      "collapse": "طي الكل",
+      "expand": "فك الكل",
+      "dragHint": "اسحب لإعادة الترتيب أو تغيير الأب",
+      "editCategory": "تعديل التصنيف",
+      "newCategory": "تصنيف جديد",
+      "sheetDescription": "التصنيفات الفرعية تظهر داخل الأب في متجرك.",
+      "invalidParent": "ما يصير تختار التصنيف نفسه أو فرعه كأب",
+      "moveFailed": "تعذّر النقل",
+      "moved": "تم النقل",
+      "saveFailed": "تعذّر الحفظ",
+      "nameRequired": "الاسم بالعربي مطلوب",
+      "nameAr": "الاسم (عربي)",
+      "nameEn": "الاسم (إنجليزي)",
+      "descriptionField": "الوصف (عربي)",
+      "image": "صورة التصنيف",
+      "parent": "التصنيف الأب",
+      "noParent": "بدون أب (جذر)",
+      "sortOrder": "الترتيب",
+      "seoTitle": "عنوان السيو",
+      "seoDescription": "وصف السيو",
+      "viewInStore": "عرض في المتجر",
+      "productsCount": "{count, plural, =0 {لا منتجات} one {منتج واحد} two {منتجان} few {{count} منتجات} many {{count} منتجاً} other {{count} منتج}}",
+      "deleteProductsWarning": "مرتبط بها {count} منتجات وستفقد هذا التصنيف."
+    },
+    "collections": {
+      "title": "المجموعات",
+      "description": "مجموعات يدوية وتلقائية لتنظيم منتجاتك.",
+      "new": "مجموعة جديدة",
+      "cols": {
+        "name": "الاسم",
+        "type": "النوع",
+        "products": "المنتجات",
+        "updated": "آخر تحديث"
+      },
+      "types": {
+        "manual": "يدوية",
+        "automatic": "تلقائية"
+      },
+      "noneTitle": "لا توجد مجموعات",
+      "noneDescription": "أنشئ مجموعة لعرضها في متجرك.",
+      "newCollection": "مجموعة جديدة",
+      "searchPlaceholder": "ابحث عن مجموعة",
+      "viewInStore": "عرض في المتجر",
+      "filters": {
+        "type": "النوع",
+        "allTypes": "كل الأنواع"
+      },
+      "results": "{count, plural, =0 {لا نتائج} one {مجموعة واحدة} two {مجموعتان} few {{count} مجموعات} many {{count} مجموعة} other {{count} مجموعة}}"
+    },
+    "inventory": {
+      "title": "المخزون",
+      "description": "مستويات المخزون لكل نسخة في كل موقع.",
+      "searchPlaceholder": "منتج أو SKU أو باركود",
+      "results": "{count, plural, =0 {لا نتائج} one {صف واحد} two {صفان} few {{count} صفوف} many {{count} صفاً} other {{count} صف}}",
+      "cols": {
+        "product": "المنتج",
+        "variant": "النسخة",
+        "onHand": "المتوفر",
+        "reserved": "محجوز",
+        "available": "الصافي",
+        "threshold": "حد التنبيه",
+        "lastMove": "آخر حركة",
+        "location": "الموقع"
+      },
+      "filters": {
+        "category": "التصنيف",
+        "allCategories": "كل التصنيفات",
+        "location": "الموقع",
+        "allLocations": "كل المواقع"
+      },
+      "noneTitle": "لا يوجد مخزون",
+      "noneDescription": "ما تم تسجيل مستويات مخزون بعد.",
+      "adjustHint": "اضغط للتعديل",
+      "adjust": {
+        "title": "تعديل المخزون",
+        "current": "الحالي: {count}",
+        "set": "قيمة جديدة",
+        "delta": "تغيير (+/−)",
+        "newQty": "الكمية الجديدة",
+        "reason": "السبب",
+        "note": "ملاحظة",
+        "noteRequired": "الملاحظة مطلوبة للتعديل اليدوي",
+        "done": "تم تعديل المخزون",
+        "failed": "تعذّر التعديل",
+        "negativeError": "ما يصير المخزون بالسالب",
+        "reasons": {
+          "adjustment": "تعديل يدوي",
+          "damage": "تالف",
+          "import": "استيراد",
+          "return": "مرتجع",
+          "cancellation": "إلغاء طلب",
+          "sale": "بيع"
+        }
+      }
+    },
+    "inventoryMovements": {
+      "title": "سجل الحركات",
+      "notFoundTitle": "النسخة غير موجودة",
+      "notFoundDescription": "الرابط غير صحيح.",
+      "backToList": "رجوع للمخزون",
+      "adjust": "تعديل المخزون",
+      "movementsTitle": "حركات المخزون",
+      "location": "الموقع: {name}",
+      "cols": {
+        "date": "التاريخ",
+        "delta": "التغيير",
+        "reason": "السبب",
+        "reference": "المرجع",
+        "actor": "بواسطة",
+        "balance": "الرصيد بعد",
+        "note": "ملاحظة",
+        "location": "الموقع"
+      },
+      "reasons": {
+        "adjustment": "تعديل يدوي",
+        "damage": "تالف",
+        "import": "استيراد",
+        "return": "مرتجع",
+        "cancellation": "إلغاء طلب",
+        "sale": "بيع",
+        "restock": "إعادة تخزين",
+        "reservation": "حجز"
+      },
+      "noneTitle": "لا حركات بعد",
+      "noneDescription": "أول حركة مخزون بتظهر هنا.",
+      "transfer": "نقل",
+      "byLocation": "المخزون حسب الموقع"
+    },
+    "imports": {
+      "title": "الاستيراد",
+      "description": "استورد المنتجات والعملاء والمخزون من ملف أو من سلة وزد.",
+      "newImport": "استيراد جديد",
+      "history": "السجل",
+      "steps": {
+        "type": "النوع والمصدر",
+        "upload": "الملف",
+        "mapping": "الأعمدة",
+        "preview": "المعاينة",
+        "options": "الخيارات"
+      },
+      "pickType": "وش بتستورد؟",
+      "pickSource": "المصدر",
+      "types": {
+        "products": "منتجات",
+        "customers": "عملاء",
+        "inventory": "مخزون"
+      },
+      "sources": {
+        "file": "ملف (CSV/Excel)",
+        "salla": "استيراد من سلة",
+        "zid": "استيراد من زد"
+      },
+      "dropFile": "اسحب الملف هنا أو اضغط للاختيار",
+      "fileTypes": "CSV أو XLSX",
+      "connect": {
+        "salla": "ربط حساب سلة",
+        "zid": "ربط حساب زد"
+      },
+      "connectHint": {
+        "salla": "بنجيب منتجاتك من سلة مباشرة — محاكاة في البيئة التجريبية.",
+        "zid": "بنجيب منتجاتك من زد مباشرة — محاكاة في البيئة التجريبية."
+      },
+      "simulation": "محاكاة",
+      "mappingHint": "طابق أعمدة ملفك مع حقول النظام.",
+      "column": "العمود {col}",
+      "fields": {
+        "name": "الاسم",
+        "sku": "SKU",
+        "price": "السعر",
+        "stock": "المخزون",
+        "phone": "الجوال",
+        "email": "البريد",
+        "ignore": "تجاهل"
+      },
+      "previewHint": "أول صفوف الملف، والأخطاء محددة لكل صف.",
+      "previewNote": "هذي معاينة لأول 20 صف فقط.",
+      "rowOk": "سليم",
+      "rowErrorNamePrice": "الاسم فارغ والسعر غير صالح",
+      "rowStatus": "الحالة",
+      "updateExisting": "تحديث المنتجات الموجودة بنفس SKU",
+      "updateExistingHint": "لو مطفى، الصفوف المكررة بتتخطى.",
+      "start": "بدء الاستيراد",
+      "started": "بدأ الاستيراد",
+      "failed": "تعذّر بدء الاستيراد",
+      "noneTitle": "لا يوجد استيراد سابق",
+      "noneDescription": "أول عملية استيراد بتظهر هنا.",
+      "download": "تنزيل",
+      "cols": {
+        "type": "النوع",
+        "file": "الملف",
+        "source": "المصدر",
+        "status": "الحالة",
+        "rows": "الصفوف (نجح/فشل)",
+        "errorFile": "ملف الأخطاء",
+        "actor": "بواسطة",
+        "date": "التاريخ"
+      },
+      "detail": {
+        "title": "تفاصيل الاستيراد",
+        "notFoundTitle": "الاستيراد غير موجود",
+        "notFoundDescription": "الرابط غير صحيح.",
+        "backToList": "رجوع للسجل",
+        "stats": {
+          "type": "النوع",
+          "source": "المصدر",
+          "succeeded": "صفوف نجحت",
+          "failedRows": "صفوف فشلت",
+          "actor": "بواسطة",
+          "at": "التاريخ",
+          "total": "إجمالي الصفوف",
+          "errorFile": "ملف الأخطاء"
+        },
+        "viewImported": "عرض المنتجات المستوردة ({count})",
+        "retry": "إعادة الاستيراد"
+      }
+    },
+    "reviews": {
+      "title": "التقييمات",
+      "description": "تقييمات العملاء للمنتجات — اعتمدها أو أخفِها أو ردّ عليها.",
+      "search": "اسم المنتج أو نص التقييم",
+      "allStatuses": "كل الحالات",
+      "noneTitle": "لا توجد تقييمات بعد",
+      "noneDescription": "التقييمات المعتمدة تظهر في صفحة المنتج بمتجرك.",
+      "emptyTitle": "لا توجد تقييمات مطابقة",
+      "emptyDescription": "جرّب تغيير فلتر الحالة أو البحث.",
+      "verified": "مشتري موثّق",
+      "replied": "تم الرد",
+      "cols": {
+        "product": "المنتج",
+        "customer": "العميل",
+        "rating": "التقييم",
+        "review": "المراجعة",
+        "status": "الحالة",
+        "date": "التاريخ"
+      },
+      "actions": {
+        "menu": "إجراءات التقييم",
+        "approve": "اعتماد",
+        "hide": "إخفاء",
+        "reply": "رد"
+      },
+      "reply": {
+        "title": "الرد على التقييم",
+        "description": "ردك يظهر للجميع تحت التقييم.",
+        "label": "الرد",
+        "placeholder": "اشكر العميل أو عالج ملاحظاته…",
+        "save": "حفظ الرد"
+      }
+    },
+    "brands": {
+      "title": "العلامات التجارية",
+      "description": "إدارة علامات منتجاتك التجارية وشعاراتها",
+      "newBrand": "علامة جديدة",
+      "editBrand": "تعديل العلامة",
+      "sheetDescription": "اسم العلامة يظهر للعملاء في المتجر ويتزامن مع حقل العلامة في المنتجات.",
+      "searchPlaceholder": "ابحث باسم العلامة أو الموقع…",
+      "nameAr": "الاسم (عربي)",
+      "nameEn": "الاسم (إنجليزي)",
+      "descriptionField": "الوصف (عربي)",
+      "descriptionEn": "الوصف (إنجليزي)",
+      "logo": "الشعار",
+      "website": "الموقع",
+      "statusLabel": "الحالة",
+      "allStatuses": "كل الحالات",
+      "status": {
+        "active": "نشطة",
+        "archived": "مؤرشفة"
+      },
+      "cols": {
+        "name": "العلامة",
+        "products": "المنتجات",
+        "website": "الموقع",
+        "status": "الحالة",
+        "actions": "إجراءات"
+      },
+      "actions": {
+        "edit": "تعديل",
+        "delete": "حذف"
+      },
+      "results": "{count, plural, one {علامة واحدة} two {علامتان} few {# علامات} many {# علامة} other {# علامة}}",
+      "resetFilters": "مسح الفلاتر",
+      "empty": {
+        "title": "ما فيه علامات للحين",
+        "body": "أضف أول علامة تجارية واربطها بمنتجاتك من حقل العلامة في المنتج."
+      },
+      "emptyFiltered": {
+        "title": "ما فيه علامات تطابق البحث",
+        "body": "جرّب تعديل البحث أو الفلاتر"
+      }
+    },
+    "locations": {
+      "title": "مواقع المخزون",
+      "description": "المستودعات والفروع اللي يُدار منها المخزون",
+      "new": "موقع جديد",
+      "cols": {
+        "name": "الموقع",
+        "city": "المدينة",
+        "address": "العنوان",
+        "status": "الحالة",
+        "actions": "إجراءات"
+      },
+      "default": "افتراضي",
+      "status": {
+        "active": "نشط",
+        "inactive": "متوقف"
+      },
+      "edit": "تعديل",
+      "setDefault": "تعيين افتراضي",
+      "deactivate": "إيقاف",
+      "activate": "تفعيل",
+      "newTitle": "إضافة موقع",
+      "editTitle": "تعديل الموقع",
+      "form": {
+        "name": "اسم الموقع",
+        "city": "المدينة",
+        "address": "العنوان",
+        "isDefault": "موقع افتراضي للشحن والطلبات"
+      },
+      "nameRequired": "اسم الموقع مطلوب",
+      "cancel": "إلغاء",
+      "save": "حفظ"
+    },
+    "transfer": {
+      "title": "نقل مخزون",
+      "from": "من موقع",
+      "to": "إلى موقع",
+      "pickLocation": "اختر موقعاً",
+      "quantity": "الكمية",
+      "note": "ملاحظة",
+      "noteHint": "سبب النقل (اختياري)",
+      "cancel": "إلغاء",
+      "submit": "نقل",
+      "sameLocation": "المصدر والوجهة لازم يختلفون",
+      "qtyRequired": "أدخل كمية صحيحة",
+      "exceeds": "الكمية تتجاوز المتاح ({available})",
+      "onHandAtSource": "المتاح في المصدر: {count}"
+    },
+    "priceLists": {
+      "title": "قوائم الأسعار",
+      "description": "أسعار الجملة والعملاء المميزين — تُطبق على الطلبات اليدوية ومتجر B2B",
+      "new": "قائمة جديدة",
+      "cols": {
+        "name": "القائمة",
+        "customers": "العملاء",
+        "rules": "القواعد",
+        "status": "الحالة"
+      },
+      "status": {
+        "active": "نشطة",
+        "archived": "مؤرشفة"
+      },
+      "edit": "تعديل",
+      "archive": "أرشفة",
+      "restore": "استعادة",
+      "delete": "حذف",
+      "newTitle": "قائمة أسعار جديدة",
+      "editTitle": "تعديل قائمة الأسعار",
+      "form": {
+        "nameAr": "الاسم (عربي)",
+        "nameEn": "الاسم (إنجليزي)",
+        "amount": "المبلغ",
+        "note": "ملاحظة"
+      },
+      "customersTitle": "العملاء المشمولون",
+      "customersHint": "القائمة تُطبق فقط على العملاء المحددين",
+      "rulesTitle": "قواعد التسعير",
+      "addRule": "إضافة قاعدة",
+      "ruleVariant": "المتغير",
+      "allVariants": "كل المتغيرات",
+      "percentOff": "خصم %",
+      "fixedPrice": "سعر ثابت",
+      "removeRule": "إزالة القاعدة",
+      "rulesHint": "السعر الثابت يتجاوز نسبة الخصم؛ قاعدة المتغير المحدد تتجاوز قاعدة «كل المتغيرات»",
+      "nameRequired": "اسم القائمة مطلوب",
+      "noneTitle": "لا قوائم أسعار",
+      "noneDescription": "أنشئ قائمة لعملاء الجملة عشان ياخذون أسعار خاصة تلقائياً"
+    }
+  },
+  "collections": {
+    "detail": {
+      "title": "المجموعة",
+      "new": "مجموعة جديدة",
+      "crumb": "المجموعات",
+      "notFoundTitle": "المجموعة غير موجودة",
+      "notFoundDescription": "الرابط غير صحيح أو المجموعة انحذفت.",
+      "backToList": "رجوع للمجموعات",
+      "fields": {
+        "nameAr": "الاسم (عربي)",
+        "nameEn": "الاسم (إنجليزي)",
+        "slug": "الرابط",
+        "descAr": "الوصف (عربي)",
+        "descEn": "الوصف (إنجليزي)",
+        "image": "رابط الصورة",
+        "type": "النوع",
+        "seoTitle": "عنوان السيو",
+        "seoDesc": "وصف السيو"
+      },
+      "manualProducts": "المنتجات",
+      "addProduct": "إضافة منتج",
+      "searchProduct": "ابحث عن منتج…",
+      "remove": "إزالة",
+      "rules": "الشروط",
+      "match": {
+        "all": "تحقق كل الشروط",
+        "any": "تحقق أي شرط"
+      },
+      "ruleFields": {
+        "title": "الاسم يحتوي",
+        "price": "السعر",
+        "category": "التصنيف",
+        "stock": "المخزون",
+        "tag": "وسم",
+        "brand": "العلامة"
+      },
+      "ops": {
+        "gt": "أكبر من",
+        "lt": "أصغر من",
+        "in": "متوفر",
+        "out": "نفد",
+        "contains": "يحتوي",
+        "eq": "يساوي",
+        "neq": "لا يساوي"
+      },
+      "addRule": "إضافة شرط",
+      "preview": "معاينة المنتجات ({count})",
+      "noMatches": "لا منتجات مطابقة للشروط الحالية.",
+      "saved": "تم الحفظ",
+      "created": "تم إنشاء المجموعة",
+      "deleted": "تم حذف المجموعة",
+      "failed": "تعذّر الحفظ",
+      "deleteTitle": "حذف المجموعة؟",
+      "deleteDescription": "المنتجات ما بتنحذف، بس المجموعة نفسها.",
+      "confirmDelete": "نعم، احذف",
+      "add": "إضافة",
+      "basics": "الأساسيات",
+      "description": "الوصف (عربي)",
+      "matchAll": "تحقق كل الشروط",
+      "matchAny": "تحقق أي شرط",
+      "nameAr": "الاسم (عربي)",
+      "nameEn": "الاسم (إنجليزي)",
+      "nameRequired": "الاسم بالعربي مطلوب",
+      "newCollection": "مجموعة جديدة",
+      "noMatch": "لا منتجات مطابقة للشروط الحالية.",
+      "noProducts": "لا منتجات في المجموعة بعد.",
+      "pickCategory": "اختر تصنيفاً…",
+      "removeRule": "حذف الشرط",
+      "ruleField": "الحقل",
+      "ruleOp": "الشرط",
+      "ruleValue": "القيمة",
+      "rulesRequired": "المجموعة التلقائية تحتاج شرطاً واحداً على الأقل",
+      "saveFailed": "تعذّر الحفظ",
+      "searchProducts": "ابحث عن منتج…",
+      "seo": "السيو",
+      "seoTitle": "عنوان السيو",
+      "seoDescription": "وصف السيو",
+      "type": "النوع",
+      "valueInHalalas": "بالهللة",
+      "valuePlaceholder": "القيمة…",
+      "viewInStore": "عرض في المتجر",
+      "types": {
+        "manual": "يدوية",
+        "automatic": "تلقائية"
+      },
+      "typesHint": {
+        "manual": "تختار المنتجات بنفسك",
+        "automatic": "تتحدث حسب الشروط تلقائياً"
+      },
+      "matchedTitle": "المنتجات المطابقة ({count})",
+      "andMore": "و{count} منتجاً آخر…",
+      "results": "{count, plural, =0 {لا نتائج} one {منتج واحد} two {منتجان} few {{count} منتجات} many {{count} منتجاً} other {{count} منتج}}",
+      "unsavedChanges": "تغييرات غير محفوظة",
+      "moveUp": "أعلى",
+      "moveDown": "أسفل"
+    }
+  },
+  "approvals": {
+    "title": "الموافقات",
+    "description": "طلبات الوكلاء اللي تحتاج قرارك.",
+    "tabs": {
+      "pending": "معلّقة",
+      "decided": "مقروءة",
+      "all": "الكل"
+    },
+    "filters": {
+      "action": "الإجراء",
+      "allActions": "كل الإجراءات"
+    },
+    "actions": {
+      "cancel_order": "إلغاء طلب",
+      "refund": "استرداد مبلغ",
+      "discount_above_limit": "خصم فوق الحد"
+    },
+    "target": "الهدف",
+    "inConversation": "في محادثة",
+    "expires": "تنتهي {time}",
+    "expiresSoon": "تنتهي قريباً",
+    "decidedAt": "القرار: {time}",
+    "approve": "موافقة",
+    "reject": "رفض",
+    "approved": "تمت الموافقة",
+    "rejected": "تم الرفض",
+    "failed": "تعذّر تنفيذ القرار",
+    "rejectTitle": "رفض الطلب؟",
+    "rejectDescription": "بيوصل الرفض للوكيل وبيبلغ العميل.",
+    "rejectReason": "سبب الرفض (اختياري)",
+    "confirmReject": "نعم، ارفض",
+    "noneTitle": "لا توجد موافقات",
+    "noneDescription": "طلبات الوكلاء المعلّقة بتظهر هنا.",
+    "emptyFilterTitle": "لا نتائج",
+    "emptyFilterDescription": "ما فيه موافقات تطابق الفلاتر.",
+    "agentCopilot": "المساعد (Copilot)"
+  },
+  "knowledge": {
+    "title": "قاعدة المعرفة",
+    "description": "المصادر اللي يتعلم منها وكلاؤك.",
+    "addSource": "مصدر جديد",
+    "searchPlaceholder": "ابحث عن مصدر",
+    "noneTitle": "لا مصادر",
+    "noneDescription": "أضف ملفاً أو رابطاً أو أسئلة شائعة.",
+    "cancel": "إلغاء",
+    "deleted": "تم حذف المصدر",
+    "deleteTitle": "حذف المصدر؟",
+    "deleteDescription": "بينحذف «{name}» وما عاد الوكلاء يستخدمونه.",
+    "confirmDelete": "نعم، احذف",
+    "autoOn": "مزامنة تلقائية",
+    "types": {
+      "file": "ملف",
+      "url": "رابط",
+      "faq": "سؤال وجواب",
+      "policy": "سياسة",
+      "product_catalog": "كتالوج المنتجات",
+      "text": "نص"
+    },
+    "cols": {
+      "title": "العنوان",
+      "type": "النوع",
+      "status": "الحالة",
+      "chunks": "الأجزاء",
+      "agents": "الوكلاء",
+      "synced": "آخر مزامنة",
+      "auto": "تلقائي"
+    },
+    "add": {
+      "title": "مصدر معرفة جديد",
+      "description": "الوكلاء بيستخدمونه للرد على العملاء.",
+      "type": "النوع",
+      "types": {
+        "file": "ملف",
+        "url": "رابط",
+        "faq": "سؤال وجواب",
+        "policy": "سياسة (رابط)",
+        "product_catalog": "كتالوج المنتجات",
+        "text": "نص"
+      },
+      "name": "العنوان",
+      "file": "الملف",
+      "url": "الرابط",
+      "faqAnswer": "الإجابة",
+      "add": "إضافة",
+      "done": "أُضيف المصدر وجاري تجهيزه",
+      "failed": "تعذّرت الإضافة",
+      "textContent": "المحتوى النصي",
+      "editTitle": "تعديل المصدر",
+      "editDescription": "يُعاد فهرسة المصدر بعد الحفظ",
+      "save": "حفظ التعديلات"
+    },
+    "detail": {
+      "title": "مصدر المعرفة",
+      "notFoundTitle": "المصدر غير موجود",
+      "notFoundDescription": "الرابط غير صحيح.",
+      "backToList": "رجوع للمعرفة",
+      "processing": "جاري التجهيز",
+      "syncNow": "مزامنة الآن",
+      "delete": "حذف",
+      "deleteTitle": "حذف المصدر؟",
+      "deleteDescription": "بينحذف المصدر وكل أجزائه المفهرسة.",
+      "confirmDelete": "نعم، احذف",
+      "deleted": "تم الحذف",
+      "info": "المعلومات",
+      "f": {
+        "type": "النوع",
+        "chunks": "الأجزاء المفهرسة",
+        "file": "الملف",
+        "url": "الرابط",
+        "synced": "آخر مزامنة",
+        "autoSync": "مزامنة تلقائية"
+      },
+      "faqTitle": "الأسئلة والأجوبة",
+      "noFaq": "لا أسئلة بعد",
+      "testTitle": "اختبار الاسترجاع",
+      "testPlaceholder": "اسأل سؤالاً لاختبار المصدر…",
+      "test": "اختبر",
+      "answer": "الإجابة",
+      "usedBy": "الوكلاء المرتبطون",
+      "noAgents": "ما فيه وكيل يستخدم هذا المصدر",
+      "linkAgent": "ربط وكيل…",
+      "unlink": "إلغاء الربط",
+      "edit": "تعديل"
+    }
+  },
+  "dev": {
+    "title": "رسائل الواجهة (msg.*)",
+    "description": "مراجعة مكوّنات ونصوص docs/UI_MESSAGES.md — بيئة التطوير فقط",
+    "emptyStates": "الحالات الفاضية",
+    "pageErrors": "أخطاء الصفحات",
+    "validation": "التحقق (zod + api-error-map + inline)",
+    "dictionary": "القاموس الكامل",
+    "keysCount": "مفتاح",
+    "key": "المفتاح",
+    "arabic": "العربية",
+    "normal": "عادي",
+    "danger": "خطر",
+    "requireText": "كتابة نص",
+    "storeName": "نخلة",
+    "runZod": "شغّل zod على بيانات غلط",
+    "phone": "الجوال"
+  },
+  "storefront": {
+    "themes": {
+      "title": "ثيمات المتجر",
+      "description": "اختر شكل متجرك، عاينه، وخصصه في محرر التصميم",
+      "preview": "معاينة",
+      "customize": "تخصيص",
+      "apply": "تطبيق",
+      "versions": "{count, plural, one {# نسخة} two {# نسختين} few {# نسخ} many {# نسخة} other {# نسخة}}",
+      "scheduledFor": "موعد النشر المجدول",
+      "window": {
+        "button": "نافذة مؤقتة",
+        "title": "ثيم مؤقت (نافذة تفعيل)",
+        "from": "من",
+        "to": "إلى",
+        "save": "حفظ النافذة",
+        "clear": "إزالة النافذة"
+      },
+      "actions": "إجراءات",
+      "duplicate": "نسخ",
+      "rename": "إعادة تسمية",
+      "renameLabel": "اسم الثيم",
+      "renameSave": "حفظ الاسم",
+      "export": "تصدير JSON",
+      "import": "استيراد JSON",
+      "importFailed": "فشل استيراد الثيم",
+      "close": "إغلاق",
+      "delete": "حذف الثيم"
+    },
+    "pages": {
+      "title": "صفحات المتجر",
+      "description": "صفحات المحتوى مثل «من نحن» والسياسات",
+      "new": "صفحة جديدة",
+      "cols": {
+        "title": "العنوان",
+        "slug": "الرابط",
+        "status": "الحالة",
+        "inMenu": "في القائمة"
+      },
+      "inMenu": "ظاهرة",
+      "editor": {
+        "newTitle": "صفحة جديدة",
+        "editTitle": "تعديل الصفحة",
+        "back": "كل الصفحات",
+        "titleAr": "العنوان (عربي)",
+        "titleEn": "العنوان (إنجليزي)",
+        "slug": "الرابط",
+        "slugHint": "مثال: /pages/about",
+        "contentAr": "المحتوى (عربي)",
+        "contentEn": "المحتوى (إنجليزي)",
+        "seoTitle": "عنوان السيو",
+        "seoDescription": "وصف السيو",
+        "published": "منشورة على المتجر",
+        "showInMenu": "إظهار في قوائم المتجر",
+        "save": "حفظ الصفحة",
+        "saved": "تم حفظ الصفحة",
+        "errors": {
+          "required": "هذا الحقل مطلوب",
+          "slug": "استخدم حروف إنجليزية صغيرة وأرقام وشرطة (-) فقط",
+          "taken": "هذا الرابط مستخدم في صفحة ثانية"
+        },
+        "template": "قالب الصفحة",
+        "templateNone": "بدون قالب — محتوى نصي",
+        "templateHint": "صفحات الهبوط تعرض أقسام قالب مخصص من محرر التصميم بدل المحتوى النصي."
+      },
+      "preview": "معاينة على المتجر",
+      "delete": "حذف الصفحة",
+      "deleteUsedWarning": "الصفحة مربوطة بـ {menus} — الرابط بيصير مكسور بعد الحذف",
+      "menuLocations": {
+        "header": "قائمة الهيدر",
+        "footer": "قائمة الفوتر"
+      }
+    },
+    "menus": {
+      "title": "قوائم المتجر",
+      "description": "روابط الهيدر والفوتر اللي تظهر لعملائك",
+      "locations": {
+        "header": "قائمة الهيدر",
+        "footer": "قائمة الفوتر"
+      },
+      "addItem": "إضافة عنصر",
+      "addSub": "إضافة فرعي",
+      "empty": "القائمة فاضية — أضف أول عنصر",
+      "untitled": "عنصر بدون نص",
+      "save": "حفظ القائمة",
+      "moveUp": "تحريك لأعلى",
+      "moveDown": "تحريك لأسفل",
+      "remove": "حذف العنصر",
+      "edit": "تعديل",
+      "item": {
+        "labelAr": "النص (عربي)",
+        "labelEn": "النص (إنجليزي)",
+        "linkType": "نوع الرابط",
+        "types": {
+          "page": "صفحة",
+          "category": "تصنيف",
+          "collection": "مجموعة",
+          "product": "منتج",
+          "url": "رابط"
+        },
+        "target": "الهدف",
+        "url": "الرابط",
+        "choose": "اختر…",
+        "add": "إضافة",
+        "done": "تم"
+      },
+      "newMenu": "قائمة جديدة",
+      "newMenuHint": "القائمة الجديدة بتبدأ فاضية — أضف عناصرها واحفظ",
+      "deleteMenu": "حذف القائمة",
+      "broken": "رابط مكسور",
+      "brokenHint": "الهدف انحذف أو الرابط ناقص — عدّل العنصر"
+    },
+    "domains": {
+      "title": "الدومينات",
+      "description": "اربط دومينك الخاص وفعّل شهادة الأمان",
+      "add": "إضافة دومين",
+      "placeholder": "shop.example.sa",
+      "primary": "الرئيسي",
+      "setPrimary": "تعيين كرئيسي",
+      "verify": "إعادة التحقق",
+      "remove": "حذف الدومين",
+      "types": {
+        "subdomain": "دومين المنصة",
+        "custom": "دومين خاص"
+      },
+      "status": {
+        "verification": "حالة الربط",
+        "ssl": "شهادة SSL"
+      },
+      "dns": {
+        "title": "سجلات DNS المطلوبة",
+        "hint": "أضف هذه السجلات عند مزود الدومين، وبنجهز الشهادة تلقائياً بعد التحقق",
+        "type": "النوع",
+        "name": "الاسم",
+        "value": "القيمة"
+      },
+      "errors": {
+        "hostname": "اكتب دومين صحيح مثل shop.example.sa"
+      },
+      "simulated": "وضع المحاكاة: التحقق من الدومين وإصدار الشهادة يتم تلقائياً — الربط الفعلي يحتاج مزود DNS حقيقي"
+    },
+    "seo": {
+      "title": "تحسين محركات البحث",
+      "description": "عنوان ووصف الصفحة الرئيسية، وتحويلات الروابط القديمة",
+      "home": {
+        "title": "سيو الصفحة الرئيسية",
+        "seoTitle": "العنوان",
+        "seoDescription": "الوصف",
+        "shareImage": "صورة المشاركة",
+        "shareImageHint": "تظهر لما أحد يشارك رابط متجرك",
+        "noImage": "ما فيه صورة — المحرر يستخدم شعار المتجر افتراضياً",
+        "save": "حفظ"
+      },
+      "redirects": {
+        "title": "التحويلات (301)",
+        "from": "من",
+        "to": "إلى",
+        "add": "إضافة تحويل",
+        "remove": "حذف التحويل",
+        "hint": "مثال: /old-page"
+      },
+      "sitemap": {
+        "title": "خريطة الموقع",
+        "hint": "تتحدث تلقائياً مع كل صفحة ومنتج",
+        "open": "فتح sitemap.xml"
+      },
+      "preview": {
+        "serp": "معاينة نتيجة قوقل",
+        "social": "معاينة المشاركة"
+      },
+      "validation": {
+        "titleRequired": "العنوان مطلوب",
+        "titleLong": "أطول من 50 حرف — قوقل بيقصه في النتائج",
+        "descLong": "أطول من 155 حرف — بينقص في النتائج"
+      }
+    }
+  },
+  "signup": {
+    "title": "أنشئ متجرك",
+    "subtitle": "جرّب المنصة مجاناً — بدون بطاقة ائتمان",
+    "name": "اسمك",
+    "store": {
+      "title": "بيانات متجرك",
+      "subtitle": "خطوة أخيرة — وش تبيع؟",
+      "submit": "أنشئ المتجر"
+    },
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "submit": "إنشاء المتجر",
+    "haveAccount": "عندك حساب؟",
+    "login": "سجّل دخولك",
+    "terms": "بإنشائك الحساب توافق على الشروط وسياسة الخصوصية",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "اكتب بريد إلكتروني صحيح",
+      "tooShort": "كلمة المرور 8 أحرف على الأقل"
+    },
+    "verify": {
+      "title": "أدخل رمز التحقق",
+      "subtitle": "أرسلنا رمزاً من 6 أرقام إلى جوالك",
+      "code": "رمز التحقق",
+      "submit": "تأكيد",
+      "resend": "إعادة إرسال الرمز"
+    }
+  },
+  "forgot": {
+    "title": "نسيت كلمة المرور؟",
+    "subtitle": "اكتب بريدك وبنرسل لك رابط إعادة التعيين",
+    "email": "البريد الإلكتروني",
+    "submit": "إرسال الرابط",
+    "sentTitle": "تحقق من بريدك",
+    "resend": "إعادة الإرسال",
+    "back": "العودة لتسجيل الدخول",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "اكتب بريد إلكتروني صحيح"
+    }
+  },
+  "mfa": {
+    "title": "التحقق بخطوتين",
+    "subtitle": "أدخل رمز التحقق المرسل إلى جوالك",
+    "code": "رمز التحقق",
+    "submit": "تحقق ودخول",
+    "resend": "إعادة إرسال الرمز",
+    "back": "العودة لتسجيل الدخول",
+    "errors": {
+      "length": "الرمز 6 أرقام"
+    }
+  },
+  "invite": {
+    "title": "قبول الدعوة",
+    "subtitle": "أكمل حسابك عشان تنضم للفريق",
+    "name": "اسمك",
+    "password": "كلمة مرور جديدة",
+    "submit": "انضم للفريق",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "tooShort": "كلمة المرور 8 أحرف على الأقل"
+    }
+  },
+  "onboarding": {
+    "title": "إعداد متجرك",
+    "subtitle": "أربع خطوات بسيطة ويبدأ متجرك يشتغل",
+    "step": "الخطوة {n} من {total}",
+    "steps": {
+      "store": "بيانات المتجر",
+      "product": "أول منتج",
+      "payment": "الدفع",
+      "done": "جاهز"
+    },
+    "storeForm": {
+      "name": "اسم المتجر",
+      "industry": "النشاط",
+      "city": "المدينة"
+    },
+    "industries": {
+      "gifts": "هدايا",
+      "perfumes": "عطور",
+      "fashion": "أزياء",
+      "food": "أغذية",
+      "other": "أخرى"
+    },
+    "productForm": {
+      "name": "اسم المنتج",
+      "price": "السعر (ر.س)",
+      "hint": "أضف الأساسيات الحين — تقدر تكمل التفاصيل والصور لاحقاً"
+    },
+    "paymentForm": {
+      "hint": "فعّل طرق الدفع اللي تبيها تستقبلها من عملائك",
+      "online": "الدفع الإلكتروني (مدى · فيزا · Apple Pay)",
+      "cod": "الدفع عند الاستلام"
+    },
+    "done": {
+      "title": "متجرك جاهز",
+      "body": "كمّل إضافة منتجاتك وانشر متجرك متى ما جهزت",
+      "cta": "الذهاب للوحة التحكم"
+    },
+    "next": "التالي",
+    "back": "رجوع",
+    "skip": "تخطَّ الحين",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "price": "أدخل سعراً صحيحاً"
+    }
+  },
+  "shipments": {
+    "title": "الشحنات",
+    "description": "تتبع شحناتك مع كل شركات الشحن من مكان واحد.",
+    "search": "ابحث برقم التتبع أو الطلب أو العميل",
+    "printLabels": "طباعة البوالص",
+    "delayed": "متأخرة",
+    "col": {
+      "tracking": "رقم التتبع",
+      "order": "الطلب",
+      "customer": "العميل",
+      "carrier": "الناقل",
+      "city": "المدينة",
+      "status": "الحالة",
+      "cod": "COD",
+      "updated": "آخر تحديث",
+      "description": "الوصف",
+      "quantity": "الكمية",
+      "unitPrice": "سعر الوحدة",
+      "vat": "الضريبة",
+      "total": "الإجمالي",
+      "service": "الخدمة",
+      "created": "تاريخ الإنشاء",
+      "eta": "الوصول المتوقع",
+      "cost": "التكلفة",
+      "payment": "حالة الدفع"
+    },
+    "filters": {
+      "all": "الكل",
+      "delayed": "المتأخرة فقط",
+      "cod": "COD فقط",
+      "service": "الخدمة",
+      "date": "تاريخ الإنشاء",
+      "stale": "بلا تحديث منذ ٣ أيام",
+      "reset": "إعادة تعيين"
+    },
+    "status": {
+      "label_created": "تم إنشاء البوليصة",
+      "picked_up": "تم الاستلام",
+      "in_transit": "في الطريق",
+      "out_for_delivery": "خرج للتوصيل",
+      "delivered": "تم التوصيل",
+      "failed_attempt": "محاولة فاشلة",
+      "returned": "مرتجعة",
+      "cancelled": "ملغاة"
+    },
+    "type": {
+      "outbound": "صادرة",
+      "return": "إرجاع"
+    },
+    "updateStatus": "تحديث الحالة",
+    "printLabel": "طباعة البوليصة",
+    "notifyCustomer": "أرسل التحديث للعميل",
+    "timeline": "الخط الزمني",
+    "items": "القطع",
+    "address": "عنوان التوصيل",
+    "carrier": "شركة الشحن",
+    "service": "الخدمة",
+    "cost": "التكلفة",
+    "eta": "التسليم المتوقع",
+    "links": "الروابط",
+    "results": "{count} شحنة",
+    "stale": "بلا تحديث",
+    "updateTracking": "تحديث التتبع",
+    "trackExternal": "التتبع الخارجي",
+    "driverNotes": "ملاحظات التوصيل",
+    "packages": "الطرود",
+    "bulk": {
+      "print": "طباعة البوالص ({count})",
+      "none": "ما فيه شحنة من المحدد عندها بوليصة جاهزة للطباعة",
+      "done": "أُرسلت {count} بوليصة للطابعة",
+      "skipped": "تم تخطي {skipped} — ما عندها بوليصة/تتبع بعد",
+      "skippedShort": "{skipped} متخطاة"
+    },
+    "statusDialog": {
+      "title": "تحديث حالة الشحنة",
+      "description": "سجّل مسح الناقل للشحنة {tracking}.",
+      "status": "الحالة الجديدة",
+      "location": "موقع المسح (اختياري)",
+      "note": "ملاحظة (اختياري)",
+      "cancel": "إلغاء",
+      "save": "حفظ الحالة",
+      "saved": "تم تحديث حالة الشحنة",
+      "terminal": "هذه الشحنة في حالة نهائية — ما ينعمل أي انتقال إضافي.",
+      "to": {
+        "label_created": "إنشاء البوليصة",
+        "picked_up": "تم الاستلام من المتجر",
+        "in_transit": "في الطريق",
+        "out_for_delivery": "خرجت للتوصيل",
+        "delivered": "تم التوصيل",
+        "failed_attempt": "محاولة توصيل فاشلة",
+        "returned": "رجعت للمرسل",
+        "cancelled": "إلغاء الشحنة"
+      },
+      "errors": {
+        "same_status": "الشحنة أصلاً بهذه الحالة",
+        "invalid_transition": "هذا الانتقال غير مسموح من الحالة الحالية",
+        "failed": "تعذّر تحديث حالة الشحنة"
+      }
+    },
+    "trackingDialog": {
+      "title": "تحديث التتبع",
+      "description": "عيّن أو صحّح رقم التتبع ورابطه من الناقل.",
+      "number": "رقم التتبع",
+      "url": "رابط التتبع (اختياري)",
+      "cancel": "إلغاء",
+      "save": "حفظ التتبع",
+      "saved": "تم تحديث التتبع",
+      "failed": "تعذّر تحديث التتبع"
+    }
+  },
+  "mediaLibrary": {
+    "title": "مكتبة الوسائط",
+    "description": "صور وفيديوهات متجرك — ارفع، قص، اضغط، وعدّل النص البديل",
+    "dropzone": "اسحب الملفات هنا أو اضغط للرفع",
+    "dropzoneHint": "صور حتى 8MB — يمكنك رفع عدة ملفات مع بعض",
+    "search": "ابحث بالنص البديل أو الرابط…",
+    "filters": {
+      "all": "الكل",
+      "images": "صور",
+      "video": "فيديو",
+      "used": "مستخدمة",
+      "unused": "غير مستخدمة"
+    },
+    "empty": "لا توجد ملفات تطابق البحث",
+    "heavy": "أكبر من 500KB",
+    "used": "مستخدمة",
+    "unused": "غير مستخدمة",
+    "compress": "ضغط",
+    "crop": "قص",
+    "delete": "حذف",
+    "altAr": "النص البديل (عربي)",
+    "altEn": "Alt text (English)",
+    "copyUrl": "نسخ الرابط",
+    "select": "تحديد",
+    "selected": "{count} محدد",
+    "deleteSelected": "حذف المحدد",
+    "deselect": "إلغاء التحديد"
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "description": "كل تنبيهات متجرك في مكان واحد — مع تفضيلات القنوات",
+    "tabs": {
+      "list": "الإشعارات",
+      "prefs": "التفضيلات"
+    },
+    "box": {
+      "active": "النشطة",
+      "archived": "المؤرشفة"
+    },
+    "filters": {
+      "box": "القائمة",
+      "event": "النوع",
+      "allEvents": "كل الأنواع",
+      "read": "الحالة",
+      "allRead": "الكل",
+      "unread": "غير مقروءة",
+      "readOnly": "مقروءة",
+      "date": "التاريخ",
+      "allDates": "كل الفترات",
+      "today": "اليوم",
+      "week": "آخر ٧ أيام",
+      "month": "آخر ٣٠ يوماً"
+    },
+    "searchPlaceholder": "ابحث في الإشعارات…",
+    "actions": {
+      "markRead": "تحديد كمقروء",
+      "markAllRead": "تحديد الكل كمقروء",
+      "archive": "أرشفة",
+      "unarchive": "إلغاء الأرشفة"
+    },
+    "results": "{count, plural, one {إشعار واحد} two {إشعاران} few {# إشعارات} many {# إشعاراً} other {# إشعار}}",
+    "resetFilters": "مسح الفلاتر",
+    "empty": {
+      "title": "لا توجد إشعارات",
+      "body": "إشعارات الطلبات والمخزون والفواتير تظهر هنا"
+    },
+    "emptyFiltered": {
+      "title": "لا نتائج تطابق الفلاتر",
+      "body": "جرّب تغيير الفلاتر أو البحث"
+    },
+    "pagination": {
+      "perPage": "{count} لكل صفحة",
+      "page": "صفحة {page} من {pages}",
+      "prev": "السابق",
+      "next": "التالي"
+    },
+    "events": {
+      "order_created": "طلب جديد",
+      "payment_failed": "فشل دفع",
+      "conversation_waiting": "محادثة بانتظار رد",
+      "approval_requested": "طلب موافقة وكيل",
+      "low_stock": "مخزون منخفض",
+      "shipments_delayed": "شحنات متأخرة",
+      "invoice_rejected": "فاتورة مرفوضة",
+      "return_requested": "طلب إرجاع",
+      "app_installed": "تثبيت تطبيق",
+      "usage_limit": "اقتراب من حد الباقة"
+    },
+    "prefs": {
+      "title": "تفضيلات الإشعارات",
+      "description": "اختر القنوات التي يصلك عليها كل نوع من الإشعارات",
+      "event": "الحدث",
+      "channels": {
+        "inapp": "داخل اللوحة",
+        "whatsapp": "واتساب",
+        "email": "بريد",
+        "sms": "رسائل نصية"
+      },
+      "events": {
+        "order_created": "طلب جديد",
+        "payment_failed": "فشل دفع",
+        "conversation_waiting": "محادثة بانتظار رد",
+        "approval_requested": "طلب موافقة وكيل",
+        "low_stock": "مخزون منخفض",
+        "shipments_delayed": "شحنات متأخرة",
+        "invoice_rejected": "فاتورة مرفوضة",
+        "return_requested": "طلب إرجاع",
+        "app_installed": "تثبيت تطبيق",
+        "usage_limit": "اقتراب من حد الباقة"
+      },
+      "simulatedHint": "إشعارات اللوحة تعمل فعلياً. القنوات الخارجية (واتساب/بريد/نصية) تُحفظ كتفضيل فقط — التوصيل الفعلي يحتاج ربط مزوّد خدمة.",
+      "inappNote": "إيقاف \"داخل اللوحة\" يخفي الحدث من الجرس ومركز الإشعارات الجديدة فقط — السجل يبقى محفوظاً."
+    }
+  },
+  "maintenance": {
+    "shellBanner": "المتجر في وضع الصيانة — الزوار يشوفون صفحة صيانة",
+    "manage": "إدارة"
+  }
+}

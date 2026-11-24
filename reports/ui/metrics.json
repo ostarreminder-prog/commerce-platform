@@ -1,0 +1,38 @@
+{
+  "measuredAt": "2026-11-23T09:10:47.648Z",
+  "mode": "production (next build + next start)",
+  "routes": [
+    {
+      "app": "storefront",
+      "label": "المتجر — الرئيسية /",
+      "url": "http://localhost:3001/",
+      "manifest": "/(site)/page",
+      "firstLoadJsKb": 803,
+      "lcpMs": 448
+    },
+    {
+      "app": "storefront",
+      "label": "المتجر — منتج /p/…",
+      "url": "http://localhost:3001/p/saudi-cardamom-coffee-500g",
+      "manifest": "/(site)/p/[slug]/page",
+      "firstLoadJsKb": 841,
+      "lcpMs": 728
+    },
+    {
+      "app": "storefront",
+      "label": "المتجر — تصنيف /c/…",
+      "url": "http://localhost:3001/c/coffee-dates",
+      "manifest": "/(site)/c/[slug]/page",
+      "firstLoadJsKb": 761,
+      "lcpMs": 400
+    },
+    {
+      "app": "admin",
+      "label": "لوحة التاجر — الرئيسية",
+      "url": "http://localhost:3000/nakhla",
+      "manifest": "/(dashboard)/[store]/page",
+      "firstLoadJsKb": 1209,
+      "lcpMs": 484
+    }
+  ]
+}

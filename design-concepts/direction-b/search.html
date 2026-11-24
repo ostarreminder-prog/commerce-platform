@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>البحث — دار سَحَر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diwan.css">
+<style>
+.shead{padding:clamp(36px,5vw,70px) 0 0}
+.shead .lbl{font-size:.66rem;letter-spacing:.3em;color:var(--faint)}
+.sfield{position:relative;border-bottom:2px solid var(--ink);margin-top:12px;display:flex;align-items:baseline;gap:14px}
+.sfield input{flex:1;background:none;border:none;color:var(--ink);font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,3.4rem);padding:16px 4px;outline:none}
+.sfield input::placeholder{color:var(--faint)}
+.sfield .cnt{font-family:var(--lat);font-size:.9rem;color:var(--faint);white-space:nowrap}
+/* live suggestions */
+.sugg{position:absolute;top:100%;inset-inline:0;z-index:40;background:var(--paper);border:1px solid var(--line2);border-top:none;display:none;max-height:60vh;overflow-y:auto;box-shadow:0 24px 40px -20px rgba(34,29,21,.25)}
+.sugg.open{display:block}
+.sugg .sg-head{font-size:.58rem;letter-spacing:.28em;color:var(--faint);padding:14px 18px 8px;border-top:1px solid var(--line)}
+.sugg .sg-head:first-child{border:none}
+.sg-item{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;padding:10px 18px;cursor:pointer;transition:.15s}
+.sg-item:hover,.sg-item.sel{background:var(--paper2)}
+.sg-item .sf{width:52px;height:64px;border:1px solid var(--line2);background:var(--paper2);display:grid;place-items:center}
+.sg-item .sn{font-family:var(--serif);font-size:1rem}
+.sg-item .sn mark{background:none;color:var(--henna)}
+.sg-item .sc{font-size:.6rem;color:var(--faint);letter-spacing:.16em;margin-top:3px}
+.sg-item .sp{font-family:var(--lat);font-size:.9rem}
+.sg-col{display:flex;justify-content:space-between;align-items:baseline;padding:12px 18px;font-family:var(--serif);font-size:1rem;cursor:pointer}
+.sg-col:hover,.sg-col.sel{background:var(--paper2)}
+.sg-col small{font-family:var(--sans);font-size:.62rem;color:var(--faint);letter-spacing:.2em}
+/* results meta */
+.rmeta{display:flex;justify-content:space-between;align-items:baseline;padding:22px 0;font-size:.72rem;color:var(--faint);letter-spacing:.18em;border-bottom:1px solid var(--line)}
+.rmeta b{color:var(--ink);font-weight:400}
+/* empty */
+.no-r{padding:clamp(60px,8vw,110px) 0;text-align:center;display:none}
+.no-r h3{font-family:var(--serif);font-weight:400;font-size:1.8rem;margin-bottom:10px}
+.no-r p{color:var(--ink2);font-size:.85rem;line-height:2;margin-bottom:26px}
+.no-r .try{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.no-r .try span{border:1px solid var(--line2);padding:9px 18px;font-size:.74rem;cursor:pointer}
+.no-r .try span:hover{border-color:var(--henna);color:var(--henna)}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap in">
+    <button class="burger" aria-label="القائمة">☰</button>
+    <a class="logo" href="index.html"><div class="ar">دار سَحَر</div><div class="en">DAR SAHAR</div></a>
+    <nav><a href="index.html#plates">المختارات</a><a href="collection.html">الفصول</a><a href="index.html#colophon">عن الدار</a></nav>
+    <div class="tools">
+      <button aria-label="بحث" style="border-color:var(--henna);color:var(--henna)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button onclick="location='cart.html'" aria-label="السلة"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg><span class="cnt">٢</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="shead">
+    <span class="lbl">فهرس الدار — بحث حيّ</span>
+    <div class="sfield">
+      <input id="q" placeholder="عود، ورد طائفي، مسك…" aria-label="بحث" autocomplete="off">
+      <span class="cnt" id="qCnt"></span>
+      <div class="sugg" id="sugg"></div>
+    </div>
+  </section>
+
+  <div class="rmeta" id="rmeta"></div>
+  <div class="plates dense" id="grid"></div>
+
+  <div class="no-r" id="noR">
+    <div class="glyph serif">؟</div>
+    <h3>لا لوحة بهذا الاسم في الفهرس</h3>
+    <p id="noRTxt">جرّب كلمة أعمّ — أو تصفّح الفصول الخمسة كاملة.</p>
+    <div class="try"><span data-q="عود">عود</span><span data-q="مسك">مسك</span><span data-q="ورد">ورد</span><span data-q="عنبر">عنبر</span><a class="link-u" href="collection.html" style="border:none;padding:9px 0">كل الفصول ←</a></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><div class="imprint"><span>دار سَحَر © ٢٠٢٦</span><span class="lat">INDEX — 30 PLATES</span></div></div>
+</footer>
+
+<script src="../shared/data.js"></script>
+<script src="../shared/bottle.js"></script>
+<script>
+const P = SAHAR.products, C = SAHAR.collections;
+const arD = n => String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const q = document.getElementById("q"), sugg = document.getElementById("sugg"),
+      grid = document.getElementById("grid"), rmeta = document.getElementById("rmeta"), noR = document.getElementById("noR");
+
+const haystack = P.map(p => ({ p, s: [p.ar, p.en, SAHAR.col(p.col).ar, p.conc,
+  p.notes.top.join(" "), p.notes.heart.join(" "), p.notes.base.join(" "), p.badge||""].join(" ").toLowerCase() }));
+
+function find(str){
+  const t = str.trim().toLowerCase();
+  if(!t) return P;
+  const terms = t.split(/\s+/);
+  return haystack.filter(h => terms.every(x => h.s.includes(x))).map(h => h.p);
+}
+const mark = (txt, str) => {
+  const t = str.trim(); if(!t) return txt;
+  return txt.replace(new RegExp(`(${t.replace(/[.*+?^${"${"}()|[\\]\\\\]/g,"\\$&")})`,"gi"), "<mark>$1</mark>");
+};
+
+function renderSugg(str){
+  const t = str.trim();
+  if(t.length < 1){ sugg.classList.remove("open"); return; }
+  const hits = find(t).slice(0,5);
+  const cols = C.filter(c => c.ar.includes(t) || c.en.toLowerCase().includes(t.toLowerCase()));
+  sugg.innerHTML =
+    (cols.length?`<div class="sg-head">الفصول</div>` + cols.map(c=>`<div class="sg-col" onclick="location='collection.html?c=${c.id}'"><span>${mark(c.ar,t)}</span><small>الفصل · ${arD(P.filter(p=>p.col===c.id).length)} لوحة</small></div>`).join(""):"") +
+    (hits.length?`<div class="sg-head">لوحات — ${arD(find(t).length)} نتيجة</div>` + hits.map(p=>`
+      <div class="sg-item" onclick="location='product.html?p=${p.id}'">
+        <span class="sf">${bottleSVG(p,{mode:"paper",glow:false,scale:.26})}</span>
+        <span><span class="sn">${mark(p.ar,t)}</span><div class="sc">${SAHAR.col(p.col).ar} · ${p.conc}</div></span>
+        <span class="sp lat">${p.price.toLocaleString("en-US")}</span>
+      </div>`).join(""):"") +
+    `<div class="sg-col" onclick="document.getElementById('q').form?.submit?.()"><span style="color:var(--henna)">كل النتائج عن «${t}» ↵</span><small>enter</small></div>`;
+  sugg.classList.add("open");
+}
+
+function render(){
+  const t = q.value;
+  const list = find(t);
+  rmeta.innerHTML = t.trim()
+    ? `<span>نتائج البحث عن <b>«${t}»</b></span><span class="lat">${list.length} PLATES</span>`
+    : `<span>الفهرس الكامل</span><span class="lat">${P.length} PLATES</span>`;
+  noR.style.display = list.length ? "none" : "block";
+  document.getElementById("noRTxt").textContent = `لا نتائج عن «${t}» — جرّب كلمة أعمّ أو تصفّح الفصول.`;
+  grid.innerHTML = list.map((p,i)=>`<a class="pl" href="product.html?p=${p.id}">
+    ${p.badge?`<span class="badge">${p.badge}</span>`:""}
+    <div class="fig">${bottleSVG(p,{mode:"paper"})}
+      <div class="quick"><button>أضِف إلى السلة</button><button class="hv" aria-label="مفضلة">♡</button></div></div>
+    <div class="cap"><span class="fno lat">${arD(String(i+1).padStart(2,"0"))}</span>
+      <span><span class="name serif">${mark(p.ar,t)}</span><span class="col">${SAHAR.col(p.col).ar} · ${p.conc}</span></span>
+      <span class="price lat">${p.price.toLocaleString("en-US")} ر.س</span></div>
+  </a>`).join("");
+}
+
+q.addEventListener("input", () => { renderSugg(q.value); render(); });
+q.addEventListener("focus", () => renderSugg(q.value));
+document.addEventListener("click", e => { if(!e.target.closest(".sfield")) sugg.classList.remove("open"); });
+document.querySelectorAll(".try span").forEach(s => s.onclick = () => { q.value = s.dataset.q; render(); q.focus(); });
+const qp = new URLSearchParams(location.search).get("q"); if(qp) q.value = qp;
+render();
+q.focus();
+</script>
+</body>
+</html>

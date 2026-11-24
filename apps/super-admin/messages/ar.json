@@ -1,0 +1,322 @@
+{
+  "meta": {
+    "title": "لوحة مالك المنصة",
+    "description": "إدارة المتاجر والباقات والمنصة"
+  },
+  "nav": {
+    "brand": "منصة تاجر",
+    "console": "لوحة المنصة",
+    "main": "القائمة الرئيسية",
+    "openMenu": "فتح القائمة",
+    "overview": "نظرة عامة",
+    "tenants": "المتاجر",
+    "plans": "الباقات",
+    "subscriptions": "الاشتراكات",
+    "usage": "الاستهلاك",
+    "ai": "استهلاك الذكاء الاصطناعي",
+    "appsReview": "مراجعة التطبيقات",
+    "partners": "المطورون",
+    "providers": "مزودو الخدمة",
+    "jobs": "المهام الخلفية",
+    "logs": "سجل العمليات",
+    "flags": "الميزات التجريبية",
+    "themes": "القوالب",
+    "team": "فريق المنصة",
+    "env": "بيئة الإنتاج",
+    "logoInitial": "ت",
+    "userInitials": "م ن",
+    "copilot": "المساعد الذكي"
+  },
+  "common": {
+    "search": "بحث",
+    "all": "الكل",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "saved": "تم الحفظ",
+    "noResults": "ما فيه نتائج تطابق بحثك",
+    "error": "تعذّر تحميل البيانات",
+    "retry": "إعادة المحاولة",
+    "back": "رجوع",
+    "perMonth": "/ شهرياً"
+  },
+  "category": {
+    "payments": "المدفوعات",
+    "shipping": "الشحن",
+    "marketing": "التسويق",
+    "accounting": "المحاسبة",
+    "ai": "الذكاء الاصطناعي"
+  },
+  "subStatus": {
+    "trialing": "تجريبي",
+    "active": "نشط",
+    "past_due": "متأخر",
+    "cancelled": "ملغي"
+  },
+  "reviewStatus": {
+    "pending": "بانتظار المراجعة",
+    "approved": "معتمد",
+    "rejected": "مرفوض"
+  },
+  "jobStatus": {
+    "success": "ناجح",
+    "running": "يعمل الآن",
+    "failed": "فشل",
+    "queued": "بالانتظار"
+  },
+  "partnerStatus": {
+    "active": "نشط",
+    "pending": "بانتظار التفعيل",
+    "suspended": "موقوف"
+  },
+  "staffStatus": {
+    "active": "نشط",
+    "invited": "مدعو",
+    "suspended": "موقوف"
+  },
+  "role": {
+    "owner": "مالك",
+    "admin": "مدير",
+    "support": "دعم",
+    "developer": "مطور"
+  },
+  "providerKind": {
+    "shipping": "شحن",
+    "payment": "مدفوعات",
+    "communication": "تواصل"
+  },
+  "flagScope": {
+    "all": "كل المتاجر",
+    "plan": "حسب الباقة",
+    "stores": "متاجر محددة"
+  },
+  "orderStub": {
+    "paid": "مدفوع",
+    "pending": "قيد المعالجة",
+    "refunded": "مسترجع"
+  },
+  "plan": {
+    "starter": "الأساسية",
+    "growth": "النمو",
+    "pro": "الاحترافية"
+  },
+  "status": {
+    "active": "نشط",
+    "trial": "تجريبي",
+    "suspended": "موقوف"
+  },
+  "overview": {
+    "title": "نظرة عامة على المنصة",
+    "description": "أداء المنصة لكل المتاجر.",
+    "mrr": "الإيراد الشهري المتكرر",
+    "tenants": "المتاجر",
+    "gmv": "إجمالي مبيعات المتاجر",
+    "ai": "محادثات الوكلاء",
+    "mrrChart": "الإيراد الشهري المتكرر (12 شهر)",
+    "planMix": "توزيع الباقات",
+    "health": "حالة الخدمات",
+    "operational": "تعمل",
+    "degraded": "أداء منخفض",
+    "uptime": "التوفر {value}",
+    "latest": "أحدث المتاجر",
+    "viewAll": "عرض الكل",
+    "storesCount": "{count} متجر"
+  },
+  "tenants": {
+    "title": "المتاجر",
+    "description": "كل المتاجر المسجلة في المنصة.",
+    "search": "ابحث بالاسم أو الدومين أو المالك",
+    "planFilter": "الباقة",
+    "store": "المتجر",
+    "owner": "المالك",
+    "city": "المدينة",
+    "orders": "الطلبات",
+    "gmv": "المبيعات",
+    "joined": "تاريخ التسجيل",
+    "details": "تفاصيل المتجر",
+    "suspend": "إيقاف المتجر",
+    "activate": "تفعيل المتجر",
+    "impersonate": "الدخول كتاجر",
+    "visit": "زيارة المتجر",
+    "suspended": "تم إيقاف {name}",
+    "activated": "تم تفعيل {name}",
+    "impersonating": "جاري فتح لوحة {name}...",
+    "aiConversations": "محادثات الوكلاء",
+    "contact": "التواصل",
+    "openDetails": "فتح صفحة المتجر"
+  },
+  "store": {
+    "back": "المتاجر",
+    "notFound": "المتجر غير موجود",
+    "info": "بيانات المتجر",
+    "subscription": "الاشتراك",
+    "renews": "نهاية الفترة الحالية",
+    "mrr": "الإيراد الشهري",
+    "usage": "الاستهلاك",
+    "aiTokens": "رموز الذكاء الاصطناعي",
+    "aiMessages": "رسائل الوكلاء",
+    "apiCalls": "طلبات API",
+    "staff": "الموظفون",
+    "orders": "أحدث الطلبات",
+    "ordersStub": "بيانات تجريبية — آخر 5 طلبات",
+    "orderNumber": "طلب رقم {number}"
+  },
+  "planDetail": {
+    "back": "الباقات",
+    "notFound": "الباقة غير موجودة",
+    "limits": "الحدود",
+    "features": "المزايا",
+    "subscribers": "المشتركون ({count})",
+    "aiQuota": "محادثات الذكاء الاصطناعي",
+    "seats": "مقاعد الموظفين",
+    "fee": "عمولة العمليات",
+    "price": "السعر الشهري",
+    "storesOnPlan": "المتاجر على هذه الباقة"
+  },
+  "subscriptions": {
+    "title": "الاشتراكات",
+    "description": "اشتراكات المتاجر وحالة الفوترة.",
+    "store": "المتجر",
+    "plan": "الباقة",
+    "status": "الحالة",
+    "mrr": "الإيراد الشهري",
+    "renews": "نهاية الفترة",
+    "started": "بداية الاشتراك",
+    "totalMrr": "إجمالي الإيراد الشهري"
+  },
+  "usage": {
+    "title": "استهلاك المنصة",
+    "description": "استهلاك الذكاء الاصطناعي وAPI لكل متجر.",
+    "store": "المتجر",
+    "messages": "رسائل الوكلاء",
+    "tokens": "الرموز (Tokens)",
+    "apiCalls": "طلبات API",
+    "share": "من إجمالي الاستهلاك"
+  },
+  "review": {
+    "title": "مراجعة التطبيقات",
+    "description": "طلبات نشر التطبيقات من المطورين.",
+    "app": "التطبيق",
+    "categoryLabel": "التصنيف",
+    "developer": "المطور",
+    "scopes": "الصلاحيات",
+    "scopesCount": "{count} صلاحية",
+    "price": "السعر",
+    "submitted": "قدّم",
+    "free": "مجاني",
+    "back": "مراجعة التطبيقات",
+    "notFound": "طلب المراجعة غير موجود",
+    "approve": "اعتماد التطبيق",
+    "reject": "رفض",
+    "approved": "تم اعتماد {name}",
+    "rejected": "تم رفض {name}",
+    "rejectTitle": "رفض {name}",
+    "rejectText": "اختر سبب الرفض — يصل للمطور مع القرار.",
+    "confirmReject": "تأكيد الرفض",
+    "reasons": {
+      "scope_abuse": "صلاحيات أكثر من اللازم",
+      "policy": "مخالفة سياسة المتجر",
+      "quality": "جودة التطبيق غير كافية",
+      "other": "سبب آخر"
+    },
+    "installs": "{count} تثبيت"
+  },
+  "partners": {
+    "title": "المطورون",
+    "description": "حسابات المطورين المسجلة في المنصة.",
+    "developer": "المطور",
+    "apps": "التطبيقات",
+    "status": "الحالة",
+    "joined": "تاريخ الانضمام",
+    "appsCount": "{count} تطبيق"
+  },
+  "providers": {
+    "title": "مزودو الخدمة",
+    "description": "تكاملات الشحن والدفع والتواصل المتاحة للمتاجر.",
+    "storesCount": "{count} متجر يستخدمه",
+    "enabled": "مفعّل",
+    "disabled": "معطّل",
+    "toggled": "تم تحديث {name}"
+  },
+  "jobs": {
+    "title": "المهام الخلفية",
+    "description": "مهام النظام المجدولة وآخر تشغيل لها.",
+    "job": "المهمة",
+    "status": "الحالة",
+    "lastRun": "آخر تشغيل",
+    "duration": "المدة",
+    "failures": "إخفاقات",
+    "queuedNote": "لم تبدأ بعد"
+  },
+  "logs": {
+    "title": "سجل العمليات",
+    "description": "كل العمليات الإدارية على مستوى المنصة.",
+    "time": "الوقت",
+    "actor": "الفاعل",
+    "action": "الإجراء",
+    "target": "الهدف",
+    "ip": "IP",
+    "system": "النظام"
+  },
+  "flags": {
+    "title": "الميزات التجريبية",
+    "description": "تفعيل الميزات على مستوى المنصة أو باقة أو متاجر محددة.",
+    "scope": "النطاق",
+    "audience": {
+      "all": "الكل",
+      "pro": "باقة الاحترافية",
+      "growth_pro": "النمو والاحترافية",
+      "stores_120": "120 متجر تجريبي",
+      "stores_beta": "مجموعة بيتا"
+    },
+    "toggled": "تم تحديث {name}"
+  },
+  "themesMarket": {
+    "title": "قوالب المتاجر",
+    "description": "القوالب المتاحة للتجار في محرر التصميم.",
+    "published": "منشور",
+    "draft": "مسودة",
+    "publishedAt": "نُشر {date}",
+    "sections": "{count} قسم"
+  },
+  "team": {
+    "title": "فريق المنصة",
+    "description": "من يملك صلاحية الوصول للوحة المالك.",
+    "member": "العضو",
+    "email": "البريد",
+    "role": "الدور",
+    "status": "الحالة",
+    "lastActive": "آخر نشاط",
+    "never": "لم يسجل دخوله",
+    "invite": "دعوة عضو"
+  },
+  "plans": {
+    "title": "الباقات والأسعار",
+    "description": "عدّل أسعار الباقات وحدودها.",
+    "aiQuota": "{count} محادثة ذكاء اصطناعي",
+    "seats": "{count} مستخدمين",
+    "fee": "عمولة {value} على كل عملية",
+    "subscribers": "{count} مشترك",
+    "edit": "تعديل الباقة",
+    "price": "السعر الشهري (ر.س)",
+    "quota": "حد محادثات الذكاء الاصطناعي",
+    "popular": "الأكثر اشتراكاً"
+  },
+  "ai": {
+    "title": "استهلاك الذكاء الاصطناعي",
+    "description": "استهلاك الوكلاء وتكلفتها على مستوى المنصة.",
+    "conversations": "المحادثات هذا الشهر",
+    "cost": "تكلفة النماذج",
+    "perConversation": "التكلفة لكل محادثة",
+    "margin": "هامش الذكاء الاصطناعي",
+    "byAgent": "حسب نوع الوكيل",
+    "topTenants": "أكثر المتاجر استهلاكاً",
+    "usage": "الاستهلاك من الباقة",
+    "alert": "وكيل خدمة العملاء أبطأ من المعتاد (1.2 ثانية). فريق المنصة يتابع المشكلة.",
+    "kind": {
+      "support": "خدمة العملاء",
+      "sales": "المبيعات",
+      "marketing": "التسويق",
+      "inventory": "المخزون"
+    }
+  }
+}

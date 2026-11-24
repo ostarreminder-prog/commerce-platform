@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>عباية حرير مطرزة — نَسيج</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../diwan.css">
+<style>
+:root{ --henna:#4e5d43; --accent:var(--henna); }
+.article{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,84px);padding:clamp(28px,4vw,56px) 0 90px}
+.plate{border:1px solid var(--line2);background:var(--paper2);aspect-ratio:4/5;display:grid;place-items:center;position:relative;overflow:hidden}
+.plate .fig{position:absolute;top:16px;inset-inline-end:16px;font-family:var(--lat);font-size:.75rem;color:var(--faint);letter-spacing:.2em}
+.plate .cap{margin-top:14px;display:flex;justify-content:space-between;font-size:.66rem;letter-spacing:.22em;color:var(--faint);border-top:1px solid var(--line);padding-top:10px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.thumbs .t{border:1px solid var(--line2);background:var(--paper2);aspect-ratio:1;display:grid;place-items:center;cursor:pointer;overflow:hidden}
+.thumbs .t:hover{border-color:var(--ink)}
+.kicker{font-size:.64rem;letter-spacing:.3em;color:var(--henna)}
+.article h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,4.2vw,3.9rem);line-height:1.2;margin:12px 0 4px}
+.article .standfirst{font-family:var(--serif);font-style:italic;color:var(--ink2);font-size:1.12rem;line-height:1.9;margin-bottom:18px}
+.byline{display:flex;gap:18px;align-items:baseline;font-size:.64rem;letter-spacing:.22em;color:var(--faint);border-block:1px solid var(--line);padding:12px 0;margin-bottom:24px;flex-wrap:wrap}
+.byline .p{font-family:var(--lat);font-size:1.5rem;color:var(--ink)}
+.byline .p small{font-size:.75rem;color:var(--ink2)}
+.byline .cmp{font-family:var(--lat);text-decoration:line-through;font-size:.95rem}
+.bodytxt{font-size:.92rem;line-height:2.2;color:var(--ink2);max-width:56ch}
+.bodytxt::first-letter{font-family:var(--serif);font-size:3.4em;float:inline-start;line-height:.8;padding-inline-end:12px;color:var(--henna)}
+.opt-label{font-size:.62rem;letter-spacing:.28em;color:var(--faint);margin:28px 0 12px;display:flex;justify-content:space-between}
+.opts{display:flex;gap:10px;flex-wrap:wrap}
+.opt{border:1px solid var(--line2);background:none;color:var(--ink);font-size:.8rem;padding:12px 22px;cursor:pointer;transition:.2s;font-family:var(--lat)}
+.opt.sel{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.opt:hover{border-color:var(--henna)}
+.opt.na{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+.sizehint{font-size:.68rem;color:var(--henna);margin-top:12px;cursor:pointer;border-bottom:1px dashed var(--henna);display:inline-block;padding-bottom:2px}
+.buyrow{display:flex;gap:10px;margin-top:30px}
+.qty{display:flex;border:1px solid var(--line2)}
+.qty button{width:42px;background:none;border:none;color:var(--ink);cursor:pointer}
+.qty span{width:36px;display:grid;place-items:center;font-family:var(--lat)}
+.buy{flex:1;background:var(--ink);color:var(--paper);border:none;font-size:.82rem;letter-spacing:.14em;padding:17px;cursor:pointer;transition:.3s}
+.buy:hover{background:var(--henna)}
+.favb{width:52px;border:1px solid var(--line2);background:none;color:var(--ink);cursor:pointer;transition:.2s}
+.favb:hover{border-color:var(--henna);color:var(--henna)}
+.footnote{margin-top:18px;font-size:.68rem;line-height:2;color:var(--faint);border-top:1px dotted var(--line2);padding-top:14px}
+.footnote b{color:var(--ink2);font-weight:400}
+.rel{padding:clamp(56px,7vw,100px) 0;border-top:1px solid var(--ink)}
+.rel h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:36px}
+.rel-g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rel .pl .fig{aspect-ratio:3/4}
+.rel .cap{padding-top:10px;border-top:1px solid var(--line);margin-top:10px;display:flex;justify-content:space-between;align-items:baseline}
+.rel .name{font-family:var(--serif);font-size:1.05rem}
+.rel .price{font-family:var(--lat);font-size:.9rem;white-space:nowrap}
+.mbuy{display:none}
+@media(max-width:960px){
+  .article{grid-template-columns:1fr;gap:44px}
+  .rel-g{grid-template-columns:1fr 1fr}
+  .mbuy{display:flex;position:fixed;bottom:0;inset-inline:0;z-index:60;background:rgba(244,239,230,.97);border-top:1px solid var(--line2);padding:12px 16px calc(12px + env(safe-area-inset-bottom));gap:12px;align-items:center}
+  .mbuy .p{font-family:var(--lat);white-space:nowrap}
+  .mbuy .p small{display:block;font-size:.58rem;color:var(--faint);letter-spacing:.14em}
+  .mbuy .buy{padding:14px;font-size:.72rem}
+  body{padding-bottom:72px}
+}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap in">
+    <button class="burger" aria-label="القائمة">☰</button>
+    <a class="logo" href="index.html"><div class="ar">نَسيج</div><div class="en">NASIJ</div></a>
+    <nav><a href="index.html#plates">المختارات</a><a href="index.html#chapters">الأقسام</a><a href="index.html#sizes">المقاسات</a></nav>
+    <div class="tools">
+      <button aria-label="بحث"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button aria-label="السلة"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg><span class="cnt">٣</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumb"><a href="index.html">العدد ١٢</a><span>/</span><a href="#" id="cCol"></a><span>/</span><span id="cName" style="color:var(--ink2)"></span></div>
+
+  <article class="article">
+    <div>
+      <div class="plate"><span class="fig lat">FIG. 1</span><div id="pArt"></div></div>
+      <div class="cap"><span class="lat">PLATE — NASIJ</span><span>صوّرناها كما هي — بلا تجميل</span></div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+
+    <div>
+      <div class="kicker" id="iCol"></div>
+      <h1 id="iName"></h1>
+      <p class="standfirst" id="iEn"></p>
+      <div class="byline">
+        <span class="p lat"><span id="iPrice"></span> <small>ر.س</small></span>
+        <span class="cmp lat" id="iCmp"></span>
+        <span>شحن مجاني فوق ٢٥٠</span>
+        <span style="margin-inline-start:auto">إرجاع ١٤ يوم</span>
+      </div>
+      <p class="bodytxt" id="iDesc"></p>
+
+      <div class="opt-label"><span>المقاس</span><span id="iSizeNote"></span></div>
+      <div class="opts" id="iOpts"></div>
+      <span class="sizehint">ما مقاسك؟ دليل المقاسات</span>
+
+      <div class="buyrow">
+        <div class="qty"><button>−</button><span class="lat">1</span><button>+</button></div>
+        <button class="buy">أضِف إلى السلة</button>
+        <button class="favb" aria-label="مفضلة">♡</button>
+      </div>
+      <p class="footnote"><b>هامش:</b> إرجاع مجاني خلال ١٤ يوماً بدون أسئلة · شحن ٢٥ ر.س (مجاني فوق ٢٥٠) · نقيس كل قطعة يدوياً — القياسات الحقيقية في دليل المقاسات.</p>
+
+      <div class="acc">
+        <details open><summary>القماش والتفاصيل</summary><div class="bd" id="aDesc"></div></details>
+        <details><summary>العناية</summary><div class="bd">غسيل بارد على دورة خفيفة، تجفيف بالتعليق، كيّ بخار على درجة منخفضة. لا مبيّض.</div></details>
+        <details><summary>الشحن والإرجاع</summary><div class="bd">شحن ١–٤ أيام لكل المدن. استبدال مقاس مجاني — نرسل البديل قبل استلام المرتجع.</div></details>
+      </div>
+    </div>
+  </article>
+
+  <section class="rel">
+    <h2>من القسم نفسِه</h2>
+    <div class="rel-g" id="relG"></div>
+  </section>
+</main>
+
+<div class="mbuy">
+  <div class="p lat"><small id="mName"></small><span id="mPrice"></span> ر.س</div>
+  <button class="buy">أضِف إلى السلة</button>
+</div>
+
+<script src="data.js"></script>
+<script>
+const id = new URLSearchParams(location.search).get("p") || "abaya-silk";
+const p = NASIJ.prod(id) || NASIJ.products[0];
+const col = NASIJ.col(p.col);
+document.title = p.ar + " — نَسيج";
+cCol.textContent = col.ar; cName.textContent = p.ar;
+iCol.textContent = col.ar + (p.badge ? " — " + p.badge : "");
+iName.textContent = p.ar;
+iEn.textContent = p.en + " · " + col.ar;
+iPrice.textContent = p.price.toLocaleString("en-US");
+iCmp.textContent = p.compareAt ? p.compareAt.toLocaleString("en-US") + " ر.س" : "";
+iSizeNote.textContent = "S — XL";
+iDesc.textContent = p.desc;
+aDesc.textContent = p.desc + " القماش مصدره مورد معتمد، والقطعة تُفصَّل في ورشة جدة وتُفحَص قبل الشحن.";
+mName.textContent = p.ar; mPrice.textContent = p.price.toLocaleString("en-US");
+
+pArt.innerHTML = garmentSVG(p);
+thumbs.innerHTML = [1,.7,.5].map(s=>`<div class="t">${garmentSVG(p,s*.8)}</div>`).join("");
+
+const na = id === "thobe-summer" ? ["XL"] : [];
+iOpts.innerHTML = p.sizes.map((s,i)=>`<button class="opt ${i===1?"sel":""} ${na.includes(s.ar)?"na":""}">${s.ar}</button>`).join("");
+iOpts.addEventListener("click",e=>{
+  const b=e.target.closest(".opt"); if(!b||b.classList.contains("na"))return;
+  iOpts.querySelectorAll(".opt").forEach(o=>o.classList.remove("sel")); b.classList.add("sel");
+});
+
+document.getElementById("relG").innerHTML = NASIJ.products.filter(x=>x.col===p.col&&x.id!==p.id).slice(0,3)
+  .map(x=>`<a class="pl" href="product.html?p=${x.id}">
+    <div class="fig">${garmentSVG(x)}</div>
+    <div class="cap"><span class="name">${x.ar}</span><span class="price lat">${x.price.toLocaleString("en-US")} ر.س</span></div>
+  </a>`).join("");
+</script>
+</body>
+</html>

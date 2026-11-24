@@ -1,0 +1,48 @@
+{
+  "name": "@repo/admin",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_OPTIONS=--max-http-header-size=131072 next dev --turbopack -p 3000",
+    "build": "next build",
+    "start": "NODE_OPTIONS=--max-http-header-size=131072 next start -p 3000",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6",
+    "@dnd-kit/sortable": "^10",
+    "@dnd-kit/utilities": "^3",
+    "@hookform/resolvers": "^5.2.2",
+    "@repo/api-client": "workspace:^",
+    "@repo/contracts": "workspace:^",
+    "@repo/copilot": "workspace:*",
+    "@repo/mocks": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "@tanstack/react-query": "^5.90.2",
+    "@tanstack/react-table": "^8.21.3",
+    "@xyflow/react": "^12",
+    "lucide-react": "^0.577.0",
+    "next": "15.5.29",
+    "next-intl": "^4.4.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-hook-form": "^7.66.0",
+    "recharts": "^2.15.4",
+    "wavesurfer.js": "^7",
+    "zod": "^3.25.76",
+    "@repo/storefront-sections": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/config": "workspace:*",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.39.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "3.4.19",
+    "typescript": "5.9.3"
+  }
+}

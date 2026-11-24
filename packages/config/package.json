@@ -1,0 +1,32 @@
+{
+  "name": "@repo/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/nextjs.json": "./tsconfig/nextjs.json",
+    "./tsconfig/library.json": "./tsconfig/library.json",
+    "./tailwind": "./tailwind/preset.ts",
+    "./eslint": "./eslint/index.js",
+    "./eslint/next": "./eslint/next.js"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@eslint/js": "^9.39.1",
+    "@next/eslint-plugin-next": "15.5.29",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.5.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript-eslint": "^8.46.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "tailwindcss": "3.4.19",
+    "typescript": "5.9.3"
+  }
+}

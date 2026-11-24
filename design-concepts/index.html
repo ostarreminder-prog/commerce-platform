@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>دار سَحَر — ثلاثة اتجاهات</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Sans Arabic',sans-serif;background:#111;color:#eee;min-height:100svh;display:grid;place-items:center;padding:40px 20px}
+main{max-width:900px;width:100%}
+h1{font-family:'Amiri',serif;font-weight:400;font-size:2.6rem;margin-bottom:8px}
+p{color:#999;font-size:.9rem;margin-bottom:36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{border:1px solid #333;padding:26px;display:block;color:inherit;text-decoration:none;transition:.25s}
+.card:hover{border-color:#888}
+.card .n{font-size:.6rem;letter-spacing:.3em;color:#777}
+.card h2{font-size:1.3rem;margin:10px 0 4px;font-weight:400}
+.card p{margin:0 0 18px;font-size:.75rem}
+.links{display:flex;gap:10px}
+.links span{border:1px solid #444;padding:8px 16px;font-size:.72rem}
+.card:hover .links span{border-color:#aaa}
+.a{background:#14100c}.b{background:#efe9db;color:#221d15}.b p{color:#7a7260}.b .n{color:#9a8f76}.b .links span{border-color:#c8bda3}.c{background:#f5f4f0;color:#131210}.c p{color:#6b675d}.c .n{color:#a8a294}.c .links span{border-color:#d8d4c9}
+</style>
+</head>
+<body><main>
+<h1>دار سَحَر — Concept Directions</h1>
+<p>ثلاثة اتجاهات تصميمية للمتجر · الرئيسية + صفحة المنتج · حمّلها بأحجام 1440 و390 للمقارنة</p>
+<div class="grid">
+  <a class="card a" href="direction-a/index.html"><span class="n">DIRECTION A</span><h2>الليل — فخامة داكنة</h2><p>Nocturne luxury · مسرح مظلم وإضاءة حواف</p><div class="links"><span>الرئيسية ←</span><span onclick="event.preventDefault();location='direction-a/product.html'">المنتج ←</span></div></a>
+  <a class="card b" href="direction-b/index.html" style="border-color:#8f3b21"><span class="n">DIRECTION B — المختار ✦</span><h2>الديوان — تحريري دافئ</h2><p>مجلة عطرية فصلية · لوحات وهوامش</p><div class="links"><span>الرئيسية ←</span><span onclick="event.preventDefault();location='direction-b/product.html'">المنتج ←</span></div></a>
+  <a class="card c" href="direction-c/index.html"><span class="n">DIRECTION C</span><h2>المدار — عصري جريء</h2><p>Orbit · فهرس حي وتايبوغرافي ضخم</p><div class="links"><span>الرئيسية ←</span><span onclick="event.preventDefault();location='direction-c/product.html'">المنتج ←</span></div></a>
+</div>
+<p style="margin-top:36px;color:#bbb">المرحلة ٢ — الديوان كاملاً:</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))">
+  <a class="card b" href="direction-b/collection.html"><h2 style="font-size:1rem">الفصل / التصنيف</h2></a>
+  <a class="card b" href="direction-b/search.html"><h2 style="font-size:1rem">البحث الحيّ</h2></a>
+  <a class="card b" href="direction-b/cart.html"><h2 style="font-size:1rem">السلة</h2></a>
+  <a class="card b" href="direction-b/drawer.html"><h2 style="font-size:1rem">الدرج الجانبي</h2></a>
+  <a class="card b" href="direction-b/checkout.html"><h2 style="font-size:1rem">إتمام الطلب</h2></a>
+  <a class="card b" href="direction-b/confirm.html"><h2 style="font-size:1rem">تأكيد الطلب</h2></a>
+  <a class="card b" href="direction-b/states.html"><h2 style="font-size:1rem">الحالات</h2></a>
+  <a class="card" href="direction-b/fashion/index.html" style="background:#e9e7da;color:#33402c;border-color:#4e5d43"><span class="n" style="color:#7a8560">ADAPTATION</span><h2 style="font-size:1rem">نَسيج — متجر أزياء</h2><p style="color:#6b7260">٤٠٠ منتج · نفس النظام</p></a>
+</div>
+<p style="margin-top:32px">اللقطات الجاهزة في <code style="color:#bbb">design-concepts/shots/</code></p>
+</main></body>
+</html>

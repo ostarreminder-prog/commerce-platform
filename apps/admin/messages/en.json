@@ -1,0 +1,5706 @@
+{
+  "meta": {
+    "title": "Merchant Admin",
+    "description": "Manage your store, orders and AI agents"
+  },
+  "designSystem": {
+    "title": "Design system",
+    "description": "Colors, typography and the core components shared by every app.",
+    "toc": "On this page",
+    "sections": {
+      "colors": {
+        "title": "Colors",
+        "description": "A single brand color controlled by the --primary variable, plus semantic status colors."
+      },
+      "typography": {
+        "title": "Typography",
+        "description": "IBM Plex Sans Arabic, always with Latin digits."
+      },
+      "buttons": {
+        "title": "Buttons",
+        "description": "Variants, sizes, loading and disabled states."
+      },
+      "badges": {
+        "title": "Badges",
+        "description": "For statuses such as payment and shipping."
+      },
+      "forms": {
+        "title": "Forms",
+        "description": "Fields bound to React Hook Form and zod, each with a label and error message."
+      },
+      "money": {
+        "title": "Money",
+        "description": "Stored as integer halalas and displayed through one formatMoney function."
+      },
+      "cards": {
+        "title": "Cards & KPIs",
+        "description": "KPI cards with their loading state."
+      },
+      "states": {
+        "title": "Screen states",
+        "description": "Every screen has four states: loading, empty, error and data."
+      },
+      "table": {
+        "title": "Tables",
+        "description": "Sorting, multi-select, bulk actions and pagination."
+      },
+      "overlays": {
+        "title": "Overlays & menus",
+        "description": "Dialog, sheet, dropdown menus, tooltips, toasts and global search."
+      },
+      "misc": {
+        "title": "Other components",
+        "description": "Tabs, alerts, progress and avatars."
+      }
+    },
+    "colors": {
+      "primary": "Primary",
+      "secondary": "Secondary",
+      "muted": "Muted",
+      "accent": "Accent",
+      "destructive": "Destructive",
+      "success": "Success",
+      "warning": "Warning",
+      "info": "Info",
+      "background": "Background",
+      "card": "Card",
+      "border": "Border"
+    },
+    "typography": {
+      "h1": "Page title",
+      "h2": "Section title",
+      "h3": "Subsection title",
+      "body": "Body text: an all-in-one platform that helps you run your store and sell on WhatsApp with AI agents.",
+      "muted": "Secondary text for hints and notes.",
+      "numbers": "Digits: 0123456789 — order #10241 placed on 2026-11-20"
+    },
+    "buttons": {
+      "primary": "Save changes",
+      "secondary": "Secondary",
+      "outline": "Outline",
+      "ghost": "Ghost",
+      "destructive": "Delete",
+      "link": "Link",
+      "small": "Small",
+      "large": "Large",
+      "loading": "Saving",
+      "disabled": "Disabled",
+      "withIcon": "Add product",
+      "iconOnly": "Settings",
+      "simulateLoading": "Try loading state"
+    },
+    "badges": {
+      "paid": "Paid",
+      "pending": "Awaiting payment",
+      "refunded": "Refunded",
+      "failed": "Failed",
+      "shipped": "Shipped",
+      "draft": "Draft",
+      "info": "New"
+    },
+    "form": {
+      "storeName": "Store name",
+      "storeNamePlaceholder": "e.g. Rose Boutique",
+      "storeNameHint": "Shown to customers in your store and invoices.",
+      "email": "Email",
+      "phone": "Mobile number",
+      "category": "Store category",
+      "categoryPlaceholder": "Choose a category",
+      "categories": {
+        "fashion": "Fashion",
+        "electronics": "Electronics",
+        "food": "Food",
+        "beauty": "Beauty"
+      },
+      "description": "Store description",
+      "shippingMethod": "Default shipping method",
+      "shipping": {
+        "standard": "Standard (3-5 days)",
+        "express": "Express (1 day)",
+        "pickup": "Store pickup"
+      },
+      "notifications": "Enable new order notifications",
+      "terms": "I agree to the terms and conditions",
+      "submit": "Submit",
+      "reset": "Reset",
+      "submitted": "Saved successfully"
+    },
+    "money": {
+      "amount": "Amount in halalas",
+      "formatted": "Displayed"
+    },
+    "stats": {
+      "revenue": "Revenue",
+      "orders": "Orders",
+      "conversion": "Conversion rate",
+      "aov": "Average order value",
+      "vsLastWeek": "vs. last week"
+    },
+    "states": {
+      "loading": "Loading",
+      "empty": "Empty",
+      "error": "Error",
+      "data": "Data",
+      "emptyTitle": "No orders yet",
+      "emptyDescription": "As soon as a customer orders from your store, it will appear here.",
+      "emptyAction": "Share your store link",
+      "errorRetried": "Retried",
+      "switcher": "Choose the displayed state"
+    },
+    "table": {
+      "number": "Order",
+      "customer": "Customer",
+      "total": "Total",
+      "status": "Payment",
+      "date": "Date",
+      "markPaid": "Mark as paid",
+      "export": "Export",
+      "exported": "Export file is ready"
+    },
+    "overlays": {
+      "openDialog": "Open dialog",
+      "dialogTitle": "Cancel order?",
+      "dialogDescription": "The customer will be notified and refunded to the original payment method. This can't be undone.",
+      "cancel": "Go back",
+      "confirm": "Cancel order",
+      "openSheetStart": "Sheet from start",
+      "openSheetEnd": "Sheet from end",
+      "openSheetBottom": "Sheet from bottom",
+      "sheetTitle": "AI assistant",
+      "sheetDescription": "Ask about your sales or have it run a task.",
+      "actions": "Actions",
+      "view": "View",
+      "edit": "Edit",
+      "duplicate": "Duplicate",
+      "delete": "Delete",
+      "popover": "Details",
+      "popoverBody": "Popovers show extra information or quick filters.",
+      "tooltip": "Hover here",
+      "tooltipBody": "A short hint explaining the action",
+      "toast": "Show toast",
+      "toastTitle": "Product saved",
+      "toastDescription": "Changes are now live in your store.",
+      "command": "Global search",
+      "commandTitle": "Search the admin",
+      "commandPlaceholder": "Search orders, products, customers or settings…",
+      "commandEmpty": "No results",
+      "commandPages": "Pages",
+      "commandOrders": "Orders",
+      "commandProducts": "Products",
+      "commandSettings": "Settings"
+    },
+    "misc": {
+      "overview": "Overview",
+      "activity": "Activity",
+      "notes": "Notes",
+      "overviewBody": "Overview tab content.",
+      "activityBody": "The order activity log appears here.",
+      "notesBody": "Internal team notes.",
+      "alertInfoTitle": "Info",
+      "alertInfo": "Shipping rates for Riyadh have been updated.",
+      "alertSuccessTitle": "Success",
+      "alertSuccess": "WhatsApp Business account connected.",
+      "alertWarningTitle": "Warning",
+      "alertWarning": "5 products are running low on stock.",
+      "alertErrorTitle": "Error",
+      "alertError": "Failed to submit the invoice to ZATCA.",
+      "setupProgress": "Store setup progress",
+      "avatars": "Avatars",
+      "shortcut": "Search shortcut"
+    }
+  },
+  "common": {
+    "viewAll": "View all",
+    "save": "Save",
+    "cancel": "Cancel",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "back": "Back",
+    "comingSoon": "Under construction",
+    "comingSoonDescription": "This screen is part of an upcoming batch.",
+    "goHome": "Back to home",
+    "viewStore": "View store",
+    "more": "More",
+    "all": "All",
+    "items": "{count, plural, one {# item} other {# items}}",
+    "delete": "Delete",
+    "breadcrumb": "Breadcrumb",
+    "next": "Next",
+    "edit": "Edit",
+    "actions": "Actions",
+    "reset": "Reset",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nav": {
+    "groups": {
+      "sales": "Sales",
+      "catalog": "Catalog",
+      "ai": "AI",
+      "growth": "Growth",
+      "store": "Store",
+      "operations": "Operations"
+    },
+    "home": "Home",
+    "orders": "Orders",
+    "customers": "Customers",
+    "shipping": "Shipping",
+    "invoices": "Invoices",
+    "products": "Products",
+    "reviews": "Reviews",
+    "inventory": "Inventory",
+    "conversations": "Conversations",
+    "agents": "Agent Studio",
+    "marketing": "Marketing",
+    "reports": "Reports",
+    "storeDesign": "Store design",
+    "apps": "Apps",
+    "settings": "Settings",
+    "openMenu": "Open menu",
+    "mainNav": "Main navigation",
+    "plan": "{plan} plan",
+    "upgrade": "Upgrade plan",
+    "usage": "Agent usage this month",
+    "returns": "Returns",
+    "abandonedCarts": "Abandoned carts",
+    "categories": "Categories",
+    "collections": "Collections",
+    "imports": "Import & export",
+    "inbox": "Inbox",
+    "approvals": "Approvals",
+    "knowledge": "Knowledge base",
+    "shipments": "Shipments",
+    "coupons": "Coupons",
+    "promotions": "Promotions",
+    "storefront": "Themes",
+    "pages": "Pages",
+    "menus": "Menus",
+    "domains": "Domains",
+    "seo": "SEO",
+    "appStore": "App Store",
+    "media": "Media",
+    "copilot": "Copilot",
+    "brands": "Brands",
+    "locations": "Locations",
+    "priceLists": "Price lists",
+    "loyalty": "Loyalty",
+    "giftCards": "Gift cards",
+    "affiliates": "Affiliates"
+  },
+  "plans": {
+    "starter": "Starter",
+    "growth": "Growth",
+    "pro": "Pro"
+  },
+  "topbar": {
+    "search": "Search orders, products and customers…",
+    "switchStore": "Switch store",
+    "stores": "Your stores",
+    "addStore": "Add a new store",
+    "notifications": "Notifications",
+    "markAllRead": "Mark all as read",
+    "account": "Account",
+    "profile": "Profile",
+    "billing": "Subscription & billing",
+    "logout": "Log out",
+    "help": "Help",
+    "notificationItems": {
+      "newOrder": "New order #{number} from {name}",
+      "lowStock": "{product} is running low",
+      "handoff": "The agent handed off a conversation with {name}",
+      "payout": "SAR 12,480.00 was deposited to your account"
+    },
+    "viewAs": "View as",
+    "roles": {
+      "owner": "Owner",
+      "admin": "Store manager",
+      "catalog": "Catalog manager",
+      "orders": "Orders staff",
+      "support": "Customer support",
+      "marketing": "Marketing",
+      "readonly": "Viewer"
+    },
+    "notificationEvents": {
+      "order_created": "New order #{number}",
+      "payment_failed": "Payment failed for order #{number}",
+      "conversation_waiting": "{customer} is waiting for staff",
+      "approval_requested": "{agent} requests approval",
+      "low_stock": "Low stock: {product}",
+      "shipments_delayed": "{count} shipments delayed",
+      "invoice_rejected": "ZATCA rejected invoice {number}",
+      "return_requested": "New return request #{number}",
+      "app_installed": "{app} installed",
+      "usage_limit": "Approaching plan limit"
+    },
+    "noNotifications": "No notifications",
+    "viewAll": "View all"
+  },
+  "commandPalette": {
+    "placeholder": "Search for a page, order or product…",
+    "empty": "No results",
+    "pages": "Pages",
+    "orders": "Orders",
+    "products": "Products",
+    "customers": "Customers",
+    "conversations": "Conversations",
+    "askCopilot": "Ask Copilot: {query}"
+  },
+  "login": {
+    "title": "Sign in",
+    "subtitle": "Welcome back! Sign in to manage your store.",
+    "email": "Email",
+    "password": "Password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "remember": "Remember me",
+    "forgot": "Forgot password?",
+    "submit": "Sign in",
+    "or": "or",
+    "withPhone": "Sign in with mobile number",
+    "noAccount": "Don't have an account?",
+    "createStore": "Create your store for free",
+    "demoHint": "Demo: any email and a 6+ character password.",
+    "brandTitle": "Your store keeps selling while you sleep",
+    "brandSubtitle": "AI agents reply to customers, follow up on orders and recover abandoned carts.",
+    "brandPoints": {
+      "agents": "Instant replies on WhatsApp and Instagram",
+      "payments": "mada, Apple Pay, Tabby and Tamara",
+      "shipping": "Direct integration with Aramex, SMSA and SPL"
+    },
+    "brandName": "Nakhla",
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Enter a valid email",
+      "tooShort": "Password must be at least 6 characters"
+    },
+    "logoInitial": "N"
+  },
+  "dashboard": {
+    "greeting": {
+      "morning": "Good morning, {name}",
+      "evening": "Good evening, {name}"
+    },
+    "subtitle": "Here's how your store performed over the last 7 days.",
+    "addProduct": "Add product",
+    "kpis": {
+      "revenue": "Sales",
+      "orders": "Orders",
+      "aov": "Average order value",
+      "conversion": "Conversion rate",
+      "vsLastWeek": "vs. last week"
+    },
+    "sales": {
+      "title": "Sales",
+      "description": "Last 30 days",
+      "revenue": "Revenue",
+      "orders": "Orders"
+    },
+    "statusBreakdown": {
+      "title": "Order status",
+      "description": "Last 50 orders"
+    },
+    "recentOrders": {
+      "title": "Recent orders",
+      "empty": "No orders yet"
+    },
+    "lowStock": {
+      "title": "Low stock",
+      "description": "Products that need restocking",
+      "empty": "Stock looks great, nothing is running low",
+      "left": "{count, plural, =0 {Out of stock} one {# left} other {# left}}"
+    },
+    "topProducts": {
+      "title": "Best sellers",
+      "sold": "{count} sold"
+    },
+    "agents": {
+      "title": "AI agent activity",
+      "description": "Last 30 days",
+      "conversations": "conversations",
+      "resolved": "resolved without a human",
+      "carts": "recovered carts",
+      "revenue": "sales via agent",
+      "manage": "Manage agents"
+    },
+    "insight": {
+      "title": "Suggestion from your AI assistant",
+      "body": "3 best sellers are about to run out and 4 conversations are waiting for your reply. Start there so you don't lose sales.",
+      "action": "Review conversations"
+    },
+    "onboarding": {
+      "title": "Finish setting up your store",
+      "progress": "{done} of {total} steps",
+      "dismiss": "Hide",
+      "steps": {
+        "store": "Store details",
+        "products": "Add your first product",
+        "payments": "Enable online payments",
+        "shipping": "Connect a carrier",
+        "domain": "Connect your domain",
+        "agent": "Enable the support agent"
+      }
+    }
+  },
+  "orderColumns": {
+    "number": "Order",
+    "customer": "Customer",
+    "date": "Date",
+    "total": "Total",
+    "status": "Status",
+    "payment": "Payment",
+    "items": "Items"
+  },
+  "orders": {
+    "title": "Orders",
+    "description": "Track your store's orders and update their status.",
+    "createOrder": "Manual order",
+    "searchPlaceholder": "Search by order number, customer or phone",
+    "allPayments": "All payment statuses",
+    "allChannels": "All channels",
+    "channel": {
+      "storefront": "Store",
+      "whatsapp": "WhatsApp",
+      "voice": "Voice agent",
+      "manual": "Manual",
+      "app": "App"
+    },
+    "bulk": {
+      "markProcessing": "Start processing",
+      "markReady": "Ready to ship",
+      "markShipped": "Mark shipped",
+      "printInvoices": "Print invoices",
+      "clear": "Clear selection"
+    },
+    "updated": "{count, plural, one {1 order} other {{count} orders}} updated",
+    "emptyTitle": "No matching orders",
+    "emptyDescription": "Try changing the search or filters.",
+    "resetFilters": "Clear filters",
+    "noOrdersTitle": "No orders yet",
+    "noOrdersDescription": "Orders will appear here as soon as customers buy from your store.",
+    "results": "{count, plural, one {1 order} other {{count} orders}}",
+    "stats": {
+      "toProcess": "Awaiting processing",
+      "toShip": "Awaiting shipment",
+      "unpaid": "Awaiting payment",
+      "todayRevenue": "Today's sales"
+    }
+  },
+  "orderDetail": {
+    "back": "Orders",
+    "title": "Order #{number}",
+    "placedAt": "{date} via {channel}",
+    "nextAction": {
+      "new": "Start processing",
+      "processing": "Ready to ship",
+      "ready": "Confirm shipment",
+      "shipped": "Confirm delivery"
+    },
+    "printInvoice": "Print invoice",
+    "printLabel": "Shipping label",
+    "cancelOrder": "Cancel order",
+    "refund": "Refund payment",
+    "markReturned": "Mark as returned",
+    "statusChanged": "Order status updated to \"{status}\"",
+    "items": "Items",
+    "qty": "Qty",
+    "sku": "SKU: {sku}",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free",
+    "discount": "Discount",
+    "vat": "VAT (15%) included",
+    "total": "Total",
+    "timeline": "Order history",
+    "actor": {
+      "system": "System",
+      "staff": "Store team",
+      "agent": "AI agent"
+    },
+    "addNote": "Add an internal note…",
+    "saveNote": "Add",
+    "noteSaved": "Note added",
+    "customer": "Customer",
+    "ordersCount": "{count, plural, one {1 order} other {{count} orders}}",
+    "viewCustomer": "Customer profile",
+    "whatsapp": "WhatsApp message",
+    "shippingCard": "Shipping",
+    "carrier": {
+      "aramex": "Aramex",
+      "smsa": "SMSA",
+      "spl": "Saudi Post (SPL)",
+      "redbox": "RedBox"
+    },
+    "tracking": "Tracking number",
+    "noTracking": "Created when shipped",
+    "copy": "Copy",
+    "copied": "Copied",
+    "payment": "Payment",
+    "method": {
+      "mada": "mada",
+      "visa": "Visa / Mastercard",
+      "applePay": "Apple Pay",
+      "stcPay": "STC Pay",
+      "tabby": "Tabby",
+      "tamara": "Tamara",
+      "cod": "Cash on delivery"
+    },
+    "customerNote": "Customer note",
+    "agentTitle": "Order assistant",
+    "agentText": "The agent confirmed the address with the customer on WhatsApp and sent the tracking link automatically.",
+    "notFoundTitle": "Order not found",
+    "notFoundDescription": "It may have been deleted or the link is wrong.",
+    "steps": "Order progress"
+  },
+  "products": {
+    "title": "Products",
+    "description": "Manage your products, prices and stock.",
+    "add": "Add product",
+    "import": "Import",
+    "searchPlaceholder": "Search by product name or SKU",
+    "allCategories": "All categories",
+    "stockFilter": {
+      "all": "All stock",
+      "in": "In stock",
+      "low": "Low stock",
+      "out": "Out of stock"
+    },
+    "view": {
+      "table": "Table view",
+      "grid": "Grid view"
+    },
+    "columns": {
+      "product": "Product",
+      "category": "Category",
+      "price": "Price",
+      "stock": "Stock",
+      "sales": "Sales",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "stockLeft": "{count} in stock",
+    "lowStock": "Low",
+    "outOfStock": "Out",
+    "sold": "{count} sold",
+    "actions": {
+      "edit": "Edit",
+      "duplicate": "Duplicate",
+      "viewInStore": "View in store",
+      "delete": "Delete"
+    },
+    "bulk": {
+      "activate": "Activate",
+      "draft": "Set as draft",
+      "delete": "Delete"
+    },
+    "deleteTitle": "Delete {count, plural, one {1 product} other {{count} products}}?",
+    "deleteDescription": "This can't be undone. Past orders are not affected.",
+    "deleted": "Deleted",
+    "updated": "Products updated",
+    "duplicated": "Copy created as draft",
+    "emptyTitle": "No matching products",
+    "emptyDescription": "Try changing the search or filters.",
+    "resetFilters": "Clear filters",
+    "noProductsTitle": "Add your first product",
+    "noProductsDescription": "Products you add appear in your store right away.",
+    "results": "{count, plural, one {1 product} other {{count} products}}",
+    "summary": {
+      "total": "All products",
+      "active": "Active",
+      "low": "Low stock",
+      "out": "Out of stock"
+    }
+  },
+  "productForm": {
+    "back": "Products",
+    "newTitle": "New product",
+    "editTitle": "Edit product",
+    "basics": "Basic information",
+    "basicsHint": "Arabic name and description are required, English is optional.",
+    "arabic": "العربية",
+    "english": "English",
+    "name": "Product name",
+    "description": "Description",
+    "namePlaceholder": "e.g. Saudi Cardamom Coffee 500g",
+    "descriptionPlaceholder": "What makes it special? Ingredients, size, how to use…",
+    "aiWrite": "Write with AI",
+    "aiWriting": "Writing…",
+    "aiDone": "The agent drafted a description. Review it before saving.",
+    "aiTemplate": "{name} is carefully selected by Nakhla Store, with quality suited for everyday use and gifting. Delivered beautifully packed within 1-3 business days across the Kingdom.",
+    "media": "Media",
+    "mediaHint": "Drag images here or click to upload. PNG or JPG up to 5MB.",
+    "upload": "Upload images",
+    "placeholderColor": "Placeholder image color",
+    "pricing": "Pricing",
+    "price": "Price",
+    "compareAt": "Compare-at price",
+    "compareAtHint": "Shown struck through next to the price.",
+    "cost": "Cost per item",
+    "costHint": "Customers won't see this.",
+    "margin": "Margin",
+    "profit": "Profit per item",
+    "discountBadge": "{percent} off",
+    "vatNote": "Prices include 15% VAT.",
+    "inventory": "Inventory",
+    "sku": "SKU",
+    "stock": "Quantity available",
+    "lowStockThreshold": "Alert when quantity drops to",
+    "status": "Product status",
+    "statusHint": {
+      "active": "Visible in the store and can be purchased.",
+      "draft": "Hidden from customers until you publish it.",
+      "archived": "Hidden and kept for records."
+    },
+    "organization": "Organization",
+    "category": "Category",
+    "selectCategory": "Select a category",
+    "preview": "Store preview",
+    "performance": "Performance",
+    "rating": "Rating",
+    "reviews": "{count} reviews",
+    "salesCount": "Sales",
+    "unsaved": "You have unsaved changes",
+    "discard": "Discard",
+    "save": "Save product",
+    "saving": "Saving…",
+    "created": "Product added",
+    "saved": "Changes saved",
+    "danger": "Delete product",
+    "dangerHint": "The product will be removed from your store permanently.",
+    "deleteConfirm": "Delete product",
+    "deleted": "Product deleted",
+    "notFoundTitle": "Product not found",
+    "notFoundDescription": "It may have been deleted or the link is wrong.",
+    "errors": {
+      "required": "This field is required",
+      "pricePositive": "Price must be greater than zero",
+      "compareAtHigher": "Must be higher than the price",
+      "nonNegative": "Can't be negative",
+      "integer": "Must be a whole number"
+    }
+  },
+  "inbox": {
+    "title": "Inbox",
+    "search": "Search by customer name",
+    "filters": {
+      "all": "All",
+      "mine": "Needs me",
+      "agent": "With agent",
+      "resolved": "Closed",
+      "channel": "Channel",
+      "allChannels": "All channels",
+      "assignee": "Assignee",
+      "everyone": "Everyone",
+      "agents": "Agents",
+      "humans": "Staff",
+      "unassigned": "Unassigned"
+    },
+    "channel": {
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "webchat": "Store chat"
+    },
+    "status": {
+      "open": "Open",
+      "waiting": "Waiting on you",
+      "resolved": "Closed"
+    },
+    "intent": {
+      "orderStatus": "Order status",
+      "productQuestion": "Product question",
+      "return": "Return",
+      "complaint": "Complaint",
+      "purchase": "Purchase intent"
+    },
+    "handledByAgent": "Agent replying",
+    "handledByStaff": "You're replying",
+    "takeOver": "Take over",
+    "returnToAgent": "Return to agent",
+    "resolve": "Resolve",
+    "reopen": "Reopen",
+    "tookOver": "You took over. The agent is paused here",
+    "returned": "The agent is replying again",
+    "resolvedToast": "Conversation closed",
+    "agentBanner": "The agent is replying to this conversation automatically. Take over to reply yourself.",
+    "handoffBanner": "The agent handed this conversation to you: {reason}",
+    "composer": "Write a reply… (Enter to send)",
+    "send": "Send",
+    "suggestions": "Suggested replies",
+    "suggestion": {
+      "orderStatus": "Your order is being prepared. You'll get a tracking link once it ships.",
+      "productQuestion": "It's in stock now. Want me to add it to your cart?",
+      "return": "Sorry about that. I've sent you a return request link.",
+      "complaint": "We're really sorry. We'll fix this right away, and here's a 15% discount code.",
+      "purchase": "Sure! Here's a direct payment link. Shipping is free over SAR 200."
+    },
+    "you": "You",
+    "agent": "Agent",
+    "back": "Conversations",
+    "context": "Customer details",
+    "linkedOrder": "Linked order",
+    "viewOrder": "View order",
+    "noOrder": "No linked order",
+    "aiSummary": "AI summary",
+    "summaryText": "The customer is asking about: {intent}. The conversation has {count} messages.",
+    "customerOrders": "{count} orders · {spent}",
+    "viewCustomer": "Customer profile",
+    "selectTitle": "Select a conversation",
+    "selectDescription": "Pick a conversation from the list to see details and reply.",
+    "emptyTitle": "No conversations here",
+    "emptyDescription": "Conversations matching this filter will show up here.",
+    "searchPlaceholder": "Name, phone or message text",
+    "statuses": {
+      "open_ai": "With agent",
+      "waiting_human": "Waiting for staff",
+      "open_human": "With staff",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    },
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "webchat": "Webchat",
+      "voice": "Voice",
+      "instagram": "Instagram",
+      "messenger": "Messenger",
+      "x": "X",
+      "tiktok": "TikTok",
+      "email": "Email"
+    },
+    "priorities": {
+      "low": "Low",
+      "normal": "Normal",
+      "high": "High",
+      "urgent": "Urgent"
+    },
+    "sentiments": {
+      "positive": "Positive",
+      "neutral": "Neutral",
+      "negative": "Negative"
+    },
+    "messageTypes": {
+      "text": "Text",
+      "image": "Image",
+      "audio": "Voice message",
+      "document": "Document",
+      "product_card": "Product card",
+      "payment_link": "Payment link",
+      "order_card": "Order card",
+      "template": "Template",
+      "system": "System",
+      "internal_note": "Internal note"
+    },
+    "system": {
+      "takeover": "Staff took over the conversation",
+      "returned_to_agent": "Conversation returned to the agent",
+      "resolved": "Conversation resolved",
+      "closed": "Conversation closed",
+      "approval_approved": "Agent request approved",
+      "approval_rejected": "Agent request rejected",
+      "reopened": "Conversation reopened",
+      "handoff_to_human": "Conversation handed to staff"
+    },
+    "waiting": "Waiting",
+    "read": "Read",
+    "noneTitle": "No conversations",
+    "noneDescription": "Your customers' first message will appear here.",
+    "noResults": "No results",
+    "noResultsHint": "Try changing the search or filters.",
+    "pickTitle": "Pick a conversation",
+    "pickDescription": "Select a conversation from the list to view and reply.",
+    "notFoundTitle": "Conversation not found",
+    "notFoundDescription": "The link is invalid.",
+    "backToList": "Back to inbox",
+    "close": "Close",
+    "unassign": "Unassign",
+    "resolveTitle": "Resolve conversation?",
+    "resolveDescription": "The conversation will be marked resolved and leave the queue.",
+    "resolved": "Conversation resolved",
+    "closed": "Conversation closed",
+    "replyPlaceholder": "Write a reply… (Enter to send)",
+    "notePlaceholder": "Internal note (customer cannot see it)…",
+    "addNote": "Add note",
+    "sendFailed": "Could not send",
+    "attach": "Attach",
+    "attachHint": "File attachments will be available with the real integration.",
+    "internalNote": "Internal note",
+    "sendProduct": "Send product",
+    "pickProductHint": "Catalog product picker coming soon.",
+    "sendPaymentLink": "Payment link",
+    "paymentLink": "Payment link",
+    "paymentLinkSent": "Payment link sent",
+    "toolCall": "Tool call: {tool}",
+    "view": "View",
+    "items": "items",
+    "assignee": "Assignee",
+    "sentiment": "Sentiment",
+    "rating": "Rating",
+    "agentPath": "Agent path",
+    "relatedOrders": "Related orders",
+    "tags": "Tags",
+    "tagPlaceholder": "Tag…",
+    "priority": "Priority",
+    "customer": "Customer",
+    "linkCustomer": "Link customer",
+    "linkOrder": "Link order",
+    "unlinkOrder": "Unlink order",
+    "noLinkedOrders": "No linked orders",
+    "reopened": "Conversation reopened",
+    "searchThread": "Search this conversation…",
+    "smartReply": {
+      "suggest": "Suggest reply",
+      "generating": "Drafting…",
+      "draftTitle": "Suggested reply draft",
+      "regenerate": "Regenerate",
+      "rephrase": "Rephrase",
+      "reject": "Dismiss suggestion",
+      "acceptSend": "Send",
+      "sources": "Sources:",
+      "hint": "Nothing is sent until you press send — edit first if needed"
+    },
+    "pick": {
+      "search": "Search…",
+      "empty": "No matching results",
+      "productTitle": "Send a product",
+      "productDescription": "Pick a product to send as a card in the thread",
+      "orderTitle": "Link order",
+      "orderDescription": "Pick the order related to this conversation",
+      "customerTitle": "Link customer",
+      "customerDescription": "Pick the customer record for this conversation"
+    }
+  },
+  "customers": {
+    "title": "Customers",
+    "description": "Know your customers, what they buy, and when they last ordered.",
+    "export": "Export",
+    "add": "Add customer",
+    "search": "Search by name, phone, or email",
+    "allSegments": "All segments",
+    "allCities": "All cities",
+    "summary": {
+      "total": "All customers",
+      "vip": "VIP customers",
+      "returning": "Returning",
+      "atRisk": "At risk"
+    },
+    "col": {
+      "customer": "Customer",
+      "city": "City",
+      "segment": "Segment",
+      "orders": "Orders",
+      "spent": "Total spent",
+      "lastOrder": "Last order"
+    },
+    "never": "No orders yet",
+    "count": "{count} customers",
+    "emptyTitle": "No customers match your search",
+    "emptyDescription": "Try another keyword or clear the filters.",
+    "clear": "Clear filters",
+    "back": "Customers",
+    "contact": "Contact",
+    "joined": "Customer since {date}",
+    "stats": {
+      "orders": "Orders",
+      "spent": "Total spent",
+      "aov": "Average order",
+      "lastOrder": "Last order"
+    },
+    "ordersTitle": "Orders",
+    "noOrders": "No orders yet",
+    "conversationsTitle": "Conversations",
+    "noConversations": "No conversations",
+    "notes": "Internal notes",
+    "notesPlaceholder": "e.g. Prefers afternoon delivery",
+    "saveNote": "Save note",
+    "noteSaved": "Note saved",
+    "aiTitle": "Assistant suggestion",
+    "ai": {
+      "vip": "A VIP customer. Send a special thank-you code before the sale season.",
+      "new": "A new customer. A welcome message with 10% off the second order improves return rates.",
+      "returning": "Buys regularly. Recommend products from the same category.",
+      "atRisk": "Hasn't ordered in a while. A \"We miss you\" campaign with a small discount may bring them back."
+    },
+    "sendWhatsapp": "Send via WhatsApp",
+    "notFoundTitle": "Customer not found",
+    "newCustomer": "New customer",
+    "searchPlaceholder": "Name, phone or email",
+    "results": "{count, plural, =0 {No results} one {# customer} other {# customers}}",
+    "resetFilters": "Reset filters",
+    "noneTitle": "No customers yet",
+    "noneDescription": "Your first customer will appear here.",
+    "cols": {
+      "name": "Customer",
+      "phone": "Phone",
+      "city": "City",
+      "orders": "Orders",
+      "totalSpent": "Total spent",
+      "lastOrder": "Last order",
+      "segment": "Segment",
+      "source": "Source",
+      "consent": "Marketing",
+      "email": "Email",
+      "registered": "Registered",
+      "avgOrder": "Avg order",
+      "tags": "Tags"
+    },
+    "filters": {
+      "segment": "Segment",
+      "allSegments": "All segments",
+      "city": "City",
+      "allCities": "All cities",
+      "source": "Source",
+      "allSources": "All sources",
+      "tag": "Tag",
+      "consent": "WhatsApp consent",
+      "consentYes": "Consented",
+      "consentNo": "Not consented",
+      "minOrders": "Min orders",
+      "minSpent": "Min spend (SAR)",
+      "lastOrder": "Last order",
+      "more": "More filters",
+      "any": "Any",
+      "maxSpent": "Max spend (SAR)"
+    },
+    "sources": {
+      "storefront": "Storefront",
+      "whatsapp": "WhatsApp",
+      "voice": "Voice",
+      "manual": "Manual",
+      "import": "Import",
+      "app": "App"
+    },
+    "bulk": {
+      "addTag": "Add tag",
+      "apply": "Apply",
+      "tagged": "Tagged {count} customers",
+      "removeTag": "Remove tag",
+      "pickTag": "Pick a tag to remove",
+      "untagged": "Removed tag “{tag}” from {count} customers"
+    },
+    "exportTitle": "Export customers",
+    "exportDescription": "{count} customers will be exported to CSV.",
+    "exportWarning": "The file contains personal data (names and phones). Handle it per PDPL.",
+    "exportDone": "Exported",
+    "exportConfirm": "Export",
+    "new": {
+      "title": "New customer",
+      "description": "Add a customer manually by phone.",
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "birthDate": "Birth date",
+      "gender": "Gender",
+      "genderUnspecified": "Unspecified",
+      "genderMale": "Male",
+      "genderFemale": "Female",
+      "tags": "Tags",
+      "tagsPlaceholder": "VIP, wholesale, …",
+      "note": "Note",
+      "consent": "Marketing consent",
+      "consent_whatsapp": "WhatsApp",
+      "consent_sms": "SMS",
+      "consent_email": "Email",
+      "withAddress": "Add address",
+      "addressRequired": "Complete recipient name and city or remove the address",
+      "create": "Create",
+      "done": "Customer created",
+      "invalid": "Enter a name and a valid Saudi phone (+9665…)",
+      "phoneTaken": "This phone belongs to another customer",
+      "failed": "Could not create"
+    },
+    "edit": {
+      "title": "Edit customer",
+      "name": "Name",
+      "email": "Email",
+      "gender": "Gender",
+      "genders": {
+        "male": "Male",
+        "female": "Female",
+        "unspecified": "Unspecified"
+      },
+      "birthDate": "Birth date",
+      "done": "Saved",
+      "notes": "Notes"
+    },
+    "profile": {
+      "title": "Customer",
+      "crumb": "Customers",
+      "backToList": "Back to customers",
+      "notFoundTitle": "Customer not found",
+      "notFoundDescription": "The link is invalid or the customer was deleted.",
+      "since": "Customer since {date}",
+      "message": "Message",
+      "newOrder": "New order",
+      "stats": {
+        "orders": "Orders",
+        "total": "Total spent",
+        "avg": "Avg. order",
+        "returns": "Returns"
+      },
+      "tabs": {
+        "orders": "Orders",
+        "conversations": "Conversations",
+        "carts": "Carts",
+        "returns": "Returns",
+        "addresses": "Addresses",
+        "timeline": "Timeline"
+      },
+      "cols": {
+        "number": "Number",
+        "date": "Date",
+        "total": "Total",
+        "status": "Status",
+        "order": "Order"
+      },
+      "emptyOrders": "No orders",
+      "emptyConversations": "No conversations",
+      "emptyCarts": "No carts",
+      "emptyReturns": "No returns",
+      "emptyAddresses": "No addresses",
+      "emptyTimeline": "No events yet",
+      "timeline": {
+        "order": "Order {number}",
+        "conversation": "New conversation",
+        "return": "Return {number}"
+      },
+      "default": "Default",
+      "data": "Details",
+      "email": "Email",
+      "source": "Source",
+      "birthDate": "Birth date",
+      "consents": "Marketing consents",
+      "channels": {
+        "whatsapp": "WhatsApp",
+        "sms": "SMS",
+        "email": "Email"
+      },
+      "consentUpdated": "Last updated: {date}",
+      "tags": "Tags",
+      "tagPlaceholder": "Tag…",
+      "removeTag": "Remove tag",
+      "notes": "Notes",
+      "notesSaved": "Note saved",
+      "actions": "Actions",
+      "sendCoupon": "Send coupon",
+      "sendCouponDescription": "Pick a coupon to send to the customer via WhatsApp.",
+      "send": "Send",
+      "couponSent": "Coupon {code} sent",
+      "exportData": "Export customer data",
+      "exportDone": "Data exported",
+      "deleteData": "Delete customer data",
+      "deleteTitle": "Delete customer data?",
+      "deleteDescription": "The customer will be permanently anonymized (name, phone, email, addresses) per PDPL.",
+      "deleteWarning": "This cannot be undone. Orders remain without personal data.",
+      "confirmDelete": "Yes, delete data",
+      "deleted": "Customer data deleted",
+      "staffNotes": "Staff notes",
+      "emptyNotes": "No notes yet.",
+      "notePlaceholder": "Add an internal note about this customer…",
+      "addNote": "Add note",
+      "noteAdded": "Note added",
+      "addAddress": "Add address",
+      "setDefault": "Set default",
+      "defaultSet": "Default address updated",
+      "deleteAddress": "Delete address?",
+      "deleteAddressBody": "The address will be removed from the customer's profile.",
+      "addressDeleted": "Address deleted",
+      "addressForm": {
+        "addTitle": "Add address",
+        "editTitle": "Edit address",
+        "label": "Label",
+        "labelPlaceholder": "Home, Work…",
+        "recipient": "Recipient name",
+        "phone": "Phone",
+        "city": "City",
+        "district": "District",
+        "street": "Street",
+        "building": "Building no.",
+        "postal": "Postal code",
+        "notes": "Notes",
+        "default": "Default address",
+        "saved": "Address saved",
+        "failed": "Could not save the address"
+      },
+      "gender": "Gender"
+    },
+    "cancel": "Cancel",
+    "segments": {
+      "title": "Segments",
+      "builtin": "Segments",
+      "presets": "Preset segments",
+      "custom": "My segments",
+      "new": "New customers (30d)",
+      "repeat": "Repeat customers",
+      "top_spenders": "Top spenders",
+      "inactive": "Inactive (90+ days)",
+      "high_order_count": "High order count",
+      "save": "Save as segment",
+      "namePlaceholder": "Segment name (saves current filters)",
+      "saved": "Segment “{name}” saved",
+      "saveFailed": "Could not save the segment",
+      "deleted": "Segment deleted",
+      "delete": "Delete segment",
+      "empty": "No saved segments yet — set filters and save them."
+    },
+    "loyalty": {
+      "title": "Loyalty points",
+      "lifetime": "Lifetime earned: {count}",
+      "emptyLedger": "No points activity yet",
+      "tiers": {
+        "bronze": "Bronze",
+        "silver": "Silver",
+        "gold": "Gold"
+      },
+      "txn": {
+        "earn": "Earn",
+        "redeem": "Redeem",
+        "adjust": "Manual adjust",
+        "expire": "Expired"
+      }
+    }
+  },
+  "inventory": {
+    "title": "Inventory",
+    "description": "Track and adjust stock, and stay ahead of stockouts.",
+    "summary": {
+      "value": "Stock value (at cost)",
+      "units": "Total units",
+      "low": "Low",
+      "out": "Out of stock"
+    },
+    "aiTitle": "Inventory agent suggestion",
+    "aiText": "{count} products will run out within a week at the current sales rate. We suggest reordering now.",
+    "aiAction": "View suggestions",
+    "search": "Search by product name or SKU",
+    "col": {
+      "product": "Product",
+      "available": "Available",
+      "threshold": "Alert at",
+      "value": "Value",
+      "adjust": "Adjust quantity"
+    },
+    "decrease": "Decrease",
+    "increase": "Increase",
+    "save": "Save",
+    "saved": "Stock updated",
+    "quantity": "New quantity for {name}",
+    "filters": {
+      "all": "All",
+      "low": "Low",
+      "out": "Out"
+    },
+    "emptyTitle": "No products here",
+    "emptyDescription": "Products matching this filter will show up here."
+  },
+  "carrierName": {
+    "aramex": "Aramex",
+    "smsa": "SMSA",
+    "spl": "SPL",
+    "redbox": "RedBox"
+  },
+  "paymentMethodName": {
+    "card": "Visa / Mastercard",
+    "mada": "mada",
+    "apple_pay": "Apple Pay",
+    "stc_pay": "STC Pay",
+    "cod": "Cash on delivery",
+    "bank_transfer": "Bank transfer",
+    "payment_link": "Payment link",
+    "gift_card": "Gift card"
+  },
+  "shipping": {
+    "title": "Shipping",
+    "description": "Prepare shipments, print labels, and track deliveries.",
+    "settings": "Shipping settings",
+    "summary": {
+      "toShip": "Awaiting shipment",
+      "inTransit": "In transit",
+      "delivered": "Delivered",
+      "avgDays": "Average delivery time"
+    },
+    "days": "{count} days",
+    "carriers": "Carriers",
+    "connected": "Connected",
+    "connect": "Connect",
+    "shipments": "{count} shipments",
+    "rate": "From {price}",
+    "tabs": {
+      "toShip": "Awaiting shipment",
+      "inTransit": "In transit",
+      "delivered": "Delivered"
+    },
+    "col": {
+      "order": "Order",
+      "customer": "Customer",
+      "city": "City",
+      "carrier": "Carrier",
+      "tracking": "Tracking number",
+      "status": "Status"
+    },
+    "createShipment": "Create shipment",
+    "printLabel": "Print label",
+    "track": "Track",
+    "created": "Shipment created and label printed",
+    "labelPrinted": "Label ready to print",
+    "freeShipping": "Free shipping on orders over {amount}",
+    "emptyTitle": "No shipments here",
+    "emptyDescription": "Shipments show up here once orders are ready."
+  },
+  "invoices": {
+    "title": "Invoices",
+    "description": "Electronic tax invoices compliant with ZATCA requirements.",
+    "export": "Export",
+    "zatcaTitle": "E-invoicing is on",
+    "zatcaText": "Your store is connected to FATOORA (Phase 2). Every invoice is reported automatically with a QR code.",
+    "zatcaStatus": "Connected",
+    "summary": {
+      "total": "Total invoiced",
+      "vat": "VAT",
+      "count": "Invoices",
+      "credit": "Credit notes"
+    },
+    "col": {
+      "number": "Invoice",
+      "order": "Order",
+      "customer": "Customer",
+      "date": "Date",
+      "vat": "VAT",
+      "total": "Total",
+      "type": "Type",
+      "zatca": "ZATCA status",
+      "description": "Description",
+      "quantity": "Qty",
+      "unitPrice": "Unit price",
+      "subtotal": "Subtotal",
+      "status": "Issue status",
+      "original": "Original invoice",
+      "sku": "SKU"
+    },
+    "type": {
+      "simplified": "Simplified invoice",
+      "standard": "Tax invoice",
+      "credit_note": "Credit note"
+    },
+    "download": "Download",
+    "downloaded": "Downloading invoice {number}",
+    "search": "Search by invoice, order, or customer",
+    "emptyTitle": "No invoices match your search",
+    "emptyDescription": "Try another number.",
+    "zatca": {
+      "pending": "Submitting",
+      "reported": "Reported",
+      "cleared": "Cleared",
+      "rejected": "Rejected"
+    },
+    "filters": {
+      "all": "All",
+      "status": "Issue status",
+      "date": "Issued",
+      "returns": "Credit notes only",
+      "reset": "Reset"
+    },
+    "resend": "Resend",
+    "zatcaErrors": "ZATCA rejected this invoice",
+    "pdfPreview": "PDF preview",
+    "pdfPreviewHint": "The ZATCA-compliant invoice preview appears here.",
+    "lines": "Invoice lines",
+    "subtotal": "Subtotal before VAT",
+    "details": "Invoice details",
+    "return": "Return",
+    "relatedInvoice": "Related invoice",
+    "customerVat": "Customer VAT number",
+    "issuedAt": "Issued at",
+    "qrTitle": "QR code",
+    "qrHint": "Phase-two compliant verification code.",
+    "zatcaOffTitle": "E-invoicing is not connected",
+    "zatcaOffText": "Connect your store to FATOORA from Settings → Taxes to start reporting invoices to ZATCA.",
+    "zatcaConn": {
+      "not_connected": "Not connected",
+      "onboarding": "Onboarding",
+      "connected": "Connected",
+      "error": "Connection error"
+    },
+    "results": "{count, plural, one {# invoice} other {# invoices}}",
+    "orphan": "Orphan",
+    "print": "Print",
+    "popupBlocked": "The browser blocked the print window",
+    "returnReason": "Return reason",
+    "shipment": "Shipment",
+    "issueStatus": {
+      "issued": "Issued",
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "partially_refunded": "Partially refunded",
+      "refunded": "Refunded",
+      "cancelled": "Cancelled"
+    },
+    "financial": {
+      "title": "Financial summary",
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "taxable": "Taxable amount",
+      "vat": "VAT (15%)",
+      "total": "Total",
+      "paid": "Paid",
+      "refunded": "Refunded",
+      "remaining": "Remaining"
+    },
+    "integrity": {
+      "missingOriginal": "This credit note isn't linked to its original invoice.",
+      "amountMismatch": "The credit note total exceeds the original invoice total."
+    },
+    "zatcaZone": {
+      "title": "ZATCA reporting",
+      "simulated": "Simulated",
+      "status": "Status",
+      "invoiceNumber": "Invoice number",
+      "lastSent": "Last submitted",
+      "qrData": "QR payload",
+      "attempts": "Submission log",
+      "loading": "Loading…",
+      "noAttempts": "No submissions yet.",
+      "resend": "Resend to ZATCA",
+      "resendTitle": "Resend invoice {number}?",
+      "resendBody": "The invoice will be submitted to the simulated FATOORA gateway again.",
+      "resendBodyError": "Last submission failed: {reason}. Resubmit anyway?",
+      "reported": "Invoice {number} reported to ZATCA",
+      "rejectedAgain": "Invoice {number} was rejected again: {reason}",
+      "notEligible": "Only pending or rejected invoices can be resent",
+      "failed": "Couldn't resend the invoice"
+    },
+    "doc": {
+      "docTitle": "Credit note",
+      "taxInvoice": "Tax invoice",
+      "seller": "Seller",
+      "billTo": "Bill to",
+      "vatNo": "VAT no.",
+      "orderNo": "Order",
+      "issueDate": "Issue date",
+      "number": "Invoice no.",
+      "description": "Description",
+      "qty": "Qty",
+      "unitPrice": "Unit price",
+      "vat": "VAT",
+      "lineTotal": "Total",
+      "subtotal": "Subtotal",
+      "vatAmount": "VAT",
+      "total": "Total",
+      "qrHint": "ZATCA QR — TLV payload",
+      "relatedInvoice": "Related invoice"
+    }
+  },
+  "reports": {
+    "title": "Reports",
+    "description": "Your store's performance over the last 30 days.",
+    "export": "Export report",
+    "range": {
+      "7": "Last 7 days",
+      "30": "Last 30 days",
+      "90": "Last 90 days"
+    },
+    "kpi": {
+      "revenue": "Net sales",
+      "orders": "Orders",
+      "aov": "Average order",
+      "conversion": "Conversion rate",
+      "tax": "Tax collected"
+    },
+    "revenueTitle": "Daily sales",
+    "channelsTitle": "Sales by channel",
+    "paymentsTitle": "Payment methods",
+    "categoriesTitle": "Sales by category",
+    "citiesTitle": "Top cities",
+    "agentTitle": "AI agents impact",
+    "agent": {
+      "conversations": "conversations",
+      "resolved": "resolved automatically",
+      "carts": "carts recovered",
+      "revenue": "sales via agents"
+    },
+    "orders": "{count} orders",
+    "revenue": "Sales",
+    "types": {
+      "sales": "Sales report",
+      "products": "Products report",
+      "customers": "Customers report",
+      "agents": "Agents report",
+      "marketing": "Marketing report",
+      "tax": "Tax report"
+    },
+    "typeDesc": {
+      "sales": "Revenue, orders and average order value by day, channel and city.",
+      "products": "Best sellers, most returned and most asked about.",
+      "customers": "New vs returning customers and segment breakdown.",
+      "agents": "Conversations, resolution and sales per agent.",
+      "marketing": "Coupon performance and abandoned-cart recovery.",
+      "tax": "VAT and invoices by period and ZATCA status."
+    },
+    "comparePrevious": "Compare to previous period",
+    "products": {
+      "topSelling": "Best sellers (last 30 days)",
+      "topReturned": "Most returned",
+      "topAsked": "Most asked about",
+      "product": "Product",
+      "sold": "Sold",
+      "revenue": "Revenue",
+      "asked": "Asked about"
+    },
+    "customers": {
+      "total": "Total customers",
+      "newInPeriod": "New in period",
+      "returning": "Returning & VIP",
+      "atRisk": "At risk",
+      "segments": "Spend by segment",
+      "segment": {
+        "new": "New",
+        "returning": "Returning",
+        "vip": "VIP",
+        "at_risk": "At risk"
+      }
+    },
+    "agents": {
+      "table": "Agent performance",
+      "agent": "Agent",
+      "conversations": "Conversations",
+      "resolved": "Resolution rate",
+      "revenue": "Revenue"
+    },
+    "marketing": {
+      "couponRevenue": "Coupon revenue",
+      "uses": "Uses",
+      "carts": "Abandoned carts",
+      "recovered": "Recovery rate",
+      "coupons": "Coupon performance",
+      "coupon": "Coupon",
+      "status": "Status",
+      "discount": "Discount given",
+      "revenue": "Revenue"
+    },
+    "tax": {
+      "vatTotal": "VAT collected",
+      "invoices": "Invoices",
+      "creditNotes": "Credit notes",
+      "rejected": "Rejected by ZATCA",
+      "invoicesList": "Period invoices",
+      "invoice": "Invoice",
+      "vat": "VAT",
+      "total": "Total",
+      "zatca": "ZATCA status"
+    }
+  },
+  "marketing": {
+    "title": "Marketing",
+    "description": "Campaigns and coupons that bring new customers and win back old ones.",
+    "newCampaign": "New campaign",
+    "newCoupon": "New coupon",
+    "aiTitle": "Let the marketing agent write your campaign",
+    "aiText": "Pick a goal and it prepares the copy, audience, and best send time.",
+    "aiPlaceholder": "e.g. National Day offer on coffee",
+    "aiGenerate": "Generate campaign",
+    "aiResult": "🇸🇦 For National Day: 20% off all Saudi coffee until the end of the week. Use code WATAN20 👇",
+    "aiAudience": "Suggested audience: 1,240 customers who bought coffee in the last 90 days",
+    "tabs": {
+      "campaigns": "Campaigns",
+      "coupons": "Coupons",
+      "carts": "Abandoned carts"
+    },
+    "campaignStatus": {
+      "active": "Active",
+      "scheduled": "Scheduled",
+      "ended": "Ended",
+      "draft": "Draft"
+    },
+    "sent": "Sent",
+    "opened": "Opened",
+    "revenue": "Sales",
+    "coupon": {
+      "code": "Code",
+      "discount": "Discount",
+      "usage": "Usage",
+      "expires": "Expires",
+      "status": "Status",
+      "active": "Active",
+      "expired": "Expired",
+      "copy": "Copy code",
+      "copied": "Code copied",
+      "title": "Coupon",
+      "notFoundTitle": "Coupon not found",
+      "notFoundDescription": "The link is invalid or the coupon was deleted.",
+      "backToList": "Back to coupons",
+      "editTitle": "Edit coupon",
+      "saved": "Saved",
+      "failed": "Could not save",
+      "activate": "Activate",
+      "deactivate": "Disable",
+      "enabled": "Activated",
+      "disabledNow": "Disabled",
+      "delete": "Delete",
+      "deleteTitle": "Delete coupon?",
+      "deleteDescription": "The coupon was used {count} times. Deletion is permanent.",
+      "deleteWarning": "Customers holding this code will no longer be able to use it.",
+      "confirmDelete": "Yes, delete",
+      "deleted": "Coupon deleted",
+      "stats": {
+        "usage": "Usage",
+        "revenue": "Revenue generated",
+        "discount": "Total discount"
+      },
+      "usageTitle": "Usage log",
+      "noUsageTitle": "No usages yet",
+      "noUsageDescription": "The first order using this coupon will appear here.",
+      "cols": {
+        "order": "Order",
+        "customer": "Customer",
+        "date": "Date",
+        "discount": "Discount",
+        "orderTotal": "Order total"
+      },
+      "settings": "Settings",
+      "s": {
+        "type": "Type",
+        "value": "Value",
+        "maxDiscount": "Max discount",
+        "period": "Period",
+        "minOrder": "Min order",
+        "perCustomer": "Per customer",
+        "appliesTo": "Applies to",
+        "excludeSale": "Excludes sale items",
+        "createdBy": "Created by"
+      },
+      "form": {
+        "code": "Code",
+        "type": "Type",
+        "types": {
+          "percentage": "Percentage %",
+          "fixed": "Fixed amount",
+          "free_shipping": "Free shipping"
+        },
+        "percent": "Percent %",
+        "amount": "Amount (SAR)",
+        "maxDiscount": "Max discount (SAR)",
+        "minOrder": "Min order amount (SAR)",
+        "usageLimit": "Total usage limit",
+        "perCustomer": "Per-customer limit",
+        "appliesTo": "Applies to",
+        "applies": {
+          "all": "All products",
+          "products": "Specific products",
+          "categories": "Specific categories",
+          "collections": "Specific collections"
+        },
+        "startsAt": "Starts",
+        "endsAt": "Ends (empty = no end)",
+        "eligibility": "Eligibility",
+        "elig": {
+          "all": "All customers",
+          "new": "New customers only"
+        },
+        "excludeSaleItems": "Exclude sale items"
+      }
+    },
+    "couponDialog": {
+      "title": "New coupon",
+      "description": "Coupons work in the store and in agent conversations.",
+      "code": "Coupon code",
+      "percent": "Discount (%)",
+      "limit": "Usage limit",
+      "create": "Create coupon",
+      "created": "Coupon {code} created",
+      "invalid": "Enter a code of at least 4 characters and a discount between 1 and 90"
+    },
+    "carts": {
+      "title": "Abandoned cart recovery",
+      "text": "The sales agent sends a WhatsApp reminder one hour after a cart is abandoned.",
+      "abandoned": "abandoned carts",
+      "recovered": "recovered",
+      "rate": "Recovery rate",
+      "value": "Recovered value",
+      "enabled": "Automatic reminders on"
+    },
+    "coupons": {
+      "title": "Coupons",
+      "description": "Discount codes for your store.",
+      "new": "New coupon",
+      "searchPlaceholder": "Coupon code",
+      "results": "{count, plural, =0 {No results} one {# coupon} other {# coupons}}",
+      "noneTitle": "No coupons",
+      "noneDescription": "Create your first discount code.",
+      "newTitle": "New coupon",
+      "newDescription": "Set the code, discount type and usage terms.",
+      "create": "Create",
+      "created": "Coupon created",
+      "failed": "Could not save",
+      "codeTaken": "Code already in use",
+      "codeInvalid": "Code must be letters and digits only",
+      "freeShipping": "Free shipping",
+      "types": {
+        "percentage": "Percentage %",
+        "fixed": "Fixed amount",
+        "free_shipping": "Free shipping"
+      },
+      "statuses": {
+        "active": "Active",
+        "scheduled": "Scheduled",
+        "expired": "Expired",
+        "disabled": "Disabled"
+      },
+      "filters": {
+        "status": "Status",
+        "allStatuses": "All statuses",
+        "type": "Type",
+        "allTypes": "All types"
+      },
+      "cols": {
+        "code": "Code",
+        "type": "Type",
+        "value": "Value",
+        "usage": "Usage",
+        "status": "Status",
+        "period": "Period",
+        "min": "Min order",
+        "by": "Created by"
+      }
+    },
+    "promotions": {
+      "title": "Automatic promotions",
+      "description": "Automatic discounts with no code.",
+      "new": "New promotion",
+      "newTitle": "New promotion",
+      "editTitle": "Edit promotion",
+      "formDescription": "Set the promotion type and period.",
+      "create": "Create",
+      "created": "Promotion created",
+      "saved": "Saved",
+      "failed": "Could not save",
+      "toggled": "Status updated",
+      "activate": "Activate",
+      "deactivate": "Disable",
+      "delete": "Delete",
+      "deleteTitle": "Delete promotion?",
+      "deleteDescription": "The promotion will be deleted and no longer applies to new carts.",
+      "confirmDelete": "Yes, delete",
+      "deleted": "Promotion deleted",
+      "noneTitle": "No promotions",
+      "noneDescription": "Create your first automatic promotion.",
+      "types": {
+        "percentage": "Percentage %",
+        "fixed_amount": "Fixed amount",
+        "free_shipping": "Free shipping",
+        "buy_x_get_y": "Buy X get Y"
+      },
+      "statuses": {
+        "active": "Active",
+        "scheduled": "Scheduled",
+        "expired": "Expired",
+        "disabled": "Disabled"
+      },
+      "filters": {
+        "status": "Status",
+        "all": "All statuses"
+      },
+      "cols": {
+        "name": "Name",
+        "type": "Type",
+        "benefit": "Benefit",
+        "period": "Period",
+        "status": "Status",
+        "orders": "Orders",
+        "revenue": "Revenue",
+        "by": "Created by"
+      },
+      "buyXGetY": "Buy {buy} get {get} free",
+      "freeShipping": "Free shipping",
+      "form": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "type": "Type",
+        "types": {
+          "percentage": "Percentage %",
+          "fixed_amount": "Fixed amount",
+          "free_shipping": "Free shipping",
+          "buy_x_get_y": "Buy X get Y"
+        },
+        "percent": "Percent %",
+        "amount": "Amount (SAR)",
+        "buyQty": "Buy quantity",
+        "getQty": "Free quantity",
+        "startsAt": "Starts",
+        "endsAt": "Ends (empty = no end)"
+      }
+    },
+    "loyalty": {
+      "title": "Loyalty program",
+      "description": "Points earned on every order and redeemed as discounts",
+      "settingsTitle": "Program settings",
+      "settingsDescription": "Earn/redeem rates and tiers",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "earnRate": "Points per SAR",
+      "earnRateHint": "e.g. 1 = one point per 1 SAR paid",
+      "redeemRate": "Point value (SAR)",
+      "redeemRateHint": "How much one point is worth when redeemed",
+      "expiryDays": "Points expiry (days)",
+      "expiryDaysHint": "0 = never expires",
+      "tiersTitle": "Tiers",
+      "minPoints": "Points threshold",
+      "perks": "Perks",
+      "tiers": {
+        "bronze": "Bronze",
+        "silver": "Silver",
+        "gold": "Gold"
+      },
+      "accountsTitle": "Customer balances",
+      "noneTitle": "No balances yet",
+      "noneDescription": "Balances are created automatically with the first earned points",
+      "cols": {
+        "customer": "Customer",
+        "points": "Points",
+        "lifetime": "Lifetime earned",
+        "tier": "Tier",
+        "date": "Date",
+        "type": "Type",
+        "note": "Note"
+      },
+      "txn": {
+        "earn": "Earn",
+        "redeem": "Redeem",
+        "adjust": "Manual adjust",
+        "expire": "Expired"
+      },
+      "ledgerTitle": "Points ledger",
+      "ledgerEmptyTitle": "No entries",
+      "ledgerEmptyDescription": "Earn and redeem entries appear here",
+      "adjust": "Adjust",
+      "adjustTitle": "Adjust points for {name}",
+      "points": "Points (±)",
+      "pointsHint": "Positive to add, negative to deduct",
+      "note": "Reason",
+      "noteRequired": "Adjustment reason is required",
+      "pointsRequired": "Enter a valid points amount",
+      "adjustSubmit": "Apply",
+      "rateRequired": "Earn and redeem rates must be greater than zero"
+    },
+    "giftCards": {
+      "title": "Gift cards",
+      "description": "Issue stored-value cards and redeem them on orders",
+      "issue": "Issue card",
+      "issueTitle": "Issue gift card",
+      "issueSubmit": "Issue",
+      "cols": {
+        "code": "Code",
+        "balance": "Balance",
+        "initial": "Value",
+        "customer": "Customer",
+        "status": "Status",
+        "expires": "Expires",
+        "date": "Date",
+        "type": "Type",
+        "amount": "Amount",
+        "order": "Order",
+        "actor": "By"
+      },
+      "status": {
+        "active": "Active",
+        "partially_used": "Partially used",
+        "redeemed": "Redeemed",
+        "expired": "Expired",
+        "deactivated": "Deactivated"
+      },
+      "txn": {
+        "issue": "Issued",
+        "redeem": "Redeemed",
+        "deactivate": "Deactivated",
+        "adjust": "Adjusted"
+      },
+      "form": {
+        "code": "Code",
+        "codeHint": "Leave empty to auto-generate",
+        "amount": "Value (SAR)",
+        "customer": "Customer",
+        "noCustomer": "No customer",
+        "expires": "Expiry date"
+      },
+      "amountRequired": "Enter a valid amount",
+      "codeTaken": "Code already used on another card",
+      "noneTitle": "No gift cards",
+      "noneDescription": "Issue your first card to customers",
+      "notFoundTitle": "Card not found",
+      "notFoundDescription": "Bad link or the card was removed",
+      "backToList": "Back to list",
+      "stats": {
+        "balance": "Balance",
+        "initial": "Original value",
+        "spent": "Spent",
+        "expires": "Expires",
+        "noExpiry": "No expiry"
+      },
+      "holder": "Holder: {name}",
+      "holderUnassigned": "Unassigned card",
+      "issuedBy": "Issued by {name}",
+      "deactivate": "Deactivate card",
+      "ledgerTitle": "Card ledger",
+      "ledgerEmptyTitle": "No entries",
+      "ledgerEmptyDescription": "Redemptions and adjustments appear here"
+    },
+    "affiliates": {
+      "title": "Affiliates",
+      "description": "Partners who drive orders for a commission on each sale",
+      "new": "New affiliate",
+      "newTitle": "Add affiliate",
+      "editTitle": "Edit affiliate",
+      "edit": "Edit",
+      "pause": "Pause",
+      "resume": "Resume",
+      "payoutsNote": "Payouts are recorded here but the actual transfer happens off-platform (simulated).",
+      "cols": {
+        "name": "Name",
+        "code": "Code",
+        "rate": "Rate",
+        "clicks": "Clicks",
+        "orders": "Orders",
+        "revenue": "Revenue",
+        "commission": "Commission",
+        "status": "Status",
+        "date": "Date",
+        "order": "Order",
+        "total": "Total",
+        "amount": "Amount",
+        "note": "Note"
+      },
+      "status": {
+        "active": "Active",
+        "paused": "Paused"
+      },
+      "payout": {
+        "pending": "Pending",
+        "paid": "Paid"
+      },
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "code": "Referral code",
+        "commissionRate": "Commission %",
+        "rateHint": "Percent of every attributed order total",
+        "amount": "Amount (SAR)",
+        "note": "Note"
+      },
+      "nameRequired": "Name is required",
+      "codeRequired": "Code is required",
+      "rateRequired": "Rate must be 1–100",
+      "noneTitle": "No affiliates",
+      "noneDescription": "Add your first partner and start tracking referrals",
+      "notFoundTitle": "Affiliate not found",
+      "notFoundDescription": "Bad link or the affiliate was removed",
+      "backToList": "Back to list",
+      "stats": {
+        "clicks": "Clicks",
+        "orders": "Orders",
+        "revenue": "Attributed revenue",
+        "commission": "Commission earned",
+        "pendingPayout": "Due for payout"
+      },
+      "conversionsTitle": "Attributed orders",
+      "conversionsEmpty": "No attributed orders yet",
+      "payoutsTitle": "Payouts",
+      "payoutsEmpty": "No payouts yet",
+      "createPayout": "Record payout",
+      "payoutTitle": "Commission payout",
+      "payoutHint": "Available to pay: {amount}",
+      "payoutAmountRequired": "Enter a valid amount",
+      "payoutSubmit": "Record",
+      "markPaid": "Mark paid"
+    }
+  },
+  "storeDesign": {
+    "title": "Store design",
+    "description": "Change how your store looks and see the result live.",
+    "publish": "Publish changes",
+    "published": "Design published to your store",
+    "preview": "Preview",
+    "theme": "Theme",
+    "themes": {
+      "oasis": "Oasis",
+      "najd": "Najd",
+      "red-sea": "Red Sea"
+    },
+    "color": "Primary color",
+    "font": "Font",
+    "fonts": {
+      "plex": "IBM Plex",
+      "tajawal": "Tajawal",
+      "almarai": "Almarai"
+    },
+    "sections": "Homepage sections",
+    "section": {
+      "hero": "Hero banner",
+      "categories": "Categories",
+      "featured": "Featured products",
+      "reviews": "Customer reviews",
+      "newsletter": "Newsletter"
+    },
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "desktop": "Desktop",
+    "mobile": "Mobile",
+    "heroTitle": "Banner title",
+    "heroDefault": "Coffee and dates from the heart of Arabia",
+    "heroCta": "Shop now",
+    "shopBy": "Shop by category",
+    "featuredTitle": "Best sellers",
+    "reviewsTitle": "What our customers say",
+    "reviewText": "Excellent quality and fast delivery. Recommended!",
+    "newsletterTitle": "Subscribe for the latest",
+    "newsletterCta": "Subscribe"
+  },
+  "apps": {
+    "title": "Apps",
+    "description": "Extend your store with ready apps for payments, shipping, marketing, and accounting.",
+    "search": "Search apps",
+    "installed": "Installed",
+    "install": "Install",
+    "uninstall": "Remove",
+    "installedToast": "{name} installed",
+    "removedToast": "{name} removed",
+    "category": {
+      "all": "All",
+      "payments": "Payments",
+      "shipping": "Shipping",
+      "marketing": "Marketing",
+      "accounting": "Accounting",
+      "ai": "AI"
+    },
+    "free": "Free",
+    "perMonth": "{price} / month",
+    "installedCount": "{count} apps installed",
+    "emptyTitle": "No apps found",
+    "emptyDescription": "Try another keyword or category.",
+    "items": {
+      "tabby": "Split purchases into 4 interest-free payments.",
+      "tamara": "Buy now, pay later.",
+      "zid-pay": "Local payment gateway supporting mada and Apple Pay.",
+      "smsa": "Connect SMSA shipments and print labels automatically.",
+      "torod": "Compare carrier rates and pick the best.",
+      "snap-pixel": "Track conversions from Snapchat ads.",
+      "mailchimp": "Send email campaigns to your customers.",
+      "google-shopping": "List your products on Google Shopping.",
+      "qoyod": "Sync invoices and sales with Qoyod.",
+      "daftra": "Accounting and inventory in one place.",
+      "ai-photos": "Enhance product photos and remove backgrounds in one click.",
+      "ai-translate": "Translate your products to English automatically."
+    },
+    "installedDescription": "Apps installed on your store and their permissions.",
+    "browseStore": "App store",
+    "storeTitle": "App store",
+    "storeDescription": "Extend your store with approved payments, shipping, marketing and accounting apps.",
+    "open": "Open",
+    "openInstalled": "Manage installation",
+    "grantedScopesCount": "{count} granted scopes",
+    "lastActivity": "Last activity {time}",
+    "installs": "{count} installs",
+    "about": "About",
+    "scopesTitle": "Required permissions",
+    "pricing": "Pricing",
+    "grantedScopes": "Granted permissions",
+    "activity": "Activity log",
+    "noActivity": "No recorded activity for this app.",
+    "billing": "Billing",
+    "installedBy": "Installed by",
+    "installedAt": "Installed {date}",
+    "installedAtShort": "Installed at",
+    "lastActivityShort": "Last activity",
+    "appInfo": "App info",
+    "developer": "Developer",
+    "support": "Support",
+    "storePage": "Store page",
+    "openStorePage": "View app page",
+    "oneTime": "{price} one time",
+    "usageBased": "{price} usage-based",
+    "scope": {
+      "orders": {
+        "read": "Read orders and their details",
+        "manage": "Manage orders and update their status"
+      },
+      "customers": {
+        "read": "Read customer data",
+        "export": "Export customer data"
+      },
+      "shipments": {
+        "manage": "Create and manage shipments and labels"
+      },
+      "reports": {
+        "read": "Access store reports"
+      },
+      "products": {
+        "read": "Read products and prices",
+        "manage": "Edit products and media"
+      },
+      "invoices": {
+        "read": "Read invoices and credit notes"
+      },
+      "inventory": {
+        "manage": "Read inventory and update quantities"
+      }
+    },
+    "auditAction": {
+      "app": {
+        "installed": "Installed the app",
+        "uninstalled": "Uninstalled the app"
+      },
+      "shipment": {
+        "created": "Created a shipment"
+      },
+      "order": {
+        "paid": "Recorded a payment"
+      },
+      "reports": {
+        "synced": "Synced reports"
+      },
+      "product": {
+        "updated": "Updated a product"
+      },
+      "staff": {
+        "invited": "Invited a staff member"
+      },
+      "settings": {
+        "updated": "Updated settings"
+      }
+    },
+    "connection": {
+      "title": "Connection & settings",
+      "simulated": "Simulated check — verifies fields are complete; no real provider handshake without a backend",
+      "keyPlaceholder": "api_key",
+      "valuePlaceholder": "Value / credentials",
+      "addField": "Add field",
+      "removeField": "Remove field",
+      "save": "Save settings",
+      "test": "Test connection",
+      "untested": "Untested",
+      "ok": "Connected (simulated)",
+      "failed": "Check failed"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Store, payments, team and plan settings.",
+    "save": "Save",
+    "cancel": "Cancel",
+    "nav": {
+      "general": "Store details",
+      "payments": "Payments",
+      "shipping": "Shipping",
+      "taxes": "Taxes & ZATCA",
+      "notifications": "Notifications",
+      "channels": "Channels",
+      "staff": "Staff",
+      "roles": "Roles",
+      "audit": "Audit log",
+      "billing": "Plan & billing",
+      "developers": "Developers",
+      "copilot": "Copilot",
+      "danger": "Danger zone",
+      "maintenance": "Maintenance",
+      "profile": "My profile",
+      "regional": "Regional & language"
+    },
+    "general": {
+      "name": "Store name",
+      "domain": "Domain",
+      "email": "Contact email",
+      "phone": "Contact phone",
+      "cr": "Commercial registration",
+      "vatNumber": "VAT number",
+      "legalName": "Legal name",
+      "industry": "Industry",
+      "logo": "Logo",
+      "changeLogo": "Change logo",
+      "connectDomain": "Connect a custom domain",
+      "taxSettings": "Tax settings"
+    },
+    "payments": {
+      "methods": "Payment methods",
+      "hint": "Choose the payment methods shown to customers at checkout.",
+      "fee": "{fee} fee",
+      "kyc": {
+        "title": "Payment account verification (KYC)",
+        "hint": "Complete verification to receive payouts and enable online payments.",
+        "viewStatus": "View verification status",
+        "status": {
+          "not_started": "Not started",
+          "pending_kyc": "Under review",
+          "active": "Active",
+          "rejected": "Rejected"
+        },
+        "steps": {
+          "account": "Account",
+          "documents": "Documents",
+          "review": "Review",
+          "live": "Live"
+        }
+      },
+      "cod": {
+        "title": "Cash on delivery",
+        "fee": "Fee (SAR)",
+        "maxOrder": "Max order value (SAR)",
+        "cities": "Available cities: {cities}"
+      },
+      "bank": {
+        "title": "Bank transfer",
+        "iban": "IBAN",
+        "bankName": "Bank name",
+        "instructions": "Customer instructions"
+      },
+      "settlement": {
+        "title": "Settlement",
+        "pending": "Pending balance",
+        "lastPayout": "Last payout",
+        "next": "Next payout"
+      }
+    },
+    "shipping": {
+      "pickup": {
+        "title": "Pickup address",
+        "hint": "The address carriers collect shipments from.",
+        "recipient": "Recipient name",
+        "phone": "Phone",
+        "city": "City",
+        "district": "District",
+        "street": "Street",
+        "postalCode": "Postal code"
+      },
+      "zones": {
+        "title": "Shipping zones",
+        "hint": "Set cities and shipping rates per zone.",
+        "rateType": "Type",
+        "conditions": "Condition",
+        "price": "Price",
+        "rate": {
+          "flat": "Flat rate",
+          "weight": "By weight",
+          "price": "By order value"
+        }
+      },
+      "carriers": {
+        "title": "Carriers"
+      },
+      "options": {
+        "title": "Shipping options",
+        "freeThreshold": "Free shipping above (SAR)",
+        "fallbackRate": "Fallback rate (SAR)",
+        "handlingDays": "Handling days"
+      }
+    },
+    "taxes": {
+      "vat": {
+        "title": "Value-added tax",
+        "enabled": "Enable VAT",
+        "enabledHint": "Tax is calculated automatically on orders and invoices.",
+        "number": "VAT number",
+        "rate": "VAT rate",
+        "included": "Prices include tax",
+        "includedHint": "Customers see prices including {rate}% VAT."
+      },
+      "zatca": {
+        "title": "E-invoicing (ZATCA)",
+        "hint": "Connect your store to issue compliant e-invoices.",
+        "egsSerial": "Device serial (EGS)",
+        "status": {
+          "not_connected": "Not connected",
+          "onboarding": "Connecting",
+          "connected": "Connected",
+          "error": "Error"
+        },
+        "steps": {
+          "register": "Registration",
+          "onboard": "Device onboarding",
+          "live": "Issuing invoices"
+        }
+      }
+    },
+    "notifications": {
+      "hint": "Message templates per event and channel — edit content and enable what you need.",
+      "event": "Event",
+      "on": "On",
+      "off": "Off",
+      "add": "Add",
+      "edit": "Edit template",
+      "channels": {
+        "whatsapp": "WhatsApp",
+        "sms": "SMS",
+        "email": "Email"
+      },
+      "waStatus": {
+        "approved": "Approved",
+        "pending": "Pending approval",
+        "rejected": "Rejected"
+      },
+      "events": {
+        "order_confirmed": "Order confirmed",
+        "payment_failed": "Payment failed",
+        "shipped": "Shipped",
+        "out_for_delivery": "Out for delivery",
+        "delivered": "Delivered",
+        "cart_abandoned": "Abandoned cart",
+        "return_update": "Return update",
+        "otp": "OTP"
+      },
+      "editor": {
+        "title": "{event} template — {channel}",
+        "hint": "Use variables in the text — real values are inserted on send.",
+        "variables": "Variables",
+        "ar": "Content (Arabic)",
+        "en": "Content (English)",
+        "enabled": "Enable this template",
+        "preview": "Preview",
+        "submit": "Submit for approval"
+      }
+    },
+    "channels": {
+      "whatsapp": "WhatsApp numbers",
+      "voice": "Voice numbers",
+      "add": "Add number",
+      "disconnect": "Disconnect",
+      "cols": {
+        "phone": "Number",
+        "displayName": "Display name",
+        "status": "Status",
+        "quality": "Quality",
+        "agent": "Agent"
+      },
+      "numStatus": {
+        "active": "Active",
+        "pending": "Connecting",
+        "disconnected": "Disconnected"
+      },
+      "quality": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "webchat": {
+        "title": "Web chat",
+        "hint": "The chat widget your storefront visitors see.",
+        "enabled": "Enable web chat",
+        "greeting": "Greeting message",
+        "agent": "Assigned agent"
+      }
+    },
+    "staff": {
+      "invite": "Invite member",
+      "cols": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "status": "Status",
+        "lastLogin": "Last login",
+        "mfa": "MFA"
+      },
+      "status": {
+        "invited": "Invite sent",
+        "active": "Active",
+        "suspended": "Suspended"
+      },
+      "mfaOn": "Enabled",
+      "inviteDialog": {
+        "title": "Invite a member",
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "pickRole": "Pick a role",
+        "submit": "Send invite"
+      }
+    },
+    "roles": {
+      "list": "Roles",
+      "new": "New role",
+      "pick": "Pick a role from the list to view and edit its permissions.",
+      "name": "Role name",
+      "description": "Description",
+      "system": "System",
+      "groups": {
+        "orders": "Orders",
+        "catalog": "Catalog",
+        "customers": "Customers",
+        "conversations": "Conversations",
+        "agents": "Agents",
+        "operations": "Operations",
+        "growth": "Growth",
+        "store": "Storefront",
+        "admin": "Administration"
+      },
+      "perms": {
+        "orders": {
+          "read": "View orders",
+          "manage": "Manage orders",
+          "refund": "Refund payments"
+        },
+        "prices": {
+          "update": "Edit prices"
+        },
+        "products": {
+          "read": "View products",
+          "manage": "Manage products"
+        },
+        "inventory": {
+          "manage": "Manage inventory"
+        },
+        "customers": {
+          "read": "View customers",
+          "manage": "Manage customers",
+          "export": "Export customers"
+        },
+        "conversations": {
+          "read": "View conversations",
+          "reply": "Reply to conversations"
+        },
+        "approvals": {
+          "decide": "Decide approvals"
+        },
+        "agents": {
+          "read": "View agents",
+          "manage": "Manage agents"
+        },
+        "knowledge": {
+          "manage": "Manage knowledge base"
+        },
+        "shipments": {
+          "manage": "Manage shipments"
+        },
+        "invoices": {
+          "read": "View invoices"
+        },
+        "returns": {
+          "manage": "Manage returns"
+        },
+        "marketing": {
+          "manage": "Manage marketing"
+        },
+        "reports": {
+          "read": "View reports"
+        },
+        "storefront": {
+          "manage": "Manage storefront"
+        },
+        "apps": {
+          "manage": "Manage apps"
+        },
+        "settings": {
+          "manage": "Manage settings"
+        },
+        "staff": {
+          "manage": "Manage staff"
+        },
+        "billing": {
+          "manage": "Manage billing"
+        },
+        "audit": {
+          "read": "View audit log"
+        },
+        "developers": {
+          "manage": "Manage developer tools"
+        }
+      }
+    },
+    "audit": {
+      "hint": "Every action on your store is logged here with actor, time and changes.",
+      "export": "Export log",
+      "filters": {
+        "actor": "Actor",
+        "allActors": "All actors",
+        "type": "Type",
+        "allTypes": "All types",
+        "range": "Period"
+      },
+      "ranges": {
+        "all": "All time",
+        "today": "Today",
+        "week": "Last 7 days",
+        "month": "Last 30 days"
+      },
+      "types": {
+        "app": "Apps",
+        "shipment": "Shipments",
+        "order": "Orders",
+        "reports": "Reports",
+        "product": "Products",
+        "staff": "Staff",
+        "settings": "Settings"
+      },
+      "actions": {
+        "app": {
+          "installed": "App installed",
+          "uninstalled": "App uninstalled"
+        },
+        "shipment": {
+          "created": "Shipment created"
+        },
+        "order": {
+          "paid": "Payment captured"
+        },
+        "reports": {
+          "synced": "Reports synced"
+        },
+        "product": {
+          "updated": "Product updated"
+        },
+        "staff": {
+          "invited": "Staff invited"
+        },
+        "settings": {
+          "updated": "Settings updated"
+        }
+      },
+      "cols": {
+        "time": "Time",
+        "actor": "Actor",
+        "action": "Action",
+        "target": "Target",
+        "changes": "Changes"
+      }
+    },
+    "billing": {
+      "current": "Your current plan",
+      "renews": "Renews on {date}",
+      "upgrade": "Upgrade plan",
+      "usage": "Usage",
+      "perMonth": "per month",
+      "addons": "Add-ons",
+      "paymentMethod": "Payment method",
+      "updatePayment": "Update payment method",
+      "invoices": "Subscription invoices",
+      "status": {
+        "trialing": "Trialing",
+        "active": "Active",
+        "past_due": "Past due",
+        "cancelled": "Cancelled"
+      },
+      "metrics": {
+        "products": "Products",
+        "staff": "Team members",
+        "agentConversations": "Agent conversations",
+        "orders": "Orders"
+      },
+      "invoiceStatus": {
+        "paid": "Paid",
+        "open": "Open"
+      },
+      "changePlan": "Change plan",
+      "changePlanHint": "Changes apply immediately in demo mode — real billing needs a payment gateway",
+      "cardLast4": "Last 4 card digits",
+      "cardHint": "Demo mode — stored as a reference only, nothing is charged"
+    },
+    "developers": {
+      "apiKeys": {
+        "title": "API keys",
+        "hint": "Keys for external systems — only the first 8 characters are shown.",
+        "create": "Create key"
+      },
+      "cols": {
+        "name": "Name",
+        "scopes": "Scopes",
+        "prefix": "Key",
+        "lastUsed": "Last used"
+      },
+      "revoke": "Revoke",
+      "webhooks": {
+        "title": "Webhooks",
+        "hint": "Receive store events in real time on your endpoint.",
+        "add": "Add webhook",
+        "addHint": "The URL must start with https:// and accept POST.",
+        "url": "URL",
+        "status": {
+          "active": "Active",
+          "disabled_failing": "Disabled (failing)"
+        }
+      },
+      "deliveries": {
+        "event": "Event",
+        "status": "Status",
+        "attempt": "Attempt",
+        "at": "Time",
+        "duration": "Duration",
+        "succeeded": "Succeeded",
+        "failed": "Failed"
+      },
+      "resend": "Resend"
+    },
+    "danger": {
+      "export": {
+        "title": "Export all data",
+        "body": "We prepare a full file with your products, orders and customers and notify you when ready.",
+        "cta": "Export data"
+      },
+      "suspend": {
+        "title": "Suspend store",
+        "body": "Customers see an “unavailable” message and agents stop working.",
+        "cta": "Suspend store"
+      },
+      "delete": {
+        "title": "Delete store permanently",
+        "body": "We delete all products, orders, customers and conversations after 30 days. This cannot be undone.",
+        "cta": "Delete store"
+      }
+    },
+    "verification": {
+      "title": "Business verification (KYC)",
+      "hint": "Upload your documents to enable online payments and payouts.",
+      "status": {
+        "not_started": "Not started",
+        "in_review": "Under review",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "steps": {
+        "details": "Details",
+        "documents": "Documents",
+        "review": "Review",
+        "live": "Live"
+      },
+      "docs": {
+        "title": "Required documents",
+        "hint": "A clear PDF or image under 10MB.",
+        "missing": "Not uploaded yet",
+        "upload": "Upload",
+        "replace": "Replace",
+        "status": {
+          "missing": "Required",
+          "uploaded": "Uploaded",
+          "rejected": "Rejected"
+        },
+        "kinds": {
+          "national_id": "National ID",
+          "commercial_registration": "Commercial registration",
+          "iban_certificate": "IBAN certificate"
+        }
+      },
+      "submit": "Submit for review"
+    },
+    "returnPolicy": {
+      "title": "Return policy",
+      "description": "These rules are enforced whenever a return request is submitted.",
+      "windowDays": "Return window (days)",
+      "reasons": "Enabled reasons",
+      "nonReturnable": "Non-returnable products",
+      "removeNonReturnable": "Remove from list",
+      "noNonReturnable": "All products are returnable right now.",
+      "allowExchange": "Allow exchange",
+      "allowStoreCredit": "Allow store credit",
+      "saved": "Return policy saved",
+      "saveFailed": "Couldn't save the return policy"
+    },
+    "maintenance": {
+      "title": "Maintenance mode",
+      "description": "Take the storefront offline for visitors during updates",
+      "toggle": "Enable maintenance mode",
+      "toggleHint": "When on, every storefront page shows the maintenance notice",
+      "messageAr": "Maintenance message (Arabic)",
+      "messageEn": "Maintenance message (English)",
+      "eta": "Estimated back-online time",
+      "etaHint": "Optional — shown to visitors under the message",
+      "activeBanner": "Maintenance mode is ON — storefront visitors see the notice page right now",
+      "syncNote": "This state syncs locally with the storefront via shared storage (simulated — no real backend)",
+      "save": "Save"
+    },
+    "profile": {
+      "title": "My profile",
+      "description": "Your account details and password — reflected across the panel",
+      "name": "Name",
+      "nameRequired": "Name is required",
+      "phone": "Phone",
+      "email": "Email",
+      "emailHint": "Email is managed in staff settings",
+      "role": "Role: {role}",
+      "roles": {
+        "owner": "Owner",
+        "admin": "Admin",
+        "catalog": "Catalog",
+        "orders": "Orders",
+        "support": "Support",
+        "marketing": "Marketing",
+        "readonly": "Read-only"
+      },
+      "language": "Panel language",
+      "langAr": "العربية",
+      "langEn": "English",
+      "languageHint": "Saved to your account and applied instantly",
+      "password": {
+        "title": "Change password",
+        "description": "Rotate your password regularly",
+        "simulated": "This is a demo environment — password change is simulated and does not alter real credentials.",
+        "current": "Current",
+        "next": "New",
+        "confirm": "Confirm new",
+        "submit": "Update password",
+        "mismatch": "Confirmation does not match the new password",
+        "weak": "Password must be at least 8 characters with a number",
+        "currentRequired": "Enter your current password"
+      },
+      "session": {
+        "title": "Session",
+        "lastLogin": "Last sign-in",
+        "mfa": "Two-factor",
+        "mfaOn": "Enabled",
+        "mfaOff": "Disabled",
+        "status": "Status",
+        "statuses": {
+          "active": "Active",
+          "invited": "Invited",
+          "suspended": "Suspended"
+        }
+      }
+    },
+    "regional": {
+      "title": "Regional & language",
+      "description": "Storefront languages, currency and timezone",
+      "languages": "Storefront languages",
+      "langNames": {
+        "ar": "العربية",
+        "en": "English"
+      },
+      "languagesHint": "Each enabled language produces a storefront version — keep translations complete",
+      "defaultLanguage": "Default language",
+      "defaultLanguageHint": "The language first-time visitors see",
+      "timezone": "Timezone",
+      "currency": "Currency",
+      "currencyPrimary": "Saudi Riyal",
+      "currencyBadge": "Primary",
+      "currencyNote": "Multi-currency display pricing is on the roadmap — all prices are SAR today.",
+      "oneRequired": "Enable at least one language",
+      "save": "Save",
+      "currencyName": "Saudi Riyal (SAR)"
+    }
+  },
+  "studio": {
+    "title": "Agent Studio",
+    "description": "Design your agent tree: an orchestrator greets the customer and hands off to the right specialist.",
+    "tabs": {
+      "overview": "Agents",
+      "test": "Test lab",
+      "live": "Live monitor",
+      "history": "History",
+      "channels": "Numbers & channels"
+    },
+    "status": {
+      "live": "Live",
+      "paused": "Paused",
+      "draft": "Draft"
+    },
+    "role": {
+      "orchestrator": "Orchestrator",
+      "specialist": "Specialist"
+    },
+    "channel": {
+      "whatsapp": "WhatsApp",
+      "voice": "Voice",
+      "webchat": "Web chat"
+    },
+    "warnings": {
+      "noDescription": "No description, so the parent can't tell when to hand off",
+      "handoffToInactive": "Handoff rule targets an inactive agent: {name}",
+      "voiceWithoutNumber": "Voice agent without a linked phone number",
+      "humanAfterHours": "Hands off to staff after hours when nobody is available"
+    },
+    "kpi": {
+      "conversations": "Conversations today",
+      "calls": "Calls today",
+      "resolution": "Resolution rate",
+      "handoff": "Human handoff",
+      "cost": "Cost today",
+      "vsYesterday": "vs yesterday"
+    },
+    "overview": {
+      "viewTree": "Tree",
+      "viewGraph": "Graph",
+      "search": "Search agents…",
+      "expandAll": "Expand all",
+      "collapseAll": "Collapse all",
+      "addRoot": "New orchestrator",
+      "rootZone": "Drop here to make it an orchestrator",
+      "noResults": "No agent matches",
+      "agentsCount": "{count} agents",
+      "levels": "{count} levels",
+      "warningsCount": "{count, plural, one {# warning} other {# warnings}}",
+      "conversations": "{count} conversations",
+      "noDescription": "No description",
+      "dragHint": "Drag an agent by its handle onto another agent to change its parent.",
+      "cycle": "An agent can't move under one of its own descendants",
+      "moved": "Moved “{name}” under “{parent}”",
+      "movedRoot": "“{name}” is now an orchestrator",
+      "humanHandoff": "Hands off to staff",
+      "hidden": "{count} hidden",
+      "readOnly": "You have view-only access; agent managers can edit.",
+      "expand": "Expand {name}",
+      "collapse": "Collapse {name}",
+      "drag": "Drag {name}",
+      "emptyTitle": "No agents yet",
+      "emptyBody": "Start with an orchestrator that greets customers on WhatsApp and calls.",
+      "errorTitle": "Couldn't load agents",
+      "retry": "Try again",
+      "depth": "Level {level}"
+    },
+    "actions": {
+      "open": "Open settings",
+      "addChild": "Add sub-agent",
+      "duplicate": "Duplicate branch",
+      "pause": "Pause",
+      "resume": "Resume",
+      "delete": "Delete",
+      "menu": "Actions for {name}",
+      "duplicated": "Branch duplicated as draft"
+    },
+    "add": {
+      "title": "New orchestrator",
+      "titleChild": "Sub-agent under “{parent}”",
+      "description": "It's created as a draft so you can finish setup before publishing.",
+      "name": "Agent name",
+      "namePlaceholder": "e.g. Gifts & occasions",
+      "nameRequired": "Enter a name",
+      "parent": "Parent agent",
+      "noParent": "No parent (orchestrator)",
+      "create": "Create and configure",
+      "created": "Agent created as draft"
+    },
+    "delete": {
+      "title": "Delete “{name}”?",
+      "body": "The agent is removed permanently and any handoff rule to it stops working.",
+      "hasChildren": "It has {count} agents below it. What should happen to them?",
+      "reparent": "Move direct children ({count}) under “{parent}”",
+      "reparentRoot": "Make direct children ({count}) orchestrators",
+      "cascade": "Delete the whole branch ({count} agents)",
+      "confirm": "Delete",
+      "deleted": "Agent deleted"
+    },
+    "pause": {
+      "title": "Pause “{name}”?",
+      "body": "It stops receiving handoffs; conversations meant for it go back to its parent.",
+      "rootWarning": "This is an orchestrator: every channel linked to it ({channels}) goes straight to your team until you resume it.",
+      "branch": "Pause the whole branch ({count} agents below)",
+      "branchResume": "Resume the whole branch ({count} agents below)",
+      "confirm": "Pause",
+      "paused": "Agent paused",
+      "resumeTitle": "Resume “{name}”?",
+      "resumeBody": "It will take handoffs again using the last published version.",
+      "resumeConfirm": "Resume",
+      "resumed": "Agent resumed"
+    },
+    "graph": {
+      "label": "Agent tree graph",
+      "toHuman": "Staff"
+    },
+    "detail": {
+      "cancel": "Cancel",
+      "breadcrumb": "Agent path",
+      "hiddenLevels": "{count} hidden levels",
+      "untitled": "Untitled agent",
+      "level": "Level {n}",
+      "updated": "Updated {when}",
+      "test": "Test",
+      "readOnly": "You have view-only access and can't change agent settings.",
+      "saved": "Draft saved",
+      "published": "Version v{v} is live",
+      "defaultNote": "Settings update",
+      "publishTitle": "Publish “{name}” as v{v}?",
+      "publishBody": "The new version starts answering customers right away. You can roll back from the Versions tab.",
+      "publishWarnings": "{count} warnings — you can publish, but we recommend fixing them:",
+      "notePlaceholder": "What changed? (optional)",
+      "note": "Version note",
+      "discardTitle": "Discard changes?",
+      "discardBody": "All fields go back to the last saved version.",
+      "notFoundTitle": "Agent not found",
+      "notFoundBody": "It may have been deleted or moved. Go back to the studio tree.",
+      "backToStudio": "Back to studio",
+      "errorTitle": "Couldn't load this agent",
+      "tabs": {
+        "general": "General",
+        "persona": "Persona",
+        "handoffs": "Handoffs",
+        "tools": "Tools",
+        "knowledge": "Knowledge",
+        "voice": "Voice",
+        "whatsapp": "WhatsApp",
+        "hours": "Working hours",
+        "versions": "Versions",
+        "performance": "Performance"
+      },
+      "footer": {
+        "dirty": "You have unsaved changes",
+        "unpublished": "Saved as draft, not live yet",
+        "clean": "Live · v{v}",
+        "discard": "Discard",
+        "save": "Save draft",
+        "publish": "Publish"
+      },
+      "inherit": {
+        "inheritedFrom": "Inherited from",
+        "via": "via {names}",
+        "direct": "directly from the parent",
+        "custom": "Customized for this agent",
+        "customHint": "Not affected by changes to “{name}”",
+        "customize": "Customize",
+        "reset": "Reset to inherited",
+        "resetTitle": "Reset to inherited?",
+        "resetBody": "Custom values will be removed and the agent will use “{name}” settings again.",
+        "resetConfirm": "Reset"
+      },
+      "general": {
+        "warningsTitle": "{count} warnings need attention",
+        "identity": "Identity",
+        "identityHint": "Name and look shown in the tree and logs.",
+        "name": "Agent name",
+        "nameRequired": "Name is required",
+        "icon": "Icon",
+        "color": "Color",
+        "placement": "Position in tree",
+        "placementHint": "Change the parent or add children.",
+        "parent": "Parent agent",
+        "parentHint": "The parent hands off based on the description below.",
+        "rootHint": "Orchestrator: first to greet customers on linked channels.",
+        "noParent": "No parent (orchestrator)",
+        "children": "Child agents ({count})",
+        "addChild": "Add child",
+        "noChildren": "No children — this agent answers by itself.",
+        "whenTitle": "When should “{parent}” hand off here?",
+        "whenHint": "Describe clearly which requests this agent owns. The parent relies on it to route.",
+        "aboutTitle": "About this agent",
+        "aboutHint": "Internal description for your team.",
+        "descriptionPlaceholder": "e.g. Customer asks about an existing order: status, shipping, exchange…",
+        "description": "Description",
+        "channels": "Channels",
+        "channelsHint": "Channels where this agent greets customers directly.",
+        "channelsChildHint": "Channels this agent can serve once a conversation is handed to it."
+      },
+      "persona": {
+        "title": "Persona",
+        "hint": "How the agent talks to customers.",
+        "tone": "Tone",
+        "tones": {
+          "friendly": "Friendly",
+          "formal": "Formal",
+          "concise": "Concise"
+        },
+        "toneSample": {
+          "friendly": "“Hey! Sure, let me check”",
+          "formal": "“Welcome, happy to assist you”",
+          "concise": "“OK. Order number?”"
+        },
+        "dialect": "Dialect",
+        "dialects": {
+          "najdi": "Najdi",
+          "hijazi": "Hijazi",
+          "gulf": "Gulf",
+          "msa": "Modern Standard"
+        },
+        "language": "Language",
+        "languages": {
+          "ar": "Arabic",
+          "en": "English",
+          "auto": "Match the customer"
+        },
+        "greeting": "Greeting",
+        "greetingHint": "First message, or the first sentence on a call.",
+        "preview": "Preview",
+        "instructions": "Instructions",
+        "instructionsHint": "Instructions belong to this agent and are not inherited by children.",
+        "snippets": {
+          "noPrices": "Never quote prices that aren't in the catalog.",
+          "confirmOrder": "Confirm the order number and phone before any action.",
+          "escalate": "If the customer is upset or asks for a person, hand off immediately.",
+          "shortAnswers": "Keep replies short — two sentences max."
+        },
+        "snippetLabels": {
+          "noPrices": "Catalog prices only",
+          "confirmOrder": "Confirm order number",
+          "escalate": "Escalate when upset",
+          "shortAnswers": "Short replies"
+        }
+      },
+      "handoffs": {
+        "title": "Handoff rules",
+        "hint": "Rules are evaluated in order; the first match runs.",
+        "add": "New rule",
+        "priority": "Priority {n}",
+        "up": "Move up",
+        "down": "Move down",
+        "when": "When",
+        "conditionPlaceholder": "e.g. Customer asks about a return",
+        "then": "Hand off to",
+        "targetType": "Target type",
+        "targets": {
+          "child": "Child agent",
+          "parent": "Parent agent",
+          "human": "Staff"
+        },
+        "pickChild": "Pick an agent",
+        "humanTeam": "Customer care team",
+        "inactive": "“{name}” isn't live — this handoff will fail",
+        "remove": "Delete rule",
+        "empty": "No rules. The agent handles everything itself.",
+        "fallback": "If no rule matches, the agent replies itself using its instructions and tools.",
+        "incoming": "Receives from",
+        "incomingHint": "Who hands off to this agent.",
+        "incomingByDescription": "The parent routes here based on the description in General.",
+        "incomingRoot": "Orchestrator — receives customers directly from channels.",
+        "map": "Handoff map"
+      },
+      "tools": {
+        "title": "Tools",
+        "hint": "What the agent can actually do in your store.",
+        "sensitive": "Sensitive",
+        "limit": "Limit",
+        "units": {
+          "percent": "%",
+          "sar": "SAR",
+          "perDay": "/day"
+        },
+        "approval": "Needs approval",
+        "enabled": "Enable {name}",
+        "on": "On",
+        "off": "Off",
+        "confirmEnableTitle": "Enable “{name}”?",
+        "confirmApprovalTitle": "Remove approval for “{name}”?",
+        "confirmEnableBody": "This tool affects customer money or orders. It will be enabled with staff approval required.",
+        "confirmApprovalBody": "The agent will run this tool without asking anyone. Make sure the limit is right.",
+        "confirm": "Confirm",
+        "names": {
+          "productSearch": "Product search",
+          "availability": "Availability",
+          "orderStatus": "Order status",
+          "paymentLink": "Payment link",
+          "shippingQuote": "Shipping quote",
+          "cancelOrder": "Cancel order",
+          "refund": "Refund",
+          "discount": "Discount code",
+          "createTicket": "Create ticket",
+          "transfer": "Transfer"
+        },
+        "descriptions": {
+          "productSearch": "Searches the catalog and suggests products",
+          "availability": "Checks stock and sizes",
+          "orderStatus": "Returns order status and tracking",
+          "paymentLink": "Creates and sends a payment link",
+          "shippingQuote": "Calculates shipping cost and ETA by city",
+          "cancelOrder": "Cancels an order that hasn't shipped",
+          "refund": "Refunds all or part of the amount",
+          "discount": "Creates a discount code for the customer",
+          "createTicket": "Opens a ticket for the team",
+          "transfer": "Hands the conversation to another agent or staff"
+        }
+      },
+      "knowledge": {
+        "title": "Knowledge sources",
+        "hint": "Files, FAQs and pages the agent uses to answer.",
+        "add": "Add source",
+        "addTitle": "New knowledge source",
+        "addHint": "Upload a file, add FAQs, or link a page.",
+        "types": {
+          "file": "File",
+          "faq": "FAQ",
+          "url": "Link"
+        },
+        "drop": "Drop a file here or click to choose",
+        "dropHint": "PDF, DOCX, XLSX, CSV up to 20MB",
+        "sourceTitle": "Title",
+        "url": "URL",
+        "pairs": "Number of questions",
+        "cancel": "Cancel",
+        "selected": "{count} of {total} sources selected",
+        "pairsCount": "{count} questions",
+        "added": "Added “{title}”"
+      },
+      "voice": {
+        "numbers": "Phone numbers",
+        "numbersHint": "Numbers whose calls route to this agent.",
+        "viaRoot": "Receives calls handed off from “{name}” ({count} numbers).",
+        "noNumber": "No phone number linked — calls won't reach this agent.",
+        "linkNumber": "Link a number",
+        "voice": "Voice",
+        "voiceHint": "Pick a voice and preview it.",
+        "male": "Male",
+        "female": "Female",
+        "preview": "Preview {name}",
+        "speed": "Speaking speed",
+        "pitch": "Pitch",
+        "behaviour": "Call behaviour",
+        "interruptible": "Allow interruptions",
+        "interruptibleHint": "Stops talking when the customer speaks.",
+        "record": "Record calls",
+        "recordHint": "Recordings are kept in history for review.",
+        "consent": "Customers are told the call is recorded.",
+        "silence": "Silence timeout",
+        "silenceHint": "Then asks if the customer is still there.",
+        "sec": "sec",
+        "maxCall": "Max duration",
+        "min": "min"
+      },
+      "whatsapp": {
+        "number": "WhatsApp number",
+        "numberHint": "Number this agent receives messages on.",
+        "numberChildHint": "Conversations arrive via “{name}”. You can link a dedicated number.",
+        "inheritNumber": "Same as orchestrator",
+        "status": "Status",
+        "statuses": {
+          "connected": "Connected",
+          "pending": "Pending",
+          "disconnected": "Disconnected"
+        },
+        "quality": "Quality",
+        "qualities": {
+          "high": "High",
+          "medium": "Medium",
+          "low": "Low"
+        },
+        "dailyLimit": "Daily limit",
+        "templates": "Allowed templates",
+        "noTemplates": "No approved templates for this number.",
+        "behaviour": "Reply behaviour",
+        "delay": "Reply delay",
+        "delayHint": "Makes replies feel more natural.",
+        "sec": "sec",
+        "typing": "Show “typing…”",
+        "typingHint": "Customer sees the agent typing.",
+        "sampleCustomer": "Hi, do you have Cambodian oud?",
+        "typingSample": "typing… ({sec}s)"
+      },
+      "hours": {
+        "title": "Working hours",
+        "hint": "When the agent and team are available. Riyadh time.",
+        "openNow": "Open now",
+        "closedNow": "Closed now",
+        "allDay": "24/7",
+        "copySunday": "Copy Sunday to all",
+        "days": {
+          "0": "Sunday",
+          "1": "Monday",
+          "2": "Tuesday",
+          "3": "Wednesday",
+          "4": "Thursday",
+          "5": "Friday",
+          "6": "Saturday"
+        },
+        "from": "From",
+        "to": "To",
+        "closed": "Closed",
+        "afterHours": "After hours",
+        "afterHoursHint": "What the agent does when customers reach out after hours.",
+        "behaviours": {
+          "reply": "Reply as usual",
+          "message": "Fixed message",
+          "voicemail": "Voicemail",
+          "human": "Hand to staff"
+        },
+        "behaviourHints": {
+          "reply": "The agent keeps answering",
+          "message": "Says the team will reply during hours",
+          "voicemail": "Records a voice message (calls)",
+          "human": "Hands off to on-call staff"
+        },
+        "humanWarning": "Make sure someone is on call, or customers will wait without a reply."
+      },
+      "versions": {
+        "title": "Versions",
+        "hint": "Every publish creates a version you can restore.",
+        "emptyTitle": "No versions yet",
+        "emptyBody": "Publish the agent to save its first version.",
+        "current": "Current",
+        "restore": "Restore",
+        "fields": {
+          "instructions": "Instructions",
+          "tone": "Tone",
+          "handoffRules": "Handoff rules",
+          "greeting": "Greeting"
+        },
+        "restoreTitle": "Restore v{v}?",
+        "restoreBody": "A new version will be published with these settings.",
+        "restoreBodyDirty": "Your unsaved changes will be lost. A new version will be published with these settings.",
+        "restoreConfirm": "Restore & publish",
+        "restored": "Agent restored to v{v} settings"
+      },
+      "performance": {
+        "allChannels": "All channels",
+        "days": "{count} days",
+        "conversations": "Conversations",
+        "resolution": "Resolution",
+        "handoff": "Human handoff",
+        "duration": "Avg duration",
+        "cost": "Cost",
+        "perConversation": "{value} per conversation",
+        "volume": "Conversation volume",
+        "rates": "Resolution & handoff"
+      }
+    },
+    "lab": {
+      "hint": "Type as a customer and see who answers and how the request is routed.",
+      "target": "Goal: reach",
+      "clearTarget": "Clear goal",
+      "traceTitle": "Thinking path",
+      "traceHint": "Click any reply to see how the agent got there.",
+      "saveAsTest": "Save as test",
+      "storeName": "Nakhla Store",
+      "typing": "typing…",
+      "servedBy": "Served by {name}",
+      "online": "online",
+      "reset": "New conversation",
+      "waNotice": "Simulation — messages don't reach real customers",
+      "placeholderWa": "Type a message",
+      "placeholderWeb": "Ask anything…",
+      "placeholderVoice": "Type what you'd say…",
+      "send": "Send",
+      "webTitle": "Store assistant",
+      "webSubtitle": "Replies in seconds",
+      "webHello": "Hi there!",
+      "webHelloBody": "Ask about a product, track an order, or get help.",
+      "ringing": "Calling…",
+      "callEnded": "Call ended · {time}",
+      "thinking": "{name} is thinking…",
+      "speaking": "{name} is speaking",
+      "listening": "Listening…",
+      "voiceIdle": "Start a test call to the unified number; speech appears here as text.",
+      "you": "You",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "endCall": "End call",
+      "speaker": "Speaker",
+      "callAgain": "Call again",
+      "startCall": "Start test call",
+      "simError": "The reply didn't arrive.",
+      "retry": "Retry",
+      "suggestions": {
+        "s1": "وين طلبي رقم 10234؟",
+        "s2": "أبغى عطر عود رجالي",
+        "s3": "نبي 200 علبة هدايا لموظفين الشركة",
+        "s4": "أبي أرجع منتج",
+        "s5": "طلبي متأخر وما أحد رد!!"
+      },
+      "trace": {
+        "emptyTitle": "No reply selected",
+        "emptyBody": "Send a message from the simulator to see who received it, who it was handed to, and which tools ran.",
+        "path": "Agent path",
+        "reached": "Reached “{name}” as expected",
+        "missed": "Didn't reach “{name}”",
+        "hops": "Handoffs",
+        "time": "Time",
+        "cost": "Cost",
+        "received": "{name} received the message",
+        "handoff": "{from} handed off to {to}",
+        "handoffHuman": "{from} handed off to staff",
+        "tool": "{name} used “{tool}”",
+        "reply": "{name} replied",
+        "why": "Why:"
+      },
+      "tests": {
+        "title": "Saved test cases",
+        "hint": "Fixed questions that confirm routing still works after any change.",
+        "runAll": "Run all",
+        "running": "Running {done}/{total}",
+        "runningOne": "Running",
+        "add": "New case",
+        "passed": "{count} passed",
+        "failed": "{count} failed",
+        "never": "{count} not run",
+        "emptyTitle": "No test cases",
+        "emptyBody": "Save any simulator conversation as a test case.",
+        "expectedLine": "Expected: {agent} · {expected}",
+        "got": "Last result: {answer}",
+        "open": "Open in simulator",
+        "run": "Run",
+        "pass": "Passed",
+        "fail": "Failed",
+        "notRun": "Not run",
+        "addTitle": "New test case",
+        "addHint": "Set the question and the agent that should answer it.",
+        "question": "Customer question",
+        "questionPlaceholder": "e.g. Where is my order?",
+        "expectedAgent": "Expected agent",
+        "pickAgent": "Pick an agent",
+        "expected": "Expected answer",
+        "expectedPlaceholder": "What should the agent do?",
+        "channel": "Channel",
+        "save": "Save",
+        "cancel": "Cancel",
+        "added": "Test case saved",
+        "runDone": "{pass} of {total} passed"
+      }
+    },
+    "live": {
+      "emptyTitle": "No live conversations",
+      "emptyBody": "Calls and WhatsApp chats show up here the moment they start.",
+      "kpi": {
+        "active": "Active sessions",
+        "calls": "Calls",
+        "whatsapp": "WhatsApp",
+        "attention": "Need attention"
+      },
+      "filters": {
+        "all": "All",
+        "voice": "Calls",
+        "whatsapp": "WhatsApp",
+        "attention": "Attention"
+      },
+      "noneInFilter": "No sessions match this filter.",
+      "states": {
+        "speaking": "Agent speaking",
+        "waiting": "Waiting for customer",
+        "transferring": "Transferring"
+      },
+      "takenOver": "You're handling this",
+      "stuck": "Stuck",
+      "stuckHint": "The agent keeps repeating itself and the customer isn't progressing. Consider stepping in.",
+      "sentiment": "Customer mood",
+      "moods": {
+        "upset": "Upset",
+        "neutral": "Neutral",
+        "happy": "Happy"
+      },
+      "messages": "Messages",
+      "listeningNow": "Listening to the call",
+      "listen": "Listen in",
+      "stopListening": "Stop listening",
+      "takeOver": "Take over",
+      "takeOverTitle": "Take over {name}'s conversation?",
+      "takeOverVoice": "The agent goes silent and you're on the line. The customer hears your replies as voice.",
+      "takeOverChat": "The agent stops replying and you continue with the customer.",
+      "tookOver": "You're now handling this conversation",
+      "release": "Hand back to agent",
+      "replyPlaceholder": "Type your reply",
+      "sayPlaceholder": "Type what to say (spoken aloud)",
+      "send": "Send",
+      "noReply": "You don't have permission to reply to conversations.",
+      "back": "Back",
+      "agentTyping": "Agent is typing…",
+      "transferring": "Transferring to another agent…",
+      "handedTo": "Handed to {name}",
+      "staff": "You (staff)",
+      "customer": "Customer"
+    },
+    "history": {
+      "title": "History",
+      "emptyTitle": "No past conversations",
+      "emptyBody": "Finished calls and chats appear here.",
+      "kpi": {
+        "resolved": "Resolution rate",
+        "duration": "Avg duration",
+        "cost": "Total cost",
+        "rating": "Avg rating"
+      },
+      "search": "Search by name, phone or summary",
+      "all": "All",
+      "outcome": "Outcome",
+      "allOutcomes": "All outcomes",
+      "outcomes": {
+        "resolved": "Resolved",
+        "handedOff": "Handed to staff",
+        "dropped": "Dropped"
+      },
+      "noResults": "No matching conversations.",
+      "rating": "Rated {value} of 5",
+      "cols": {
+        "customer": "Customer",
+        "path": "Agent path",
+        "outcome": "Outcome",
+        "duration": "Duration",
+        "cost": "Cost",
+        "rating": "Rating",
+        "date": "Date"
+      },
+      "detail": {
+        "back": "Back to history",
+        "notFoundTitle": "Conversation not found",
+        "notFoundBody": "It may have been deleted or the link is wrong.",
+        "errorTitle": "Couldn't load this conversation",
+        "duration": "Duration {time}",
+        "cost": "Cost {value}",
+        "messages": "Messages ({count})",
+        "summary": "AI summary",
+        "path": "Agent path",
+        "actions": "Actions taken",
+        "noActions": "The agent took no actions.",
+        "ticket": "Ticket",
+        "ticketOpen": "Open",
+        "noTicket": "No ticket was opened.",
+        "play": "Play",
+        "pause": "Pause",
+        "seek": "Recording position",
+        "speed": "Playback speed",
+        "agentVoice": "Agent",
+        "customerVoice": "Customer",
+        "clickToSeek": "Click any line to jump to it"
+      }
+    },
+    "channels": {
+      "phones": "Phone numbers",
+      "phonesHint": "Each number routes to its linked agent — ideally an orchestrator.",
+      "addPhone": "Add number",
+      "whatsapp": "WhatsApp Business numbers",
+      "whatsappHint": "Numbers connected to your Meta account.",
+      "addWhatsApp": "Connect WhatsApp number",
+      "unassigned": "Unassigned",
+      "notOrchestrator": "Specialist — customers skip the orchestrator",
+      "noPhones": "No phone numbers",
+      "noPhonesBody": "Add a number so customers can call your agents.",
+      "noWhatsApp": "No WhatsApp numbers",
+      "noWhatsAppBody": "Connect a WhatsApp Business number so agents can reply to messages.",
+      "linked": "Number linked to “{name}”",
+      "unlinked": "Number unlinked",
+      "quality": "Quality",
+      "qualities": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "dailyLimit": "Daily limit",
+      "templates": "Approved templates ({count})",
+      "noTemplates": "No approved templates",
+      "cols": {
+        "number": "Number",
+        "provider": "Carrier",
+        "agent": "Linked agent",
+        "status": "Status",
+        "calls": "Calls today"
+      },
+      "status": {
+        "active": "Active",
+        "connected": "Connected",
+        "pending": "Pending",
+        "disconnected": "Disconnected"
+      },
+      "add": {
+        "phoneTitle": "Add phone number",
+        "phoneHint": "Unified, mobile or landline number.",
+        "waTitle": "Connect WhatsApp number",
+        "waHint": "The number must be registered with the WhatsApp Business API.",
+        "number": "Number",
+        "phoneInvalid": "Enter a valid Saudi number (9200XXXXX, 05XXXXXXXX or 01XXXXXXXX).",
+        "waInvalid": "Use international format 9665XXXXXXXX.",
+        "provider": "Carrier",
+        "displayName": "Display name",
+        "displayPlaceholder": "e.g. Nakhla Store",
+        "agent": "Link to agent",
+        "later": "Later",
+        "phoneNote": "We'll send a forwarding request to the carrier; activation usually takes 1–2 business days.",
+        "waNote": "We'll send a verification code; once Meta approves, the number connects.",
+        "cancel": "Cancel",
+        "submit": "Add",
+        "added": "Number added and pending activation"
+      },
+      "social": {
+        "title": "Social channels",
+        "hint": "Connect social messaging so the agent can answer — connect flow is simulated (no real OAuth)",
+        "kinds": {
+          "instagram": "Instagram DM",
+          "messenger": "Messenger",
+          "x": "X",
+          "tiktok": "TikTok",
+          "email": "Email"
+        },
+        "notConnected": "Not connected",
+        "agent": "Assigned agent",
+        "connect": "Connect",
+        "disconnect": "Disconnect",
+        "test": "Test",
+        "connectTitle": "Connect {channel}",
+        "connectDescription": "Enter the handle or page id to finish connecting",
+        "simulatedNote": "Simulated — no real OAuth with {channel} is opened. Status moves from \"pending\" to \"connected\" automatically.",
+        "handleLabel": "Handle / page id",
+        "handlePlaceholder": "@username or page id",
+        "handleHint": "e.g. @nakhla_store or the platform page id"
+      }
+    }
+  },
+  "storeGate": {
+    "title": "Store not found",
+    "description": "This link points to a store that doesn't exist or you don't have access to.",
+    "back": "Back to my store"
+  },
+  "actor": {
+    "staff": "Staff",
+    "agent": "Agent",
+    "app": "App",
+    "system": "System",
+    "customer": "Customer"
+  },
+  "entity": {
+    "previewHint": "Hover or Shift+click to preview",
+    "preview": {
+      "notFound": "Not found",
+      "total": "Total",
+      "payment": "Payment",
+      "fulfillment": "Fulfillment",
+      "createdAt": "Created",
+      "phone": "Phone",
+      "ordersCount": "Orders",
+      "totalSpent": "Total spent",
+      "lastOrder": "Last order",
+      "price": "Price",
+      "variants": "Variants",
+      "sold30d": "Sold (30d)",
+      "sku": "SKU",
+      "channel": "Channel",
+      "updatedAt": "Updated",
+      "messages": "Messages",
+      "summary": "Summary",
+      "tracking": "Tracking",
+      "eta": "ETA",
+      "cod": "COD",
+      "lastUpdate": "Last update",
+      "type": "Type",
+      "vat": "VAT",
+      "issuedAt": "Issued",
+      "reason": "Reason",
+      "items": "Items",
+      "refund": "Refund",
+      "attempts": "Recovery attempts",
+      "abandonedAt": "Abandoned",
+      "role": "Role",
+      "channels": "Channels",
+      "roles": {
+        "orchestrator": "Orchestrator",
+        "specialist": "Specialist"
+      },
+      "channelNames": {
+        "whatsapp": "WhatsApp",
+        "webchat": "Web chat",
+        "voice": "Voice",
+        "instagram": "Instagram",
+        "messenger": "Messenger",
+        "x": "X",
+        "tiktok": "TikTok",
+        "email": "Email"
+      },
+      "invoiceTypes": {
+        "simplified": "Simplified",
+        "standard": "Standard",
+        "credit_note": "Credit note"
+      },
+      "returnReasons": {
+        "damaged": "Damaged",
+        "wrong_item": "Wrong item",
+        "not_as_described": "Not as described",
+        "size_issue": "Size issue",
+        "changed_mind": "Changed mind",
+        "other": "Other"
+      },
+      "uses": "Uses",
+      "revenue": "Revenue",
+      "chunks": "Chunks",
+      "agents": "Agents",
+      "succeeded": "Succeeded",
+      "failed": "Failed",
+      "amount": "Amount",
+      "products": "Products",
+      "collectionTypes": {
+        "manual": "Manual",
+        "automatic": "Automatic"
+      },
+      "couponTypes": {
+        "percentage": "Percentage",
+        "fixed": "Fixed amount",
+        "free_shipping": "Free shipping"
+      },
+      "knowledgeTypes": {
+        "file": "File",
+        "faq": "Q&A",
+        "url": "URL",
+        "policy": "Policy",
+        "product_catalog": "Product catalog",
+        "text": "Text"
+      },
+      "importTypes": {
+        "products": "Products",
+        "customers": "Customers",
+        "inventory": "Inventory"
+      },
+      "approvalActions": {
+        "cancel_order": "Cancel order",
+        "refund": "Refund",
+        "discount_above_limit": "Discount above limit"
+      }
+    }
+  },
+  "sales": {
+    "paymentMethods": {
+      "card": "Card",
+      "mada": "mada",
+      "apple_pay": "Apple Pay",
+      "stc_pay": "STC Pay",
+      "cod": "Cash on delivery",
+      "bank_transfer": "Bank transfer",
+      "payment_link": "Payment link",
+      "gift_card": "Gift card"
+    },
+    "periods": {
+      "all": "All time",
+      "today": "Today",
+      "7d": "Last 7 days",
+      "30d": "Last 30 days",
+      "90d": "Last 90 days"
+    },
+    "cancelReasons": {
+      "customer_request": "Customer request",
+      "out_of_stock": "Out of stock",
+      "fraud": "Suspected fraud",
+      "payment_failed": "Payment failed",
+      "other": "Other"
+    },
+    "invoiceTypes": {
+      "simplified": "Simplified invoice",
+      "standard": "Tax invoice",
+      "credit_note": "Credit note"
+    },
+    "events": {
+      "created": "Order created",
+      "paid": "Payment received",
+      "payment_failed": "Payment failed",
+      "status_changed": "Fulfillment changed to {to}",
+      "shipment_created": "Shipment created with {carrier}",
+      "shipment_updated": "Shipment updated",
+      "delivered": "Delivered",
+      "refunded": "Refunded {amount}",
+      "note_added": "Internal note",
+      "invoice_issued": "Invoice issued",
+      "message_sent": "{kind, select, payment_link {Payment link sent to customer} confirmation {Order confirmation sent} other {Message sent to customer}}",
+      "return_requested": "Return requested",
+      "cancelled": "Order cancelled",
+      "edited": "Order edited",
+      "digital_delivered": "Digital files delivered",
+      "loyalty_earned": "Loyalty points credited"
+    },
+    "orders": {
+      "title": "Orders",
+      "description": "Every order from every channel.",
+      "export": "Export",
+      "newOrder": "New manual order",
+      "searchPlaceholder": "Order #, phone, name, SKU or tracking",
+      "resetFilters": "Clear filters",
+      "results": "{count, plural, =0 {No results} one {# order} other {# orders}}",
+      "emptyTitle": "No matching orders",
+      "emptyDescription": "Try a different search or filters.",
+      "noOrdersTitle": "No orders yet",
+      "noOrdersDescription": "Orders will show up here as soon as customers buy.",
+      "tabs": {
+        "all": "All",
+        "needs_action": "Needs action",
+        "in_progress": "In progress",
+        "completed": "Completed",
+        "cancelled": "Cancelled",
+        "unpaid": "Unpaid"
+      },
+      "columns": {
+        "number": "Order",
+        "date": "Date",
+        "customer": "Customer",
+        "channel": "Channel",
+        "items": "Items",
+        "total": "Total",
+        "payment": "Payment",
+        "fulfillment": "Fulfillment",
+        "shipment": "Shipment",
+        "tags": "Tags"
+      },
+      "filters": {
+        "period": "Period",
+        "payment": "Payment status",
+        "fulfillment": "Fulfillment status",
+        "allPayments": "All payment statuses",
+        "allFulfillment": "All fulfillment statuses",
+        "more": "More filters",
+        "any": "Any",
+        "method": "Payment method",
+        "channel": "Channel",
+        "agent": "Agent",
+        "city": "City",
+        "amount": "Amount (SAR)",
+        "from": "From",
+        "to": "To",
+        "coupon": "Coupon",
+        "tag": "Tag",
+        "customer": "Customer",
+        "product": "Product",
+        "clearMore": "Clear extra filters"
+      },
+      "bulk": {
+        "createShipments": "Create shipments ({count})",
+        "shipmentsCreated": "{count, plural, one {# shipment} other {# shipments}} created",
+        "printLabels": "Print labels",
+        "labelsQueued": "Preparing {count} labels",
+        "changeStatus": "Change status",
+        "updated": "{count} orders updated",
+        "addTag": "Add tag",
+        "tagPlaceholder": "e.g. VIP",
+        "apply": "Apply",
+        "tagged": "Tag added to {count} orders",
+        "export": "Export CSV",
+        "shipmentsPartial": "{ok} of {total} shipments created",
+        "shipmentsFailed": "Couldn't create shipments",
+        "noLabels": "No shipments for the selected orders",
+        "askCopilot": "Ask copilot"
+      },
+      "stats": {
+        "needsAction": "Needs action",
+        "todayOrders": "Today's orders",
+        "todayRevenue": "Today's revenue"
+      }
+    },
+    "order": {
+      "notFoundTitle": "Order not found",
+      "notFoundDescription": "The link may be wrong or the order belongs to another store.",
+      "backToOrders": "Back to orders",
+      "actions": {
+        "createShipment": "Create shipment",
+        "refund": "Refund",
+        "cancel": "Cancel order",
+        "print": "Print",
+        "printInvoice": "Invoice",
+        "printLabel": "Shipping label",
+        "more": "More",
+        "duplicate": "Duplicate order",
+        "sendPaymentLink": "Send payment link",
+        "edit": "Edit order",
+        "createReturn": "Create return",
+        "copyData": "Copy order data"
+      },
+      "labelQueued": "Preparing label for printing",
+      "paymentLinkSent": "Payment link sent to customer",
+      "cancelledBanner": "Order cancelled: {reason}",
+      "items": "Items",
+      "cols": {
+        "product": "Product",
+        "sku": "SKU",
+        "qty": "Qty",
+        "price": "Price",
+        "discount": "Discount",
+        "total": "Total",
+        "fulfillment": "Fulfillment"
+      },
+      "line": {
+        "fulfilled": "{n} of {of} fulfilled",
+        "returned": "{n} returned"
+      },
+      "summary": {
+        "subtotal": "Subtotal",
+        "discount": "Discount",
+        "shipping": "Shipping",
+        "free": "Free",
+        "tax": "VAT (15%)",
+        "taxIncluded": "VAT (15%) included",
+        "total": "Total",
+        "paid": "Paid",
+        "refunded": "Refunded",
+        "balance": "Balance due"
+      },
+      "payments": "Payments",
+      "noPayments": "No payments recorded yet. Method: {method}",
+      "refundLine": "Refund",
+      "shipments": "Shipments",
+      "noShipments": "Not shipped yet.",
+      "returnShipment": "Return shipment",
+      "invoice": "Invoice",
+      "noInvoice": "No invoice issued yet.",
+      "returns": "Returns",
+      "noReturns": "No returns.",
+      "timeline": "Timeline",
+      "customer": "Customer",
+      "whatsapp": "WhatsApp",
+      "customerOrders": "Orders",
+      "customerSpent": "Total spent",
+      "customerMissing": "Customer not found",
+      "risk": {
+        "title": "Risk signals",
+        "firstOrder": "First order from this customer",
+        "highAmount": "Order amount is unusually high",
+        "codWithReturns": "Cash on delivery for a customer with past returns"
+      },
+      "shippingAddress": "Shipping address",
+      "edit": "Edit",
+      "customerNote": "Customer note",
+      "internalNotes": "Internal notes",
+      "noNotes": "No notes.",
+      "notePlaceholder": "Add an internal note…",
+      "addNote": "Add note",
+      "noteSaved": "Note added",
+      "tags": "Tags",
+      "conversation": "Linked conversation",
+      "createdByAgent": "Created by agent",
+      "addTag": "Add tag",
+      "tagPlaceholder": "e.g. VIP",
+      "removeTag": "Remove tag \"{tag}\"",
+      "noTags": "No tags yet",
+      "tagFailed": "Couldn't update tags",
+      "popupBlocked": "The browser blocked the print window",
+      "paymentLinkFailed": "Couldn't send the payment link",
+      "labelFields": {
+        "order": "Order",
+        "to": "Deliver to",
+        "cod": "COD",
+        "weight": "Weight",
+        "tracking": "Tracking",
+        "label": "Label no.",
+        "packages": "Packages"
+      },
+      "printInvoice": {
+        "title": "Tax invoice",
+        "billTo": "Bill to"
+      },
+      "copied": "Order data copied",
+      "copyFailed": "Couldn't copy order data",
+      "billingAddress": "Billing address",
+      "billingSameAsShipping": "Same as shipping address",
+      "editDialog": {
+        "title": "Edit order #{number}",
+        "description": "Add or remove items, edit quantities and the discount — totals recompute automatically.",
+        "lockedLine": "Linked to a return/refund — quantity can't change",
+        "decrease": "Decrease",
+        "increase": "Increase",
+        "quantity": "Quantity",
+        "remove": "Remove",
+        "discount": "Discount (SAR)",
+        "shipping": "Shipping fee (SAR)",
+        "newTotal": "New total",
+        "save": "Save changes",
+        "saved": "Order changes saved",
+        "errors": {
+          "not_editable": "An order in this status can't be edited",
+          "cancelled": "Cancelled orders can't be edited",
+          "insufficient_stock": "Not enough stock for variant {sku}",
+          "below_fulfilled": "Quantity is below what's already fulfilled",
+          "line_locked": "Line is linked to a return or refund",
+          "quantity": "Invalid quantity",
+          "variant": "Unknown product",
+          "no_items": "Can't save an order with no items",
+          "failed": "Couldn't save order changes"
+        }
+      },
+      "digitalTitle": "Digital delivery",
+      "digitalDelivered": "Delivered",
+      "attribution": "Attribution & source",
+      "affiliate": "Affiliate:",
+      "locationLabel": "Stock location:"
+    },
+    "dialogs": {
+      "ofMax": "Max {max}",
+      "qtyFor": "Quantity of {name}",
+      "refund": {
+        "title": "Refund order #{number}",
+        "description": "Refundable balance: {remaining}",
+        "amount": "Refund amount (SAR)",
+        "amountHint": "Calculated from selected items; editable up to {max}",
+        "reason": "Reason",
+        "reasonRequired": "Enter a refund reason",
+        "restock": "Return items to stock",
+        "notify": "Notify customer",
+        "warning": "Refunds can't be undone. The amount goes back to the original payment method.",
+        "confirm": "Refund {amount}",
+        "done": "Refunded {amount}",
+        "failed": "Refund failed. Check the amount."
+      },
+      "cancel": {
+        "title": "Cancel order #{number}",
+        "description": "Shipped orders can't be cancelled. The cancellation is logged on the timeline.",
+        "reason": "Cancellation reason",
+        "choose": "Choose a reason",
+        "reasonRequired": "Choose a reason",
+        "details": "Details",
+        "refund": "Refund the paid amount",
+        "restock": "Return items to stock",
+        "notify": "Notify customer",
+        "confirm": "Confirm cancellation",
+        "done": "Order #{number} cancelled",
+        "failed": "Couldn't cancel the order"
+      },
+      "shipment": {
+        "title": "New shipment for order #{number}",
+        "description": "Choose items, package and carrier.",
+        "items": "Items and quantities",
+        "package": "Package",
+        "weight": "Weight (kg)",
+        "dims": {
+          "l": "Length (cm)",
+          "w": "Width (cm)",
+          "h": "Height (cm)"
+        },
+        "carrier": "Carrier and service",
+        "eta": "{days, plural, one {# day} other {# days}}",
+        "cod": "COD amount",
+        "noCod": "None",
+        "pickup": "Pickup date",
+        "confirm": "Create shipment ({count} items)",
+        "done": "Shipment {tracking} created",
+        "failed": "Couldn't create shipment",
+        "existing": "Existing shipments for this order",
+        "fullyShipped": "All shippable items are already on shipments.",
+        "deliverTo": "Deliver to"
+      },
+      "address": {
+        "title": "Edit shipping address",
+        "description": "Only editable before shipping.",
+        "recipientName": "Recipient",
+        "phone": "Phone",
+        "city": "City",
+        "district": "District",
+        "street": "Street",
+        "buildingNumber": "Building no.",
+        "postalCode": "Postal code",
+        "shortAddress": "Short address",
+        "saved": "Address updated",
+        "failed": "Couldn't update address"
+      }
+    },
+    "returnReasons": {
+      "damaged": "Damaged",
+      "wrong_item": "Wrong item",
+      "not_as_described": "Not as described",
+      "size_issue": "Size issue",
+      "changed_mind": "Changed mind",
+      "other": "Other"
+    },
+    "newOrder": {
+      "title": "New manual order",
+      "fromConversation": "From conversation",
+      "duplicateOf": "Copy of order",
+      "customer": "Customer",
+      "change": "Change",
+      "searchCustomer": "Search by name or phone",
+      "quickCreate": "New customer",
+      "customerName": "Name",
+      "customerPhone": "Phone",
+      "createCustomer": "Create customer",
+      "customerCreated": "Customer created",
+      "cancel": "Cancel",
+      "products": "Products",
+      "searchProduct": "Search by product name or SKU",
+      "noProducts": "Search for a product to add it.",
+      "lowStock": "Only {n} available",
+      "decrease": "Decrease",
+      "increase": "Increase",
+      "quantity": "Quantity",
+      "unitPrice": "Unit price",
+      "remove": "Remove",
+      "address": "Address",
+      "pickCustomerFirst": "Pick a customer first.",
+      "newAddress": "New address",
+      "recipient": "Recipient",
+      "city": "City",
+      "district": "District",
+      "street": "Street",
+      "shipping": "Shipping",
+      "paymentAndNotes": "Discount and payment",
+      "coupon": "Coupon",
+      "couponApplied": "Coupon discount {amount}",
+      "couponErrors": {
+        "unknown": "Coupon not found",
+        "inactive": "Coupon is not active",
+        "min": "Order is below the coupon minimum"
+      },
+      "manualDiscount": "Manual discount (SAR)",
+      "paymentMethod": "Payment method",
+      "payments": {
+        "payment_link": "Payment link",
+        "cod": "Cash on delivery",
+        "bank_transfer": "Bank transfer",
+        "external": "Paid externally"
+      },
+      "note": "Internal note",
+      "sendConfirmation": "Send order confirmation to customer",
+      "summary": "Summary",
+      "subtotal": "Subtotal ({count, plural, one {# item} other {# items}})",
+      "discount": "Discount",
+      "shippingFee": "Shipping",
+      "taxIncluded": "VAT (15%) included",
+      "total": "Total",
+      "overStockWarning": "{count, plural, one {# item exceeds} other {# items exceed}} available stock",
+      "submit": "Create order",
+      "created": "Order #{number} created",
+      "fixErrors": "Complete the required fields",
+      "errors": {
+        "customer": "Choose a customer",
+        "items": "Add at least one product",
+        "address": "Choose an address or complete the new one",
+        "name": "Enter a name",
+        "phone": "Enter a Saudi mobile (05XXXXXXXX)",
+        "taken": "A customer with this phone already exists",
+        "insufficientStock": "Not enough stock for one of the items"
+      },
+      "failed": "Couldn't create the order",
+      "growthTitle": "Attribution & extras",
+      "location": "Fulfilment location",
+      "locationHint": "Stock is deducted from this location",
+      "affiliateCode": "Affiliate code",
+      "affiliateHint": "Attribute this order to a partner",
+      "giftCard": "Gift card",
+      "checkBalance": "Check",
+      "cardBalance": "Balance: {amount}",
+      "cardInvalid": "Invalid card",
+      "giftCardHint": "Deducted from the total on create",
+      "loyaltyPoints": "Loyalty points",
+      "loyaltyHint": "Balance: {points} pts ≈ {amount}",
+      "loyaltyNone": "Pick a customer or enable the program"
+    },
+    "returns": {
+      "title": "Returns",
+      "description": "Customer return requests and their status.",
+      "search": "Return or order number",
+      "allStatuses": "All statuses",
+      "allReasons": "All reasons",
+      "noneTitle": "No returns",
+      "noneDescription": "Return requests will show up here.",
+      "cols": {
+        "number": "Number",
+        "order": "Order",
+        "customer": "Customer",
+        "items": "Items",
+        "reason": "Reason",
+        "status": "Status",
+        "refundAmount": "Refund amount",
+        "date": "Date",
+        "refundStatus": "Refund status"
+      },
+      "heading": "Return #{number}",
+      "items": "Returned items",
+      "reasonAndNote": "Reason and customer note",
+      "noNote": "No note from the customer.",
+      "summary": "Details",
+      "originalOrder": "Original order",
+      "resolution": "Resolution",
+      "restock": "Restock",
+      "yes": "Yes",
+      "no": "No",
+      "returnShipment": "Return shipment",
+      "creditNote": "Credit note",
+      "rejectedBanner": "Rejected: {reason}",
+      "receivedDone": "Return marked as received",
+      "notFound": "Return not found",
+      "back": "Back to returns",
+      "actions": {
+        "approve": "Approve",
+        "reject": "Reject",
+        "receive": "Mark received",
+        "refund": "Refund",
+        "requestInfo": "Request info"
+      },
+      "approve": {
+        "title": "Approve return #{number}",
+        "description": "Choose the resolution and amount.",
+        "resolution": "Resolution",
+        "resolutions": {
+          "refund": "Refund",
+          "exchange": "Exchange",
+          "store_credit": "Store credit"
+        },
+        "amount": "Amount (SAR)",
+        "restock": "Restock items once received",
+        "createShipment": "Create return shipment",
+        "confirm": "Approve return",
+        "done": "Return approved",
+        "acceptedQty": "Accepted qty",
+        "requestedQty": "requested: {n}",
+        "noAcceptedItems": "Accept at least one unit",
+        "creditAmount": "Credit amount"
+      },
+      "reject": {
+        "title": "Reject return #{number}",
+        "description": "The reason is shared with the customer.",
+        "reason": "Rejection reason",
+        "required": "Enter a reason",
+        "confirm": "Reject return",
+        "done": "Return rejected"
+      },
+      "refund": {
+        "title": "Refund {amount}",
+        "description": "Refunds the customer and issues a credit note.",
+        "warning": "Refunds can't be undone.",
+        "confirm": "Refund {amount}",
+        "done": "Refunded {amount} and issued a credit note",
+        "failed": "Refund failed"
+      },
+      "requestInfo": {
+        "title": "Request info — return #{number}",
+        "description": "Ask the customer for extra details or photos before deciding.",
+        "note": "What do you need from the customer?",
+        "required": "Describe what you need",
+        "confirm": "Request info",
+        "done": "Info request sent",
+        "failed": "Couldn't send the info request"
+      },
+      "activity": {
+        "title": "Return activity",
+        "notePlaceholder": "Add an internal note…",
+        "addNote": "Add note",
+        "noteFailed": "Couldn't add the note",
+        "events": {
+          "created": "Return request created ({items} lines)",
+          "status_changed": "Status changed to {to}",
+          "info_requested": "More info requested",
+          "note_added": "Internal note"
+        }
+      }
+    },
+    "carts": {
+      "title": "Abandoned carts",
+      "description": "{recovered} of {total} carts recovered.",
+      "noneTitle": "No abandoned carts",
+      "noneDescription": "Carts left before checkout will show up here.",
+      "emptyTitle": "No carts with this status",
+      "all": "All",
+      "cols": {
+        "customer": "Customer",
+        "items": "Items",
+        "total": "Value",
+        "abandonedAt": "Abandoned",
+        "status": "Recovery status",
+        "attempts": "Attempts",
+        "order": "Resulting order",
+        "actions": "Actions"
+      },
+      "send": "Send reminder",
+      "sent": "Recovery message sent",
+      "openConversation": "Conversation",
+      "detailTitle": "Abandoned cart",
+      "abandoned": "Abandoned {when}",
+      "attemptsTitle": "Recovery attempts",
+      "noAttempts": "No reminders sent yet.",
+      "opened": "Opened",
+      "notOpened": "Not opened",
+      "channels": {
+        "whatsapp": "WhatsApp",
+        "sms": "SMS",
+        "email": "Email"
+      },
+      "notFound": "Cart not found",
+      "back": "Back to carts",
+      "settings": {
+        "auto": "Automatic recovery",
+        "delay": "Timing",
+        "after1h": "After 1 hour",
+        "after24h": "After 24 hours",
+        "agent": "Responsible agent",
+        "coupon": "Incentive coupon",
+        "noCoupon": "No coupon",
+        "saved": "Settings saved",
+        "secondReminder": "Second reminder",
+        "reminderOff": "Off",
+        "after48h": "After 48h",
+        "excludeRecentOrders": "Exclude recent buyers",
+        "excludeDays": "{n} days",
+        "excludeOptedOut": "Exclude opted-out"
+      },
+      "sendFailed": "Couldn't send the recovery message",
+      "errors": {
+        "cart_not_due": "This cart isn't due for recovery yet",
+        "recovery_recent": "A recovery message was already sent recently",
+        "closed": "This cart is already closed",
+        "excluded_recent_order": "Cart excluded — customer ordered recently",
+        "excluded_opted_out": "Cart excluded — customer opted out"
+      },
+      "source": "Visit source",
+      "probability": "Recovery probability",
+      "probabilityValue": "{n}%",
+      "sources": {
+        "storefront": "Storefront",
+        "instagram": "Instagram",
+        "google": "Google search",
+        "whatsapp": "WhatsApp",
+        "direct": "Direct"
+      },
+      "sendDialog": {
+        "title": "Send recovery message",
+        "description": "Pick a template or write a custom message for the customer.",
+        "template": "Template",
+        "noTemplate": "No template — custom message",
+        "message": "Message text",
+        "messagePlaceholder": "Write the recovery message…",
+        "templateHint": "Leave empty to send the template text as-is.",
+        "cancel": "Cancel",
+        "confirm": "Send"
+      },
+      "templates": {
+        "title": "Recovery templates",
+        "new": "New template",
+        "empty": "No templates yet — create your first recovery template.",
+        "disabled": "Disabled",
+        "preview": "Preview",
+        "edit": "Edit",
+        "delete": "Delete",
+        "deleted": "Template deleted",
+        "saved": "Template saved",
+        "saveFailed": "Couldn't save the template",
+        "newTitle": "New recovery template",
+        "editTitle": "Edit template",
+        "vars": "Available variables: {name} · {store} · {link}",
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "channel": "Channel",
+        "channels": {
+          "whatsapp": "WhatsApp",
+          "sms": "SMS",
+          "email": "Email"
+        },
+        "enabled": "Enabled",
+        "contentAr": "Content (Arabic)",
+        "contentEn": "Content (English)",
+        "save": "Save template"
+      }
+    },
+    "home": {
+      "greeting": "Hi {name}",
+      "subtitle": "Your store at a glance today.",
+      "viewAll": "View all",
+      "kpi": {
+        "salesToday": "Sales today",
+        "vsYesterday": "vs yesterday",
+        "ordersToday": "Orders today",
+        "aov": "Average order",
+        "visitors": "Visitors today",
+        "conversion": "Conversion rate"
+      },
+      "lists": {
+        "needsAction": "Orders needing action",
+        "noneNeedsAction": "No orders waiting on you",
+        "waiting": "Conversations waiting for staff",
+        "noneWaiting": "No conversations waiting",
+        "approvals": "Pending agent approvals",
+        "noneApprovals": "No pending approvals",
+        "lowStock": "Running low",
+        "noneLowStock": "Stock looks healthy",
+        "left": "{n} left",
+        "latest": "Latest orders",
+        "noneLatest": "No orders yet"
+      },
+      "approvalActions": {
+        "cancel_order": "Cancel order",
+        "refund": "Refund",
+        "discount_above_limit": "Discount above limit"
+      },
+      "charts": {
+        "sales30": "Sales, last 30 days",
+        "revenue": "Revenue",
+        "orders": "Orders",
+        "byChannel": "Orders by channel (30 days)"
+      },
+      "agents": {
+        "title": "Agent performance",
+        "conversationsToday": "Conversations today",
+        "resolution": "Resolution rate",
+        "sales": "Sales via agents (30 days)"
+      },
+      "setup": {
+        "title": "Finish setting up your store",
+        "progress": "{done} of {total}",
+        "products": "Add products",
+        "payments": "Enable payments",
+        "shipping": "Enable shipping",
+        "whatsapp": "Connect WhatsApp",
+        "domain": "Connect domain",
+        "published": "Publish store"
+      }
+    },
+    "newReturn": {
+      "title": "New return",
+      "description": "Submit a return request on the customer's behalf — the return policy applies automatically.",
+      "policyHint": "Return policy: within {days} days of the order.",
+      "selectOrder": "Order",
+      "selectOrderPlaceholder": "Pick an eligible order…",
+      "notReturnable": "Non-returnable product (policy)",
+      "alreadyReturned": "Fully returned already",
+      "quantity": "Quantity",
+      "details": "Request details",
+      "reason": "Reason",
+      "note": "Description",
+      "notePlaceholder": "e.g. item arrived broken…",
+      "photos": "Attachments",
+      "addPhoto": "Attach photo",
+      "removePhoto": "Remove photo",
+      "summary": "Summary",
+      "summaryOrder": "Order",
+      "summaryItems": "Units",
+      "submit": "Submit return request",
+      "created": "Return #{number} created",
+      "noPermissionTitle": "No permission",
+      "noPermissionDescription": "You need the returns permission to submit a return.",
+      "back": "Back to returns",
+      "errors": {
+        "no_items": "Select at least one unit",
+        "window_expired": "The return window for this order expired",
+        "reason_disabled": "This reason is disabled by the return policy",
+        "item": "Unknown line",
+        "not_returnable": "Product is non-returnable per policy",
+        "item_qty": "Quantity exceeds what remains returnable",
+        "failed": "Couldn't submit the return request"
+      }
+    }
+  },
+  "catalog": {
+    "stock": {
+      "all": "All",
+      "in_stock": "In stock",
+      "low": "Low",
+      "out_of_stock": "Out of stock"
+    },
+    "products": {
+      "title": "Products",
+      "description": "All your store products with variants and stock.",
+      "new": "New product",
+      "searchPlaceholder": "Product name, SKU or barcode",
+      "results": "{count, plural, =0 {No results} one {# product} other {# products}}",
+      "resetFilters": "Reset filters",
+      "noneTitle": "No products yet",
+      "noneDescription": "Add your first product or import a file.",
+      "noResults": "No matching products",
+      "noResultsHint": "Try changing the search or filters.",
+      "cols": {
+        "product": "Product",
+        "sku": "SKU",
+        "price": "Price",
+        "stock": "Stock",
+        "status": "Status",
+        "categories": "Categories",
+        "updated": "Updated",
+        "variants": "Variants",
+        "name": "Product",
+        "sold": "Sold (30d)",
+        "conversations": "Conversations"
+      },
+      "filters": {
+        "status": "Status",
+        "allStatuses": "All statuses",
+        "category": "Category",
+        "allCategories": "All categories",
+        "collection": "Collection",
+        "allCollections": "All collections",
+        "import": "Import",
+        "stock": "Stock",
+        "allStock": "All stock",
+        "brand": "Brand",
+        "clearMore": "Clear",
+        "from": "From",
+        "more": "More filters",
+        "price": "Price",
+        "tag": "Tag",
+        "to": "To",
+        "allBrands": "All brands"
+      },
+      "statuses": {
+        "draft": "Draft",
+        "active": "Active",
+        "archived": "Archived"
+      },
+      "export": {
+        "title": "Export products",
+        "description": "{count} products will be exported with the selected columns.",
+        "download": "Download CSV",
+        "done": "Exported {count} rows",
+        "perVariant": "One row per variant",
+        "pickCols": "Pick at least one column",
+        "cols": {
+          "name": "Product",
+          "sku": "SKU",
+          "barcode": "Barcode",
+          "status": "Status",
+          "price": "Price",
+          "compareAt": "Compare-at price",
+          "cost": "Cost",
+          "stock": "Stock",
+          "sold30d": "Sold 30d",
+          "categories": "Categories"
+        }
+      },
+      "bulk": {
+        "activate": "Activate",
+        "archive": "Archive",
+        "addTag": "Add tag",
+        "apply": "Apply",
+        "updated": "Updated {count} products",
+        "tagged": "Tagged {count} products",
+        "adjustPrices": "Adjust prices",
+        "cancel": "Cancel",
+        "confirmDelete": "Yes, delete",
+        "delete": "Delete",
+        "deleteTitle": "Delete products?",
+        "deleteDescription": "{count} products will be permanently deleted.",
+        "deleteWarning": "Past orders are unaffected, but products and variants will be deleted.",
+        "deleted": "Deleted {count} products",
+        "export": "Export",
+        "setStatus": "Set status",
+        "tagPlaceholder": "Tag…",
+        "toCategory": "Add to category",
+        "toCollection": "Add to collection",
+        "price": {
+          "apply": "Apply",
+          "cancel": "Cancel",
+          "description": "The price of {count} products will change.",
+          "done": "Adjusted prices of {count} products",
+          "failed": "Could not adjust",
+          "fixed": "Fixed (+/− SAR)",
+          "percent": "Percent (+/− %)",
+          "title": "Adjust prices",
+          "value": "Value",
+          "valueHint": "Negative to decrease, positive to increase."
+        },
+        "category": {
+          "apply": "Add",
+          "cancel": "Cancel",
+          "failed": "Could not add",
+          "placeholder": "Pick a category…",
+          "title": "Add to category",
+          "done": "Added {count} products to the category",
+          "description": "{count} products will be added to the selected category."
+        },
+        "collection": {
+          "apply": "Add",
+          "cancel": "Cancel",
+          "failed": "Could not add",
+          "placeholder": "Pick a collection…",
+          "title": "Add to collection",
+          "done": "Added {count} products to the collection",
+          "description": "{count} products will be added to the selected collection."
+        },
+        "statused": "Updated status of {count} products"
+      },
+      "duplicate": "Duplicate",
+      "archivedToast": "Archived",
+      "duplicated": "Product duplicated",
+      "fromImport": "From import {id}",
+      "newProduct": "New product",
+      "import": "Import",
+      "emptyTitle": "No matching products",
+      "emptyDescription": "Try changing the search or filters.",
+      "stockLow": "Low",
+      "stockOut": "Out",
+      "summary": {
+        "total": "All products",
+        "active": "Active",
+        "draft": "Drafts",
+        "archived": "Archived",
+        "lowOut": "Low / out of stock"
+      }
+    },
+    "editor": {
+      "title": "Product",
+      "newProduct": "New product",
+      "editProduct": "Edit product",
+      "saved": "Saved",
+      "created": "Product created",
+      "failed": "Could not save",
+      "notFoundTitle": "Product not found",
+      "notFoundDescription": "The link is invalid or the product was deleted.",
+      "backToList": "Back to products",
+      "crumb": "Products",
+      "sections": {
+        "basics": "Basics",
+        "media": "Media",
+        "organization": "Organization",
+        "options": "Options & variants",
+        "seo": "SEO"
+      },
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "descAr": "Description (Arabic)",
+        "descEn": "Description (English)",
+        "slug": "Slug",
+        "type": "Product type",
+        "status": "Status",
+        "categories": "Categories",
+        "collections": "Manual collections",
+        "tags": "Tags",
+        "mediaUrl": "Image URL",
+        "addMedia": "Add",
+        "optionName": "Option name (e.g. Size)",
+        "optionValues": "Values (comma separated)",
+        "addOption": "Add option",
+        "price": "Price",
+        "compareAt": "Compare-at price",
+        "cost": "Cost",
+        "sku": "SKU",
+        "barcode": "Barcode",
+        "stock": "Stock",
+        "lowStock": "Low-stock alert",
+        "weight": "Weight (kg)",
+        "taxable": "Taxable",
+        "seoTitle": "SEO title",
+        "seoDesc": "SEO description"
+      },
+      "types": {
+        "physical": "Physical",
+        "digital": "Digital",
+        "service": "Service"
+      },
+      "optionsHint": "Add options like size or color to generate variants.",
+      "noOptions": "Single-variant product",
+      "variantsTitle": "Variants",
+      "applyToAll": "Apply to all",
+      "deleteProduct": "Delete product",
+      "deleteTitle": "Delete product?",
+      "deleteDescription": "The product and its variants will be permanently deleted. Past orders are unaffected.",
+      "deleted": "Product deleted",
+      "confirmDelete": "Yes, delete",
+      "createOptionFirst": "Add at least one option or save as a single-variant product",
+      "addImage": "Add image",
+      "addOption": "Add option",
+      "aiDone": "Generated — review before saving",
+      "aiNotes": "Notes for agents",
+      "aiNotesHint": "Agent-only text — specs, warnings, common answers.",
+      "aiNotesPlaceholder": "e.g. not for pregnant women, country of origin…",
+      "aiWrite": "Generate with AI",
+      "backInStock": "Back-in-stock alerts",
+      "backInStockWaiting": "{count} customers waiting for restock",
+      "backInStockNone": "No customers waiting for restock",
+      "basics": "Basics",
+      "brand": "Brand",
+      "bulkPrice": "Price for all",
+      "bulkPricePrompt": "One price for all variants (SAR)",
+      "bulkWeight": "Weight for all",
+      "bulkWeightPrompt": "One weight for all variants (kg)",
+      "categories": "Categories",
+      "collections": "Manual collections",
+      "compareAt": "Compare-at price",
+      "conversationsAbout": "Conversations about product",
+      "crumbProducts": "Products",
+      "generateVariants": "Generate variants",
+      "inventory": "Inventory",
+      "inventoryScreen": "Inventory log",
+      "mainImage": "Main image",
+      "media": "Media",
+      "mediaHint": "Pick from the library or upload — the first image is the main one.",
+      "moveDown": "Move down",
+      "moveUp": "Move up",
+      "nameAr": "Name (Arabic)",
+      "nameEn": "Name (English)",
+      "nameRequired": "Arabic name is required",
+      "newHint": "New product — fill the fields and save.",
+      "noManualCollections": "No manual collections yet.",
+      "optionName": "Option name",
+      "optionNamePlaceholder": "Size, color, capacity…",
+      "optionValues": "Values",
+      "optionValuesPlaceholder": "50ml, 100ml (comma separated)",
+      "optionsVariants": "Options & variants",
+      "ordersWithProduct": "Orders with this product",
+      "organization": "Organization",
+      "price": "Price",
+      "priceRequired": "Price is required",
+      "related": "Related screens",
+      "cropImage": "Crop image",
+      "removeImage": "Remove image",
+      "removeOption": "Remove option",
+      "removeTag": "Remove tag",
+      "requiresShipping": "Requires shipping",
+      "saveFailed": "Could not save",
+      "selectAll": "Select all",
+      "selectVariant": "Pick a variant to see its stock",
+      "seo": "SEO",
+      "seoTitle": "SEO title",
+      "seoTitleHint": "Up to 60 chars",
+      "seoDescription": "SEO description",
+      "seoDescriptionHint": "Up to 160 chars",
+      "seoPreviewTitle": "Product title | Nakhla",
+      "seoPreviewDescription": "The product description shown in search results.",
+      "shortDescription": "Short description",
+      "sku": "SKU",
+      "stats": "30-day performance",
+      "status": "Status",
+      "tagPlaceholder": "Tag…",
+      "tags": "Tags",
+      "taxable": "Taxable",
+      "unsavedChanges": "Unsaved changes",
+      "variantOption": "Variant",
+      "viewInStore": "View in store",
+      "weight": "Weight (kg)",
+      "descriptionAr": "Description (Arabic)",
+      "descriptionEn": "Description (English)",
+      "selected": "selected",
+      "sold30d": "Sold",
+      "revenue30d": "Revenue",
+      "views30d": "Views",
+      "conversations30d": "Conversations",
+      "altText": "Alt text",
+      "altAr": "Alt text (Arabic)",
+      "altEn": "Alt text (English)",
+      "deleteVariant": "Delete variant",
+      "deleteVariantBody": "The variant and its stock record will be removed from the product.",
+      "deleteVariantOrdered": "This variant appears in past orders — orders are unaffected since they keep a snapshot.",
+      "deleteVariantTitle": "Delete this variant?",
+      "draftRestored": "Restored an unsaved draft — continue or discard.",
+      "duplicateBarcode": "Barcode \"{value}\" is duplicated — it must be unique.",
+      "duplicateSku": "SKU \"{value}\" is duplicated — it must be unique.",
+      "margin": "Margin",
+      "priceInvalid": "Compare-at price and cost must be valid numbers.",
+      "reviewsOf": "Product reviews",
+      "slugHint": "Used in the storefront product URL — leave empty to derive from the name.",
+      "variantImage": "Variant image",
+      "variantImageEmpty": "Add product images first, then assign them to variants.",
+      "uploadFailed": "Could not upload the image — try again.",
+      "digitalTitle": "Digital delivery files",
+      "digitalNote": "Digital products are delivered as download links after payment (simulated — no real file storage).",
+      "digitalKind": "Kind",
+      "digitalFile": "File",
+      "digitalLink": "Link",
+      "digitalName": "Name",
+      "digitalUrl": "URL",
+      "digitalRemove": "Remove",
+      "digitalAdd": "Add file",
+      "digitalSave": "Save files",
+      "digitalIncomplete": "Complete the name and URL of every file"
+    },
+    "categories": {
+      "title": "Categories",
+      "description": "Your store's category tree.",
+      "new": "New category",
+      "editTitle": "Edit category",
+      "newTitle": "New category",
+      "cols": {
+        "name": "Name",
+        "products": "Products",
+        "order": "Order",
+        "slug": "Slug"
+      },
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "slug": "Slug",
+        "parent": "Parent category",
+        "noParent": "No parent (root)",
+        "sortOrder": "Sort order",
+        "seoTitle": "SEO title",
+        "seoDesc": "SEO description"
+      },
+      "saved": "Saved",
+      "created": "Category created",
+      "deleted": "Category deleted",
+      "failed": "Could not save",
+      "deleteTitle": "Delete category?",
+      "deleteDescription": "Subcategories move to the parent and products lose this category.",
+      "confirmDelete": "Yes, delete",
+      "noneTitle": "No categories",
+      "noneDescription": "Create your first category to organize products.",
+      "pickTitle": "Pick a category",
+      "pickDescription": "Select a category from the tree to view or edit it.",
+      "addChild": "Add child",
+      "collapse": "Collapse all",
+      "expand": "Expand all",
+      "dragHint": "Drag to reorder or change parent",
+      "editCategory": "Edit category",
+      "newCategory": "New category",
+      "sheetDescription": "Subcategories appear under the parent in your store.",
+      "invalidParent": "A category cannot be its own parent or child",
+      "moveFailed": "Could not move",
+      "moved": "Moved",
+      "saveFailed": "Could not save",
+      "nameRequired": "Arabic name is required",
+      "nameAr": "Name (Arabic)",
+      "nameEn": "Name (English)",
+      "descriptionField": "Description (Arabic)",
+      "image": "Category image",
+      "parent": "Parent category",
+      "noParent": "No parent (root)",
+      "sortOrder": "Sort order",
+      "seoTitle": "SEO title",
+      "seoDescription": "SEO description",
+      "viewInStore": "View in store",
+      "productsCount": "{count, plural, =0 {No products} one {# product} other {# products}}",
+      "deleteProductsWarning": "{count} products are linked to this category and will lose it."
+    },
+    "collections": {
+      "title": "Collections",
+      "description": "Manual and automatic collections.",
+      "new": "New collection",
+      "cols": {
+        "name": "Name",
+        "type": "Type",
+        "products": "Products",
+        "updated": "Updated"
+      },
+      "types": {
+        "manual": "Manual",
+        "automatic": "Automatic"
+      },
+      "noneTitle": "No collections",
+      "noneDescription": "Create a collection to feature in your store.",
+      "newCollection": "New collection",
+      "searchPlaceholder": "Search collections",
+      "viewInStore": "View in store",
+      "filters": {
+        "type": "Type",
+        "allTypes": "All types"
+      },
+      "results": "{count, plural, =0 {No results} one {# collection} other {# collections}}"
+    },
+    "inventory": {
+      "title": "Inventory",
+      "description": "Stock levels per variant per location.",
+      "searchPlaceholder": "Product, SKU or barcode",
+      "results": "{count, plural, =0 {No results} one {# row} other {# rows}}",
+      "cols": {
+        "product": "Product",
+        "variant": "Variant",
+        "onHand": "On hand",
+        "reserved": "Reserved",
+        "available": "Available",
+        "threshold": "Alert at",
+        "lastMove": "Last move",
+        "location": "Location"
+      },
+      "filters": {
+        "category": "Category",
+        "allCategories": "All categories",
+        "location": "Location",
+        "allLocations": "All locations"
+      },
+      "noneTitle": "No inventory",
+      "noneDescription": "No stock levels recorded yet.",
+      "adjustHint": "Click to adjust",
+      "adjust": {
+        "title": "Adjust inventory",
+        "current": "Current: {count}",
+        "set": "Set quantity",
+        "delta": "Change (+/−)",
+        "newQty": "New quantity",
+        "reason": "Reason",
+        "note": "Note",
+        "noteRequired": "A note is required for manual adjustments",
+        "done": "Inventory adjusted",
+        "failed": "Could not adjust",
+        "negativeError": "Stock cannot go negative",
+        "reasons": {
+          "adjustment": "Manual adjustment",
+          "damage": "Damaged",
+          "import": "Import",
+          "return": "Return",
+          "cancellation": "Order cancelled",
+          "sale": "Sale"
+        }
+      }
+    },
+    "inventoryMovements": {
+      "title": "Movement log",
+      "notFoundTitle": "Variant not found",
+      "notFoundDescription": "The link is invalid.",
+      "backToList": "Back to inventory",
+      "adjust": "Adjust inventory",
+      "movementsTitle": "Inventory movements",
+      "location": "Location: {name}",
+      "cols": {
+        "date": "Date",
+        "delta": "Change",
+        "reason": "Reason",
+        "reference": "Reference",
+        "actor": "By",
+        "balance": "Balance after",
+        "note": "Note",
+        "location": "Location"
+      },
+      "reasons": {
+        "adjustment": "Manual adjustment",
+        "damage": "Damaged",
+        "import": "Import",
+        "return": "Return",
+        "cancellation": "Order cancelled",
+        "sale": "Sale",
+        "restock": "Restock",
+        "reservation": "Reservation"
+      },
+      "noneTitle": "No movements yet",
+      "noneDescription": "The first stock movement will appear here.",
+      "transfer": "Transfer",
+      "byLocation": "Stock by location"
+    },
+    "imports": {
+      "title": "Imports",
+      "description": "Import products, customers and inventory from a file, Salla or Zid.",
+      "newImport": "New import",
+      "history": "History",
+      "steps": {
+        "type": "Type & source",
+        "upload": "File",
+        "mapping": "Columns",
+        "preview": "Preview",
+        "options": "Options"
+      },
+      "pickType": "What are you importing?",
+      "pickSource": "Source",
+      "types": {
+        "products": "Products",
+        "customers": "Customers",
+        "inventory": "Inventory"
+      },
+      "sources": {
+        "file": "File (CSV/Excel)",
+        "salla": "Import from Salla",
+        "zid": "Import from Zid"
+      },
+      "dropFile": "Drop a file here or click to choose",
+      "fileTypes": "CSV or XLSX",
+      "connect": {
+        "salla": "Connect Salla",
+        "zid": "Connect Zid"
+      },
+      "connectHint": {
+        "salla": "We will pull your products from Salla — simulated in this demo environment.",
+        "zid": "We will pull your products from Zid — simulated in this demo environment."
+      },
+      "simulation": "Simulation",
+      "mappingHint": "Match your file columns to system fields.",
+      "column": "Column {col}",
+      "fields": {
+        "name": "Name",
+        "sku": "SKU",
+        "price": "Price",
+        "stock": "Stock",
+        "phone": "Phone",
+        "email": "Email",
+        "ignore": "Ignore"
+      },
+      "previewHint": "First file rows, with per-row errors flagged.",
+      "previewNote": "This previews only the first 20 rows.",
+      "rowOk": "OK",
+      "rowErrorNamePrice": "Empty name and invalid price",
+      "rowStatus": "Status",
+      "updateExisting": "Update existing products with the same SKU",
+      "updateExistingHint": "When off, duplicate rows are skipped.",
+      "start": "Start import",
+      "started": "Import started",
+      "failed": "Could not start the import",
+      "noneTitle": "No imports yet",
+      "noneDescription": "Your first import will appear here.",
+      "download": "Download",
+      "cols": {
+        "type": "Type",
+        "file": "File",
+        "source": "Source",
+        "status": "Status",
+        "rows": "Rows (ok/failed)",
+        "errorFile": "Error file",
+        "actor": "By",
+        "date": "Date"
+      },
+      "detail": {
+        "title": "Import details",
+        "notFoundTitle": "Import not found",
+        "notFoundDescription": "The link is invalid.",
+        "backToList": "Back to history",
+        "stats": {
+          "type": "Type",
+          "source": "Source",
+          "succeeded": "Rows succeeded",
+          "failedRows": "Rows failed",
+          "actor": "By",
+          "at": "Date",
+          "total": "Total rows",
+          "errorFile": "Error file"
+        },
+        "viewImported": "View imported products ({count})",
+        "retry": "Run again"
+      }
+    },
+    "reviews": {
+      "title": "Reviews",
+      "description": "Customer product reviews — approve, hide or reply.",
+      "search": "Product name or review text",
+      "allStatuses": "All statuses",
+      "noneTitle": "No reviews yet",
+      "noneDescription": "Approved reviews show on the product page in your store.",
+      "emptyTitle": "No matching reviews",
+      "emptyDescription": "Try changing the status filter or search.",
+      "verified": "Verified purchase",
+      "replied": "Replied",
+      "cols": {
+        "product": "Product",
+        "customer": "Customer",
+        "rating": "Rating",
+        "review": "Review",
+        "status": "Status",
+        "date": "Date"
+      },
+      "actions": {
+        "menu": "Review actions",
+        "approve": "Approve",
+        "hide": "Hide",
+        "reply": "Reply"
+      },
+      "reply": {
+        "title": "Reply to review",
+        "description": "Your reply shows publicly under the review.",
+        "label": "Reply",
+        "placeholder": "Thank the customer or address their feedback…",
+        "save": "Save reply"
+      }
+    },
+    "brands": {
+      "title": "Brands",
+      "description": "Manage your product brands and their logos",
+      "newBrand": "New brand",
+      "editBrand": "Edit brand",
+      "sheetDescription": "The brand name is shown to customers and synced with the product brand field.",
+      "searchPlaceholder": "Search by name or website…",
+      "nameAr": "Name (Arabic)",
+      "nameEn": "Name (English)",
+      "descriptionField": "Description (Arabic)",
+      "descriptionEn": "Description (English)",
+      "logo": "Logo",
+      "website": "Website",
+      "statusLabel": "Status",
+      "allStatuses": "All statuses",
+      "status": {
+        "active": "Active",
+        "archived": "Archived"
+      },
+      "cols": {
+        "name": "Brand",
+        "products": "Products",
+        "website": "Website",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "results": "{count, plural, one {# brand} other {# brands}}",
+      "resetFilters": "Reset filters",
+      "empty": {
+        "title": "No brands yet",
+        "body": "Add your first brand and link it to products via the product brand field."
+      },
+      "emptyFiltered": {
+        "title": "No brands match",
+        "body": "Try adjusting the search or filters"
+      }
+    },
+    "locations": {
+      "title": "Inventory locations",
+      "description": "Warehouses and branches stock is managed from",
+      "new": "New location",
+      "cols": {
+        "name": "Location",
+        "city": "City",
+        "address": "Address",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "default": "Default",
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "edit": "Edit",
+      "setDefault": "Set default",
+      "deactivate": "Deactivate",
+      "activate": "Activate",
+      "newTitle": "Add location",
+      "editTitle": "Edit location",
+      "form": {
+        "name": "Location name",
+        "city": "City",
+        "address": "Address",
+        "isDefault": "Default fulfilment location"
+      },
+      "nameRequired": "Location name is required",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "transfer": {
+      "title": "Transfer stock",
+      "from": "From location",
+      "to": "To location",
+      "pickLocation": "Pick a location",
+      "quantity": "Quantity",
+      "note": "Note",
+      "noteHint": "Reason for transfer (optional)",
+      "cancel": "Cancel",
+      "submit": "Transfer",
+      "sameLocation": "Source and destination must differ",
+      "qtyRequired": "Enter a valid quantity",
+      "exceeds": "Quantity exceeds on-hand ({available})",
+      "onHandAtSource": "On hand at source: {count}"
+    },
+    "priceLists": {
+      "title": "Price lists",
+      "description": "Wholesale & VIP pricing — applied to manual orders and the B2B storefront",
+      "new": "New list",
+      "cols": {
+        "name": "List",
+        "customers": "Customers",
+        "rules": "Rules",
+        "status": "Status"
+      },
+      "status": {
+        "active": "Active",
+        "archived": "Archived"
+      },
+      "edit": "Edit",
+      "archive": "Archive",
+      "restore": "Restore",
+      "delete": "Delete",
+      "newTitle": "New price list",
+      "editTitle": "Edit price list",
+      "form": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "amount": "Amount",
+        "note": "Note"
+      },
+      "customersTitle": "Assigned customers",
+      "customersHint": "The list only applies to the selected customers",
+      "rulesTitle": "Pricing rules",
+      "addRule": "Add rule",
+      "ruleVariant": "Variant",
+      "allVariants": "All variants",
+      "percentOff": "% off",
+      "fixedPrice": "Fixed price",
+      "removeRule": "Remove rule",
+      "rulesHint": "Fixed price beats percent off; a variant-specific rule beats the all-variants rule",
+      "nameRequired": "List name is required",
+      "noneTitle": "No price lists",
+      "noneDescription": "Create a list so wholesale customers get their pricing automatically"
+    }
+  },
+  "collections": {
+    "detail": {
+      "title": "Collection",
+      "new": "New collection",
+      "crumb": "Collections",
+      "notFoundTitle": "Collection not found",
+      "notFoundDescription": "The link is invalid or the collection was deleted.",
+      "backToList": "Back to collections",
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "slug": "Slug",
+        "descAr": "Description (Arabic)",
+        "descEn": "Description (English)",
+        "image": "Image URL",
+        "type": "Type",
+        "seoTitle": "SEO title",
+        "seoDesc": "SEO description"
+      },
+      "manualProducts": "Products",
+      "addProduct": "Add product",
+      "searchProduct": "Search for a product…",
+      "remove": "Remove",
+      "rules": "Conditions",
+      "match": {
+        "all": "All conditions must match",
+        "any": "Any condition matches"
+      },
+      "ruleFields": {
+        "title": "Title contains",
+        "price": "Price",
+        "category": "Category",
+        "stock": "Stock",
+        "tag": "Tag",
+        "brand": "Brand"
+      },
+      "ops": {
+        "gt": "greater than",
+        "lt": "less than",
+        "in": "in stock",
+        "out": "out of stock",
+        "contains": "contains",
+        "eq": "equals",
+        "neq": "not equal"
+      },
+      "addRule": "Add condition",
+      "preview": "Product preview ({count})",
+      "noMatches": "No products match the current conditions.",
+      "saved": "Saved",
+      "created": "Collection created",
+      "deleted": "Collection deleted",
+      "failed": "Could not save",
+      "deleteTitle": "Delete collection?",
+      "deleteDescription": "Products are not deleted, only the collection.",
+      "confirmDelete": "Yes, delete",
+      "add": "Add",
+      "basics": "Basics",
+      "description": "Description (Arabic)",
+      "matchAll": "All conditions must match",
+      "matchAny": "Any condition matches",
+      "nameAr": "Name (Arabic)",
+      "nameEn": "Name (English)",
+      "nameRequired": "Arabic name is required",
+      "newCollection": "New collection",
+      "noMatch": "No products match the current conditions.",
+      "noProducts": "No products in the collection yet.",
+      "pickCategory": "Pick a category…",
+      "removeRule": "Remove condition",
+      "ruleField": "Field",
+      "ruleOp": "Condition",
+      "ruleValue": "Value",
+      "rulesRequired": "An automatic collection needs at least one condition",
+      "saveFailed": "Could not save",
+      "searchProducts": "Search products…",
+      "seo": "SEO",
+      "seoTitle": "SEO title",
+      "seoDescription": "SEO description",
+      "type": "Type",
+      "valueInHalalas": "in halalas",
+      "valuePlaceholder": "Value…",
+      "viewInStore": "View in store",
+      "types": {
+        "manual": "Manual",
+        "automatic": "Automatic"
+      },
+      "typesHint": {
+        "manual": "You pick the products",
+        "automatic": "Updates automatically by conditions"
+      },
+      "matchedTitle": "Matching products ({count})",
+      "andMore": "and {count} more…",
+      "results": "{count, plural, =0 {No results} one {# product} other {# products}}",
+      "unsavedChanges": "Unsaved changes",
+      "moveUp": "Move up",
+      "moveDown": "Move down"
+    }
+  },
+  "approvals": {
+    "title": "Approvals",
+    "description": "Agent requests that need your decision.",
+    "tabs": {
+      "pending": "Pending",
+      "decided": "Decided",
+      "all": "All"
+    },
+    "filters": {
+      "action": "Action",
+      "allActions": "All actions"
+    },
+    "actions": {
+      "cancel_order": "Cancel order",
+      "refund": "Refund",
+      "discount_above_limit": "Discount above limit"
+    },
+    "target": "Target",
+    "inConversation": "In conversation",
+    "expires": "Expires {time}",
+    "expiresSoon": "Expiring soon",
+    "decidedAt": "Decided: {time}",
+    "approve": "Approve",
+    "reject": "Reject",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "failed": "Could not apply the decision",
+    "rejectTitle": "Reject request?",
+    "rejectDescription": "The agent will be notified and will inform the customer.",
+    "rejectReason": "Rejection reason (optional)",
+    "confirmReject": "Yes, reject",
+    "noneTitle": "No approvals",
+    "noneDescription": "Pending agent requests will appear here.",
+    "emptyFilterTitle": "No results",
+    "emptyFilterDescription": "No approvals match the filters.",
+    "agentCopilot": "Copilot"
+  },
+  "knowledge": {
+    "title": "Knowledge base",
+    "description": "Sources your agents learn from.",
+    "addSource": "New source",
+    "searchPlaceholder": "Search sources",
+    "noneTitle": "No sources",
+    "noneDescription": "Add a file, URL or FAQ.",
+    "cancel": "Cancel",
+    "deleted": "Source deleted",
+    "deleteTitle": "Delete source?",
+    "deleteDescription": "\"{name}\" will be deleted and agents will stop using it.",
+    "confirmDelete": "Yes, delete",
+    "autoOn": "Auto sync",
+    "types": {
+      "file": "File",
+      "url": "URL",
+      "faq": "FAQ",
+      "policy": "Policy",
+      "product_catalog": "Product catalog",
+      "text": "Text"
+    },
+    "cols": {
+      "title": "Title",
+      "type": "Type",
+      "status": "Status",
+      "chunks": "Chunks",
+      "agents": "Agents",
+      "synced": "Last synced",
+      "auto": "Auto"
+    },
+    "add": {
+      "title": "New knowledge source",
+      "description": "Agents use it to answer customers.",
+      "type": "Type",
+      "types": {
+        "file": "File",
+        "url": "URL",
+        "faq": "FAQ",
+        "policy": "Policy (link)",
+        "product_catalog": "Product catalog",
+        "text": "Text"
+      },
+      "name": "Title",
+      "file": "File",
+      "url": "URL",
+      "faqAnswer": "Answer",
+      "add": "Add",
+      "done": "Source added and is being processed",
+      "failed": "Could not add",
+      "textContent": "Text content",
+      "editTitle": "Edit source",
+      "editDescription": "The source is re-indexed after saving",
+      "save": "Save changes"
+    },
+    "detail": {
+      "title": "Knowledge source",
+      "notFoundTitle": "Source not found",
+      "notFoundDescription": "The link is invalid.",
+      "backToList": "Back to knowledge",
+      "processing": "Processing",
+      "syncNow": "Sync now",
+      "delete": "Delete",
+      "deleteTitle": "Delete source?",
+      "deleteDescription": "The source and all its indexed chunks will be deleted.",
+      "confirmDelete": "Yes, delete",
+      "deleted": "Deleted",
+      "info": "Details",
+      "f": {
+        "type": "Type",
+        "chunks": "Indexed chunks",
+        "file": "File",
+        "url": "URL",
+        "synced": "Last synced",
+        "autoSync": "Auto sync"
+      },
+      "faqTitle": "Questions & answers",
+      "noFaq": "No questions yet",
+      "testTitle": "Retrieval test",
+      "testPlaceholder": "Ask a question to test the source…",
+      "test": "Test",
+      "answer": "Answer",
+      "usedBy": "Linked agents",
+      "noAgents": "No agent uses this source",
+      "linkAgent": "Link an agent…",
+      "unlink": "Unlink",
+      "edit": "Edit"
+    }
+  },
+  "dev": {
+    "title": "UI messages (msg.*)",
+    "description": "Review components and copy from docs/UI_MESSAGES.md — development only",
+    "emptyStates": "Empty states",
+    "pageErrors": "Page errors",
+    "validation": "Validation (zod + api-error-map + inline)",
+    "dictionary": "Full dictionary",
+    "keysCount": "keys",
+    "key": "Key",
+    "arabic": "Arabic",
+    "normal": "Normal",
+    "danger": "Danger",
+    "requireText": "Type text",
+    "storeName": "Nakhla",
+    "runZod": "Run zod on bad data",
+    "phone": "Phone"
+  },
+  "storefront": {
+    "themes": {
+      "title": "Store themes",
+      "description": "Pick your store's look, preview it, and customize it in the design editor",
+      "preview": "Preview",
+      "customize": "Customize",
+      "apply": "Apply",
+      "versions": "{count, plural, one {# version} other {# versions}}",
+      "scheduledFor": "Scheduled publish at",
+      "window": {
+        "button": "Temporary window",
+        "title": "Temporary theme (activation window)",
+        "from": "From",
+        "to": "To",
+        "save": "Save window",
+        "clear": "Remove window"
+      },
+      "actions": "Actions",
+      "duplicate": "Duplicate",
+      "rename": "Rename",
+      "renameLabel": "Theme name",
+      "renameSave": "Save name",
+      "export": "Export JSON",
+      "import": "Import JSON",
+      "importFailed": "Theme import failed",
+      "close": "Close",
+      "delete": "Delete theme"
+    },
+    "pages": {
+      "title": "Store pages",
+      "description": "Content pages like “About us” and policies",
+      "new": "New page",
+      "cols": {
+        "title": "Title",
+        "slug": "Slug",
+        "status": "Status",
+        "inMenu": "In menu"
+      },
+      "inMenu": "Shown",
+      "editor": {
+        "newTitle": "New page",
+        "editTitle": "Edit page",
+        "back": "All pages",
+        "titleAr": "Title (Arabic)",
+        "titleEn": "Title (English)",
+        "slug": "Slug",
+        "slugHint": "e.g. /pages/about",
+        "contentAr": "Content (Arabic)",
+        "contentEn": "Content (English)",
+        "seoTitle": "SEO title",
+        "seoDescription": "SEO description",
+        "published": "Published on the store",
+        "showInMenu": "Show in store menus",
+        "save": "Save page",
+        "saved": "Page saved",
+        "errors": {
+          "required": "This field is required",
+          "slug": "Use lowercase letters, numbers and dashes (-) only",
+          "taken": "This slug is already used by another page"
+        },
+        "template": "Page template",
+        "templateNone": "No template — plain content",
+        "templateHint": "Landing pages render a custom design-editor template instead of plain content."
+      },
+      "preview": "Preview on storefront",
+      "delete": "Delete page",
+      "deleteUsedWarning": "This page is linked in {menus} — the link will break after deletion",
+      "menuLocations": {
+        "header": "Header menu",
+        "footer": "Footer menu"
+      }
+    },
+    "menus": {
+      "title": "Store menus",
+      "description": "Header and footer links your customers see",
+      "locations": {
+        "header": "Header menu",
+        "footer": "Footer menu"
+      },
+      "addItem": "Add item",
+      "addSub": "Add sub-item",
+      "empty": "The menu is empty — add the first item",
+      "untitled": "Untitled item",
+      "save": "Save menu",
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "remove": "Remove item",
+      "edit": "Edit",
+      "item": {
+        "labelAr": "Label (Arabic)",
+        "labelEn": "Label (English)",
+        "linkType": "Link type",
+        "types": {
+          "page": "Page",
+          "category": "Category",
+          "collection": "Collection",
+          "product": "Product",
+          "url": "URL"
+        },
+        "target": "Target",
+        "url": "URL",
+        "choose": "Choose…",
+        "add": "Add",
+        "done": "Done"
+      },
+      "newMenu": "New menu",
+      "newMenuHint": "The new menu starts empty — add items and save",
+      "deleteMenu": "Delete menu",
+      "broken": "Broken link",
+      "brokenHint": "Target deleted or URL missing — edit the item"
+    },
+    "domains": {
+      "title": "Domains",
+      "description": "Connect your own domain and enable the SSL certificate",
+      "add": "Add domain",
+      "placeholder": "shop.example.sa",
+      "primary": "Primary",
+      "setPrimary": "Set as primary",
+      "verify": "Verify again",
+      "remove": "Remove domain",
+      "types": {
+        "subdomain": "Platform domain",
+        "custom": "Custom domain"
+      },
+      "status": {
+        "verification": "Connection status",
+        "ssl": "SSL certificate"
+      },
+      "dns": {
+        "title": "Required DNS records",
+        "hint": "Add these records at your DNS provider, and we'll issue the certificate automatically after verification",
+        "type": "Type",
+        "name": "Name",
+        "value": "Value"
+      },
+      "errors": {
+        "hostname": "Enter a valid domain like shop.example.sa"
+      },
+      "simulated": "Simulation mode: domain checks and SSL issuance complete automatically — real wiring needs an actual DNS provider integration"
+    },
+    "seo": {
+      "title": "Search engine optimization",
+      "description": "Home page title & description, plus redirects for old links",
+      "home": {
+        "title": "Home page SEO",
+        "seoTitle": "Title",
+        "seoDescription": "Description",
+        "shareImage": "Share image",
+        "shareImageHint": "Shown when someone shares your store link",
+        "noImage": "No image — the store logo is used by default",
+        "save": "Save"
+      },
+      "redirects": {
+        "title": "Redirects (301)",
+        "from": "From",
+        "to": "To",
+        "add": "Add redirect",
+        "remove": "Remove redirect",
+        "hint": "e.g. /old-page"
+      },
+      "sitemap": {
+        "title": "Sitemap",
+        "hint": "Updates automatically with every page and product",
+        "open": "Open sitemap.xml"
+      },
+      "preview": {
+        "serp": "Google result preview",
+        "social": "Share preview"
+      },
+      "validation": {
+        "titleRequired": "Title is required",
+        "titleLong": "Over 50 chars — Google truncates it in results",
+        "descLong": "Over 155 chars — truncated in results"
+      }
+    }
+  },
+  "signup": {
+    "title": "Create your store",
+    "subtitle": "Try the platform for free — no credit card needed",
+    "name": "Your name",
+    "store": {
+      "title": "Your store details",
+      "subtitle": "One last step — what do you sell?",
+      "submit": "Create store"
+    },
+    "email": "Email",
+    "password": "Password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "submit": "Create store",
+    "haveAccount": "Already have an account?",
+    "login": "Sign in",
+    "terms": "By creating an account you agree to the terms and privacy policy",
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Enter a valid email",
+      "tooShort": "Password must be at least 8 characters"
+    },
+    "verify": {
+      "title": "Enter verification code",
+      "subtitle": "We sent a 6-digit code to your phone",
+      "code": "Verification code",
+      "submit": "Verify",
+      "resend": "Resend code"
+    }
+  },
+  "forgot": {
+    "title": "Forgot your password?",
+    "subtitle": "Enter your email and we'll send a reset link",
+    "email": "Email",
+    "submit": "Send link",
+    "sentTitle": "Check your inbox",
+    "resend": "Resend",
+    "back": "Back to sign in",
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Enter a valid email"
+    }
+  },
+  "mfa": {
+    "title": "Two-factor authentication",
+    "subtitle": "Enter the verification code sent to your phone",
+    "code": "Verification code",
+    "submit": "Verify & sign in",
+    "resend": "Resend code",
+    "back": "Back to sign in",
+    "errors": {
+      "length": "The code is 6 digits"
+    }
+  },
+  "invite": {
+    "title": "Accept invite",
+    "subtitle": "Finish your account to join the team",
+    "name": "Your name",
+    "password": "New password",
+    "submit": "Join the team",
+    "errors": {
+      "required": "This field is required",
+      "tooShort": "Password must be at least 8 characters"
+    }
+  },
+  "onboarding": {
+    "title": "Set up your store",
+    "subtitle": "Four quick steps and your store is running",
+    "step": "Step {n} of {total}",
+    "steps": {
+      "store": "Store info",
+      "product": "First product",
+      "payment": "Payments",
+      "done": "Done"
+    },
+    "storeForm": {
+      "name": "Store name",
+      "industry": "Industry",
+      "city": "City"
+    },
+    "industries": {
+      "gifts": "Gifts",
+      "perfumes": "Perfumes",
+      "fashion": "Fashion",
+      "food": "Food",
+      "other": "Other"
+    },
+    "productForm": {
+      "name": "Product name",
+      "price": "Price (SAR)",
+      "hint": "Add the basics now — you can finish details and photos later"
+    },
+    "paymentForm": {
+      "hint": "Enable the payment methods you want to accept",
+      "online": "Online payment (mada · Visa · Apple Pay)",
+      "cod": "Cash on delivery"
+    },
+    "done": {
+      "title": "Your store is ready",
+      "body": "Keep adding products and publish whenever you're set",
+      "cta": "Go to dashboard"
+    },
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip for now",
+    "errors": {
+      "required": "This field is required",
+      "price": "Enter a valid price"
+    }
+  },
+  "shipments": {
+    "title": "Shipments",
+    "description": "Track shipments across all your carriers in one place.",
+    "search": "Search by tracking number, order or customer",
+    "printLabels": "Print labels",
+    "delayed": "Delayed",
+    "col": {
+      "tracking": "Tracking no.",
+      "order": "Order",
+      "customer": "Customer",
+      "carrier": "Carrier",
+      "city": "City",
+      "status": "Status",
+      "cod": "COD",
+      "updated": "Last update",
+      "description": "Description",
+      "quantity": "Qty",
+      "unitPrice": "Unit price",
+      "vat": "VAT",
+      "total": "Total",
+      "service": "Service",
+      "created": "Created",
+      "eta": "ETA",
+      "cost": "Cost",
+      "payment": "Payment"
+    },
+    "filters": {
+      "all": "All",
+      "delayed": "Delayed only",
+      "cod": "COD only",
+      "service": "Service",
+      "date": "Created",
+      "stale": "No update 3+ days",
+      "reset": "Reset"
+    },
+    "status": {
+      "label_created": "Label created",
+      "picked_up": "Picked up",
+      "in_transit": "In transit",
+      "out_for_delivery": "Out for delivery",
+      "delivered": "Delivered",
+      "failed_attempt": "Failed attempt",
+      "returned": "Returned",
+      "cancelled": "Cancelled"
+    },
+    "type": {
+      "outbound": "Outbound",
+      "return": "Return"
+    },
+    "updateStatus": "Update status",
+    "printLabel": "Print label",
+    "notifyCustomer": "Send update to customer",
+    "timeline": "Timeline",
+    "items": "Items",
+    "address": "Delivery address",
+    "carrier": "Carrier",
+    "service": "Service",
+    "cost": "Cost",
+    "eta": "Estimated delivery",
+    "links": "Links",
+    "results": "{count, plural, one {# shipment} other {# shipments}}",
+    "stale": "Stale",
+    "updateTracking": "Update tracking",
+    "trackExternal": "Track online",
+    "driverNotes": "Driver notes",
+    "packages": "Packages",
+    "bulk": {
+      "print": "Print labels ({count})",
+      "none": "None of the selected shipments has a printable label",
+      "done": "Sent {printed, plural, one {# label} other {# labels}} to the printer",
+      "skipped": "{skipped} skipped — no carrier label/tracking yet",
+      "skippedShort": "{skipped} skipped"
+    },
+    "statusDialog": {
+      "title": "Update shipment status",
+      "description": "Record a carrier scan for {tracking}.",
+      "status": "New status",
+      "location": "Scan location (optional)",
+      "note": "Note (optional)",
+      "cancel": "Cancel",
+      "save": "Save status",
+      "saved": "Shipment status updated",
+      "terminal": "This shipment is in a final state — no further transitions are allowed.",
+      "to": {
+        "label_created": "Label created",
+        "picked_up": "Mark as picked up",
+        "in_transit": "Mark as in transit",
+        "out_for_delivery": "Out for delivery",
+        "delivered": "Mark as delivered",
+        "failed_attempt": "Record a failed attempt",
+        "returned": "Mark as returned",
+        "cancelled": "Cancel shipment"
+      },
+      "errors": {
+        "same_status": "The shipment is already in that status",
+        "invalid_transition": "That transition isn't allowed from the current status",
+        "failed": "Couldn't update the shipment status"
+      }
+    },
+    "trackingDialog": {
+      "title": "Update tracking",
+      "description": "Assign or correct the carrier tracking number and URL.",
+      "number": "Tracking number",
+      "url": "Tracking URL (optional)",
+      "cancel": "Cancel",
+      "save": "Save tracking",
+      "saved": "Tracking updated",
+      "failed": "Couldn't update tracking"
+    }
+  },
+  "mediaLibrary": {
+    "title": "Media library",
+    "description": "Your store images & videos — upload, crop, compress, edit alt text",
+    "dropzone": "Drop files here or click to upload",
+    "dropzoneHint": "Images up to 8MB — drop multiple files",
+    "search": "Search by alt text or url…",
+    "filters": {
+      "all": "All",
+      "images": "Images",
+      "video": "Video",
+      "used": "Used",
+      "unused": "Unused"
+    },
+    "empty": "No files match the search",
+    "heavy": "Over 500KB",
+    "used": "Used",
+    "unused": "Unused",
+    "compress": "Compress",
+    "crop": "Crop",
+    "delete": "Delete",
+    "altAr": "النص البديل (عربي)",
+    "altEn": "Alt text (English)",
+    "copyUrl": "Copy URL",
+    "select": "Select",
+    "selected": "{count} selected",
+    "deleteSelected": "Delete selected",
+    "deselect": "Clear selection"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "description": "Every store alert in one place — plus channel preferences",
+    "tabs": {
+      "list": "Notifications",
+      "prefs": "Preferences"
+    },
+    "box": {
+      "active": "Active",
+      "archived": "Archived"
+    },
+    "filters": {
+      "box": "Mailbox",
+      "event": "Type",
+      "allEvents": "All types",
+      "read": "Status",
+      "allRead": "All",
+      "unread": "Unread",
+      "readOnly": "Read",
+      "date": "Date",
+      "allDates": "All time",
+      "today": "Today",
+      "week": "Last 7 days",
+      "month": "Last 30 days"
+    },
+    "searchPlaceholder": "Search notifications…",
+    "actions": {
+      "markRead": "Mark as read",
+      "markAllRead": "Mark all as read",
+      "archive": "Archive",
+      "unarchive": "Unarchive"
+    },
+    "results": "{count, plural, one {# notification} other {# notifications}}",
+    "resetFilters": "Reset filters",
+    "empty": {
+      "title": "No notifications",
+      "body": "Order, stock and invoice alerts will show here"
+    },
+    "emptyFiltered": {
+      "title": "Nothing matches the filters",
+      "body": "Try changing the filters or search"
+    },
+    "pagination": {
+      "perPage": "{count} per page",
+      "page": "Page {page} of {pages}",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "events": {
+      "order_created": "New order",
+      "payment_failed": "Payment failed",
+      "conversation_waiting": "Conversation waiting",
+      "approval_requested": "Agent approval",
+      "low_stock": "Low stock",
+      "shipments_delayed": "Delayed shipments",
+      "invoice_rejected": "Invoice rejected",
+      "return_requested": "Return requested",
+      "app_installed": "App installed",
+      "usage_limit": "Plan limit approaching"
+    },
+    "prefs": {
+      "title": "Notification preferences",
+      "description": "Pick which channels each alert type reaches you on",
+      "event": "Event",
+      "channels": {
+        "inapp": "In-app",
+        "whatsapp": "WhatsApp",
+        "email": "Email",
+        "sms": "SMS"
+      },
+      "events": {
+        "order_created": "New order",
+        "payment_failed": "Payment failed",
+        "conversation_waiting": "Conversation waiting",
+        "approval_requested": "Agent approval",
+        "low_stock": "Low stock",
+        "shipments_delayed": "Delayed shipments",
+        "invoice_rejected": "Invoice rejected",
+        "return_requested": "Return requested",
+        "app_installed": "App installed",
+        "usage_limit": "Plan limit approaching"
+      },
+      "simulatedHint": "In-app alerts work for real. External channels (WhatsApp/email/SMS) are stored as preferences only — real delivery needs a provider integration.",
+      "inappNote": "Turning off \"In-app\" only hides the event from the bell and new notification center — history is kept."
+    }
+  },
+  "maintenance": {
+    "shellBanner": "The store is in maintenance mode — visitors see a notice page",
+    "manage": "Manage"
+  }
+}

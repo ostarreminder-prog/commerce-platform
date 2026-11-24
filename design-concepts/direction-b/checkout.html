@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>إتمام الطلب — دار سَحَر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diwan.css">
+<style>
+.co{display:grid;grid-template-columns:1.5fr .9fr;gap:clamp(28px,5vw,80px);padding-bottom:100px;align-items:start}
+.csec{border:1px solid var(--line2);background:var(--paper);padding:clamp(20px,3vw,34px);margin-bottom:18px;position:relative}
+.csec .cs-no{position:absolute;top:20px;inset-inline-end:22px;font-family:var(--lat);color:var(--faint);font-size:.8rem;letter-spacing:.2em}
+.csec h3{font-family:var(--serif);font-weight:400;font-size:1.4rem;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.paymarks{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.paymarks span{border:1px solid var(--line2);padding:6px 14px;font-family:var(--lat);font-size:.68rem;letter-spacing:.14em;color:var(--ink2)}
+.cardflds{display:none;margin-top:8px}
+.cardflds.show{display:block}
+.receipt .mini{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px dotted var(--line2);font-size:.78rem}
+.receipt .mini .mf{width:44px;height:56px;border:1px solid var(--line2);background:var(--paper);display:grid;place-items:center;flex-shrink:0}
+.receipt .mini .mp{margin-inline-start:auto;font-family:var(--lat);white-space:nowrap}
+.sec-note{display:flex;gap:10px;align-items:center;margin-top:18px;font-size:.64rem;color:var(--faint);letter-spacing:.1em}
+@media(max-width:900px){.co{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap in">
+    <button class="burger" aria-label="القائمة">☰</button>
+    <a class="logo" href="index.html"><div class="ar">دار سَحَر</div><div class="en">DAR SAHAR</div></a>
+    <nav><a href="index.html#plates">المختارات</a><a href="collection.html">الفصول</a></nav>
+    <div class="tools"><span class="lat" style="font-size:.62rem;letter-spacing:.24em;color:var(--faint)">SECURE CHECKOUT</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="steps">
+    <span><b class="lat">١</b><span class="lbl">السلة</span></span><i></i>
+    <span class="on"><b class="lat">٢</b><span class="lbl">العنوان والدفع</span></span><i></i>
+    <span><b class="lat">٣</b><span class="lbl">التأكيد</span></span>
+  </div>
+
+  <div class="co">
+    <div>
+      <section class="csec"><span class="cs-no lat">I</span>
+        <h3>إلى أين نرسل الطلب؟</h3>
+        <div class="frow">
+          <div class="fld"><label>الاسم الكامل</label><input value="نورة العتيبي"></div>
+          <div class="fld"><label>الجوال</label><input value="05XXXXXXXX" dir="ltr" style="text-align:end"></div>
+        </div>
+        <div class="frow">
+          <div class="fld"><label>المدينة</label><select><option>الرياض</option><option>جدة</option><option>الدمام</option><option>أخرى</option></select></div>
+          <div class="fld"><label>الحي</label><input placeholder="حي السفارات"></div>
+        </div>
+        <div class="fld"><label>الشارع والمبنى</label><input placeholder="شارع… مبنى… شقة…"><div class="hint">أو العنوان الوطني المختصر إن وُجد</div></div>
+      </section>
+
+      <section class="csec"><span class="cs-no lat">II</span>
+        <h3>سرعة التوصيل</h3>
+        <div class="rcards">
+          <button class="rcard on"><span style="display:flex;align-items:center"><span class="dot"></span><span class="t">عادي — ١ إلى ٣ أيام<small>لكل مدن المملكة</small></span></span><span class="s">40 ر.س</span></button>
+          <button class="rcard"><span style="display:flex;align-items:center"><span class="dot"></span><span class="t">سريع — خلال ٢٤ ساعة<small>الرياض فقط · يُقطَع طلب اليوم ٨م</small></span></span><span class="s">65 ر.س</span></button>
+          <button class="rcard"><span style="display:flex;align-items:center"><span class="dot"></span><span class="t">استلام من الدار<small>حي السفارات — جاهز خلال ساعتين</small></span></span><span class="s">مجاني</span></button>
+        </div>
+      </section>
+
+      <section class="csec"><span class="cs-no lat">III</span>
+        <h3>الدفع</h3>
+        <div class="paymarks"><span>مدى</span><span>VISA</span><span>APPLE PAY</span><span>TABBY ×4</span><span>STC PAY</span></div>
+        <div class="rcards" id="payCards">
+          <button class="rcard on" data-p="card"><span style="display:flex;align-items:center"><span class="dot"></span><span class="t">بطاقة مدى / ائتمانية</span></span><span class="s lat">••••</span></button>
+          <button class="rcard" data-p="apple"><span style="display:flex;align-items:center"><span class="dot"></span><span class="t">Apple Pay</span></span><span class="s lat"></span></button>
+          <button class="rcard" data-p="tabby"><span style="display:flex;align-items:center"><span class="dot"></span><span class="t">تابي — ٤ دفعات<small>٤٢٠ ر.س × ٤ · بدون فوائد</small></span></span><span class="s lat">×4</span></button>
+        </div>
+        <div class="cardflds show" id="cardFlds">
+          <div class="fld"><label>رقم البطاقة</label><input dir="ltr" placeholder="0000 0000 0000 0000" style="text-align:end"></div>
+          <div class="frow">
+            <div class="fld"><label>الانتهاء</label><input dir="ltr" placeholder="MM/YY" style="text-align:end"></div>
+            <div class="fld"><label>CVV</label><input dir="ltr" placeholder="•••" style="text-align:end"></div>
+          </div>
+        </div>
+        <div class="sec-note"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> الدفع مشفّر — لا نحفظ بيانات بطاقتك</div>
+      </section>
+    </div>
+
+    <aside class="receipt">
+      <h4>طلبك</h4>
+      <div id="mini"></div>
+      <div class="r" style="margin-top:14px"><span>المجموع الفرعي</span><span class="lat">1,640 ر.س</span></div>
+      <div class="r"><span>الشحن — عادي</span><span class="lat">40 ر.س</span></div>
+      <div class="r"><span>تغليف هدية</span><span>مجاني ✦</span></div>
+      <div class="r total"><span>الإجمالي</span><span class="lat">1,680 ر.س</span></div>
+      <a class="btn-ink" href="confirm.html">تأكيد الطلب والدفع</a>
+      <div class="stamp">بإتمامك توافق على شروط الدار — إرجاع مجاني ١٤ يوماً</div>
+    </aside>
+  </div>
+</main>
+
+<script src="../shared/data.js"></script>
+<script src="../shared/bottle.js"></script>
+<script>
+const cart = [
+  { p: SAHAR.prod("sahar-najd"), size:"٥٠ مل", price:890 },
+  { p: SAHAR.prod("amber-nights"), size:"٥٠ مل", price:680 },
+  { p: SAHAR.prod("tahara-royal"), size:"٦ مل", price:320 },
+];
+document.getElementById("mini").innerHTML = cart.map(i=>`
+  <div class="mini"><span class="mf">${bottleSVG(i.p,{mode:"paper",glow:false,scale:.18})}</span>
+    <span>${i.p.ar}<br><small style="color:var(--faint);font-size:.62rem">${i.size}</small></span>
+    <span class="mp">${i.price.toLocaleString("en-US")}</span></div>`).join("");
+
+document.getElementById("payCards").addEventListener("click", e=>{
+  const b = e.target.closest(".rcard"); if(!b) return;
+  document.querySelectorAll("#payCards .rcard").forEach(c=>c.classList.remove("on"));
+  b.classList.add("on");
+  document.getElementById("cardFlds").classList.toggle("show", b.dataset.p==="card");
+});
+</script>
+</body>
+</html>

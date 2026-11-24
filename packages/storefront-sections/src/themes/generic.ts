@@ -1,0 +1,190 @@
+import type { Theme } from "@repo/contracts";
+import { blk, featureBlocks, footerSec, headerSec, mainProductSec, makeTheme, preset, scheme, sec } from "./helpers";
+
+/**
+ * نخلة — generic multi-category storefront (coffee/dates + home + care).
+ */
+export const genericTheme: Theme = makeTheme(
+  "theme_generic",
+  "نخلة — عام",
+  {
+    primaryColor: "#166534",
+    font: "default",
+    headingFont: "default",
+    spacing: "compact",
+    radius: 10,
+    logoPosition: "start",
+    announcementBar: "شحن مجاني للطلبات فوق 200 ر.س · قسّمها على 4 دفعات مع تابي",
+  },
+  {
+    home: [
+      headerSec("شحن مجاني للطلبات فوق 200 ر.س · قسّمها على 4 دفعات مع تابي", "Free shipping over SAR 200 · Split it in 4 with Tabby", "نخلة", "Nakhla", "search-prominent"),
+      sec(
+        "hero",
+        { layout: "split", productIds: ["prd_001", "prd_002", "prd_004"] },
+        [
+          blk("badge", { labelAr: "محمّصة أسبوعياً", labelEn: "Roasted weekly" }),
+          blk("heading", { textAr: "قهوة وتمور من قلب المملكة", textEn: "Coffee and dates from the heart of the Kingdom", size: "lg" }),
+          blk("text", { contentAr: "محمّصة طازجة كل أسبوع، وتوصل لباب بيتك خلال يومين.", contentEn: "Roasted fresh every week, delivered to your door in two days." }),
+          blk("button", { labelAr: "تسوّق الآن", labelEn: "Shop now", url: "/", style: "solid" }),
+        ],
+      ),
+      sec("categories", {
+        titleAr: "تسوّق حسب التصنيف",
+        titleEn: "Shop by category",
+        categoryIds: ["cat_coffee", "cat_perfume", "cat_fashion", "cat_home", "cat_care", "cat_tech"],
+        columns: "6",
+        mobile: { columns: "3" },
+      }),
+      sec("featured-products", {
+        titleAr: "الأكثر مبيعاً",
+        titleEn: "Best sellers",
+        productIds: ["prd_001", "prd_002", "prd_007", "prd_011", "prd_017", "prd_022", "prd_027", "prd_029"],
+        limit: 8,
+        showViewAll: true,
+        mobile: { limit: 4 },
+      }),
+      sec(
+        "slider",
+        { titleAr: "عروض الأسبوع", titleEn: "This week's offers" },
+        [
+          blk("slide", { titleAr: "خصم 15% على القهوة", titleEn: "15% off coffee", textAr: "على كل أنواع القهوة والدلال", textEn: "On all coffee and dallahs", ctaLabelAr: "تسوّق العرض", ctaLabelEn: "Shop the offer", hue: "30" }),
+          blk("slide", { titleAr: "شحن مجاني فوق 300", titleEn: "Free shipping over 300", textAr: "لجميع مدن المملكة", textEn: "To every city in the Kingdom", ctaLabelAr: "اطلب الآن", ctaLabelEn: "Order now", hue: "140" }),
+        ],
+      ),
+      sec("banner", {
+        titleAr: "أفكار هدايا لكل مناسبة",
+        titleEn: "Gift ideas for every occasion",
+        textAr: "تغليف مجاني ورسالة إهداء مع كل طلب هدية.",
+        textEn: "Free wrap and a gift note with every gift order.",
+        ctaLabelAr: "اختر هديتك",
+        ctaLabelEn: "Pick a gift",
+        ctaUrl: "/",
+        colorScheme: "scheme_palm",
+      }),
+      sec("faq", { titleAr: "الأسئلة الشائعة", titleEn: "Frequently asked questions" }, [
+        blk("qa", { qAr: "كم يستغرق التوصيل؟", qEn: "How long does delivery take?", aAr: "من 1 إلى 4 أيام عمل داخل المملكة.", aEn: "1–4 business days within the Kingdom." }),
+        blk("qa", { qAr: "هل يمكنني إرجاع المنتج؟", qEn: "Can I return a product?", aAr: "نعم، خلال 7 أيام من الاستلام بحالته الأصلية.", aEn: "Yes, within 7 days of delivery in its original condition." }),
+      ]),
+      sec("newsletter", {
+        titleAr: "اشترك في نشرة نخلة",
+        titleEn: "Join the Nakhla newsletter",
+        textAr: "عروض ووصفات قهوة تصلك أسبوعياً.",
+        textEn: "Offers and coffee recipes in your inbox weekly.",
+        placeholderAr: "بريدك الإلكتروني",
+        placeholderEn: "Your email address",
+        buttonLabelAr: "اشترك",
+        buttonLabelEn: "Subscribe",
+      }),
+      sec("recently-viewed", { titleAr: "شاهدت مؤخراً", titleEn: "Recently viewed", limit: 8 }),
+      footerSec("متجر نخلة — قهوة وتمور ومنتجات سعودية مختارة.", "Nakhla Store — Saudi coffee, dates and curated goods."),
+    ],
+    product: [
+      headerSec("شحن مجاني للطلبات فوق 200 ر.س", "Free shipping over SAR 200", "نخلة", "Nakhla", "search-prominent"),
+      mainProductSec(),
+      sec("featured-products", {
+        titleAr: "قد يعجبك أيضاً",
+        titleEn: "You may also like",
+        productIds: ["prd_003", "prd_005", "prd_018", "prd_023"],
+        limit: 4,
+        showViewAll: false,
+      }),
+      footerSec("متجر نخلة — قهوة وتمور ومنتجات سعودية مختارة.", "Nakhla Store — Saudi coffee, dates and curated goods."),
+    ],
+    category: [
+      headerSec("شحن مجاني للطلبات فوق 200 ر.س", "Free shipping over SAR 200", "نخلة", "Nakhla", "search-prominent"),
+      sec("categories", { titleAr: "كل الأقسام", titleEn: "All categories", categoryIds: ["cat_coffee", "cat_perfume", "cat_fashion", "cat_home", "cat_care", "cat_tech"], columns: "6" }),
+      footerSec("متجر نخلة — قهوة وتمور ومنتجات سعودية مختارة.", "Nakhla Store — Saudi coffee, dates and curated goods."),
+    ],
+    cart: [
+      headerSec("شحن مجاني للطلبات فوق 200 ر.س", "Free shipping over SAR 200", "نخلة", "Nakhla", "search-prominent"),
+      sec("features", { columns: "4" }, featureBlocks()),
+      footerSec("متجر نخلة — قهوة وتمور ومنتجات سعودية مختارة.", "Nakhla Store — Saudi coffee, dates and curated goods."),
+    ],
+    page: [
+      headerSec("شحن مجاني للطلبات فوق 200 ر.س", "Free shipping over SAR 200", "نخلة", "Nakhla", "search-prominent"),
+      sec("image-text", {
+        titleAr: "قصة نخلة",
+        titleEn: "The Nakhla story",
+        textAr: "نجمع أفضل منتجات المملكة — تمور وقهوة وعطور — في متجر واحد يوصل لباب بيتك.",
+        textEn: "We gather the best Saudi products — dates, coffee, perfumes — in one store delivered to your door.",
+        ctaLabelAr: "تسوّق الآن",
+        ctaLabelEn: "Shop now",
+        ctaUrl: "/",
+        imageHue: 30,
+        imageSide: "end",
+      }),
+      sec(
+        "rich-text",
+        { alignment: "center" },
+        [
+          blk("heading", { textAr: "وعدنا لعملائنا", textEn: "Our promise to customers", size: "md" }),
+          blk("text", { contentAr: "كل منتج في نخلة يمرّ بفحص جودة قبل ما يوصلك — لأن ثقتكم رأس مالنا.", contentEn: "Every product at Nakhla passes a quality check before it reaches you — your trust is our capital." }),
+          blk("divider", {}),
+          blk("text", { contentAr: "أسئلة؟ فريقنا يرد خلال ساعات العمل على مدار الأسبوع.", contentEn: "Questions? Our team replies during business hours all week." }),
+        ],
+      ),
+      sec("features", { columns: "4" }, featureBlocks()),
+      sec("contact-form", {
+        titleAr: "تواصل معنا",
+        titleEn: "Contact us",
+        textAr: "سؤال عن منتج أو طلب؟ راسلنا وسنرد بأسرع وقت.",
+        textEn: "A question about a product or an order? Message us and we'll reply soon.",
+        layout: "split",
+        addressAr: "الرياض — حي العليا، طريق الملك فهد",
+        addressEn: "King Fahd Rd, Al Olaya, Riyadh",
+        phone: "+966112345678",
+        email: "hello@nakhla.sa",
+        showName: true,
+        reqName: true,
+        showEmail: true,
+        reqEmail: true,
+        showSubject: true,
+        reqSubject: false,
+        showMessage: true,
+        reqMessage: true,
+        buttonLabelAr: "إرسال",
+        buttonLabelEn: "Send",
+      }),
+      sec("map", {
+        titleAr: "موقعنا",
+        titleEn: "Our location",
+        addressAr: "الرياض — حي العليا، طريق الملك فهد",
+        addressEn: "King Fahd Rd, Al Olaya, Riyadh",
+        lat: "24.7136",
+        lng: "46.6753",
+        height: "md",
+      }),
+      footerSec("متجر نخلة — قهوة وتمور ومنتجات سعودية مختارة.", "Nakhla Store — Saudi coffee, dates and curated goods."),
+    ],
+  },
+  null,
+  {
+    colorSchemes: [
+      scheme("scheme_palm", "نخلة", "Palm", {
+        background: "#f2f7f0",
+        text: "#1d3324",
+        buttonBg: "#166534",
+        buttonText: "#ffffff",
+        accent: "#dcecdf",
+      }),
+      scheme("scheme_dusk", "غسق", "Dusk", {
+        background: "#101d15",
+        text: "#e9f2ea",
+        buttonBg: "#8fd0a4",
+        buttonText: "#0d2416",
+        accent: "#1d3a28",
+      }),
+    ],
+    presets: [
+      preset("preset_ramadan", "رمضان", "Ramadan", {
+        primaryColor: "#14532d",
+        announcementBar: "رمضان كريم — سلال إهداء لرمضان والعيد",
+      }),
+      preset("preset_national", "اليوم الوطني", "National Day", {
+        primaryColor: "#15803d",
+        announcementBar: "اليوم الوطني السعودي — عروض بمناسبة 23 سبتمبر",
+      }),
+    ],
+  },
+);

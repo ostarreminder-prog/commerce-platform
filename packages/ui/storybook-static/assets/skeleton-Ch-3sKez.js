@@ -1,0 +1,1 @@
+import{j as t}from"./jsx-runtime-D_zvdyIk.js";import{c as n}from"./cn-BLSKlp9E.js";function r({className:e,...o}){return t.jsx("div",{"aria-hidden":!0,className:n("bg-muted animate-pulse rounded-md",e),...o})}r.__docgenInfo={description:"",methods:[],displayName:"Skeleton"};export{r as S};

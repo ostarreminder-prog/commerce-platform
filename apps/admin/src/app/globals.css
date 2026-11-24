@@ -1,0 +1,9 @@
+@import "@repo/ui/styles/globals.css";
+
+/* Copilot ui.highlight — flash outline for ~3s on the target element. */
+.copilot-highlight {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: 4px;
+  transition: outline-color 0.3s ease;
+}

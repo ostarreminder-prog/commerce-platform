@@ -1,0 +1,36 @@
+{
+  "name": "@repo/storefront-sections",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./themes": "./src/themes/index.ts",
+    "./editor": "./src/editor.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/contracts": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "lucide-react": "^0.577.0",
+    "zod": "^3.25.76"
+  },
+  "peerDependencies": {
+    "next-intl": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@repo/config": "workspace:*",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.39.1",
+    "next-intl": "^4.4.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "typescript": "5.9.3"
+  }
+}

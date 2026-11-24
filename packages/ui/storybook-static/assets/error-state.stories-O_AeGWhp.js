@@ -1,0 +1,5 @@
+import{j as p}from"./jsx-runtime-D_zvdyIk.js";import{E as i}from"./error-state-CcK8rena.js";import"./cn-BLSKlp9E.js";import"./button-Rc-0UiSC.js";import"./index-CkOfz6b4.js";import"./index-Cvdn1Lp9.js";import"./index-EXTQMK5R.js";import"./createLucideIcon-CeCWHmPF.js";import"./index-DO5CUyDi.js";import"./react-DbW1txLS.js";import"./triangle-alert-D0CESF8f.js";import"./rotate-cw-CGgHL1Fp.js";const D={title:"ErrorState"},r={render:()=>p.jsx(i,{onRetry:()=>alert("retry")})},e={render:()=>p.jsx(i,{onRetry:()=>{},retrying:!0})};var t,o,a;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  render: () => <ErrorState onRetry={() => alert("retry")} />
+}`,...(a=(o=r.parameters)==null?void 0:o.docs)==null?void 0:a.source}}};var s,m,n;e.parameters={...e.parameters,docs:{...(s=e.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  render: () => <ErrorState onRetry={() => {}} retrying />
+}`,...(n=(m=e.parameters)==null?void 0:m.docs)==null?void 0:n.source}}};const _=["Default","Retrying"];export{r as Default,e as Retrying,_ as __namedExportsOrder,D as default};

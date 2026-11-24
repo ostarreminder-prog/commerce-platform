@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>حالات الواجهة — دار سَحَر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diwan.css">
+<style>
+.states{display:grid;gap:clamp(30px,5vw,64px);padding:clamp(36px,5vw,64px) 0 90px}
+.st-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.st-head h2{font-family:var(--serif);font-weight:400;font-size:1.7rem}
+.st-head .lat{font-size:.7rem;color:var(--faint);letter-spacing:.24em}
+/* empty cart */
+.ecart{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line2)}
+.ecart .e{padding:clamp(40px,5vw,70px) 30px;text-align:center}
+.ecart .e:last-child{border-inline-start:1px dashed var(--line2);background:var(--paper2)}
+.ecart .glyph{font-family:var(--serif);font-size:3.4rem;color:var(--faint);line-height:1}
+.ecart h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;margin:16px 0 8px}
+.ecart p{font-size:.82rem;color:var(--ink2);line-height:2;max-width:36ch;margin:0 auto 22px}
+@media(max-width:760px){.ecart{grid-template-columns:1fr}.ecart .e:last-child{border-inline-start:none;border-top:1px dashed var(--line2)}}
+/* skeleton */
+.skg{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.skg .sk .f{aspect-ratio:3/4}
+.skg .sk .l{height:14px;margin-top:12px;width:70%}
+.skg .sk .l2{height:10px;margin-top:8px;width:40%}
+@media(max-width:760px){.skg{grid-template-columns:repeat(2,1fr)}}
+/* 404 & error */
+.err{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.err .state h3{font-size:clamp(3.4rem,7vw,6rem);font-family:var(--lat);color:var(--line2);line-height:1;margin-bottom:10px}
+@media(max-width:760px){.err{grid-template-columns:1fr}}
+/* toast */
+.toast{position:fixed;bottom:26px;inset-inline-start:50%;transform:translateX(50%);background:var(--ink);color:var(--paper);padding:14px 22px;font-size:.78rem;display:flex;gap:14px;align-items:center;z-index:90;box-shadow:0 16px 34px -14px rgba(34,29,21,.5)}
+.toast button{background:none;border:none;color:var(--paper);border-bottom:1px solid var(--paper);font-size:.72rem;cursor:pointer;padding-bottom:2px}
+.toast.err-t{background:var(--henna)}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap in">
+    <button class="burger" aria-label="القائمة">☰</button>
+    <a class="logo" href="index.html"><div class="ar">دار سَحَر</div><div class="en">DAR SAHAR</div></a>
+    <nav><a href="index.html#plates">المختارات</a><a href="collection.html">الفصول</a></nav>
+    <div class="tools">
+      <button onclick="location='search.html'" aria-label="بحث"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button onclick="location='cart.html'" aria-label="السلة"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="phero"><span class="chno lat">SYSTEM — UI STATES</span>
+    <h1 style="font-size:clamp(2rem,4vw,3rem)">الحالات الفاضية والتحميل والأخطاء</h1>
+    <p class="sub">كلها بنفس لغة الديوان — هامشية، هادئة، وتوجّه دائماً للخطوة التالية.</p>
+  </section>
+
+  <div class="states">
+
+    <section>
+      <div class="st-head"><h2>سلة وبحث فاضيان</h2><span class="lat">EMPTY STATES</span></div>
+      <div class="ecart">
+        <div class="e"><div class="glyph serif">❦</div><h3>سلّتك ما زالت فارغة</h3>
+          <p>لم تُضَف أي لوحة بعد — الفصول الخمسة تنتظر.</p>
+          <a class="btn-ink" href="collection.html">تصفّح الفصول</a></div>
+        <div class="e"><div class="glyph serif">؟</div><h3>لا لوحة بهذا الاسم</h3>
+          <p>جرّب «عود» أو «مسك» — أو اكتب اسم الفصل الذي تبحث عنه.</p>
+          <a class="btn-line" href="search.html">عودة للفهرس</a></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="st-head"><h2>التحميل — لوحات تُستعدّ للطبع</h2><span class="lat">SKELETON</span></div>
+      <div class="skg">
+        <div class="sk"><div class="f skel"></div><div class="l skel"></div><div class="l2 skel"></div></div>
+        <div class="sk"><div class="f skel"></div><div class="l skel"></div><div class="l2 skel"></div></div>
+        <div class="sk"><div class="f skel"></div><div class="l skel"></div><div class="l2 skel"></div></div>
+        <div class="sk"><div class="f skel"></div><div class="l skel"></div><div class="l2 skel"></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="st-head"><h2>أخطاء</h2><span class="lat">ERROR STATES</span></div>
+      <div class="err">
+        <div class="state"><h3>404</h3><h3 style="font-size:1.4rem">هذه الصفحة خرجت من الطبعة</h3>
+          <p>الرابط قديم أو نُقلت اللوحة — الفهرس الكامل ما زال هنا.</p>
+          <a class="btn-ink" href="index.html">العودة للغلاف</a></div>
+        <div class="state"><h3>500</h3><h3 style="font-size:1.4rem">المطبعة تعثّرت</h3>
+          <p>خطأ من جهتنا — فريق الدار أُبلغ تلقائياً. جرّب بعد لحظات.</p>
+          <button class="btn-line" onclick="location.reload()">إعادة المحاولة</button></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="st-head"><h2>إشعارات</h2><span class="lat">TOASTS</span></div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <button class="btn-line" onclick="toast('أُضيف «سَحَر النَّجد» إلى سلّتك',0)">نجاح — إضافة للسلة</button>
+        <button class="btn-line" onclick="toast('تعذّر الاتصال — تحقق من الشبكة',1)">خطأ — شبكة</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><div class="imprint"><span>دار سَحَر © ٢٠٢٦</span><span class="lat">UI STATES · ANNEX</span></div></div>
+</footer>
+
+<div class="toast" id="toast" style="display:none"><span id="tMsg"></span><button id="tAct">عرض السلة</button></div>
+<script>
+let t;
+function toast(msg, isErr){
+  const el = document.getElementById("toast");
+  document.getElementById("tMsg").textContent = msg;
+  document.getElementById("tAct").textContent = isErr ? "أعد المحاولة" : "عرض السلة";
+  el.classList.toggle("err-t", !!isErr);
+  el.style.display = "flex";
+  clearTimeout(t); t = setTimeout(()=> el.style.display="none", 2600);
+}
+</script>
+</body>
+</html>

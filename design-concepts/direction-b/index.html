@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>دار سَحَر — العدد الأول</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4efe6; --paper2:#ece5d6; --ink:#221d15; --ink2:#5b5444; --faint:#9a927f;
+  --henna:#8f3b21; --line:#d8cfbc; --line2:#c8bda3;
+  --serif:'Amiri',serif; --sans:'IBM Plex Sans Arabic',sans-serif; --lat:'EB Garamond',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:0;
+  background-image:radial-gradient(rgba(34,29,21,.045) 1px,transparent 1px);background-size:26px 26px}
+::selection{background:var(--henna);color:var(--paper)}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);position:relative;z-index:1}
+.serif{font-family:var(--serif)}.lat{font-family:var(--lat)}
+.eyebrow{font-size:.66rem;letter-spacing:.3em;color:var(--henna);font-weight:500}
+
+/* masthead */
+.mast{border-bottom:3px double var(--line2);padding:14px 0 0}
+.mast .top{display:flex;justify-content:space-between;align-items:baseline;font-size:.68rem;letter-spacing:.22em;color:var(--ink2);padding-bottom:12px}
+.mast .logo{text-align:center;padding:6px 0 18px}
+.mast .logo .ar{font-family:var(--serif);font-size:clamp(2.6rem,6vw,4.6rem);line-height:1}
+.mast .logo .en{font-family:var(--lat);font-size:.62rem;letter-spacing:.58em;color:var(--faint);margin-top:8px}
+.mast .tocnav{border-top:1px solid var(--line);display:flex;justify-content:center;gap:0}
+.mast .tocnav a{font-size:.78rem;color:var(--ink2);padding:14px 26px;border-inline-start:1px solid var(--line);transition:.25s;position:relative}
+.mast .tocnav a:last-child{border-inline-end:1px solid var(--line)}
+.mast .tocnav a:hover{color:var(--henna);background:var(--paper2)}
+.mast .tocnav a .no{font-family:var(--lat);font-size:.6rem;color:var(--faint);display:block;text-align:center}
+.tools{position:fixed;top:14px;inset-inline-end:clamp(14px,3vw,40px);display:flex;gap:14px;z-index:60}
+.tools button{background:var(--paper);border:1px solid var(--line2);width:38px;height:38px;border-radius:50%;cursor:pointer;color:var(--ink);display:grid;place-items:center;transition:.25s;position:relative}
+.tools button:hover{border-color:var(--henna);color:var(--henna)}
+.tools .cnt{position:absolute;top:-4px;inset-inline-start:-4px;background:var(--henna);color:var(--paper);font-size:.58rem;width:16px;height:16px;border-radius:50%;display:grid;place-items:center}
+
+/* cover hero */
+.cover{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,80px);padding:clamp(40px,6vw,90px) 0;border-bottom:1px solid var(--line)}
+.cover h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5.6vw,5.4rem);line-height:1.28}
+.cover h1 em{font-style:normal;color:var(--henna)}
+.cover .dek{margin-top:26px;font-size:.95rem;line-height:2.1;color:var(--ink2);max-width:46ch;border-inline-start:3px solid var(--henna);padding-inline-start:18px}
+.cover .cta{margin-top:36px;display:flex;gap:18px;align-items:center}
+.btn-ink{background:var(--ink);color:var(--paper);border:none;padding:15px 34px;font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;cursor:pointer;transition:.3s}
+.btn-ink:hover{background:var(--henna)}
+.link-u{font-size:.8rem;color:var(--henna);border-bottom:1px solid var(--henna);padding-bottom:4px}
+.cover .plate{position:relative;border:1px solid var(--line2);background:var(--paper2);padding:8%;display:grid;place-items:center}
+.cover .plate::after{content:"لوحة الغلاف";position:absolute;bottom:-24px;inset-inline-start:0;font-size:.62rem;letter-spacing:.26em;color:var(--faint)}
+.cover .plate .fig{position:absolute;top:14px;inset-inline-end:14px;font-family:var(--lat);font-size:.72rem;color:var(--faint);letter-spacing:.2em}
+
+/* contents strip */
+.contents{padding:34px 0;border-bottom:1px solid var(--line)}
+.contents .ct{font-size:.62rem;letter-spacing:.3em;color:var(--faint);margin-bottom:18px}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px 34px}
+.toc a{display:flex;align-items:baseline;gap:8px;font-family:var(--serif);font-size:1.08rem;padding:7px 0;transition:.2s}
+.toc a:hover{color:var(--henna)}
+.toc .dots{flex:1;border-bottom:1px dotted var(--faint);transform:translateY(-4px)}
+.toc .pg{font-family:var(--lat);font-size:.85rem;color:var(--faint)}
+
+/* editorial product plates */
+.sec{padding:clamp(70px,8vw,120px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem)}
+.sec-head .folio{font-family:var(--lat);font-size:.8rem;color:var(--faint);letter-spacing:.2em}
+.plates{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(18px,3vw,44px)}
+.pl{position:relative}
+.pl .fig{border:1px solid var(--line2);background:var(--paper2);display:grid;place-items:center;padding:12%;transition:.35s;position:relative;overflow:hidden}
+.pl:hover .fig{border-color:var(--ink)}
+.pl .fig svg{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.pl:hover .fig svg{transform:translateY(-8px)}
+.pl .cap{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:baseline;padding-top:12px;border-top:1px solid var(--line);margin-top:12px}
+.pl .cap .fno{font-family:var(--lat);font-size:.72rem;color:var(--henna);letter-spacing:.14em;white-space:nowrap}
+.pl .cap .name{font-family:var(--serif);font-size:1.15rem;line-height:1.4}
+.pl .cap .col{display:block;font-size:.62rem;color:var(--faint);letter-spacing:.2em;margin-top:3px}
+.pl .cap .price{font-family:var(--lat);font-size:1rem;white-space:nowrap}
+.pl .quick{position:absolute;inset-inline:8%;bottom:14%;display:flex;justify-content:center;gap:8px;opacity:0;transform:translateY(8px);transition:.35s}
+.pl:hover .quick{opacity:1;transform:none}
+.pl .quick button{background:var(--ink);color:var(--paper);border:none;font-family:var(--sans);font-size:.68rem;padding:10px 18px;cursor:pointer}
+.pl .quick button.hv{background:var(--paper);color:var(--ink);border:1px solid var(--line2);width:36px;padding:0}
+.p1{grid-column:1/6}.p1 .fig{aspect-ratio:4/5}
+.p2{grid-column:6/10;margin-top:80px}.p2 .fig{aspect-ratio:1}
+.p3{grid-column:10/13}.p3 .fig{aspect-ratio:3/4.4}
+.p4{grid-column:2/5;margin-top:-40px}.p4 .fig{aspect-ratio:1}
+.p5{grid-column:5/9;margin-top:60px}.p5 .fig{aspect-ratio:16/10}
+.p6{grid-column:9/12;margin-top:-20px}.p6 .fig{aspect-ratio:3/4}
+@media(max-width:860px){
+  .plates{grid-template-columns:1fr 1fr;gap:26px 16px}
+  .p1{grid-column:1/3}.p2{grid-column:1/2;margin-top:0}.p3{grid-column:2/3;margin-top:40px}
+  .p4{grid-column:1/2;margin-top:0}.p5{grid-column:2/3;margin-top:40px}.p6{grid-column:1/3;margin-top:0}
+}
+
+/* chapters as journal sections */
+.chapter{border-top:1px solid var(--line);padding:clamp(44px,6vw,80px) 0;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,80px);align-items:center}
+.chapter:nth-child(even){direction:ltr}
+.chapter:nth-child(even)>*{direction:rtl}
+.chapter .chno{font-family:var(--lat);font-size:.78rem;letter-spacing:.3em;color:var(--henna)}
+.chapter h3{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,3.2rem);margin:8px 0 16px}
+.chapter .drop::first-letter{font-family:var(--serif);font-size:3.1em;float:inline-start;line-height:.85;padding-inline-end:10px;color:var(--henna)}
+.chapter p{font-size:.88rem;line-height:2.15;color:var(--ink2);max-width:50ch}
+.chapter .more{display:inline-block;margin-top:20px;font-size:.75rem;color:var(--henna);border-bottom:1px solid var(--henna);padding-bottom:4px}
+.chapter .plrow{display:flex;gap:14px}
+.chapter .plrow figure{flex:1;border:1px solid var(--line2);background:var(--paper2);aspect-ratio:3/4;display:grid;place-items:center;padding:10%;transition:.3s}
+.chapter .plrow figure:hover{border-color:var(--henna)}
+.chapter .plrow figure:nth-child(2){transform:translateY(18px)}
+@media(max-width:860px){.chapter{grid-template-columns:1fr}.chapter:nth-child(even){direction:rtl}}
+
+/* pull quote spread */
+.spread{background:var(--paper2);border-block:1px solid var(--line2);text-align:center;padding:clamp(70px,9vw,130px) 0}
+.spread q{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.9;quotes:"«" "»";max-width:22ch;display:inline-block}
+.spread .src{margin-top:26px;font-size:.68rem;letter-spacing:.3em;color:var(--faint)}
+
+/* colophon footer */
+footer{border-top:3px double var(--line2);padding-bottom:40px}
+.colo{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:56px 0;border-bottom:1px solid var(--line)}
+.colo h5{font-size:.62rem;letter-spacing:.3em;color:var(--henna);font-weight:500;margin-bottom:18px}
+.colo a{display:block;font-size:.8rem;color:var(--ink2);padding:5px 0}
+.colo a:hover{color:var(--henna)}
+.imprint{display:flex;justify-content:space-between;padding:22px 0;font-size:.64rem;color:var(--faint);letter-spacing:.18em;flex-wrap:wrap;gap:10px}
+@media(max-width:860px){.colo{grid-template-columns:1fr 1fr}}
+
+/* search overlay */
+.search-ov{position:fixed;inset:0;z-index:80;background:rgba(244,239,230,.98);display:none;align-items:flex-start;padding-top:15vh}
+.search-ov.open{display:flex}
+.so-inner{max-width:760px;margin:0 auto;width:100%;padding:0 24px}
+.so-inner input{width:100%;background:none;border:none;border-bottom:2px solid var(--ink);color:var(--ink);font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.8rem);padding:14px 4px;outline:none}
+.so-hints{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.so-hints span{border:1px solid var(--line2);padding:8px 16px;font-size:.72rem;color:var(--ink2);cursor:pointer}
+.so-hints span:hover{border-color:var(--henna);color:var(--henna)}
+.so-close{position:absolute;top:24px;inset-inline-end:24px;background:none;border:none;color:var(--ink);font-size:.75rem;letter-spacing:.3em;cursor:pointer}
+
+@media(max-width:860px){
+  .mast .top{font-size:.56rem}
+  .mast .tocnav{overflow-x:auto;justify-content:flex-start}
+  .mast .tocnav a{padding:12px 18px;white-space:nowrap}
+  .cover{grid-template-columns:1fr;gap:48px;padding-top:32px}
+  .cover .plate{margin-bottom:24px}
+  .sec-head{flex-direction:column;gap:8px;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="tools">
+  <button id="openSearch" aria-label="بحث"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+  <button onclick="location='cart.html'" aria-label="السلة"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg><span class="cnt">٢</span></button>
+</div>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="top">
+      <span>مجلة الدار العطرية — العدد الأوّل</span>
+      <span class="lat">ISSUE Nº 1 — RIYADH</span>
+      <span>خريف ١٤٤٨هـ</span>
+    </div>
+    <a class="logo" href="#"><div class="ar serif">دار سَحَر</div><div class="en">DAR SAHAR · A PERFUME QUARTERLY</div></a>
+    <nav class="tocnav">
+      <a href="#plates">المختارات<span class="no lat">PLATES</span></a>
+      <a href="collection.html">الفصول<span class="no lat">CHAPTERS</span></a>
+      <a href="#marginalia">هوامش<span class="no lat">NOTES</span></a>
+      <a href="#colophon">عن الدار<span class="no lat">ABOUT</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- COVER -->
+  <section class="cover">
+    <div>
+      <div class="eyebrow">افتتاحية العدد</div>
+      <h1>عَطرٌ يُقرَأ<br>كَما يُقرَأ <em>الشِّعر</em></h1>
+      <p class="dek">في هذا العدد: ثلاثون عطراً في خمسة فصول — من ديوان العود إلى الإصدارات النادرة. كل قارورة لوحة، وكل مجموعة فصلٌ في كتاب الدار.</p>
+      <div class="cta"><a class="btn-ink" href="#plates">تصفّح اللوحات</a><a class="link-u" href="product.html">اقرأ عن عطر الغلاف</a></div>
+    </div>
+    <figure class="plate"><span class="fig lat">FIG. 1</span><div id="coverBottle"></div></figure>
+  </section>
+
+  <!-- CONTENTS -->
+  <section class="contents">
+    <div class="ct">في هذا العدد</div>
+    <div class="toc" id="tocList"></div>
+  </section>
+
+  <!-- PLATES -->
+  <section class="sec" id="plates">
+    <div class="sec-head"><h2>مختارات المُحرِّر</h2><span class="folio lat">PLATES 2 — 7</span></div>
+    <div class="plates" id="platesGrid"></div>
+  </section>
+
+  <!-- CHAPTERS -->
+  <section id="chapters" style="padding-bottom:40px">
+    <div class="sec-head"><h2>فصول الدار الخمسة</h2><span class="folio lat">CHAPTERS I — V</span></div>
+    <div id="chaptersList"></div>
+  </section>
+</main>
+
+<!-- PULL QUOTE -->
+<section class="spread" id="marginalia">
+  <div class="wrap">
+    <div class="eyebrow">من هامش الدار</div>
+    <q>العطرُ الجيّد لا يُشَمّ — يُتَذَكَّر.</q>
+    <div class="src lat">— FROM THE MARGIN, P. 12</div>
+  </div>
+</section>
+
+<footer id="colophon">
+  <div class="wrap">
+    <div class="colo">
+      <div><h5>التحرير</h5><a href="#">حكاية الدار</a><a href="#">مصادرنا</a><a href="#">الإصدارات النادرة</a><a href="#">بطاقات الإهداء</a></div>
+      <div><h5>الفصول</h5><a href="collection.html?c=oud">ديوان العود</a><a href="collection.html?c=rose">حديقة الطائف</a><a href="collection.html?c=musk">نخبة المسك</a><a href="collection.html?c=amber">ليالي العنبر</a></div>
+      <div><h5>القرّاء</h5><a href="#">الشحن والإرجاع</a><a href="#">تغليف الهدايا</a><a href="#">الأسئلة الشائعة</a><a href="#">اكتب لنا</a></div>
+      <div><h5>الاشتراك</h5><a href="#">انضم لقائمة الدار</a><a href="#">إنستغرام</a><a href="#">واتساب</a><a href="#">الرياض — حي السفارات</a></div>
+    </div>
+    <div class="imprint">
+      <span>دار سَحَر © ٢٠٢٦ — يُطبَع ويُوزَّع من الرياض</span>
+      <span class="lat">SET IN AMIRI &amp; EB GARAMOND · PRINTED IN RIYADH</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-ov" id="searchOv">
+  <button class="so-close" id="closeSearch">إغلاق ✕</button>
+  <div class="so-inner">
+    <input placeholder="ابحث في صفحات الدار…" aria-label="بحث">
+    <div class="so-hints"><span>عود كمبودي</span><span>ورد طائفي</span><span>مسك</span><span>هدايا</span><span>إصدارات نادرة</span></div>
+  </div>
+</div>
+
+<script src="../shared/data.js"></script>
+<script src="../shared/bottle.js"></script>
+<script>
+const P = SAHAR.products, C = SAHAR.collections;
+const arD = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
+
+document.getElementById("coverBottle").innerHTML = bottleSVG(SAHAR.prod("sahar-01"), {mode:"paper"});
+
+// contents list
+document.getElementById("tocList").innerHTML = C.map((c,i) =>
+  `<a href="collection.html?c=${c.id}"><span>${c.ar}</span><span class="dots"></span><span class="pg lat">p.${12 + i * 14}</span></a>`
+).join("") + `<a href="#plates"><span>مختارات المحرّر</span><span class="dots"></span><span class="pg lat">p.4</span></a>`;
+
+// plates
+const plateIds = ["sahar-01","taif-absolue","empty-quarter","pearl-musk","museum","ghassan"];
+document.getElementById("platesGrid").innerHTML = plateIds.map((id,i) => {
+  const p = SAHAR.prod(id);
+  return `<a class="pl p${i+1}" href="product.html?p=${p.id}">
+    <div class="fig">${bottleSVG(p,{mode:"paper"})}
+      <div class="quick"><button>أضِف إلى السلة</button><button class="hv" aria-label="مفضلة">♡</button></div>
+    </div>
+    <div class="cap">
+      <span class="fno lat">لوحة ${arD(i+2)}</span>
+      <span><span class="name serif">${p.ar}</span><span class="col">${SAHAR.col(p.col).ar} · ${p.conc}</span></span>
+      <span class="price lat">${p.price.toLocaleString("en-US")} ر.س</span>
+    </div>
+  </a>`;
+}).join("");
+
+// chapters
+const chDescs = {
+  oud:"سبعة عطور تفتح الكتاب — عود كمبودي وهندي معتّق، معمول بيوت القصور، وبخور الليالي الطويلة. أعمق فصول الدار وأقربها إلى قلبها.",
+  rose:"خمس لوحات وردية قطفت قممها قبل الشروق — من ورد الطائف المطلق إلى جوري الفجر النديّ.",
+  musk:"بياض المسك بست درجات — من صفاء الغَسْل إلى لمعة اللؤلؤ. فصل الصباحات والثياب البيض.",
+  amber:"سمر المجالس في ستة عطور — قهوة وعنبر ودخان ورواشين جدة القديمة.",
+  rare:"ست قارورات خارج التعداد — مرقّمة، محدودة، لا تُعاد. منها النسخة الأولى التي بدأت الحكاية.",
+};
+document.getElementById("chaptersList").innerHTML = C.map((c,i) => {
+  const prods = P.filter(p=>p.col===c.id).slice(0,3);
+  return `<div class="chapter">
+    <div>
+      <span class="chno lat">${c.chapterAr} · CHAPTER ${["I","II","III","IV","V"][i]}</span>
+      <h3>${c.ar}</h3>
+      <p class="drop">${chDescs[c.id]}</p>
+      <a class="more" href="collection.html?c=${c.id}">اقرأ الفصل كاملاً</a>
+    </div>
+    <div class="plrow">${prods.map(p=>`<figure title="${p.ar}" onclick="location='product.html?p=${p.id}'" style="cursor:pointer">${bottleSVG(p,{mode:"paper",glow:false,scale:.72})}</figure>`).join("")}</div>
+  </div>`;
+}).join("");
+
+const ov = document.getElementById("searchOv");
+document.getElementById("openSearch").onclick = () => location = "search.html";
+document.getElementById("closeSearch").onclick = () => ov.classList.remove("open");
+</script>
+</body>
+</html>
